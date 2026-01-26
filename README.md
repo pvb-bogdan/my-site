@@ -1,75 +1,86 @@
-# Nuxt Minimal Starter
+# Nuxt Portfolio Site
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A modern, responsive single-page portfolio website built with Nuxt 3 and Tailwind CSS.
+
+## Features
+
+- ✨ Modern, minimal design with smooth scrolling navigation
+- 📱 Fully responsive mobile-first design
+- 🎨 Tailwind CSS for styling with customizable color scheme
+- 🚀 Built with Nuxt 3 and Vue 3 Composition API
+- 🎯 Sections: Hero, Services, About, Portfolio, Testimonials, Contact
+- 💼 Sticky header with mobile navigation
+- 🌈 Gradient accents and smooth transitions
 
 ## Setup
 
-Make sure to install dependencies:
+1. Install dependencies:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+2. Start development server:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+The site will be available at `http://localhost:3000`
 
-Build the application for production:
+## Build for Production
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run preview
 ```
 
-Locally preview production build:
+Or generate static site:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+npm run generate
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Customization
+
+### Changing Colors
+
+The site uses Tailwind's indigo color by default. To change the accent color:
+
+1. Open `pages/index.vue`
+2. Find and replace `indigo-` with your preferred color (e.g., `teal-`, `purple-`, `blue-`)
+3. Or customize colors in `tailwind.config.js`
+
+### Updating Content
+
+Edit `pages/index.vue` and modify the data arrays:
+
+- `services` - Your service offerings
+- `technologies` - Tech stack
+- `projects` - Portfolio items
+- `testimonials` - Client testimonials
+- `socialLinks` - Social media links
+
+### Changing Name
+
+Replace "Alex Doe" throughout `pages/index.vue` and in `nuxt.config.ts`
+
+## Project Structure
+
+```
+├── assets/
+│   └── css/
+│       └── tailwind.css        # Tailwind imports
+├── pages/
+│   └── index.vue               # Main portfolio page
+├── nuxt.config.ts              # Nuxt configuration
+├── tailwind.config.js          # Tailwind configuration
+└── package.json
+```
+
+## Technologies
+
+- Nuxt 3
+- Vue 3
+- Tailwind CSS
+- TypeScript

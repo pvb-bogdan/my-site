@@ -1,14 +1,28 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite"
-
 export default defineNuxtConfig({
-  compatibilityDate: '2025-05-15',
+  compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
-  vite: {
-    plugins: [
-      tailwindcss(),
-    ],
+
+  css: ['~/assets/css/tailwind.css'],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
   },
-  modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/ui']
+
+  app: {
+    head: {
+      title: 'Alex Doe - Web Designer & Frontend Developer',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          name: 'description',
+          content: 'Personal portfolio of Alex Doe - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.'
+        },
+      ],
+    },
+  },
 })
