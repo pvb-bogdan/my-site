@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from 'nuxt/config';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -14,13 +16,13 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Alex Doe - Web Designer & Frontend Developer',
+      title: 'Petre Bogdan - Web Designer & Frontend Developer',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'Personal portfolio of Alex Doe - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.'
+          content: 'Personal portfolio of Petre Bogdan - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.'
         },
       ],
     },

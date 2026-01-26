@@ -61,10 +61,6 @@ Edit `pages/index.vue` and modify the data arrays:
 - `testimonials` - Client testimonials
 - `socialLinks` - Social media links
 
-### Changing Name
-
-Replace "Alex Doe" throughout `pages/index.vue` and in `nuxt.config.ts`
-
 ## Project Structure
 
 ```

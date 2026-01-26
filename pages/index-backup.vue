@@ -16,7 +16,7 @@
         <div class="flex items-center justify-between">
           <!-- Logo -->
           <a href="#hero" class="text-2xl font-bold text-indigo-400 hover:text-indigo-300 transition-colors">
-            Alex Doe
+            Petre Bogdan
           </a>
 
           <!-- Desktop Navigation -->
@@ -483,7 +483,7 @@
         'container mx-auto text-center',
         isDarkMode ? 'text-gray-400' : 'text-gray-600'
       ]">
-        <p>&copy; {{ currentYear }} Alex Doe. All rights reserved.</p>
+        <p>&copy; {{ currentYear }} Petre Bogdan. All rights reserved.</p>
       </div>
     </footer>
   </div>
