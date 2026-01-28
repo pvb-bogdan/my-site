@@ -14,6 +14,9 @@ export default {
       colors: {
         // You can customize your color palette here
       },
+      fontFamily: {
+        sans: ['Sora', 'sans-serif'],
+      },
     },
   },
   plugins: [],

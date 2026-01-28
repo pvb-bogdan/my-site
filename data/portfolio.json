@@ -59,9 +59,7 @@
     {
       "title": "E-Commerce Platform",
       "images": [
-        "/images/project1-1.jpg",
-        "/images/project1-2.jpg",
-        "/images/project1-3.jpg"
+        "/images/test1.jpg"
       ],
       "description": "Modern online shopping experience with Vue and Nuxt Modern online shopping experience with Vue and NuxtModern online shopping experience with Vue and Nuxt",
       "fullDescription": "A comprehensive e-commerce solution built with Nuxt 3 and Vue 3, featuring a modern shopping cart, secure payment integration with Stripe, and a responsive design that works seamlessly across all devices. The platform includes advanced product filtering, wishlist functionality, and a smooth checkout process.",
@@ -78,6 +76,9 @@
     },
     {
       "title": "SaaS Dashboard",
+      "images": [
+        "/images/test2.jpg"
+      ],
       "description": "Analytics dashboard with real-time data visualization",
       "fullDescription": "An advanced analytics dashboard featuring real-time data visualization, customizable widgets, and comprehensive reporting tools. Built with Vue 3 and Chart.js for smooth, interactive charts and graphs.",
       "tags": ["Vue", "Chart.js", "API"],
@@ -88,6 +89,9 @@
     },
     {
       "title": "Portfolio Website",
+      "images": [
+        "/images/test3.jpg"
+      ],
       "description": "Clean and minimal portfolio for a creative agency",
       "fullDescription": "A stunning portfolio website showcasing creative work with smooth animations, interactive galleries, and a modern, minimalist design approach that puts the work front and center.",
       "tags": ["Nuxt", "Tailwind", "Animations"],
@@ -97,6 +101,9 @@
     },
     {
       "title": "Mobile App Landing",
+      "images": [
+        "/images/test5.jpg"
+      ],
       "description": "Engaging landing page for a mobile application",
       "fullDescription": "A conversion-optimized landing page designed to showcase mobile app features with engaging animations, clear CTAs, and responsive design that adapts beautifully to all screen sizes.",
       "tags": ["Vue", "Tailwind", "Responsive"],
@@ -111,6 +118,9 @@
     },
     {
       "title": "Design System",
+      "images": [
+        "/images/test6.jpg"
+      ],
       "description": "Comprehensive component library for enterprise",
       "fullDescription": "A scalable design system and component library built for enterprise applications. Includes comprehensive documentation, accessibility features, and consistent design tokens for maintaining brand consistency across products.",
       "tags": ["Vue", "Storybook", "TypeScript"],
@@ -120,6 +130,9 @@
     },
     {
       "title": "Blog Platform",
+      "images": [
+        "/images/test7.jpg"
+      ],
       "description": "Content-focused blogging platform with CMS",
       "fullDescription": "A modern blogging platform with integrated CMS, SEO optimization, and social sharing features. Designed for content creators who want a fast, beautiful, and easy-to-manage blog.",
       "tags": ["Nuxt", "Content", "SEO"],
@@ -129,6 +142,9 @@
     },
     {
       "title": "Brand Identity Design",
+      "images": [
+        "/images/test8.jpg"
+      ],
       "description": "Complete branding package for tech startup",
       "fullDescription": "A comprehensive brand identity package including logo design, color palette, typography system, brand guidelines, and marketing collateral for a growing tech startup.",
       "tags": ["Illustrator", "Photoshop", "Branding"],
@@ -137,6 +153,9 @@
     },
     {
       "title": "Restaurant Website",
+      "images": [
+        "/images/test9.jpg"
+      ],
       "description": "Modern restaurant website with online ordering",
       "fullDescription": "A delicious restaurant website featuring online ordering, reservation system, interactive menu, and integration with delivery services. Optimized for mobile ordering.",
       "tags": ["React", "Tailwind", "API"],
@@ -146,6 +165,9 @@
     },
     {
       "title": "Fitness App UI",
+      "images": [
+        "/images/test10.png"
+      ],
       "description": "User interface design for mobile fitness application",
       "fullDescription": "Modern and motivating UI design for a fitness tracking application. Includes workout tracking, progress visualization, social features, and gamification elements.",
       "tags": ["Figma", "UI Design", "Mobile"],
@@ -154,6 +176,9 @@
     },
     {
       "title": "Real Estate Portal",
+      "images": [
+        "/images/test11.jpg"
+      ],
       "description": "Property listing platform with advanced search",
       "fullDescription": "A comprehensive real estate portal with advanced property search, interactive maps, virtual tours, and integrated contact forms. Designed for both buyers and real estate agents.",
       "tags": ["Vue", "Maps API", "Search"],
@@ -163,6 +188,9 @@
     },
     {
       "title": "Social Media Graphics",
+      "images": [
+        "/images/test12.jpg"
+      ],
       "description": "Engaging social media content and templates",
       "fullDescription": "A collection of eye-catching social media graphics and templates designed to boost engagement. Includes post templates, story designs, and promotional graphics.",
       "tags": ["Canva", "Photoshop", "Marketing"],
@@ -171,6 +199,9 @@
     },
     {
       "title": "Corporate Website",
+      "images": [
+        "/images/test1.jpg"
+      ],
       "description": "Professional corporate site with CMS integration",
       "fullDescription": "A sophisticated corporate website with headless CMS integration, multi-language support, SEO optimization, and a professional design that builds trust and credibility.",
       "tags": ["Next.js", "Sanity", "SEO"],
