@@ -103,7 +103,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
 
 interface NavLink {
   label: string
@@ -125,9 +125,18 @@ const activeIndex = ref(0)
 const activeBubble = ref<HTMLElement | null>(null)
 const hoverBubble = ref<HTMLElement | null>(null)
 
+// Utility function to calculate bubble position
+const setBubblePosition = (bubble: HTMLElement, target: HTMLElement, nav: Element) => {
+  const rect = target.getBoundingClientRect()
+  const navRect = nav.getBoundingClientRect()
+  bubble.style.left = `${rect.left - navRect.left}px`
+  bubble.style.top = `${rect.top - navRect.top}px`
+  bubble.style.width = `${rect.width}px`
+  bubble.style.height = `${rect.height}px`
+}
+
 const handleLinkClick = (index: number, href: string) => {
   activeIndex.value = index
-  updateActiveBubble()
   // Smooth scroll to section
   const target = document.querySelector(href)
   if (target) {
@@ -138,14 +147,9 @@ const handleLinkClick = (index: number, href: string) => {
 const handleMouseEnter = (e: Event) => {
   const target = e.target as HTMLElement
   if (hoverBubble.value && target) {
-    const rect = target.getBoundingClientRect()
     const nav = target.closest('.nav')
     if (nav) {
-      const navRect = nav.getBoundingClientRect()
-      hoverBubble.value.style.left = `${rect.left - navRect.left}px`
-      hoverBubble.value.style.top = `${rect.top - navRect.top}px`
-      hoverBubble.value.style.width = `${rect.width}px`
-      hoverBubble.value.style.height = `${rect.height}px`
+      setBubblePosition(hoverBubble.value, target, nav)
       hoverBubble.value.style.opacity = '1'
     }
   }
@@ -161,14 +165,9 @@ const updateActiveBubble = () => {
   nextTick(() => {
     const activeLink = document.querySelector('.nav a.active') as HTMLElement
     if (activeBubble.value && activeLink) {
-      const rect = activeLink.getBoundingClientRect()
       const nav = activeLink.closest('.nav')
       if (nav) {
-        const navRect = nav.getBoundingClientRect()
-        activeBubble.value.style.left = `${rect.left - navRect.left}px`
-        activeBubble.value.style.top = `${rect.top - navRect.top}px`
-        activeBubble.value.style.width = `${rect.width}px`
-        activeBubble.value.style.height = `${rect.height}px`
+        setBubblePosition(activeBubble.value, activeLink, nav)
       }
     }
   })
@@ -178,10 +177,18 @@ const handleMobileClick = () => {
   mobileMenuOpen.value = false
 }
 
+// Watch for activeIndex changes
+watch(activeIndex, () => {
+  updateActiveBubble()
+})
+
 onMounted(() => {
   updateActiveBubble()
-  // Update bubble position on scroll to handle active section changes
   window.addEventListener('resize', updateActiveBubble)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateActiveBubble)
 })
 </script>
 

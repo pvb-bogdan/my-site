@@ -42,18 +42,18 @@
     "cvLink": "#"
   },
   "technologies": [
-    "HTML & CSS",
-    "JavaScript",
-    "TypeScript",
-    "Vue.js",
-    "Nuxt.js",
-    "React",
-    "Tailwind CSS",
-    "Figma",
-    "Git & GitHub",
-    "Node.js",
-    "REST APIs",
-    "Responsive Design"
+    { "name": "HTML & CSS", "level": 90 },
+    { "name": "JavaScript", "level": 85 },
+    { "name": "TypeScript", "level": 80 },
+    { "name": "Vue.js", "level": 85 },
+    { "name": "Nuxt.js", "level": 80 },
+    { "name": "React", "level": 70 },
+    { "name": "Tailwind CSS", "level": 90 },
+    { "name": "Figma", "level": 85 },
+    { "name": "Git & GitHub", "level": 85 },
+    { "name": "Node.js", "level": 75 },
+    { "name": "REST APIs", "level": 80 },
+    { "name": "Responsive Design", "level": 95 }
   ],
   "projects": [
     {
