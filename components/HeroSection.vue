@@ -32,7 +32,7 @@
           <!-- Hero Image -->
         <div class="flex-shrink-0 lg:flex-1">
           <img 
-            src="~/assets/images/hero-img.png" 
+            src="~/assets/images/hero-img1.png" 
             alt="Device Mockup" 
             class="w-full max-w-lg mx-auto transition-transform duration-300 transform lg:max-w-xl xl:max-w-2xl hover:scale-105"
           />
