@@ -209,6 +209,139 @@
       "technologies": ["Next.js", "Sanity CMS", "SEO", "i18n", "TypeScript"],
       "liveUrl": "https://example.com",
       "githubUrl": "https://github.com"
+    },
+    {
+      "title": "Aplicație Rezervări Hotel",
+      "images": [
+        "/images/test2.jpg"
+      ],
+      "description": "Sistem de rezervări online pentru industria hotelieră",
+      "fullDescription": "O platformă completă de rezervări hoteliere cu calendar interactiv, selecție camere, procesare plăți și management al rezervărilor. Optimizată pentru conversii și experiență utilizator excelentă.",
+      "tags": ["Vue", "Node.js", "MongoDB"],
+      "category": "frontend",
+      "technologies": ["Vue 3", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com"
+    },
+    {
+      "title": "Dashboard Crypto",
+      "images": [
+        "/images/test3.jpg"
+      ],
+      "description": "Platformă de monitorizare criptomonede în timp real",
+      "fullDescription": "Un dashboard avansat pentru monitorizarea portofoliului crypto cu prețuri în timp real, grafice interactive, alerte personalizate și analiză de piață.",
+      "tags": ["React", "WebSocket", "Charts"],
+      "category": "frontend",
+      "technologies": ["React", "WebSocket", "Recharts", "CoinGecko API", "Tailwind CSS"],
+      "liveUrl": "https://example.com"
+    },
+    {
+      "title": "Landing Page Educație",
+      "images": [
+        "/images/test5.jpg"
+      ],
+      "description": "Pagină de prezentare pentru platformă educațională",
+      "fullDescription": "O pagină de destinație modernă pentru o platformă de cursuri online, cu prezentare cursuri, testimoniale studenți și formular de înscriere optimizat pentru conversii.",
+      "tags": ["Nuxt", "Tailwind", "SEO"],
+      "category": "webdesign",
+      "technologies": ["Nuxt 3", "Tailwind CSS", "SEO", "Google Analytics"],
+      "liveUrl": "https://example.com"
+    },
+    {
+      "title": "Aplicație Task Manager",
+      "images": [
+        "/images/test6.jpg"
+      ],
+      "description": "Aplicație de management al sarcinilor cu drag & drop",
+      "fullDescription": "O aplicație de productivitate cu board-uri Kanban, drag & drop, filtre avansate, notificări și sincronizare în timp real între dispozitive.",
+      "tags": ["Vue", "Firebase", "Real-time"],
+      "category": "frontend",
+      "technologies": ["Vue 3", "Firebase", "VueDraggable", "Pinia", "TypeScript"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com"
+    },
+    {
+      "title": "Branding Studio Foto",
+      "images": [
+        "/images/test7.jpg"
+      ],
+      "description": "Identitate vizuală completă pentru studio foto",
+      "fullDescription": "Pachet complet de branding pentru un studio foto, incluzând logo, paletă de culori, materiale tipărite, template-uri social media și ghid de utilizare.",
+      "tags": ["Illustrator", "Photoshop", "Branding"],
+      "category": "graphics",
+      "technologies": ["Adobe Illustrator", "Adobe Photoshop", "Figma", "Print Design"]
+    },
+    {
+      "title": "Portal Știri",
+      "images": [
+        "/images/test8.jpg"
+      ],
+      "description": "Platformă de știri cu actualizări în timp real",
+      "fullDescription": "Un portal de știri modern cu categorii multiple, sistem de comentarii, newsletter integrat și optimizare pentru motoarele de căutare. Design responsive și performant.",
+      "tags": ["Next.js", "GraphQL", "CMS"],
+      "category": "webdesign",
+      "technologies": ["Next.js", "GraphQL", "Contentful", "Tailwind CSS", "TypeScript"],
+      "liveUrl": "https://example.com"
+    },
+    {
+      "title": "Aplicație Livrare Mâncare",
+      "images": [
+        "/images/test9.jpg"
+      ],
+      "description": "Interfață pentru aplicație de livrare mâncare",
+      "fullDescription": "Design UI/UX complet pentru o aplicație de livrare mâncare, cu flow de comandă optimizat, tracking în timp real, și sistem de rating pentru restaurante.",
+      "tags": ["Figma", "UI/UX", "Mobile"],
+      "category": "graphics",
+      "technologies": ["Figma", "Prototyping", "User Research", "Mobile Design"]
+    },
+    {
+      "title": "Platformă HR",
+      "images": [
+        "/images/test10.png"
+      ],
+      "description": "Sistem de management resurse umane",
+      "fullDescription": "O platformă HR comprehensivă cu gestionare angajați, pontaj, management concedii, evaluări performanță și rapoarte detaliate pentru departamentul HR.",
+      "tags": ["Vue", "Node.js", "PostgreSQL"],
+      "category": "frontend",
+      "technologies": ["Vue 3", "Node.js", "PostgreSQL", "Pinia", "Tailwind CSS"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com"
+    },
+    {
+      "title": "Site Clinică Medicală",
+      "images": [
+        "/images/test11.jpg"
+      ],
+      "description": "Prezență online pentru clinică medicală",
+      "fullDescription": "Un site profesional pentru o clinică medicală cu programări online, prezentare medici și servicii, blog medical și integrare cu sistemul de management al pacienților.",
+      "tags": ["Nuxt", "Tailwind", "Accesibilitate"],
+      "category": "webdesign",
+      "technologies": ["Nuxt 3", "Tailwind CSS", "WCAG 2.1", "Schema.org"],
+      "liveUrl": "https://example.com"
+    },
+    {
+      "title": "Dashboard IoT",
+      "images": [
+        "/images/test12.jpg"
+      ],
+      "description": "Panou de control pentru dispozitive IoT",
+      "fullDescription": "Un dashboard pentru monitorizarea și controlul dispozitivelor IoT smart home, cu vizualizări în timp real, automatizări și istoric de date.",
+      "tags": ["React", "MQTT", "Charts"],
+      "category": "frontend",
+      "technologies": ["React", "MQTT.js", "InfluxDB", "Grafana", "Tailwind CSS"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com"
+    },
+    {
+      "title": "Ilustrații Digitale",
+      "images": [
+        "/images/test1.jpg"
+      ],
+      "description": "Colecție de ilustrații digitale pentru web",
+      "fullDescription": "O serie de ilustrații digitale personalizate pentru diverse proiecte web, incluzând caractere, scene și elemente decorative în stil modern și colorat.",
+      "tags": ["Procreate", "Illustrator", "Digital Art"],
+      "category": "graphics",
+      "technologies": ["Procreate", "Adobe Illustrator", "Digital Illustration"]
     }
   ],
   "testimonials": [

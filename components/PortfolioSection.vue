@@ -26,9 +26,13 @@
       </div>
 
       <!-- Masonry Layout -->
-      <div class="masonry-container">
+      <TransitionGroup 
+        name="project" 
+        tag="div" 
+        class="masonry-container"
+      >
         <div
-          v-for="project in filteredProjects"
+          v-for="project in visibleProjects"
           :key="project.title"
           @click="openModal(project)"
           class="relative overflow-hidden transition-all duration-300 shadow-lg cursor-pointer masonry-item group rounded-xl hover:shadow-2xl"
@@ -68,6 +72,22 @@
             </div>
           </div>
         </div>
+      </TransitionGroup>
+
+      <!-- Show More Button -->
+      <div v-if="hasMoreProjects" class="flex justify-center mt-12">
+        <button
+          @click="showMoreProjects"
+          class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 shadow-lg group rounded-xl hover:shadow-xl hover:scale-105"
+        >
+          <span class="relative z-10 flex items-center gap-3">
+            <span>Arată mai multe</span>
+            <span class="px-2 py-1 text-sm rounded-lg bg-white/20">
+              +{{ Math.min(LOAD_MORE_COUNT, remainingProjects) }}
+            </span>
+          </span>
+          <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover:opacity-100"></div>
+        </button>
       </div>
     </div>
 
@@ -81,7 +101,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import ProjectModal from './ProjectModal.vue'
 
 interface Project {
@@ -112,9 +132,18 @@ const filters = [
   { label: 'Grafică', value: 'graphics' }
 ]
 
+const INITIAL_PROJECTS = 12
+const LOAD_MORE_COUNT = 8
+
 const activeFilter = ref('all')
 const isModalOpen = ref(false)
 const selectedProject = ref<Project | null>(null)
+const visibleCount = ref(INITIAL_PROJECTS)
+
+// Reset visible count when filter changes
+watch(activeFilter, () => {
+  visibleCount.value = INITIAL_PROJECTS
+})
 
 const filteredProjects = computed(() => {
   if (activeFilter.value === 'all') {
@@ -122,6 +151,25 @@ const filteredProjects = computed(() => {
   }
   return props.projects.filter(project => project.category === activeFilter.value)
 })
+
+const visibleProjects = computed(() => {
+  return filteredProjects.value.slice(0, visibleCount.value)
+})
+
+const hasMoreProjects = computed(() => {
+  return visibleCount.value < filteredProjects.value.length
+})
+
+const remainingProjects = computed(() => {
+  return filteredProjects.value.length - visibleCount.value
+})
+
+const showMoreProjects = () => {
+  visibleCount.value = Math.min(
+    visibleCount.value + LOAD_MORE_COUNT,
+    filteredProjects.value.length
+  )
+}
 
 const openModal = (project: Project) => {
   selectedProject.value = project
@@ -176,4 +224,49 @@ const getRandomHeight = () => {
 .masonry-item:hover {
   transform: translateY(-4px);
 }
+
+/* TransitionGroup animations */
+.project-enter-active {
+  animation: projectFadeIn 0.6s ease-out forwards;
+}
+
+.project-leave-active {
+  animation: projectFadeOut 0.4s ease-in forwards;
+}
+
+.project-move {
+  transition: transform 0.5s ease;
+}
+
+@keyframes projectFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes projectFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+}
+
+/* Staggered animation for initial load and show more */
+.project-enter-active:nth-child(1) { animation-delay: 0ms; }
+.project-enter-active:nth-child(2) { animation-delay: 50ms; }
+.project-enter-active:nth-child(3) { animation-delay: 100ms; }
+.project-enter-active:nth-child(4) { animation-delay: 150ms; }
+.project-enter-active:nth-child(5) { animation-delay: 200ms; }
+.project-enter-active:nth-child(6) { animation-delay: 250ms; }
+.project-enter-active:nth-child(7) { animation-delay: 300ms; }
+.project-enter-active:nth-child(8) { animation-delay: 350ms; }
 </style>
