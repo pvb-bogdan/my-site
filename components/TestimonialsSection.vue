@@ -2,9 +2,9 @@
   <section id="testimonials" class="py-20 px-6">
     <div class="container mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Testimonials</h2>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">{{ t('testimonials.title') }}</h2>
         <p class="text-xl max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
-          What clients say about working with me
+          {{ t('testimonials.subtitle') }}
         </p>
       </div>
 
@@ -36,6 +36,8 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 interface Testimonial {
   name: string
   role: string
@@ -46,4 +48,6 @@ interface Testimonial {
 defineProps<{
   testimonials: Testimonial[]
 }>()
+
+const { t } = useI18n()
 </script>

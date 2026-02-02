@@ -5,26 +5,26 @@
         <!-- Text Content -->
         <div class="flex-1 text-center lg:text-left">
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Hi, I'm <span class="text-indigo-400">{{ name }}</span>
+            {{ t('hero.greeting') }} <span class="text-indigo-400">{{ name }}</span>
           </h1>
           <h2 class="text-3xl md:text-4xl font-semibold mb-6 text-gray-700 dark:text-gray-300">
-            {{ title }}
+            {{ t('hero.title') }}
           </h2>
           <p class="text-xl mb-8 max-w-2xl mx-auto lg:mx-0 text-gray-600 dark:text-gray-400">
-            {{ description }}
+            {{ t('hero.description') }}
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href="#portfolio"
               class="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              View Portfolio
+              {{ t('hero.viewPortfolio') }}
             </a>
             <a
               href="#contact"
               class="px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl border bg-white hover:bg-gray-100 text-gray-900 border-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white dark:border-gray-700"
             >
-              Contact Me
+              {{ t('hero.contactMe') }}
             </a>
           </div>
         </div>
@@ -39,9 +39,11 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 defineProps<{
   name: string
-  title: string
-  description: string
 }>()
+
+const { t } = useI18n()
 </script>

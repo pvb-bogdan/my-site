@@ -4,9 +4,9 @@
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <!-- Bio -->
         <div>
-          <h2 class="mb-6 text-4xl font-bold md:text-5xl">About Me</h2>
+          <h2 class="mb-6 text-4xl font-bold md:text-5xl">{{ t('about.title') }}</h2>
           <p
-            v-for="(paragraph, index) in bio"
+            v-for="(paragraph, index) in translatedBio"
             :key="index"
             class="mb-6 text-xl leading-relaxed text-gray-600 dark:text-gray-400"
           >
@@ -16,13 +16,13 @@
             :href="cvLink"
             class="inline-block px-8 py-4 font-semibold text-white transition-all duration-200 transform bg-indigo-600 rounded-lg shadow-lg hover:bg-indigo-700 hover:scale-105"
           >
-            Download CV
+            {{ t('about.downloadCV') }}
           </a>
         </div>
 
         <!-- Technologies -->
         <div>
-          <h3 class="mb-6 text-2xl font-semibold">Technologies & Tools</h3>
+          <h3 class="mb-6 text-2xl font-semibold">{{ t('about.technologiesTitle') }}</h3>
           <div class="grid grid-cols-2 gap-4">
             <div
               v-for="tech in technologies"
@@ -54,14 +54,25 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 interface Technology {
   name: string
   level: number
 }
 
 defineProps<{
-  bio: string[]
   cvLink: string
   technologies: Technology[]
 }>()
+
+const { t } = useI18n()
+
+const translatedBio = computed(() => {
+  return [
+    t('about.bio[0]'),
+    t('about.bio[1]')
+  ]
+})
 </script>

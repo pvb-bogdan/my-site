@@ -3,7 +3,7 @@
     <!-- Header Navigation -->
     <HeaderNav
       :name="portfolioData.personal.name"
-      :nav-links="portfolioData.navLinks"
+      :nav-links="navLinks"
       :is-scrolled="isScrolled"
       @toggle-theme="toggleTheme"
     />
@@ -11,8 +11,6 @@
     <!-- Hero Section -->
     <HeroSection
       :name="portfolioData.personal.name"
-      :title="portfolioData.personal.title"
-      :description="portfolioData.personal.description"
     />
 
     <!-- Services Section -->
@@ -22,7 +20,6 @@
 
     <!-- About Section -->
     <AboutSection
-      :bio="portfolioData.about.bio"
       :cv-link="portfolioData.about.cvLink"
       :technologies="portfolioData.technologies"
     />
@@ -45,7 +42,7 @@
     <!-- Footer -->
     <footer class="py-8 px-6 border-t bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
       <div class="container mx-auto text-center text-gray-600 dark:text-gray-400">
-        <p>&copy; {{ currentYear }} {{ portfolioData.personal.name }}. All rights reserved.</p>
+        <p>&copy; {{ currentYear }} {{ portfolioData.personal.name }}. {{ t('footer.rights') }}</p>
       </div>
     </footer>
   </div>
@@ -53,7 +50,20 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import portfolioData from '../data/portfolio.json'
+
+const { t } = useI18n()
+
+// Navigation links
+const navLinks = [
+  { key: 'home', href: '#hero' },
+  { key: 'services', href: '#services' },
+  { key: 'about', href: '#about' },
+  { key: 'portfolio', href: '#portfolio' },
+  { key: 'testimonials', href: '#testimonials' },
+  { key: 'contact', href: '#contact' }
+]
 
 // Navigation state
 const isScrolled = ref(false)

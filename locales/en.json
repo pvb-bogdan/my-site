@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "title": "Web Designer & Frontend Developer",
+    "description": "I craft beautiful, user-centric digital experiences with modern web technologies. Specializing in Vue, Nuxt, and design systems that scale.",
+    "viewPortfolio": "View Portfolio",
+    "contactMe": "Contact Me"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Comprehensive solutions for modern web development and design",
+    "items": [
+      {
+        "title": "UI/UX Design",
+        "description": "Creating intuitive and beautiful user interfaces that provide exceptional user experiences."
+      },
+      {
+        "title": "Frontend Development",
+        "description": "Building responsive, performant web applications with modern frameworks and best practices."
+      },
+      {
+        "title": "Design Systems",
+        "description": "Developing scalable design systems and component libraries for consistent user experiences."
+      },
+      {
+        "title": "Performance Optimization",
+        "description": "Ensuring your website loads fast and runs smoothly across all devices and platforms."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "bio": [
+      "I'm a passionate web designer and frontend developer with over 5 years of experience creating stunning digital experiences. I specialize in building modern, performant, and accessible web applications that users love.",
+      "My approach combines clean design principles with robust development practices, ensuring every project not only looks great but performs flawlessly across all devices."
+    ],
+    "downloadCV": "Download CV",
+    "technologiesTitle": "Technologies & Tools"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "A selection of my recent work",
+    "filters": {
+      "all": "All",
+      "webdesign": "Web Design",
+      "frontend": "Frontend",
+      "graphics": "Graphics"
+    },
+    "viewProject": "View Project",
+    "livePreview": "Live Preview",
+    "sourceCode": "Source Code",
+    "technologies": "Technologies",
+    "close": "Close"
+  },
+  "testimonials": {
+    "title": "What Clients Say",
+    "subtitle": "Feedback from satisfied clients"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Let's work together to create something amazing",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your.email{'@'}example.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "submit": "Send Message",
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred. Please try again."
+    },
+    "social": "Or connect with me on social media"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

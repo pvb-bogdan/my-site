@@ -2,9 +2,9 @@
   <section id="portfolio" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50">
     <div class="container mx-auto">
       <div class="mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">Portfolio</h2>
+        <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('portfolio.title') }}</h2>
         <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 dark:text-gray-400">
-          A selection of recent projects showcasing my work
+          {{ t('portfolio.subtitle') }}
         </p>
 
         <!-- Filter Buttons -->
@@ -20,7 +20,7 @@
                 : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:border-gray-700'
             ]"
           >
-            {{ filter.label }}
+            {{ t(`portfolio.filters.${filter.value}`) }}
           </button>
         </div>
       </div>
@@ -82,6 +82,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import ProjectModal from './ProjectModal.vue'
 
 interface Project {
@@ -105,11 +106,13 @@ const props = defineProps<{
   projects: Project[]
 }>()
 
+const { t } = useI18n()
+
 const filters = [
-  { label: 'All', value: 'all' },
-  { label: 'Web Design', value: 'webdesign' },
-  { label: 'Frontend', value: 'frontend' },
-  { label: 'Graphics', value: 'graphics' }
+  { value: 'all' },
+  { value: 'webdesign' },
+  { value: 'frontend' },
+  { value: 'graphics' }
 ]
 
 const activeFilter = ref('all')

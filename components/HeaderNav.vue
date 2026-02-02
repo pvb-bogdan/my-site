@@ -22,13 +22,23 @@
               @mouseenter="handleMouseEnter"
               @mouseleave="handleMouseLeave"
             >
-              {{ link.label }}
+              {{ t(`nav.${link.key}`) }}
             </a>
           </nav>
         </div>
 
-        <!-- Theme Toggle (Right) -->
-        <div class="items-center hidden lg:flex">
+        <!-- Theme Toggle & Language Switcher (Right) -->
+        <div class="items-center hidden gap-2 lg:flex">
+          <!-- Language Switcher -->
+          <button
+            @click="toggleLanguage"
+            class="px-3 py-2 text-sm font-semibold text-gray-700 transition-all duration-200 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
+            aria-label="Toggle language"
+          >
+            {{ currentLocale === 'ro' ? 'EN' : 'RO' }}
+          </button>
+          
+          <!-- Theme Toggle -->
           <button
             @click="$emit('toggleTheme')"
             class="p-2 text-gray-700 transition-all duration-200 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-yellow-400"
@@ -43,8 +53,18 @@
           </button>
         </div>
 
-        <!-- Mobile Menu & Theme Toggle -->
+        <!-- Mobile Menu, Language & Theme Toggle -->
         <div class="flex items-center gap-2 lg:hidden">
+          <!-- Language Switcher -->
+          <button
+            @click="toggleLanguage"
+            class="px-3 py-2 text-sm font-semibold text-gray-700 transition-all duration-200 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300"
+            aria-label="Toggle language"
+          >
+            {{ currentLocale === 'ro' ? 'EN' : 'RO' }}
+          </button>
+          
+          <!-- Theme Toggle -->
           <button
             @click="$emit('toggleTheme')"
             class="p-2 text-gray-700 transition-all duration-200 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-yellow-400"
@@ -95,7 +115,7 @@
           @click="handleMobileClick"
           class="block text-gray-700 transition-colors duration-200 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400"
         >
-          {{ link.label }}
+          {{ t(`nav.${link.key}`) }}
         </a>
       </div>
     </div>
@@ -103,10 +123,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 interface NavLink {
-  label: string
+  key: string
   href: string
 }
 
@@ -119,6 +140,13 @@ defineProps<{
 defineEmits<{
   toggleTheme: []
 }>()
+
+const { locale, t } = useI18n()
+const currentLocale = computed(() => locale.value)
+
+const toggleLanguage = () => {
+  locale.value = locale.value === 'ro' ? 'en' : 'ro'
+}
 
 const mobileMenuOpen = ref(false)
 const activeIndex = ref(0)

@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "services": "Servicii",
+    "about": "Despre",
+    "portfolio": "Portofoliu",
+    "testimonials": "Testimoniale",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bună, sunt",
+    "title": "Web Designer & Dezvoltator Frontend",
+    "description": "Creez experiențe digitale frumoase și centrate pe utilizator cu tehnologii web moderne. Specializat în Vue, Nuxt și sisteme de design scalabile.",
+    "viewPortfolio": "Vezi Portofoliu",
+    "contactMe": "Contactează-mă"
+  },
+  "services": {
+    "title": "Servicii",
+    "subtitle": "Soluții complete pentru dezvoltare și design web modern",
+    "items": [
+      {
+        "title": "Design UI/UX",
+        "description": "Crearea de interfețe intuitive și frumoase care oferă experiențe excepționale utilizatorilor."
+      },
+      {
+        "title": "Dezvoltare Frontend",
+        "description": "Construirea de aplicații web responsive și performante cu framework-uri moderne și cele mai bune practici."
+      },
+      {
+        "title": "Sisteme de Design",
+        "description": "Dezvoltarea de sisteme de design scalabile și biblioteci de componente pentru experiențe consistente."
+      },
+      {
+        "title": "Optimizare Performanță",
+        "description": "Asigurarea că site-ul tău se încarcă rapid și funcționează perfect pe toate dispozitivele și platformele."
+      }
+    ]
+  },
+  "about": {
+    "title": "Despre Mine",
+    "bio": [
+      "Sunt un web designer și dezvoltator frontend pasionat cu peste 5 ani de experiență în crearea de experiențe digitale uimitoare. Sunt specializat în construirea de aplicații web moderne, performante și accesibile pe care utilizatorii le adoră.",
+      "Abordarea mea combină principii de design curat cu practici robuste de dezvoltare, asigurându-mă că fiecare proiect nu doar arată grozav, dar funcționează impecabil pe toate dispozitivele."
+    ],
+    "downloadCV": "Descarcă CV",
+    "technologiesTitle": "Tehnologii & Instrumente"
+  },
+  "portfolio": {
+    "title": "Portofoliu",
+    "subtitle": "O selecție a lucrărilor mele recente",
+    "filters": {
+      "all": "Toate",
+      "webdesign": "Design Web",
+      "frontend": "Frontend",
+      "graphics": "Grafică"
+    },
+    "viewProject": "Vezi Proiect",
+    "livePreview": "Vezi Live",
+    "sourceCode": "Cod Sursă",
+    "technologies": "Tehnologii",
+    "close": "Închide"
+  },
+  "testimonials": {
+    "title": "Ce Spun Clienții",
+    "subtitle": "Feedback de la clienți mulțumiți"
+  },
+  "contact": {
+    "title": "Contactează-mă",
+    "subtitle": "Ai un proiect în minte? Hai să colaborăm pentru a crea ceva uimitor",
+    "form": {
+      "name": "Nume",
+      "namePlaceholder": "Numele tău",
+      "email": "Email",
+      "emailPlaceholder": "email{'@'}exemplu.com",
+      "message": "Mesaj",
+      "messagePlaceholder": "Spune-mi despre proiectul tău...",
+      "submit": "Trimite Mesaj",
+      "success": "Mesajul tău a fost trimis cu succes!",
+      "error": "A apărut o eroare. Te rog încearcă din nou."
+    },
+    "social": "Sau conectează-te cu mine pe rețelele sociale"
+  },
+  "footer": {
+    "rights": "Toate drepturile rezervate."
+  }
+}
