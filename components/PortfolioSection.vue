@@ -2,9 +2,9 @@
   <section id="portfolio" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50">
     <div class="container mx-auto">
       <div class="mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">Portfolio</h2>
+        <h2 class="mb-4 text-4xl font-bold md:text-5xl">Portofoliu</h2>
         <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 dark:text-gray-400">
-          A selection of recent projects showcasing my work
+          O selecție de proiecte recente care prezintă munca mea
         </p>
 
         <!-- Filter Buttons -->
@@ -106,10 +106,10 @@ const props = defineProps<{
 }>()
 
 const filters = [
-  { label: 'All', value: 'all' },
+  { label: 'Toate', value: 'all' },
   { label: 'Web Design', value: 'webdesign' },
   { label: 'Frontend', value: 'frontend' },
-  { label: 'Graphics', value: 'graphics' }
+  { label: 'Grafică', value: 'graphics' }
 ]
 
 const activeFilter = ref('all')

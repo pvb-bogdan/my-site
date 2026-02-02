@@ -45,7 +45,7 @@
     <!-- Footer -->
     <footer class="py-8 px-6 border-t bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
       <div class="container mx-auto text-center text-gray-600 dark:text-gray-400">
-        <p>&copy; {{ currentYear }} {{ portfolioData.personal.name }}. All rights reserved.</p>
+        <p>&copy; {{ currentYear }} {{ portfolioData.personal.name }}. Toate drepturile rezervate.</p>
       </div>
     </footer>
   </div>

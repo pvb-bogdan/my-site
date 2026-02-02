@@ -11,14 +11,12 @@
         <!-- Desktop Navigation (Center) -->
         <div class="absolute hidden -translate-x-1/2 lg:flex left-1/2">
           <nav class="nav">
-            <div class="bubble active" ref="activeBubble"></div>
             <div class="bubble hover" ref="hoverBubble"></div>
             <a
-              v-for="(link, index) in navLinks"
+              v-for="link in navLinks"
               :key="link.href"
               :href="link.href"
-              :class="{ active: activeIndex === index }"
-              @click.prevent="handleLinkClick(index, link.href)"
+              @click.prevent="handleLinkClick(link.href)"
               @mouseenter="handleMouseEnter"
               @mouseleave="handleMouseLeave"
             >
@@ -103,7 +101,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { ref } from 'vue'
 
 interface NavLink {
   label: string
@@ -121,11 +119,9 @@ defineEmits<{
 }>()
 
 const mobileMenuOpen = ref(false)
-const activeIndex = ref(0)
-const activeBubble = ref<HTMLElement | null>(null)
 const hoverBubble = ref<HTMLElement | null>(null)
 
-// Utility function to calculate bubble position
+// Utility function to calculate bubble position for hover effect
 const setBubblePosition = (bubble: HTMLElement, target: HTMLElement, nav: Element) => {
   const rect = target.getBoundingClientRect()
   const navRect = nav.getBoundingClientRect()
@@ -135,8 +131,7 @@ const setBubblePosition = (bubble: HTMLElement, target: HTMLElement, nav: Elemen
   bubble.style.height = `${rect.height}px`
 }
 
-const handleLinkClick = (index: number, href: string) => {
-  activeIndex.value = index
+const handleLinkClick = (href: string) => {
   // Smooth scroll to section
   const target = document.querySelector(href)
   if (target) {
@@ -161,35 +156,9 @@ const handleMouseLeave = () => {
   }
 }
 
-const updateActiveBubble = () => {
-  nextTick(() => {
-    const activeLink = document.querySelector('.nav a.active') as HTMLElement
-    if (activeBubble.value && activeLink) {
-      const nav = activeLink.closest('.nav')
-      if (nav) {
-        setBubblePosition(activeBubble.value, activeLink, nav)
-      }
-    }
-  })
-}
-
 const handleMobileClick = () => {
   mobileMenuOpen.value = false
 }
-
-// Watch for activeIndex changes
-watch(activeIndex, () => {
-  updateActiveBubble()
-})
-
-onMounted(() => {
-  updateActiveBubble()
-  window.addEventListener('resize', updateActiveBubble)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('resize', updateActiveBubble)
-})
 </script>
 
 <style scoped>
@@ -197,6 +166,7 @@ onUnmounted(() => {
   position: relative;
   display: flex;
   gap: 8px;
+  scroll-target-group: auto;
 }
 
 .nav a {
@@ -208,7 +178,7 @@ onUnmounted(() => {
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 12px;
 }
 
@@ -216,12 +186,17 @@ onUnmounted(() => {
   color: rgb(209 213 219);
 }
 
-.nav a.active {
+/* CSS-only scrollspy: style the link whose target section is in view */
+.nav a:target-current {
   color: white;
+  background: linear-gradient(135deg, rgb(99 102 241), rgb(79 70 229));
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
 }
 
-.dark .nav a.active {
+.dark .nav a:target-current {
   color: white;
+  background: linear-gradient(135deg, rgb(79 70 229), rgb(67 56 202));
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.5);
 }
 
 .bubble {
@@ -229,17 +204,6 @@ onUnmounted(() => {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 12px;
   pointer-events: none;
-}
-
-.bubble.active {
-  z-index: 1;
-  background: linear-gradient(135deg, rgb(99 102 241), rgb(79 70 229));
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-}
-
-.dark .bubble.active {
-  background: linear-gradient(135deg, rgb(79 70 229), rgb(67 56 202));
-  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.5);
 }
 
 .bubble.hover {

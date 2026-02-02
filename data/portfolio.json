@@ -1,43 +1,43 @@
 {
   "personal": {
     "name": "Petre Bogdan",
-    "title": "Web Designer & Frontend Developer",
-    "description": "I craft beautiful, user-centric digital experiences with modern web technologies. Specializing in Vue, Nuxt, and design systems that scale."
+    "title": "Web Designer & Dezvoltator Frontend",
+    "description": "Creez experiențe digitale frumoase, centrate pe utilizator, cu tehnologii web moderne. Specializat în Vue, Nuxt și sisteme de design scalabile."
   },
   "navLinks": [
-    { "label": "Home", "href": "#hero" },
-    { "label": "Services", "href": "#services" },
-    { "label": "About", "href": "#about" },
-    { "label": "Portfolio", "href": "#portfolio" },
-    { "label": "Testimonials", "href": "#testimonials" },
+    { "label": "Acasă", "href": "#hero" },
+    { "label": "Servicii", "href": "#services" },
+    { "label": "Despre", "href": "#about" },
+    { "label": "Portofoliu", "href": "#portfolio" },
+    { "label": "Testimoniale", "href": "#testimonials" },
     { "label": "Contact", "href": "#contact" }
   ],
   "services": [
     {
       "icon": "🎨",
-      "title": "UI/UX Design",
-      "description": "Creating intuitive and beautiful user interfaces that provide exceptional user experiences."
+      "title": "Design UI/UX",
+      "description": "Creez interfețe intuitive și frumoase care oferă experiențe excepționale utilizatorilor."
     },
     {
       "icon": "💻",
-      "title": "Frontend Development",
-      "description": "Building responsive, performant web applications with modern frameworks and best practices."
+      "title": "Dezvoltare Frontend",
+      "description": "Construiesc aplicații web responsive și performante cu framework-uri moderne și bune practici."
     },
     {
       "icon": "🧩",
-      "title": "Design Systems",
-      "description": "Developing scalable design systems and component libraries for consistent user experiences."
+      "title": "Sisteme de Design",
+      "description": "Dezvolt sisteme de design scalabile și biblioteci de componente pentru experiențe consistente."
     },
     {
       "icon": "⚡",
-      "title": "Performance Optimization",
-      "description": "Ensuring your website loads fast and runs smoothly across all devices and platforms."
+      "title": "Optimizare Performanță",
+      "description": "Mă asigur că site-ul tău se încarcă rapid și funcționează perfect pe toate dispozitivele și platformele."
     }
   ],
   "about": {
     "bio": [
-      "I'm a passionate web designer and frontend developer with over 5 years of experience creating stunning digital experiences. I specialize in building modern, performant, and accessible web applications that users love.",
-      "My approach combines clean design principles with robust development practices, ensuring every project not only looks great but performs flawlessly across all devices."
+      "Sunt un web designer și dezvoltator frontend pasionat, cu peste 5 ani de experiență în crearea de experiențe digitale impresionante. Mă specializez în construirea de aplicații web moderne, performante și accesibile, pe care utilizatorii le adoră.",
+      "Abordarea mea combină principii de design curat cu practici robuste de dezvoltare, asigurându-mă că fiecare proiect nu doar arată excelent, ci și funcționează impecabil pe toate dispozitivele."
     ],
     "cvLink": "#"
   },
@@ -45,7 +45,7 @@
     { "name": "HTML & CSS", "level": 90 },
     { "name": "JavaScript", "level": 85 },
     { "name": "TypeScript", "level": 80 },
-    { "name": "Vue.js", "level": 85 },
+    { "name": "Vue.js", "level": 55 },
     { "name": "Nuxt.js", "level": 80 },
     { "name": "React", "level": 70 },
     { "name": "Tailwind CSS", "level": 90 },
@@ -57,30 +57,30 @@
   ],
   "projects": [
     {
-      "title": "E-Commerce Platform",
+      "title": "Platformă E-Commerce",
       "images": [
         "/images/test1.jpg"
       ],
-      "description": "Modern online shopping experience with Vue and Nuxt Modern online shopping experience with Vue and NuxtModern online shopping experience with Vue and Nuxt",
-      "fullDescription": "A comprehensive e-commerce solution built with Nuxt 3 and Vue 3, featuring a modern shopping cart, secure payment integration with Stripe, and a responsive design that works seamlessly across all devices. The platform includes advanced product filtering, wishlist functionality, and a smooth checkout process.",
+      "description": "Experiență modernă de cumpărături online cu Vue și Nuxt",
+      "fullDescription": "O soluție completă de e-commerce construită cu Nuxt 3 și Vue 3, cu coș de cumpărături modern, integrare securizată de plăți cu Stripe și design responsive care funcționează perfect pe toate dispozitivele. Platforma include filtrare avansată de produse, funcționalitate de wishlist și un proces de checkout fluent.",
       "tags": ["Nuxt", "Tailwind", "Stripe"],
       "category": "frontend",
       "technologies": ["Nuxt 3", "Vue 3", "Tailwind CSS", "Stripe API", "Pinia", "TypeScript"],
       "liveUrl": "https://example.com",
       "githubUrl": "https://github.com",
       "testimonial": {
-        "quote": "The platform exceeded all our expectations. Sales increased by 45% in the first month!",
+        "quote": "Platforma a depășit toate așteptările noastre. Vânzările au crescut cu 45% în prima lună!",
         "author": "Sarah Johnson",
         "role": "CEO, Fashion Retail Co."
       }
     },
     {
-      "title": "SaaS Dashboard",
+      "title": "Dashboard SaaS",
       "images": [
         "/images/test2.jpg"
       ],
-      "description": "Analytics dashboard with real-time data visualization",
-      "fullDescription": "An advanced analytics dashboard featuring real-time data visualization, customizable widgets, and comprehensive reporting tools. Built with Vue 3 and Chart.js for smooth, interactive charts and graphs.",
+      "description": "Dashboard de analiză cu vizualizare de date în timp real",
+      "fullDescription": "Un dashboard avansat de analiză cu vizualizare de date în timp real, widget-uri personalizabile și instrumente comprehensive de raportare. Construit cu Vue 3 și Chart.js pentru grafice interactive și fluente.",
       "tags": ["Vue", "Chart.js", "API"],
       "category": "frontend",
       "technologies": ["Vue 3", "Chart.js", "REST API", "WebSocket", "Tailwind CSS"],
@@ -88,122 +88,122 @@
       "githubUrl": "https://github.com"
     },
     {
-      "title": "Portfolio Website",
+      "title": "Site Portofoliu",
       "images": [
         "/images/test3.jpg"
       ],
-      "description": "Clean and minimal portfolio for a creative agency",
-      "fullDescription": "A stunning portfolio website showcasing creative work with smooth animations, interactive galleries, and a modern, minimalist design approach that puts the work front and center.",
-      "tags": ["Nuxt", "Tailwind", "Animations"],
+      "description": "Portofoliu curat și minimal pentru o agenție creativă",
+      "fullDescription": "Un site portofoliu impresionant care prezintă lucrări creative cu animații fluente, galerii interactive și o abordare modernă, minimalistă care pune în centru lucrările.",
+      "tags": ["Nuxt", "Tailwind", "Animații"],
       "category": "webdesign",
       "technologies": ["Nuxt 3", "Tailwind CSS", "GSAP", "Intersection Observer"],
       "liveUrl": "https://example.com"
     },
     {
-      "title": "Mobile App Landing",
+      "title": "Landing Page Aplicație Mobilă",
       "images": [
         "/images/test5.jpg"
       ],
-      "description": "Engaging landing page for a mobile application",
-      "fullDescription": "A conversion-optimized landing page designed to showcase mobile app features with engaging animations, clear CTAs, and responsive design that adapts beautifully to all screen sizes.",
+      "description": "Pagină de prezentare captivantă pentru aplicație mobilă",
+      "fullDescription": "O pagină de destinație optimizată pentru conversie, concepută să prezinte funcțiile aplicației mobile cu animații captivante, CTA-uri clare și design responsive care se adaptează frumos la toate dimensiunile ecranului.",
       "tags": ["Vue", "Tailwind", "Responsive"],
       "category": "webdesign",
-      "technologies": ["Vue 3", "Tailwind CSS", "AOS", "Responsive Design"],
+      "technologies": ["Vue 3", "Tailwind CSS", "AOS", "Design Responsive"],
       "liveUrl": "https://example.com",
       "testimonial": {
-        "quote": "Our app downloads increased by 200% after launching this landing page!",
+        "quote": "Descărcările aplicației noastre au crescut cu 200% după lansarea acestei pagini!",
         "author": "Michael Chen",
         "role": "Product Manager, AppTech"
       }
     },
     {
-      "title": "Design System",
+      "title": "Sistem de Design",
       "images": [
         "/images/test6.jpg"
       ],
-      "description": "Comprehensive component library for enterprise",
-      "fullDescription": "A scalable design system and component library built for enterprise applications. Includes comprehensive documentation, accessibility features, and consistent design tokens for maintaining brand consistency across products.",
+      "description": "Bibliotecă comprehensivă de componente pentru enterprise",
+      "fullDescription": "Un sistem de design scalabil și bibliotecă de componente construită pentru aplicații enterprise. Include documentație comprehensivă, funcții de accesibilitate și token-uri de design consistente pentru menținerea consecvenței brandului în toate produsele.",
       "tags": ["Vue", "Storybook", "TypeScript"],
       "category": "frontend",
-      "technologies": ["Vue 3", "TypeScript", "Storybook", "CSS Variables", "Accessibility"],
+      "technologies": ["Vue 3", "TypeScript", "Storybook", "Variabile CSS", "Accesibilitate"],
       "githubUrl": "https://github.com"
     },
     {
-      "title": "Blog Platform",
+      "title": "Platformă Blog",
       "images": [
         "/images/test7.jpg"
       ],
-      "description": "Content-focused blogging platform with CMS",
-      "fullDescription": "A modern blogging platform with integrated CMS, SEO optimization, and social sharing features. Designed for content creators who want a fast, beautiful, and easy-to-manage blog.",
+      "description": "Platformă de blogging focalizată pe conținut cu CMS",
+      "fullDescription": "O platformă modernă de blogging cu CMS integrat, optimizare SEO și funcții de partajare socială. Concepută pentru creatorii de conținut care doresc un blog rapid, frumos și ușor de administrat.",
       "tags": ["Nuxt", "Content", "SEO"],
       "category": "frontend",
-      "technologies": ["Nuxt 3", "Nuxt Content", "SEO Tools", "RSS", "Markdown"],
+      "technologies": ["Nuxt 3", "Nuxt Content", "Instrumente SEO", "RSS", "Markdown"],
       "liveUrl": "https://example.com"
     },
     {
-      "title": "Brand Identity Design",
+      "title": "Design Identitate de Brand",
       "images": [
         "/images/test8.jpg"
       ],
-      "description": "Complete branding package for tech startup",
-      "fullDescription": "A comprehensive brand identity package including logo design, color palette, typography system, brand guidelines, and marketing collateral for a growing tech startup.",
+      "description": "Pachet complet de branding pentru startup tech",
+      "fullDescription": "Un pachet comprehensiv de identitate de brand incluzând design de logo, paletă de culori, sistem tipografic, ghiduri de brand și materiale de marketing pentru un startup tech în creștere.",
       "tags": ["Illustrator", "Photoshop", "Branding"],
       "category": "graphics",
-      "technologies": ["Adobe Illustrator", "Adobe Photoshop", "Figma", "Brand Strategy"]
+      "technologies": ["Adobe Illustrator", "Adobe Photoshop", "Figma", "Strategie de Brand"]
     },
     {
-      "title": "Restaurant Website",
+      "title": "Site Restaurant",
       "images": [
         "/images/test9.jpg"
       ],
-      "description": "Modern restaurant website with online ordering",
-      "fullDescription": "A delicious restaurant website featuring online ordering, reservation system, interactive menu, and integration with delivery services. Optimized for mobile ordering.",
+      "description": "Site modern de restaurant cu comandă online",
+      "fullDescription": "Un site de restaurant delicios cu comandă online, sistem de rezervări, meniu interactiv și integrare cu servicii de livrare. Optimizat pentru comenzi de pe mobil.",
       "tags": ["React", "Tailwind", "API"],
       "category": "webdesign",
       "technologies": ["React", "Tailwind CSS", "Stripe", "Google Maps API"],
       "liveUrl": "https://example.com"
     },
     {
-      "title": "Fitness App UI",
+      "title": "UI Aplicație Fitness",
       "images": [
         "/images/test10.png"
       ],
-      "description": "User interface design for mobile fitness application",
-      "fullDescription": "Modern and motivating UI design for a fitness tracking application. Includes workout tracking, progress visualization, social features, and gamification elements.",
+      "description": "Design interfață utilizator pentru aplicație mobilă de fitness",
+      "fullDescription": "Design UI modern și motivant pentru o aplicație de tracking fitness. Include urmărirea antrenamentelor, vizualizarea progresului, funcții sociale și elemente de gamificare.",
       "tags": ["Figma", "UI Design", "Mobile"],
       "category": "graphics",
-      "technologies": ["Figma", "UI/UX Design", "Prototyping", "Mobile First"]
+      "technologies": ["Figma", "Design UI/UX", "Prototipare", "Mobile First"]
     },
     {
-      "title": "Real Estate Portal",
+      "title": "Portal Imobiliar",
       "images": [
         "/images/test11.jpg"
       ],
-      "description": "Property listing platform with advanced search",
-      "fullDescription": "A comprehensive real estate portal with advanced property search, interactive maps, virtual tours, and integrated contact forms. Designed for both buyers and real estate agents.",
-      "tags": ["Vue", "Maps API", "Search"],
+      "description": "Platformă de listări proprietăți cu căutare avansată",
+      "fullDescription": "Un portal imobiliar comprehensiv cu căutare avansată de proprietăți, hărți interactive, tururi virtuale și formulare de contact integrate. Conceput atât pentru cumpărători, cât și pentru agenți imobiliari.",
+      "tags": ["Vue", "Maps API", "Căutare"],
       "category": "frontend",
-      "technologies": ["Vue 3", "Google Maps API", "Algolia Search", "Virtual Tours"],
+      "technologies": ["Vue 3", "Google Maps API", "Căutare Algolia", "Tururi Virtuale"],
       "liveUrl": "https://example.com"
     },
     {
-      "title": "Social Media Graphics",
+      "title": "Grafică Social Media",
       "images": [
         "/images/test12.jpg"
       ],
-      "description": "Engaging social media content and templates",
-      "fullDescription": "A collection of eye-catching social media graphics and templates designed to boost engagement. Includes post templates, story designs, and promotional graphics.",
+      "description": "Conținut și template-uri captivante pentru social media",
+      "fullDescription": "O colecție de grafică și template-uri atrăgătoare pentru social media, concepute să crească engagement-ul. Include template-uri de postări, design-uri de story-uri și grafică promoțională.",
       "tags": ["Canva", "Photoshop", "Marketing"],
       "category": "graphics",
-      "technologies": ["Canva", "Adobe Photoshop", "Social Media Marketing"]
+      "technologies": ["Canva", "Adobe Photoshop", "Marketing Social Media"]
     },
     {
-      "title": "Corporate Website",
+      "title": "Site Corporativ",
       "images": [
         "/images/test1.jpg"
       ],
-      "description": "Professional corporate site with CMS integration",
-      "fullDescription": "A sophisticated corporate website with headless CMS integration, multi-language support, SEO optimization, and a professional design that builds trust and credibility.",
+      "description": "Site corporativ profesional cu integrare CMS",
+      "fullDescription": "Un site corporativ sofisticat cu integrare CMS headless, suport multi-limbă, optimizare SEO și un design profesional care construiește încredere și credibilitate.",
       "tags": ["Next.js", "Sanity", "SEO"],
       "category": "webdesign",
       "technologies": ["Next.js", "Sanity CMS", "SEO", "i18n", "TypeScript"],
@@ -216,19 +216,19 @@
       "name": "Sarah Johnson",
       "role": "CEO, TechStart Inc.",
       "initials": "SJ",
-      "text": "Alex delivered an outstanding website that exceeded our expectations. Professional, creative, and incredibly responsive to feedback."
+      "text": "Bogdan a livrat un site excepțional care a depășit așteptările noastre. Profesionist, creativ și incredibil de receptiv la feedback."
     },
     {
       "name": "Michael Chen",
       "role": "Product Manager, InnovateCo",
       "initials": "MC",
-      "text": "Working with Alex was a pleasure. The attention to detail and technical expertise really shows in the final product."
+      "text": "A fost o plăcere să lucrez cu Bogdan. Atenția la detalii și expertiza tehnică se văd cu adevărat în produsul final."
     },
     {
       "name": "Emily Rodriguez",
-      "role": "Marketing Director, GrowthHub",
+      "role": "Director Marketing, GrowthHub",
       "initials": "ER",
-      "text": "Our new website has significantly improved our conversion rates. Alex truly understands both design and user experience."
+      "text": "Noul nostru site a îmbunătățit semnificativ ratele de conversie. Bogdan înțelege cu adevărat atât designul, cât și experiența utilizatorului."
     }
   ],
   "socialLinks": [

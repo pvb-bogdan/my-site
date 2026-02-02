@@ -2,9 +2,9 @@
   <section id="testimonials" class="py-20 px-6">
     <div class="container mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Testimonials</h2>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Testimoniale</h2>
         <p class="text-xl max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
-          What clients say about working with me
+          Ce spun clienții despre colaborarea cu mine
         </p>
       </div>
 

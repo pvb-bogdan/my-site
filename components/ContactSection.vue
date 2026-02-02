@@ -2,16 +2,16 @@
   <section id="contact" class="py-20 px-6 bg-gray-100 dark:bg-gray-800/50">
     <div class="container mx-auto max-w-4xl">
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Contactează-mă</h2>
         <p class="text-xl max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
-          Have a project in mind? Let's work together to create something amazing
+          Ai un proiect în minte? Hai să lucrăm împreună pentru a crea ceva extraordinar
         </p>
       </div>
 
       <!-- Contact Form -->
       <form @submit.prevent="handleSubmit" class="p-8 md:p-12 rounded-xl shadow-2xl border bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
         <div class="mb-6">
-          <label for="name" class="block text-sm font-medium mb-2">Name</label>
+          <label for="name" class="block text-sm font-medium mb-2">Nume</label>
           <input
             id="name"
             v-model="form.name"
@@ -21,12 +21,12 @@
               'w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all bg-gray-50 dark:bg-gray-800',
               formErrors.name ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 dark:border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
             ]"
-            placeholder="Your name"
+            placeholder="Numele tău"
           />
         </div>
 
         <div class="mb-6">
-          <label for="email" class="block text-sm font-medium mb-2">Email</label>
+          <label for="email" class="block text-sm font-medium mb-2">E-mail</label>
           <input
             id="email"
             v-model="form.email"
@@ -41,7 +41,7 @@
         </div>
 
         <div class="mb-6">
-          <label for="message" class="block text-sm font-medium mb-2">Message</label>
+          <label for="message" class="block text-sm font-medium mb-2">Mesaj</label>
           <textarea
             id="message"
             v-model="form.message"
@@ -51,7 +51,7 @@
               'w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-all resize-none bg-gray-50 dark:bg-gray-800',
               formErrors.message ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 dark:border-gray-700 focus:ring-indigo-500 focus:border-indigo-500'
             ]"
-            placeholder="Tell me about your project..."
+            placeholder="Spune-mi despre proiectul tău..."
           ></textarea>
         </div>
 
@@ -59,13 +59,13 @@
           type="submit"
           class="w-full px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
-          Send Message
+          Trimite Mesajul
         </button>
       </form>
 
       <!-- Social Links -->
       <div class="mt-12 text-center">
-        <p class="mb-6 text-gray-600 dark:text-gray-400">Or connect with me on social media</p>
+        <p class="mb-6 text-gray-600 dark:text-gray-400">Sau conectează-te cu mine pe rețelele sociale</p>
         <div class="flex justify-center space-x-6">
           <a
             v-for="social in socialLinks"
@@ -124,7 +124,7 @@ const handleSubmit = () => {
     console.log('Form submitted:', form.value)
     // Reset form
     form.value = { name: '', email: '', message: '' }
-    alert('Thank you for your message! I will get back to you soon.')
+    alert('Mulțumesc pentru mesaj! Îți voi răspunde în curând.')
   }
 }
 

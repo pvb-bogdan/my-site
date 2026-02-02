@@ -2,9 +2,9 @@
   <section id="services" class="py-20 px-6 bg-gray-100 dark:bg-gray-800/50">
     <div class="container mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">Services</h2>
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Servicii</h2>
         <p class="text-xl max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
-          Comprehensive solutions for modern web development and design
+          Soluții complete pentru dezvoltare web și design modern
         </p>
       </div>
 

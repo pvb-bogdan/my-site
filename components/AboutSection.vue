@@ -4,7 +4,7 @@
       <div class="grid items-center gap-12 lg:grid-cols-2">
         <!-- Bio -->
         <div>
-          <h2 class="mb-6 text-4xl font-bold md:text-5xl">About Me</h2>
+          <h2 class="mb-6 text-4xl font-bold md:text-5xl">Despre Mine</h2>
           <p
             v-for="(paragraph, index) in bio"
             :key="index"
@@ -16,13 +16,13 @@
             :href="cvLink"
             class="inline-block px-8 py-4 font-semibold text-white transition-all duration-200 transform bg-indigo-600 rounded-lg shadow-lg hover:bg-indigo-700 hover:scale-105"
           >
-            Download CV
+            Descarcă CV
           </a>
         </div>
 
         <!-- Technologies -->
         <div>
-          <h3 class="mb-6 text-2xl font-semibold">Technologies & Tools</h3>
+          <h3 class="mb-6 text-2xl font-semibold">Tehnologii și Instrumente</h3>
           <div class="grid grid-cols-2 gap-4">
             <div
               v-for="tech in technologies"
