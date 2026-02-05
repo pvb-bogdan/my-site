@@ -57,16 +57,18 @@
   ],
   "projects": [
     {
-      "title": "Platformă E-Commerce",
+      "title": "Catalog Ballroom",
       "images": [
-        "/images/test1.jpg"
+        "/images/magazines/ballroom.jpg",
+        "/images/magazines/ballroom1.jpg",
+        "/images/magazines/ballroom2.jpg"
       ],
-      "description": "Experiență modernă de cumpărături online cu Vue și Nuxt",
+      "description": "Catalog prezentare mobilier ballroom",
       "fullDescription": "O soluție completă de e-commerce construită cu Nuxt 3 și Vue 3, cu coș de cumpărături modern, integrare securizată de plăți cu Stripe și design responsive care funcționează perfect pe toate dispozitivele. Platforma include filtrare avansată de produse, funcționalitate de wishlist și un proces de checkout fluent.",
-      "tags": ["Nuxt", "Tailwind", "Stripe"],
-      "category": "frontend",
-      "technologies": ["Nuxt 3", "Vue 3", "Tailwind CSS", "Stripe API", "Pinia", "TypeScript"],
-      "liveUrl": "https://example.com",
+      "tags": ["InDesign", "PDF", "Tipar"],
+      "category": "magazines",
+      "technologies": ["InDesign", "Photoshop", "PDF"],
+      "liveUrl": "",
       "githubUrl": "https://github.com",
       "testimonial": {
         "quote": "Platforma a depășit toate așteptările noastre. Vânzările au crescut cu 45% în prima lună!",
@@ -77,12 +79,12 @@
     {
       "title": "Dashboard SaaS",
       "images": [
-        "/images/test2.jpg"
+        "/images/magazines/ballroom2.jpg"
       ],
       "description": "Dashboard de analiză cu vizualizare de date în timp real",
       "fullDescription": "Un dashboard avansat de analiză cu vizualizare de date în timp real, widget-uri personalizabile și instrumente comprehensive de raportare. Construit cu Vue 3 și Chart.js pentru grafice interactive și fluente.",
       "tags": ["Vue", "Chart.js", "API"],
-      "category": "frontend",
+      "category": "magazines",
       "technologies": ["Vue 3", "Chart.js", "REST API", "WebSocket", "Tailwind CSS"],
       "liveUrl": "https://example.com",
       "githubUrl": "https://github.com"
