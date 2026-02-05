@@ -42,11 +42,11 @@
                 </p>
                 <a 
                   v-else
-                  :href="`tel:${contactInfo.phone}`"
+                  :href="`tel:${phone.replace(/\s/g, '')}`"
                   class="font-semibold text-gray-900 transition-colors dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400"
                   @click.stop
                 >
-                  {{ contactInfo.phone }}
+                  {{ phone }}
                 </a>
               </div>
               <IconsEye v-if="!phoneRevealed" class="w-5 h-5 text-gray-400" />
@@ -70,11 +70,11 @@
                 </p>
                 <a 
                   v-else
-                  :href="`mailto:${contactInfo.email}`"
+                  :href="`mailto:${email}`"
                   class="font-semibold text-gray-900 transition-colors dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400"
                   @click.stop
                 >
-                  {{ contactInfo.email }}
+                  {{ email }}
                 </a>
               </div>
               <IconsEye v-if="!emailRevealed" class="w-5 h-5 text-gray-400" />
@@ -82,7 +82,7 @@
 
             <!-- WhatsApp -->
             <a 
-              :href="`https://wa.me/${contactInfo.whatsapp}`"
+              :href="`https://wa.me/${whatsapp}`"
               target="_blank"
               rel="noopener noreferrer"
               class="flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-green-500 dark:hover:border-green-500 hover:shadow-lg"
@@ -149,7 +149,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 // Reveal states for anti-spam protection
 const phoneRevealed = ref(false)
@@ -157,20 +157,28 @@ const emailRevealed = ref(false)
 
 // Reveal functions
 const revealPhone = () => {
-  phoneRevealed.value = !phoneRevealed.value
+   if (!phoneRevealed.value) {
+    setTimeout(() => (phoneRevealed.value = true), 300)
+  }
 }
 
 const revealEmail = () => {
-  emailRevealed.value = !emailRevealed.value
+   if (!emailRevealed.value) {
+    setTimeout(() => (emailRevealed.value = true), 300)
+  }
 }
 
 // Contact information - you can update these values
 const contactInfo = {
-  phone: '+40 723390457',
-  email: 'pvb.bogdan@gmail.com',
-  whatsapp: '40723390457', // Without + for wa.me link
+  phone: ['+40', '723', '390', '457'],
+  email: ['pvb.bogdan', 'gmail', 'com'],
+  whatsapp: ['40', '723', '390', '457'],
   instagram: 'https://instagram.com/yourprofile',
   facebook: 'https://facebook.com/yourprofile',
   linkedin: 'https://linkedin.com/in/yourprofile'
 }
+const phone = computed(() => contactInfo.phone.join(' '))
+const whatsapp = computed(() => contactInfo.whatsapp.join(''))
+const email = computed(() => `${contactInfo.email[0]}@${contactInfo.email[1]}.${contactInfo.email[2]}`)
+
 </script>
