@@ -1,6 +1,7 @@
 {
   "personal": {
-    "name": "Petre Bogdan",
+    "name": "Bogdan",
+    "fullName": "Bogdan Petre",
     "title": "Web Designer & Dezvoltator Frontend",
     "description": "Creez experiențe digitale frumoase, centrate pe utilizator, cu tehnologii web moderne. Specializat în Vue, Nuxt și sisteme de design scalabile."
   },
@@ -14,22 +15,22 @@
   ],
   "services": [
     {
-      "icon": "🎨",
+      "icon": "uiux",
       "title": "Design UI/UX",
-      "description": "Creez interfețe intuitive și frumoase care oferă experiențe excepționale utilizatorilor."
+      "description": "Creez interfețe intuitive și site-uri care arată bine și funcționează exact așa cum trebuie, gândite pentru oameni, nu doar pentru ecrane."
     },
     {
-      "icon": "💻",
-      "title": "Dezvoltare Frontend",
-      "description": "Construiesc aplicații web responsive și performante cu framework-uri moderne și bune practici."
+      "icon": "print",
+      "title": "Print Design",
+      "description": "Creez materiale print clare și bine structurate, pregătite corect pentru tipar, care arată profesionist și transmit mesajul tău exact așa cum trebuie."
     },
     {
-      "icon": "🧩",
-      "title": "Sisteme de Design",
-      "description": "Dezvolt sisteme de design scalabile și biblioteci de componente pentru experiențe consistente."
+      "icon": "identity",
+      "title": "Identitate vizuală",
+      "description": "Creez identități vizuale care spun povestea brandului tău, prin elemente simple și memorabile, ușor de recunoscut."
     },
     {
-      "icon": "⚡",
+      "icon": "performance",
       "title": "Optimizare Performanță",
       "description": "Mă asigur că site-ul tău se încarcă rapid și funcționează perfect pe toate dispozitivele și platformele."
     }
