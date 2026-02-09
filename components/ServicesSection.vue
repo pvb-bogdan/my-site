@@ -45,19 +45,13 @@
         <div
           v-for="service in services"
           :key="service.title"
-          class="relative p-8 overflow-hidden text-center transition-all duration-300 transform bg-white border border-gray-200 shadow-lg group rounded-xl hover:shadow-2xl hover:-translate-y-2 hover:border-indigo-400 dark:bg-gray-900 dark:border-gray-800 dark:hover:border-indigo-500/50"
+          class="relative p-8 overflow-hidden text-center transition-all duration-300 transform bg-white border border-gray-200 shadow-md group rounded-2xl hover:shadow-lg hover:-translate-y-1 hover:border-indigo-300 dark:bg-gray-900 dark:border-gray-800 dark:hover:border-indigo-500/40"
         >
-          <!-- Top accent gradient -->
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500"></div>
-          
-          <div class="flex items-center justify-center w-12 h-12 mx-auto mb-4 transition-transform duration-300 bg-indigo-100 rounded-lg group-hover:scale-110 dark:bg-indigo-600/20">
-            <component :is="iconMap[service.icon]" class="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+          <div class="flex items-center justify-center mx-auto mb-5 transition-transform duration-300 w-14 h-14 bg-indigo-50 rounded-2xl group-hover:scale-105 group-hover:bg-indigo-100 dark:bg-indigo-600/15 dark:group-hover:bg-indigo-600/25">
+            <component :is="iconMap[service.icon]" class="text-indigo-600 w-7 h-7 dark:text-indigo-400" />
           </div>
           
-          <!-- Gradient divider -->
-          <div class="w-16 h-0.5 mx-auto mb-4 bg-gradient-to-r from-transparent via-indigo-400 to-transparent dark:via-indigo-500"></div>
-          
-          <h3 class="mb-4 text-2xl font-semibold">{{ service.title }}</h3>
+          <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">{{ service.title }}</h3>
           <p class="text-gray-600 dark:text-gray-400">{{ service.description }}</p>
         </div>
       </div>
