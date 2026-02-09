@@ -75,7 +75,10 @@
             
             <!-- Content -->
             <div class="relative flex items-center justify-between h-full px-4">
-              <span class="text-sm font-medium text-gray-900 transition-colors dark:text-white group-hover:text-white">{{ tech.name }}</span>
+              <div class="flex items-center gap-2">
+                <component :is="techIconMap[tech.icon]" class="w-4 h-4 text-indigo-600 transition-colors dark:text-indigo-400 group-hover:text-white" />
+                <span class="text-sm font-medium text-gray-900 transition-colors dark:text-white group-hover:text-white">{{ tech.name }}</span>
+              </div>
               <span class="text-xs font-semibold text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">{{ tech.level }}%</span>
             </div>
           </div>
@@ -86,9 +89,35 @@
 </template>
 
 <script setup lang="ts">
+import type { Component } from 'vue'
+import HtmlCss from './icons/tech/HtmlCss.vue'
+import Bootstrap from './icons/tech/Bootstrap.vue'
+import TailwindCss from './icons/tech/TailwindCss.vue'
+import Javascript from './icons/tech/Javascript.vue'
+import Vuejs from './icons/tech/Vuejs.vue'
+import Nuxtjs from './icons/tech/Nuxtjs.vue'
+import Git from './icons/tech/Git.vue'
+import Figma from './icons/tech/Figma.vue'
+import AdobeCC from './icons/tech/AdobeCC.vue'
+import Responsive from './icons/tech/Responsive.vue'
+
+const techIconMap: Record<string, Component> = {
+  htmlcss: HtmlCss,
+  bootstrap: Bootstrap,
+  tailwind: TailwindCss,
+  javascript: Javascript,
+  vue: Vuejs,
+  nuxt: Nuxtjs,
+  git: Git,
+  figma: Figma,
+  adobe: AdobeCC,
+  responsive: Responsive
+}
+
 interface Technology {
   name: string
   level: number
+  icon: string
 }
 
 defineProps<{
