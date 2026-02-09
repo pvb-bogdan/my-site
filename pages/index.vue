@@ -43,8 +43,11 @@
     />
 
     <!-- Footer -->
-    <footer class="px-6 py-8 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-800">
-      <div class="container mx-auto text-center text-gray-600 dark:text-gray-400">
+    <footer class="pt-8 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-800">
+      <div class="container mx-auto mb-4 text-center">
+        <h4 class="text-lg text-gray-600 dark:text-gray-300">Te mai astept!<br/>Iti doresc o zi de {{ dayGreeting }} fericita!</h4>
+      </div>
+      <div class="py-2 mx-auto text-sm text-center text-gray-400 bg-gray-100 rounded-lg dark:text-gray-400 dark:bg-gray-800">
         <p>&copy; {{ currentYear }} {{ portfolioData.personal.name }}. Toate drepturile rezervate.</p>
       </div>
     </footer>
@@ -76,6 +79,10 @@ const toggleTheme = () => {
 
 // Current year for footer
 const currentYear = computed(() => new Date().getFullYear())
+
+// Day greeting for footer
+const dayNames = ['Duminica', 'Luni', 'Marti', 'Miercuri', 'Joi', 'Vineri si un weekend placut', 'Sambata']
+const dayGreeting = computed(() => dayNames[new Date().getDay()])
 
 // Scroll handler for header
 const handleScroll = () => {
