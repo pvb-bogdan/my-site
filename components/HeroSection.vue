@@ -16,9 +16,10 @@
           <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
             <a
               href="#portfolio"
-              class="px-8 py-4 font-semibold text-white transition-all duration-200 transform bg-indigo-600 rounded-lg shadow-lg hover:bg-indigo-700 hover:scale-105 hover:shadow-xl"
+              class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 rounded-lg shadow-lg group hover:scale-105 hover:shadow-xl"
             >
-              Vezi Portofoliul
+              <span class="relative z-10">Vezi Portofoliul</span>
+              <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover:opacity-100"></div>
             </a>
             <a
               href="#contact"

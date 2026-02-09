@@ -189,13 +189,13 @@ const handleMobileClick = () => {
 /* CSS-only scrollspy: style the link whose target section is in view */
 .nav a:target-current {
   color: white;
-  background: linear-gradient(135deg, rgb(99 102 241), rgb(79 70 229));
+  background: linear-gradient(to right, rgb(67 56 202), rgb(147 51 234)); /* from-indigo-700 to-purple-600 */
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
 }
 
 .dark .nav a:target-current {
   color: white;
-  background: linear-gradient(135deg, rgb(79 70 229), rgb(67 56 202));
+  background: linear-gradient(to right, rgb(67 56 202), rgb(147 51 234)); /* from-indigo-700 to-purple-600 */
   box-shadow: 0 4px 20px rgba(79, 70, 229, 0.5);
 }
 

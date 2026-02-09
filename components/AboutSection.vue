@@ -14,9 +14,10 @@
           </p>
           <a
             :href="cvLink"
-            class="inline-block px-8 py-4 font-semibold text-white transition-all duration-200 transform bg-indigo-600 rounded-lg shadow-lg hover:bg-indigo-700 hover:scale-105"
+            class="relative inline-block px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 rounded-lg shadow-lg group hover:scale-105 hover:shadow-xl"
           >
-            Descarcă CV
+            <span class="relative z-10">Descarcă CV</span>
+            <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover:opacity-100"></div>
           </a>
         </div>
 
