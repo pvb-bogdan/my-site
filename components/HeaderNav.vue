@@ -4,8 +4,8 @@
     <div class="container px-6 py-4 mx-auto">
       <div class="flex items-center justify-between">
         <!-- Logo (Left) -->
-        <a href="#hero" class="z-10 text-2xl font-bold text-indigo-400 transition-colors hover:text-indigo-300">
-          {{ name }}
+        <a href="#hero" class="z-10 text-2xl text-indigo-500 transition-colors hover:text-indigo-300">
+          {{ fullName }}
         </a>
 
         <!-- Desktop Navigation (Center) -->
@@ -109,7 +109,7 @@ interface NavLink {
 }
 
 defineProps<{
-  name: string
+  fullName: string
   navLinks: NavLink[]
   isScrolled: boolean
 }>()

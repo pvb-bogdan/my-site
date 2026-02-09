@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-screen transition-colors duration-300 bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+  <div class="min-h-screen text-gray-900 transition-colors duration-300 bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
     <!-- Header Navigation -->
     <HeaderNav
-      :name="portfolioData.personal.name"
+      :full-name="portfolioData.personal.fullName"
       :nav-links="portfolioData.navLinks"
       :is-scrolled="isScrolled"
       @toggle-theme="toggleTheme"
@@ -43,7 +43,7 @@
     />
 
     <!-- Footer -->
-    <footer class="py-8 px-6 border-t bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
+    <footer class="px-6 py-8 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-800">
       <div class="container mx-auto text-center text-gray-600 dark:text-gray-400">
         <p>&copy; {{ currentYear }} {{ portfolioData.personal.name }}. Toate drepturile rezervate.</p>
       </div>
