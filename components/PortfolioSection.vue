@@ -14,28 +14,36 @@
             :key="filter.value"
             @click="activeFilter = filter.value"
             :class="[
-              'px-6 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105',
+              'relative overflow-hidden px-6 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 group/filter',
               activeFilter === filter.value
-                ? 'bg-indigo-600 text-white shadow-lg'
+                ? 'bg-indigo-600 text-white shadow-lg hover:shadow-xl'
                 : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:border-gray-700'
             ]"
           >
-            {{ filter.label }}
+            <span class="relative z-10">{{ filter.label }}</span>
+            <div
+              v-if="activeFilter === filter.value"
+              class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover/filter:opacity-100"
+            ></div>
           </button>
         </div>
       </div>
 
-      <!-- Masonry Layout -->
-      <TransitionGroup 
-        name="project" 
+      <TransitionGroup
+        name="project"
         tag="div" 
         class="masonry-container"
       >
         <div
-          v-for="project in visibleProjects"
+          v-for="(project, index) in visibleProjects"
           :key="project.title"
+          :data-key="project.title"
           @click="openModal(project)"
-          class="relative overflow-hidden transition-all duration-300 shadow-lg cursor-pointer masonry-item group rounded-xl hover:shadow-2xl"
+          :class="[
+            'relative overflow-hidden transition-all duration-500 shadow-lg cursor-pointer masonry-item group rounded-xl hover:shadow-2xl',
+            isRevealed(project.title) ? 'reveal-visible' : 'reveal-hidden'
+          ]"
+          :style="{ transitionDelay: `${(index % 4) * 100}ms` }"
         >
           <!-- Project Image -->
           <div class="relative overflow-hidden" :style="{ height: getRandomHeight() }">
@@ -101,7 +109,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import ProjectModal from './ProjectModal.vue'
 
 interface Project {
@@ -180,6 +188,62 @@ const closeModal = () => {
   isModalOpen.value = false
 }
 
+// Scroll reveal with Intersection Observer
+const revealedItems = ref<Set<string>>(new Set())
+let observer: IntersectionObserver | null = null
+
+const setupObserver = () => {
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const key = entry.target.getAttribute('data-key')
+          if (key) {
+            revealedItems.value.add(key)
+          }
+        }
+      })
+    },
+    {
+      threshold: 0.1,
+      rootMargin: '50px'
+    }
+  )
+}
+
+const observeItems = () => {
+  nextTick(() => {
+    const items = document.querySelectorAll('.masonry-item[data-key]')
+    items.forEach((item) => {
+      if (observer) {
+        observer.observe(item)
+      }
+    })
+  })
+}
+
+onMounted(() => {
+  setupObserver()
+  observeItems()
+})
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect()
+  }
+})
+
+// Re-observe when visible projects change
+watch(visibleProjects, () => {
+  nextTick(() => {
+    observeItems()
+  })
+})
+
+const isRevealed = (projectTitle: string) => {
+  return revealedItems.value.has(projectTitle)
+}
+
 // Random heights for masonry effect
 const heights = ['250px', '300px', '350px', '280px', '320px', '380px']
 let heightIndex = 0
@@ -223,6 +287,21 @@ const getRandomHeight = () => {
 
 .masonry-item:hover {
   transform: translateY(-4px);
+}
+
+/* Scroll reveal animations */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal-visible:hover {
+  transform: translateY(-4px) scale(1.02);
 }
 
 /* TransitionGroup animations */
