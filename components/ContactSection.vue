@@ -175,7 +175,7 @@ const contactInfo = {
   whatsapp: ['40', '723', '390', '457'],
   instagram: 'https://instagram.com/yourprofile',
   facebook: 'https://facebook.com/yourprofile',
-  linkedin: 'https://linkedin.com/in/yourprofile'
+  linkedin: 'https://www.linkedin.com/in/petrebogdan'
 }
 const phone = computed(() => contactInfo.phone.join(' '))
 const whatsapp = computed(() => contactInfo.whatsapp.join(''))
