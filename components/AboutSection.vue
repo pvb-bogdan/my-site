@@ -15,6 +15,8 @@
           <a
             :href="cvLink"
             class="relative inline-block px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 rounded-lg shadow-lg group hover:scale-105 hover:shadow-xl"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span class="relative z-10">Descarcă CV</span>
             <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover:opacity-100"></div>
