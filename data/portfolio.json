@@ -40,20 +40,18 @@
       "Sunt un web designer și dezvoltator frontend pasionat, cu peste 5 ani de experiență în crearea de experiențe digitale impresionante. Mă specializez în construirea de aplicații web moderne, performante și accesibile, pe care utilizatorii le adoră.",
       "Abordarea mea combină principii de design curat cu practici robuste de dezvoltare, asigurându-mă că fiecare proiect nu doar arată excelent, ci și funcționează impecabil pe toate dispozitivele."
     ],
-    "cvLink": "https://www.linkedin.com/in/petrebogdan"
+    "linkedinLink": "https://www.linkedin.com/in/petrebogdan"
   },
   "technologies": [
     { "name": "HTML & CSS", "level": 90 },
-    { "name": "JavaScript", "level": 85 },
-    { "name": "TypeScript", "level": 80 },
+    { "name": "Bootstrap", "level": 90 },
+    { "name": "Tailwind CSS", "level": 90 },
+    { "name": "JavaScript", "level": 75 },
     { "name": "Vue.js", "level": 55 },
     { "name": "Nuxt.js", "level": 80 },
-    { "name": "React", "level": 70 },
-    { "name": "Tailwind CSS", "level": 90 },
-    { "name": "Figma", "level": 85 },
     { "name": "Git & GitHub", "level": 85 },
-    { "name": "Node.js", "level": 75 },
-    { "name": "REST APIs", "level": 80 },
+    { "name": "Figma", "level": 75 },
+    { "name": "Adobe CC", "level": 75 },
     { "name": "Responsive Design", "level": 95 }
   ],
   "projects": [

@@ -23,7 +23,7 @@
     <!-- About Section -->
     <AboutSection
       :bio="portfolioData.about.bio"
-      :cv-link="portfolioData.about.cvLink"
+      :linkedin-link="portfolioData.about.linkedinLink"
       :technologies="portfolioData.technologies"
     />
 
