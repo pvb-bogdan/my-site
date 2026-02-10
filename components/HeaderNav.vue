@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/50 backdrop-blur-sm dark:bg-gray-900/50 data-[scrolled]:bg-white/95 data-[scrolled]:dark:bg-gray-900/95 data-[scrolled]:shadow-lg"
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent data-[scrolled]:bg-white/60 data-[scrolled]:dark:bg-gray-900/70 data-[scrolled]:backdrop-blur-xl data-[scrolled]:border-b data-[scrolled]:border-white/20 data-[scrolled]:dark:border-gray-700/30 data-[scrolled]:shadow-[0_4px_30px_rgba(0,0,0,0.1)] data-[scrolled]:dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
     :data-scrolled="isScrolled ? '' : undefined">
     <div class="container px-6 py-4 mx-auto">
       <div class="flex items-center justify-between">
