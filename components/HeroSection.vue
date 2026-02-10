@@ -1,19 +1,37 @@
 <template>
-  <section id="hero" class="flex items-center justify-center min-h-screen px-6 pt-20">
-    <div class="container mx-auto">
+  <section id="hero" class="relative flex items-center justify-center min-h-screen px-6 pt-20 overflow-hidden">
+    <!-- Background Gradient Blobs -->
+    <div class="absolute inset-0 z-0">
+      <!-- Violet/Purple blob - top left area -->
+      <div class="absolute -top-20 left-[10%] w-[550px] h-[550px] bg-gradient-to-br from-violet-400 to-purple-500 rounded-full blur-3xl opacity-40 mix-blend-multiply dark:mix-blend-screen dark:opacity-30"></div>
+      
+      <!-- Cyan/Teal blob - upper right -->
+      <div class="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-gradient-to-bl from-cyan-300 to-teal-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20"></div>
+      
+      <!-- Indigo/Blue blob - left center-ish -->
+      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-indigo-400 to-blue-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25"></div>
+      
+      <!-- Pink/Fuchsia blob - bottom center-right -->
+      <div class="absolute bottom-[10%] right-[25%] w-[450px] h-[450px] bg-gradient-to-tl from-pink-300 to-fuchsia-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20"></div>
+      
+      <!-- Sky/Cyan blob - bottom left offset -->
+      <div class="absolute -bottom-16 left-[30%] w-[400px] h-[400px] bg-gradient-to-r from-sky-300 to-cyan-400 rounded-full blur-3xl opacity-25 mix-blend-multiply dark:mix-blend-screen dark:opacity-15"></div>
+    </div>
+
+    <div class="container mx-auto z-1">
       <div class="flex flex-col items-center justify-between gap-12 lg:flex-row">
         <!-- Text Content -->
         <div class="flex-1 text-center lg:text-left">
-          <h1 class="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl">
+          <h1 class="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl animate-fade-in-up animation-delay-100">
             Salut, sunt <br/> <span class="text-indigo-400">{{ name }}</span>
           </h1>
-          <h2 class="mb-6 text-3xl font-semibold text-gray-700 md:text-4xl dark:text-gray-300">
-            {{ title }}
+          <h2 class="mb-6 text-3xl font-semibold text-gray-700 md:text-4xl dark:text-gray-300 animate-fade-in-up animation-delay-200">
+            UI/UX Designer
           </h2>
-          <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 lg:mx-0 dark:text-gray-400">
-            {{ description }}
+          <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 lg:mx-0 dark:text-gray-400 animate-fade-in-up animation-delay-300">
+            Creez experiențe digitale intuitive și atractive, axate pe utilizator, folosind Figma și AdobeXD pentru prototipare și design. Integrez designul cu dezvoltarea frontend pentru rezultate moderne și eficiente.
           </p>
-          <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+          <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in-up animation-delay-400">
             <a
               href="#portfolio"
               class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 rounded-lg shadow-lg group hover:scale-105 hover:shadow-xl"
@@ -31,7 +49,7 @@
         </div>
 
           <!-- Hero Image -->
-        <div class="flex-shrink-0 lg:flex-1">
+        <div class="flex-shrink-0 lg:flex-1 animate-fade-in-right animation-delay-300">
           <img 
             src="~/assets/images/hero-img1.png" 
             alt="Device Mockup" 
@@ -50,3 +68,72 @@ defineProps<{
   description: string
 }>()
 </script>
+
+<style scoped>
+/* Fade in from above */
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from below */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from right */
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  opacity: 0;
+  animation: fade-in-right 0.8s ease-out forwards;
+}
+
+/* Animation delays */
+.animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+</style>

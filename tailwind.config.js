@@ -15,7 +15,7 @@ export default {
         // You can customize your color palette here
       },
       fontFamily: {
-        sans: ['Sora', 'sans-serif'],
+        sans: ['Nunito Variable', 'Nunito', 'sans-serif'],
       },
       animation: {
         'blob': 'blob 7s infinite',
