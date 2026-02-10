@@ -69,7 +69,7 @@
       </div>
     </div>
     <!-- Scroll Indicator -->
-    <div class="absolute flex flex-col items-center -translate-x-1/2 left-1/2 bottom-6 opacity-80 animate-fade-in-up animation-delay-400">
+    <div class="absolute flex flex-col items-center -translate-x-1/2 left-1/2 bottom-6 opacity-80 animate-fade-in-up animation-delay-400 hidden md:flex">
       <div class="relative flex items-start justify-center h-12 border-2 border-indigo-400 rounded-full w-7 dark:border-gray-600">
         <div class="w-2 h-2 mt-2 bg-indigo-400 rounded-full dark:bg-gray-600 animate-scroll-indicator"></div>
       </div>
