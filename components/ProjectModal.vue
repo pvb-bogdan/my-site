@@ -19,7 +19,7 @@
         <!-- Modal Content -->
         <div class="container px-6 py-20 mx-auto">
           <!-- Project Header -->
-          <div class="max-w-4xl mb-12">
+          <div v-if="project" class="max-w-4xl mb-12">
             <h2 class="mb-6 text-5xl font-bold text-gray-900 md:text-6xl dark:text-gray-100">
               {{ project.title }}
             </h2>
@@ -35,41 +35,31 @@
           </div>
 
           <!-- Image Slider -->
-          <div class="mb-16">
+          <div v-if="project" class="mb-16">
             <div class="relative overflow-hidden aspect-video bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl group">
-              <img
-                v-if="project.images && project.images.length > 0"
-                :src="project.images[currentImageIndex]"
-                :alt="project.title"
-                class="object-cover w-full h-full transition-opacity duration-300"
-              />
-              <div v-else class="flex items-center justify-center w-full h-full text-2xl font-semibold text-white">
-                {{ project.title }}
+              <div
+                ref="carouselRef"
+                class="flex w-full h-full overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar"
+                style="-webkit-overflow-scrolling: touch;"
+                @scroll="onScroll"
+              >
+                <template v-if="project.images && project.images.length > 0">
+                  <div
+                    v-for="(image, idx) in project.images"
+                    :key="image + idx"
+                    class="flex-shrink-0 w-full h-full snap-start"
+                  >
+                    <img
+                      :src="image"
+                      :alt="project.title"
+                      class="object-cover w-full h-full transition-opacity duration-300"
+                    />
+                  </div>
+                </template>
+                <div v-else class="flex items-center justify-center w-full h-full text-2xl font-semibold text-white">
+                  {{ project.title }}
+                </div>
               </div>
-
-              <!-- Previous Button -->
-              <button
-                v-if="project.images && project.images.length > 1"
-                @click="previousImage"
-                class="absolute p-3 text-white transition-all -translate-y-1/2 rounded-full opacity-0 left-4 top-1/2 bg-black/50 hover:bg-black/70 group-hover:opacity-100"
-                aria-label="Previous image"
-              >
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
-              <!-- Next Button -->
-              <button
-                v-if="project.images && project.images.length > 1"
-                @click="nextImage"
-                class="absolute p-3 text-white transition-all -translate-y-1/2 rounded-full opacity-0 right-4 top-1/2 bg-black/50 hover:bg-black/70 group-hover:opacity-100"
-                aria-label="Next image"
-              >
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
 
               <!-- Image Counter -->
               <div
@@ -84,8 +74,8 @@
             <div v-if="project.images && project.images.length > 1" class="flex justify-center gap-2 mt-6">
               <button
                 v-for="(image, index) in project.images"
-                :key="index"
-                @click="currentImageIndex = index"
+                :key="'dot-' + index"
+                @click="scrollToSlide(index)"
                 :class="[
                   'h-2 rounded-full transition-all',
                   currentImageIndex === index
@@ -98,7 +88,7 @@
           </div>
 
           <!-- Two Column Layout -->
-          <div class="grid gap-12 md:grid-cols-3">
+          <div v-if="project" class="grid gap-12 md:grid-cols-3">
             <!-- Main Content -->
             <div class="space-y-12 md:col-span-2">
               <!-- Project Details -->
@@ -189,7 +179,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, nextTick } from 'vue'
 
 interface Testimonial {
   quote: string
@@ -220,23 +210,40 @@ const emit = defineEmits<{
 }>()
 
 const currentImageIndex = ref(0)
+const carouselRef = ref<HTMLElement | null>(null)
 
 const closeModal = () => {
   emit('close')
 }
 
-const nextImage = () => {
-  if (props.project?.images && props.project.images.length > 0) {
-    currentImageIndex.value = (currentImageIndex.value + 1) % props.project.images.length
-  }
+const scrollToSlide = (index: number) => {
+  currentImageIndex.value = index
+  nextTick(() => {
+    const container = carouselRef.value
+    if (!container) return
+    const card = container.children[index] as HTMLElement
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', inline: 'start' })
+    }
+  })
 }
 
-const previousImage = () => {
-  if (props.project?.images && props.project.images.length > 0) {
-    currentImageIndex.value = currentImageIndex.value === 0
-      ? props.project.images.length - 1
-      : currentImageIndex.value - 1
-  }
+// Update currentImageIndex on scroll (for snap sync)
+const onScroll = () => {
+  const container = carouselRef.value
+  if (!container) return
+  const children = Array.from(container.children) as HTMLElement[]
+  const scrollLeft = container.scrollLeft
+  let minDiff = Infinity
+  let closest = 0
+  children.forEach((child, idx) => {
+    const diff = Math.abs(child.offsetLeft - scrollLeft)
+    if (diff < minDiff) {
+      minDiff = diff
+      closest = idx
+    }
+  })
+  currentImageIndex.value = closest
 }
 
 // Reset image index when project changes
@@ -244,14 +251,12 @@ watch(() => props.project, () => {
   currentImageIndex.value = 0
 })
 
-// Handle ESC key to close modal and arrow keys for navigation
+// Handle ESC key to close modal
 watch(() => props.isOpen, (isOpen) => {
   if (isOpen) {
     document.body.style.overflow = 'hidden'
     const handleKeydown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeModal()
-      if (e.key === 'ArrowRight') nextImage()
-      if (e.key === 'ArrowLeft') previousImage()
     }
     window.addEventListener('keydown', handleKeydown)
     return () => {
