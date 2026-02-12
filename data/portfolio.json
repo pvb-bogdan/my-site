@@ -347,40 +347,40 @@
   ],
   "testimonials": [
     {
-      "name": "Sarah Johnson",
-      "role": "CEO, TechStart Inc.",
-      "initials": "SJ",
-      "text": "Bogdan a livrat un site excepțional care a depășit așteptările noastre. Profesionist, creativ și incredibil de receptiv la feedback."
+      "name": "Bogdan Danaila",
+      "role": "Business Manager / Motul Romania",
+      "initials": "BD",
+      "text": "Pe langa entuziasm si focus pe calitate, are o viziune orientata catre client, venind tot timpul cu propuneri si idei, cu o consultanta in web si graphic design foarte eficienta si constructiva."
     },
     {
-      "name": "Michael Chen",
-      "role": "Product Manager, InnovateCo",
+      "name": "Michael Dan Popa",
+      "role": "CEO / Cinetic Data",
       "initials": "MC",
-      "text": "A fost o plăcere să lucrez cu Bogdan. Atenția la detalii și expertiza tehnică se văd cu adevărat în produsul final."
+      "text": "Conceperea mesajului, design-ul, implementarea si consultanta in optimizare sunt orientate spre atingerea unor obiective de retentie si fidelizare a vizitatorilor si nu spre livrarea unui produs in cel mai scurt timp."
     },
     {
-      "name": "Emily Rodriguez",
-      "role": "Director Marketing, GrowthHub",
-      "initials": "ER",
-      "text": "Noul nostru site a îmbunătățit semnificativ ratele de conversie. Bogdan înțelege cu adevărat atât designul, cât și experiența utilizatorului."
+      "name": "Catalin Bozienita",
+      "role": "Director / CPS",
+      "initials": "CB",
+      "text": "Am fost foarte impresionati de capacitatea lui Bogdan de a livra o identitate corporativa care simbolizeaza perfect viziunea noastra si transmite imaginea stilat, elegant si modern. Recomandam cu incredere."
     },
     {
-      "name": "Alexandru Popescu",
-      "role": "Fondator, StartupRo",
-      "initials": "AP",
-      "text": "Colaborarea cu Bogdan a fost impecabilă de la început până la sfârșit. A transformat viziunea noastră într-un produs digital de excepție."
+      "name": "Iosif Cristian Dietter",
+      "role": "IT Manager / Pavone Profumi",
+      "initials": "IC",
+      "text": "Suntem foarte multumiti de noua noastra identitate de brand si modul in care Bogdan isi desfasoara activitatea . A fost experienta si o placere  lucru cu el"
     },
     {
-      "name": "Diana Ionescu",
-      "role": "Manager Creativ, DesignStudio",
-      "initials": "DI",
-      "text": "Rar întâlnești un dezvoltator care să înțeleagă atât de bine partea de design. Bogdan livrează mereu la timp și peste așteptări."
+      "name": "Adrian Stefanescu",
+      "role": "Manager / MegaMusic",
+      "initials": "AS",
+      "text": "Un designer talentat, cu o capacitate excelentă de a transforma viziunea noastră într-o prezentare nouă, elegantă și bine structurată. A înțeles rapid nevoile noastre și a venit cu soluții creative, livrate cu atenție la detalii. Îl recomand cu cea mai mare încredere."
     },
     {
-      "name": "Andrei Munteanu",
-      "role": "CTO, WebSolutions",
-      "initials": "AM",
-      "text": "Am lucrat cu mulți freelanceri, dar Bogdan se evidențiază prin comunicare excelentă și cod curat. Recomand cu încredere!"
+      "name": "Laurentiu Bozienita",
+      "role": "AscendioPraxis",
+      "initials": "LB",
+      "text": "Bogdan ne-a ajutat atât cu designul, cât și cu dezvoltarea site-ului, iar rezultatul a ieșit exact cum ne doream: modern, rapid și ușor de folosit. Îl recomand cu încredere oricui își dorește un site bine făcut, de la concept până la implementare."
     }
   ],
   "socialLinks": [

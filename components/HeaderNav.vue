@@ -5,7 +5,7 @@
       <div class="flex items-center justify-between">
         <!-- Logo (Left) -->
         <a href="#hero" class="z-10 text-2xl text-indigo-500 transition-colors hover:text-indigo-300">
-          {{ fullName }}
+          <strong>pb</strong>
         </a>
 
         <!-- Desktop Navigation (Center) -->
@@ -29,7 +29,7 @@
         <div class="items-center hidden lg:flex">
           <button
             @click="$emit('toggleTheme')"
-            class="p-2 text-gray-700 transition-all duration-200 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-yellow-400"
+            class="p-2 text-gray-700 transition-all duration-200 dark:text-yellow-400"
             aria-label="Toggle theme"
           >
             <svg class="hidden w-5 h-5 dark:block" fill="currentColor" viewBox="0 0 20 20">

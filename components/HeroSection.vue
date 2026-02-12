@@ -3,11 +3,11 @@
     <!-- Background Gradient Blobs -->
     <div class="absolute inset-0 z-0">
       <!-- Violet/Purple blob - top left area -->
-      <div class="absolute -top-20 left-[10%] w-[550px] h-[550px] bg-gradient-to-br from-violet-400 to-purple-500 rounded-full blur-3xl opacity-40 mix-blend-multiply dark:mix-blend-screen dark:opacity-30 animate-blob-move-1"></div>
+      <div class="absolute -top-20 left-[10%] w-[550px] h-[550px] bg-gradient-to-br from-violet-200 to-purple-400 rounded-full blur-3xl opacity-40 mix-blend-multiply dark:mix-blend-screen dark:opacity-30 animate-blob-move-1"></div>
       <!-- Cyan/Teal blob - upper right -->
       <div class="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-gradient-to-bl from-cyan-300 to-teal-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-2"></div>
       <!-- Indigo/Blue blob - left center-ish -->
-      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-indigo-400 to-blue-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3"></div>
+      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-indigo-200 to-blue-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3"></div>
       <!-- Pink/Fuchsia blob - bottom center-right -->
       <div class="absolute bottom-[10%] right-[25%] w-[450px] h-[450px] bg-gradient-to-tl from-pink-300 to-fuchsia-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-4"></div>
       <!-- Sky/Cyan blob - bottom left offset -->
@@ -69,7 +69,7 @@
       </div>
     </div>
     <!-- Scroll Indicator -->
-    <div class="absolute flex flex-col items-center -translate-x-1/2 left-1/2 bottom-6 opacity-80 animate-fade-in-up animation-delay-400 hidden md:flex">
+    <div class="absolute flex flex-col items-center hidden -translate-x-1/2 left-1/2 bottom-6 opacity-80 animate-fade-in-up animation-delay-400 md:flex">
       <div class="relative flex items-start justify-center h-12 border-2 border-indigo-400 rounded-full w-7 dark:border-gray-600">
         <div class="w-2 h-2 mt-2 bg-indigo-400 rounded-full dark:bg-gray-600 animate-scroll-indicator"></div>
       </div>
