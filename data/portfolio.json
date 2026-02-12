@@ -76,15 +76,21 @@
       }
     },
     {
-      "title": "Dashboard SaaS",
+      "title": "Catalog WeDeco",
       "images": [
-        "/images/magazines/ballroom2.jpg"
+        "/images/magazines/wedeco-1.jpg",
+        "/images/magazines/wedeco-2.jpg",
+        "/images/magazines/wedeco-3.jpg",
+        "/images/magazines/wedeco-4.jpg",
+        "/images/magazines/wedeco-5.jpg",
+        "/images/magazines/wedeco-6.jpg",
+        "/images/magazines/wedeco-7.jpg"
       ],
-      "description": "Dashboard de analiză cu vizualizare de date în timp real",
-      "fullDescription": "Un dashboard avansat de analiză cu vizualizare de date în timp real, widget-uri personalizabile și instrumente comprehensive de raportare. Construit cu Vue 3 și Chart.js pentru grafice interactive și fluente.",
-      "tags": ["Vue", "Chart.js", "API"],
+      "description": "Catalog prezentare scaune WeDeco",
+      "fullDescription": "Un catalog detaliat care prezintă gama completă de scaune WeDeco, cu imagini de înaltă calitate și descrieri detaliate ale produselor. Ideal pentru prezentări și promovarea produselor în magazine și online.",
+      "tags": ["InDesign", "PDF", "Tipar"],
       "category": "magazines",
-      "technologies": ["Vue 3", "Chart.js", "REST API", "WebSocket", "Tailwind CSS"],
+      "technologies": ["InDesign", "Photoshop", "PDF"],
       "liveUrl": "https://example.com",
       "githubUrl": "https://github.com"
     },
