@@ -1,5 +1,6 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent data-[scrolled]:bg-white/60 data-[scrolled]:dark:bg-gray-900/70 data-[scrolled]:backdrop-blur-xl data-[scrolled]:border-b data-[scrolled]:border-white/20 data-[scrolled]:dark:border-gray-700/30 data-[scrolled]:shadow-[0_4px_30px_rgba(0,0,0,0.1)] data-[scrolled]:dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+  <header
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl border-b border-white/20 dark:border-gray-700/30 shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)] lg:bg-transparent lg:dark:bg-transparent lg:backdrop-blur-none lg:border-none lg:shadow-none lg:data-[scrolled]:bg-white/60 lg:data-[scrolled]:dark:bg-gray-900/70 lg:data-[scrolled]:backdrop-blur-xl lg:data-[scrolled]:border-b lg:data-[scrolled]:border-white/20 lg:data-[scrolled]:dark:border-gray-700/30 lg:data-[scrolled]:shadow-[0_4px_30px_rgba(0,0,0,0.1)] lg:data-[scrolled]:dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
     :data-scrolled="isScrolled ? '' : undefined">
     <div class="container px-6 py-4 mx-auto">
       <div class="flex items-center justify-between">
@@ -108,7 +109,7 @@ interface NavLink {
   href: string
 }
 
-defineProps<{
+const props = defineProps<{
   fullName: string
   navLinks: NavLink[]
   isScrolled: boolean
@@ -117,6 +118,7 @@ defineProps<{
 defineEmits<{
   toggleTheme: []
 }>()
+
 
 const mobileMenuOpen = ref(false)
 const hoverBubble = ref<HTMLElement | null>(null)
