@@ -57,6 +57,7 @@
   "projects": [
     {
       "title": "Catalog Ballroom",
+      "thumbImage": "/images/magazines/ballroom.jpg",
       "images": [
         "/images/magazines/ballroom.jpg",
         "/images/magazines/ballroom1.jpg",
@@ -77,6 +78,7 @@
     },
     {
       "title": "Catalog WeDeco",
+      "thumbImage": "/images/magazines/wedeco-1.jpg",
       "images": [
         "/images/magazines/wedeco-1.jpg",
         "/images/magazines/wedeco-2.jpg",
@@ -95,19 +97,21 @@
       "githubUrl": "https://github.com"
     },
     {
-      "title": "Site Portofoliu",
+      "title": "Site Hotel ANdra",
+      "thumbImage": "/images/andra/home1.jpg",
       "images": [
-        "/images/test3.jpg"
+        "/images/andra/home1.jpg"
       ],
-      "description": "Portofoliu curat și minimal pentru o agenție creativă",
-      "fullDescription": "Un site portofoliu impresionant care prezintă lucrări creative cu animații fluente, galerii interactive și o abordare modernă, minimalistă care pune în centru lucrările.",
-      "tags": ["Nuxt", "Tailwind", "Animații"],
+      "description": "Portofoliu curat și minimal pentru un hotel boutique",
+      "fullDescription": "  Un site web elegant și minimalist pentru un hotel boutique, cu o navigare simplă, imagini captivante și o experiență de utilizare fluidă. Designul se concentrează pe evidențierea frumuseții și confortului hotelului, cu o paletă de culori calde și tipografie rafinată.",
+      "tags": ["HTML", "Bootstrap CSS", "Lightbox"],
       "category": "webdesign",
-      "technologies": ["Nuxt 3", "Tailwind CSS", "GSAP", "Intersection Observer"],
-      "liveUrl": "https://example.com"
+      "technologies": ["HTML", "Bootstrap CSS", "Lightbox"],
+      "liveUrl": "https://hotelandratecuci.ro/index.html"
     },
     {
       "title": "Landing Page Aplicație Mobilă",
+      "thumbImage": "/images/test5.jpg",
       "images": [
         "/images/test5.jpg"
       ],
@@ -125,6 +129,7 @@
     },
     {
       "title": "Sistem de Design",
+      "thumbImage": "/images/test6.jpg",
       "images": [
         "/images/test6.jpg"
       ],
@@ -137,6 +142,7 @@
     },
     {
       "title": "Platformă Blog",
+      "thumbImage": "/images/test7.jpg",
       "images": [
         "/images/test7.jpg"
       ],
@@ -149,6 +155,7 @@
     },
     {
       "title": "Design Identitate de Brand",
+      "thumbImage": "/images/test8.jpg",
       "images": [
         "/images/test8.jpg"
       ],
@@ -160,6 +167,7 @@
     },
     {
       "title": "Site Restaurant",
+      "thumbImage": "/images/test9.jpg",
       "images": [
         "/images/test9.jpg"
       ],
@@ -172,6 +180,7 @@
     },
     {
       "title": "UI Aplicație Fitness",
+      "thumbImage": "/images/test10.png",
       "images": [
         "/images/test10.png"
       ],
@@ -183,6 +192,7 @@
     },
     {
       "title": "Portal Imobiliar",
+      "thumbImage": "/images/test11.jpg",
       "images": [
         "/images/test11.jpg"
       ],
@@ -195,6 +205,7 @@
     },
     {
       "title": "Grafică Social Media",
+      "thumbImage": "/images/test12.jpg",
       "images": [
         "/images/test12.jpg"
       ],
@@ -206,6 +217,7 @@
     },
     {
       "title": "Site Corporativ",
+      "thumbImage": "/images/test1.jpg",
       "images": [
         "/images/test1.jpg"
       ],
@@ -219,6 +231,7 @@
     },
     {
       "title": "Aplicație Rezervări Hotel",
+      "thumbImage": "/images/test2.jpg",
       "images": [
         "/images/test2.jpg"
       ],
@@ -232,6 +245,7 @@
     },
     {
       "title": "Dashboard Crypto",
+      "thumbImage": "/images/test3.jpg",
       "images": [
         "/images/test3.jpg"
       ],
@@ -244,6 +258,7 @@
     },
     {
       "title": "Landing Page Educație",
+      "thumbImage": "/images/test5.jpg",
       "images": [
         "/images/test5.jpg"
       ],
@@ -256,6 +271,7 @@
     },
     {
       "title": "Aplicație Task Manager",
+      "thumbImage": "/images/test6.jpg",
       "images": [
         "/images/test6.jpg"
       ],
@@ -269,6 +285,7 @@
     },
     {
       "title": "Branding Studio Foto",
+      "thumbImage": "/images/test7.jpg",
       "images": [
         "/images/test7.jpg"
       ],
@@ -280,6 +297,7 @@
     },
     {
       "title": "Portal Știri",
+      "thumbImage": "/images/test8.jpg",
       "images": [
         "/images/test8.jpg"
       ],
@@ -292,6 +310,7 @@
     },
     {
       "title": "Aplicație Livrare Mâncare",
+      "thumbImage": "/images/test9.jpg",
       "images": [
         "/images/test9.jpg"
       ],
@@ -303,6 +322,7 @@
     },
     {
       "title": "Platformă HR",
+      "thumbImage": "/images/test10.png",
       "images": [
         "/images/test10.png"
       ],
@@ -316,6 +336,7 @@
     },
     {
       "title": "Site Clinică Medicală",
+      "thumbImage": "/images/test11.jpg",
       "images": [
         "/images/test11.jpg"
       ],
@@ -328,6 +349,7 @@
     },
     {
       "title": "Dashboard IoT",
+      "thumbImage": "/images/test12.jpg",
       "images": [
         "/images/test12.jpg"
       ],
@@ -341,6 +363,7 @@
     },
     {
       "title": "Ilustrații Digitale",
+      "thumbImage": "/images/test1.jpg",
       "images": [
         "/images/test1.jpg"
       ],

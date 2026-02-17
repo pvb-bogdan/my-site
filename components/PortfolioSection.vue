@@ -49,7 +49,7 @@
           <div class="relative overflow-hidden" :style="{ height: getRandomHeight() }">
             <img
               v-if="project.images && project.images.length > 0"
-              :src="project.images[0]"
+              :src="project.thumbImage || project.images[0]"
               :alt="project.title"
               class="object-cover w-full h-full"
             />
@@ -118,6 +118,7 @@ interface Project {
   fullDescription?: string
   tags: string[]
   category: string
+  thumbImage?: string
   images?: string[]
   technologies?: string[]
   liveUrl?: string
