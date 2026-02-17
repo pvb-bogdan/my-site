@@ -56,6 +56,26 @@
   ],
   "projects": [
     {
+      "title": "Catalog WeDeco",
+      "thumbImage": "/images/magazines/wedeco-1.jpg",
+      "images": [
+        "/images/magazines/wedeco-1.jpg",
+        "/images/magazines/wedeco-2.jpg",
+        "/images/magazines/wedeco-3.jpg",
+        "/images/magazines/wedeco-4.jpg",
+        "/images/magazines/wedeco-5.jpg",
+        "/images/magazines/wedeco-6.jpg",
+        "/images/magazines/wedeco-7.jpg"
+      ],
+      "description": "Catalog prezentare scaune WeDeco",
+      "fullDescription": "Un catalog detaliat care prezintă gama completă de scaune WeDeco, cu imagini de înaltă calitate și descrieri detaliate ale produselor. Ideal pentru prezentări și promovarea produselor în magazine și online.",
+      "tags": ["InDesign", "PDF", "Tipar"],
+      "category": "magazines",
+      "technologies": ["InDesign", "Photoshop", "PDF"],
+      "liveUrl": "https://example.com",
+      "githubUrl": "https://github.com"
+    },
+    {
       "title": "Catalog Ballroom",
       "thumbImage": "/images/magazines/ballroom.jpg",
       "images": [
@@ -77,30 +97,13 @@
       }
     },
     {
-      "title": "Catalog WeDeco",
-      "thumbImage": "/images/magazines/wedeco-1.jpg",
-      "images": [
-        "/images/magazines/wedeco-1.jpg",
-        "/images/magazines/wedeco-2.jpg",
-        "/images/magazines/wedeco-3.jpg",
-        "/images/magazines/wedeco-4.jpg",
-        "/images/magazines/wedeco-5.jpg",
-        "/images/magazines/wedeco-6.jpg",
-        "/images/magazines/wedeco-7.jpg"
-      ],
-      "description": "Catalog prezentare scaune WeDeco",
-      "fullDescription": "Un catalog detaliat care prezintă gama completă de scaune WeDeco, cu imagini de înaltă calitate și descrieri detaliate ale produselor. Ideal pentru prezentări și promovarea produselor în magazine și online.",
-      "tags": ["InDesign", "PDF", "Tipar"],
-      "category": "magazines",
-      "technologies": ["InDesign", "Photoshop", "PDF"],
-      "liveUrl": "https://example.com",
-      "githubUrl": "https://github.com"
-    },
-    {
       "title": "Site Hotel ANdra",
-      "thumbImage": "/images/andra/home1.jpg",
+      "thumbImage": "/images/andra/thumbnail-andra.jpg",
       "images": [
-        "/images/andra/home1.jpg"
+        "/images/andra/thumbnail-andra.jpg",
+        "/images/andra/home1.jpg",
+        "/images/andra/home-camere.jpg",
+        "/images/andra/home-footer.jpg"
       ],
       "description": "Portofoliu curat și minimal pentru un hotel boutique",
       "fullDescription": "  Un site web elegant și minimalist pentru un hotel boutique, cu o navigare simplă, imagini captivante și o experiență de utilizare fluidă. Designul se concentrează pe evidențierea frumuseții și confortului hotelului, cu o paletă de culori calde și tipografie rafinată.",
