@@ -6,27 +6,27 @@
         <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 dark:text-gray-400">
           O selecție de proiecte recente care prezintă munca mea
         </p>
+      </div>
 
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap justify-center gap-3 mt-8">
-          <button
-            v-for="filter in filters"
-            :key="filter.value"
-            @click="activeFilter = filter.value"
-            :class="[
-              'relative overflow-hidden px-6 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 group/filter',
-              activeFilter === filter.value
-                ? 'bg-indigo-600 text-white shadow-lg hover:shadow-xl'
-                : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:border-gray-700'
-            ]"
-          >
-            <span class="relative z-10">{{ filter.label }}</span>
-            <div
-              v-if="activeFilter === filter.value"
-              class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover/filter:opacity-100"
-            ></div>
-          </button>
-        </div>
+      <!-- Filter Buttons (desktop/tablet: top, mobile: hidden) -->
+      <div class="justify-center hidden gap-3 mb-8 md:flex-wrap filter-btns-desktop md:flex">
+        <button
+          v-for="filter in filters"
+          :key="filter.value"
+          @click="activeFilter = filter.value"
+          :class="[
+            'relative overflow-hidden px-6 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 group/filter',
+            activeFilter === filter.value
+              ? 'bg-indigo-600 text-white shadow-lg hover:shadow-xl'
+              : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:border-gray-700'
+          ]"
+        >
+          <span class="relative z-10">{{ filter.label }}</span>
+          <div
+            v-if="activeFilter === filter.value"
+            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover/filter:opacity-100"
+          ></div>
+        </button>
       </div>
 
       <TransitionGroup
@@ -34,6 +34,7 @@
         tag="div" 
         class="masonry-container"
       >
+        <!-- ...existing project grid code... -->
         <div
           v-for="(project, index) in visibleProjects"
           :key="project.title"
@@ -57,7 +58,6 @@
               v-else 
               class="w-full h-full bg-gradient-to-br from-indigo-600 to-purple-600"
             ></div>
-            
             <!-- Hover Overlay with Project Info -->
             <div class="absolute inset-0 flex flex-col justify-center p-6 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50 group-hover:opacity-100">
               <h3 class="mb-3 text-2xl font-bold text-white">
@@ -66,7 +66,6 @@
               <p class="mb-4 text-sm leading-relaxed text-gray-200 line-clamp-3">
                 {{ project.description }}
               </p>
-              
               <!-- Tags -->
               <div class="flex flex-wrap gap-2">
                 <span
@@ -82,8 +81,8 @@
         </div>
       </TransitionGroup>
 
-      <!-- Show More Button -->
-      <div v-if="hasMoreProjects" class="flex justify-center mt-12">
+      <!-- Show More Button (desktop/tablet: bottom, mobile: hidden) -->
+      <div v-if="hasMoreProjects" class="justify-center hidden mt-12 show-more-desktop md:flex">
         <button
           @click="showMoreProjects"
           class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 shadow-lg group rounded-xl hover:shadow-xl hover:scale-105"
@@ -97,6 +96,34 @@
           <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover:opacity-100"></div>
         </button>
       </div>
+
+      <!-- Sticky Mobile/Tablet Footer with Icon Buttons -->
+       <div class="sticky z-50 flex items-center justify-between w-full p-4 rounded-lg shadow-2xl bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl md:hidden bottom-5">
+          <AllIcon 
+          class="w-6 h-6 cursor-pointer"
+          :class="{ active: activeFilter === 'all' }"
+          @click="activeFilter = 'all'"
+          aria-label="Toate"/>
+          <WebDesignIcon 
+          class="w-6 h-6 cursor-pointer"
+          :class="{ active: activeFilter === 'webdesign' }"
+          @click="activeFilter = 'webdesign'"
+          aria-label="Web Design"/>
+          <MagazinesIcon 
+          class="w-6 h-6 cursor-pointer"
+          :class="{ active: activeFilter === 'magazines' }"
+          @click="activeFilter = 'magazines'"
+          aria-label="Magazines"/>
+          <GraphicsIcon 
+          class="w-6 h-6 cursor-pointer"
+          :class="{ active: activeFilter === 'graphics' }"
+          @click="activeFilter = 'graphics'"
+          aria-label="Grafică"/>
+          <ShowMoreIcon 
+          class="w-6 h-6 cursor-pointer"
+          :disabled="!hasMoreProjects"
+          @click="showMoreProjects" aria-label="Arata mai multe"/>  
+       </div>
     </div>
 
     <!-- Project Modal -->
@@ -109,6 +136,11 @@
 </template>
 
 <script setup lang="ts">
+import AllIcon from './icons/AllIcon.vue'
+import WebDesignIcon from './icons/WebDesignIcon.vue'
+import MagazinesIcon from './icons/MagazinesIcon.vue'
+import GraphicsIcon from './icons/GraphicsIcon.vue'
+import ShowMoreIcon from './icons/ShowMoreIcon.vue'
 import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
 import ProjectModal from './ProjectModal.vue'
 
@@ -256,29 +288,28 @@ const getRandomHeight = () => {
 }
 </script>
 <style scoped>
+/* Responsive visibility handled by Tailwind classes (hidden md:flex, flex md:hidden) */
+
+/* Masonry columns (not available in Tailwind yet) */
 .masonry-container {
   column-count: 1;
   column-gap: 2rem;
 }
-
 @media (min-width: 640px) {
   .masonry-container {
     column-count: 2;
   }
 }
-
 @media (min-width: 1024px) {
   .masonry-container {
     column-count: 3;
   }
 }
-
 @media (min-width: 1280px) {
   .masonry-container {
     column-count: 4;
   }
 }
-
 .masonry-item {
   break-inside: avoid;
   margin-bottom: 2rem;
@@ -286,38 +317,27 @@ const getRandomHeight = () => {
   width: 100%;
 }
 
-.masonry-item:hover {
-  transform: translateY(-4px);
-}
-
-/* Scroll reveal animations */
+/* Animations (keep custom for now) */
 .reveal-hidden {
   opacity: 0;
   transform: translateY(40px) scale(0.95);
 }
-
 .reveal-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-
 .reveal-visible:hover {
   transform: translateY(-4px) scale(1.02);
 }
-
-/* TransitionGroup animations */
 .project-enter-active {
   animation: projectFadeIn 0.6s ease-out forwards;
 }
-
 .project-leave-active {
   animation: projectFadeOut 0.4s ease-in forwards;
 }
-
 .project-move {
   transition: transform 0.5s ease;
 }
-
 @keyframes projectFadeIn {
   0% {
     opacity: 0;
@@ -328,7 +348,6 @@ const getRandomHeight = () => {
     transform: translateY(0) scale(1);
   }
 }
-
 @keyframes projectFadeOut {
   0% {
     opacity: 1;
@@ -339,8 +358,6 @@ const getRandomHeight = () => {
     transform: translateY(-20px) scale(0.95);
   }
 }
-
-/* Staggered animation for initial load and show more */
 .project-enter-active:nth-child(1) { animation-delay: 0ms; }
 .project-enter-active:nth-child(2) { animation-delay: 50ms; }
 .project-enter-active:nth-child(3) { animation-delay: 100ms; }
