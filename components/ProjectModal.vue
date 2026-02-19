@@ -85,6 +85,10 @@
                 :aria-label="`View image ${index + 1}`"
               />
             </div>
+            <!-- Swipe hint for mobile -->
+            <p class="mt-4 text-sm text-center text-gray-400 md:hidden dark:text-gray-500">
+              ← Swipe pentru a naviga →
+            </p>
           </div>
 
           <!-- Two Column Layout -->
