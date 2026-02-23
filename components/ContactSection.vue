@@ -173,8 +173,8 @@ const contactInfo = {
   phone: ['+40', '723', '390', '457'],
   email: ['pvb.bogdan', 'gmail', 'com'],
   whatsapp: ['40', '723', '390', '457'],
-  instagram: 'https://instagram.com/yourprofile',
-  facebook: 'https://facebook.com/yourprofile',
+  instagram: 'https://www.instagram.com/bogdanpetre72/',
+  facebook: 'https://www.facebook.com/pvb.bogdan',
   linkedin: 'https://www.linkedin.com/in/petrebogdan'
 }
 const phone = computed(() => contactInfo.phone.join(' '))
