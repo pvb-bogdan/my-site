@@ -1,6 +1,5 @@
-import { defineNuxtConfig } from 'nuxt/config';
+import { defineNuxtConfig } from 'nuxt/config'
 
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -17,11 +16,27 @@ export default defineNuxtConfig({
     },
   },
 
+  modules: ['@nuxtjs/seo'],
+
   seo: {
-    name: 'Petre Bogdan - Web Designer & Frontend Developer',
-    description: 'Personal portfolio of Petre Bogdan - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.',
-    url: 'https://petrebogdan.com',
-    image: 'https://petrebogdan.com/og-image.png',
+    site: {
+      url: 'https://petrebogdan.com',
+      name: 'Petre Bogdan - Web Designer & Frontend Developer'
+    },
+
+    sitemap: {
+      enabled: true,
+    },
+
+    robots: {
+      enabled: true,
+      rules: [
+        {
+          userAgent: '*',
+          allow: '/',
+        },
+      ],
+    },
   },
 
   app: {
@@ -30,6 +45,29 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          name: 'description',
+          content:
+            'Personal portfolio of Petre Bogdan - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.'
+        },
+        {
+          property: 'og:title',
+          content: 'Petre Bogdan - Web Designer & Frontend Developer'
+        },
+        {
+          property: 'og:description',
+          content:
+            'Personal portfolio of Petre Bogdan - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.'
+        },
+        {
+          property: 'og:image',
+          content: 'https://petrebogdan.com/og-image.png'
+        },
+        {
+          property: 'og:url',
+          content: 'https://petrebogdan.com'
+        },
+        { name: 'twitter:card', content: 'summary_large_image' }
       ],
       link: [
         {
@@ -40,6 +78,4 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  modules: ['@nuxtjs/seo'],
 })
