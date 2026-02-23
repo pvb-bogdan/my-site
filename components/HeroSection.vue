@@ -61,7 +61,7 @@
           </div> -->
 
           <img 
-            src="~/assets/images/avatar2.png" 
+            src="~/assets/images/avatar2.webp" 
             alt="Device Mockup" 
             class="relative z-10 hidden w-full max-w-lg mx-auto transition-transform duration-300 transform md:block lg:max-w-xl xl:max-w-[40rem] hover:scale-105"
           />

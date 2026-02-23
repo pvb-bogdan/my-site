@@ -21,7 +21,7 @@
             <!-- Avatar container - larger size -->
             <div class="relative overflow-hidden border-2 border-gray-300 rounded-full shadow-lg cursor-pointer w-72 h-72 md:w-96 md:h-96 dark:border-gray-700 group/avatar">
               <img 
-                src="~/assets/images/avatar1.png" 
+                src="~/assets/images/avatar1.webp" 
                 alt="Avatar" 
                 class="object-cover w-full h-full transition-all duration-500 bg-white grayscale dark:bg-gray-900 group-hover/avatar:grayscale-0"
               />

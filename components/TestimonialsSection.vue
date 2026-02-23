@@ -49,7 +49,7 @@
                   {{ testimonial.initials }}
                 </div>
                 <div class="ml-4">
-                  <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ testimonial.name }}</h4>
+                  <p class="text-lg font-semibold text-gray-900 dark:text-white">{{ testimonial.name }}</p>
                   <p class="text-sm text-gray-600 dark:text-gray-400">{{ testimonial.role }}</p>
                 </div>
               </div>
