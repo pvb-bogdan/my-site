@@ -98,12 +98,12 @@
     },
     {
       "title": "Site Hotel Andra",
-      "thumbImage": "/images/andra/thumbnail-andra.jpg",
+      "thumbImage": "/images/andra/thumbnail-andra.webp",
       "images": [
-        "/images/andra/thumbnail-andra.jpg",
-        "/images/andra/home1.jpg",
-        "/images/andra/home-camere.jpg",
-        "/images/andra/home-footer.jpg"
+        "/images/andra/thumbnail-andra.webp",
+        "/images/andra/home1.webp",
+        "/images/andra/home-camere.webp",
+        "/images/andra/home-footer.webp"
       ],
       "description": "Portofoliu curat și minimal pentru un hotel boutique",
       "fullDescription": "  Un site web elegant și minimalist pentru un hotel boutique, cu o navigare simplă, imagini captivante și o experiență de utilizare fluidă. Designul se concentrează pe evidențierea frumuseții și confortului hotelului, cu o paletă de culori calde și tipografie rafinată.",
