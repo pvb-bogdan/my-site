@@ -24,7 +24,7 @@
           <h2 class="mb-6 text-3xl font-semibold text-gray-700 md:text-4xl dark:text-gray-300 animate-fade-in-up animation-delay-200">
             UI/UX Designer
           </h2>
-          <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 lg:mx-0 dark:text-gray-400 animate-fade-in-up animation-delay-300">
+          <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-700 lg:mx-0 dark:text-gray-200 animate-fade-in-up animation-delay-300">
             Creez experiențe digitale intuitive și atractive, axate pe utilizator, folosind Figma și AdobeXD pentru prototipare și design. Integrez designul cu dezvoltarea frontend pentru rezultate moderne și eficiente.
           </p>
           <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in-up animation-delay-400">
