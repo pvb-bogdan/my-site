@@ -17,16 +17,19 @@ export default defineNuxtConfig({
     },
   },
 
+  seo: {
+    name: 'Petre Bogdan - Web Designer & Frontend Developer',
+    description: 'Personal portfolio of Petre Bogdan - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.',
+    url: 'https://petrebogdan.com',
+    image: 'https://petrebogdan.com/og-image.png',
+  },
+
   app: {
     head: {
       title: 'Petre Bogdan - Web Designer & Frontend Developer',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          name: 'description',
-          content: 'Personal portfolio of Petre Bogdan - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.'
-        },
       ],
       link: [
         {
@@ -37,4 +40,6 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  modules: ['@nuxtjs/seo'],
 })
