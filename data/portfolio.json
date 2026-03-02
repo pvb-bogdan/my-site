@@ -77,11 +77,14 @@
     },
     {
       "title": "Catalog Ballroom",
-      "thumbImage": "/images/magazines/ballroom.jpg",
+      "thumbImage": "/images/magazines/ballroom/ballroom1.webp",
       "images": [
-        "/images/magazines/ballroom.jpg",
-        "/images/magazines/ballroom1.jpg",
-        "/images/magazines/ballroom2.jpg"
+        "/images/magazines/ballroom/ballroom1.webp",
+        "/images/magazines/ballroom/ballroom2.webp",
+        "/images/magazines/ballroom/ballroom3.webp",
+        "/images/magazines/ballroom/ballroom4.webp",
+        "/images/magazines/ballroom/ballroom5.webp",
+        "/images/magazines/ballroom/ballroom6.webp"
       ],
       "description": "Catalog prezentare mobilier ballroom",
       "fullDescription": "O soluție completă de e-commerce construită cu Nuxt 3 și Vue 3, cu coș de cumpărături modern, integrare securizată de plăți cu Stripe și design responsive care funcționează perfect pe toate dispozitivele. Platforma include filtrare avansată de produse, funcționalitate de wishlist și un proces de checkout fluent.",
