@@ -61,6 +61,30 @@
                 </div>
               </div>
 
+              <!-- Prev / Next Buttons (desktop only) -->
+              <template v-if="project.images && project.images.length > 1">
+                <button
+                  @click="scrollToSlide(currentImageIndex - 1)"
+                  :disabled="currentImageIndex === 0"
+                  class="absolute items-center justify-center hidden w-10 h-10 text-white transition-all -translate-y-1/2 rounded-full left-4 top-1/2 md:flex bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed"
+                  aria-label="Previous image"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  @click="scrollToSlide(currentImageIndex + 1)"
+                  :disabled="currentImageIndex === project.images.length - 1"
+                  class="absolute items-center justify-center hidden w-10 h-10 text-white transition-all -translate-y-1/2 rounded-full right-4 top-1/2 md:flex bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed"
+                  aria-label="Next image"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </template>
+
               <!-- Image Counter -->
               <div
                 v-if="project.images && project.images.length > 1"
@@ -164,11 +188,11 @@
                 <h3 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">
                   Tehnologii
                 </h3>
-                <div class="space-y-2">
+                <div class="grid grid-cols-2 gap-4">
                   <div
                     v-for="tech in project.technologies"
                     :key="tech"
-                    class="p-3 font-medium text-gray-700 bg-gray-100 rounded-lg dark:bg-gray-800 dark:text-gray-300"
+                    class="p-3 font-medium text-center text-gray-700 bg-gray-100 rounded-lg dark:bg-gray-800 dark:text-gray-300"
                   >
                     {{ tech }}
                   </div>

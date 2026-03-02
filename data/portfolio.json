@@ -69,11 +69,15 @@
       ],
       "description": "Catalog prezentare scaune WeDeco",
       "fullDescription": "Un catalog detaliat care prezintă gama completă de scaune WeDeco, cu imagini de înaltă calitate și descrieri detaliate ale produselor. Ideal pentru prezentări și promovarea produselor în magazine și online.",
-      "tags": ["InDesign", "PDF", "Tipar"],
+      "tags": ["InDesign", "PDF", "Print"],
       "category": "magazines",
-      "technologies": ["InDesign", "Photoshop", "PDF"],
-      "liveUrl": "https://example.com",
-      "githubUrl": "https://github.com"
+      "technologies": ["InDesign", "Photoshop", "PDF", "Print"],
+      "liveUrl": "https://www.wedeco.ro",
+      "testimonial": {
+        "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastră de mobilier WeDeco!",
+        "author": "Mac Florea",
+        "role": "CEO, Wedeco"
+      }
     },
     {
       "title": "Catalog Ballroom",
@@ -87,16 +91,15 @@
         "/images/magazines/ballroom/ballroom6.webp"
       ],
       "description": "Catalog prezentare mobilier ballroom",
-      "fullDescription": "O soluție completă de e-commerce construită cu Nuxt 3 și Vue 3, cu coș de cumpărături modern, integrare securizată de plăți cu Stripe și design responsive care funcționează perfect pe toate dispozitivele. Platforma include filtrare avansată de produse, funcționalitate de wishlist și un proces de checkout fluent.",
-      "tags": ["InDesign", "PDF", "Tipar"],
+      "fullDescription": "Un catalog elegant și bine structurat care prezintă gama de mobilier pentru săli de bal, cu imagini de înaltă calitate și descrieri detaliate ale produselor. Perfect pentru a atrage atenția clienților și a evidenția calitatea și designul mobilierului oferit.",
+      "tags": ["InDesign", "PDF", "Print"],
       "category": "magazines",
-      "technologies": ["InDesign", "Photoshop", "PDF"],
-      "liveUrl": "",
-      "githubUrl": "https://github.com",
+      "technologies": ["InDesign", "Photoshop", "PDF", "Print"],
+      "liveUrl": "https://www.wedeco.ro",
       "testimonial": {
-        "quote": "Platforma a depășit toate așteptările noastre. Vânzările au crescut cu 45% în prima lună!",
-        "author": "Sarah Johnson",
-        "role": "CEO, Fashion Retail Co."
+        "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastră de mobilier WeDeco!",
+        "author": "Mac Florea",
+        "role": "CEO, Wedeco."
       }
     },
     {
