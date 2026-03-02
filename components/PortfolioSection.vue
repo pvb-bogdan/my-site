@@ -31,31 +31,25 @@
 
       <TransitionGroup
         name="project"
-        tag="div" 
-        class="masonry-container"
+        tag="div"
+        class="grid grid-cols-1 gap-8 md:grid-cols-3 "
       >
-        <!-- ...existing project grid code... -->
         <div
-          v-for="(project, index) in visibleProjects"
+          v-for="project in visibleProjects"
           :key="project.title"
-          :data-key="project.title"
           @click="openModal(project)"
-          :class="[
-            'relative overflow-hidden transition-all duration-500 shadow-lg cursor-pointer masonry-item group rounded-xl hover:shadow-2xl',
-            isRevealed(project.title) ? 'reveal-visible' : 'reveal-hidden'
-          ]"
-          :style="{ transitionDelay: `${(index % 4) * 100}ms` }"
+          class="relative overflow-hidden shadow-lg cursor-pointer group rounded-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
         >
           <!-- Project Image -->
-          <div class="relative overflow-hidden" :style="{ height: getRandomHeight() }">
+          <div class="relative overflow-hidden aspect-video">
             <img
               v-if="project.images && project.images.length > 0"
               :src="project.thumbImage || project.images[0]"
               :alt="project.title"
-              class="object-cover w-full h-full"
+              class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
             />
-            <div 
-              v-else 
+            <div
+              v-else
               class="w-full h-full bg-gradient-to-br from-indigo-600 to-purple-600"
             ></div>
             <!-- Hover Overlay with Project Info -->
@@ -141,7 +135,7 @@ import WebDesignIcon from './icons/WebDesignIcon.vue'
 import MagazinesIcon from './icons/MagazinesIcon.vue'
 import GraphicsIcon from './icons/GraphicsIcon.vue'
 import ShowMoreIcon from './icons/ShowMoreIcon.vue'
-import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, computed, watch } from 'vue'
 import ProjectModal from './ProjectModal.vue'
 
 interface Project {
@@ -173,8 +167,8 @@ const filters = [
   { label: 'Grafică', value: 'graphics' }
 ]
 
-const INITIAL_PROJECTS = 12
-const LOAD_MORE_COUNT = 8
+const INITIAL_PROJECTS = 9
+const LOAD_MORE_COUNT = 3
 
 const activeFilter = ref('all')
 const isModalOpen = ref(false)
@@ -221,114 +215,9 @@ const closeModal = () => {
   isModalOpen.value = false
 }
 
-// Scroll reveal with Intersection Observer
-const revealedItems = ref<Set<string>>(new Set())
-let observer: IntersectionObserver | null = null
 
-const setupObserver = () => {
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const key = entry.target.getAttribute('data-key')
-          if (key) {
-            revealedItems.value.add(key)
-          }
-        }
-      })
-    },
-    {
-      threshold: 0.1,
-      rootMargin: '50px'
-    }
-  )
-}
-
-const observeItems = () => {
-  nextTick(() => {
-    const items = document.querySelectorAll('.masonry-item[data-key]')
-    items.forEach((item) => {
-      if (observer) {
-        observer.observe(item)
-      }
-    })
-  })
-}
-
-onMounted(() => {
-  setupObserver()
-  observeItems()
-})
-
-onUnmounted(() => {
-  if (observer) {
-    observer.disconnect()
-  }
-})
-
-// Re-observe when visible projects change
-watch(visibleProjects, () => {
-  nextTick(() => {
-    observeItems()
-  })
-})
-
-const isRevealed = (projectTitle: string) => {
-  return revealedItems.value.has(projectTitle)
-}
-
-// Random heights for masonry effect
-const heights = ['250px', '300px', '350px', '280px', '320px', '380px']
-let heightIndex = 0
-
-const getRandomHeight = () => {
-  const height = heights[heightIndex % heights.length]
-  heightIndex++
-  return height
-}
 </script>
 <style scoped>
-/* Responsive visibility handled by Tailwind classes (hidden md:flex, flex md:hidden) */
-
-/* Masonry columns (not available in Tailwind yet) */
-.masonry-container {
-  column-count: 1;
-  column-gap: 2rem;
-}
-@media (min-width: 640px) {
-  .masonry-container {
-    column-count: 2;
-  }
-}
-@media (min-width: 1024px) {
-  .masonry-container {
-    column-count: 3;
-  }
-}
-@media (min-width: 1280px) {
-  .masonry-container {
-    column-count: 4;
-  }
-}
-.masonry-item {
-  break-inside: avoid;
-  margin-bottom: 2rem;
-  display: inline-block;
-  width: 100%;
-}
-
-/* Animations (keep custom for now) */
-.reveal-hidden {
-  opacity: 0;
-  transform: translateY(40px) scale(0.95);
-}
-.reveal-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-.reveal-visible:hover {
-  transform: translateY(-4px) scale(1.02);
-}
 .project-enter-active {
   animation: projectFadeIn 0.6s ease-out forwards;
 }

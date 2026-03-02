@@ -111,6 +111,23 @@
       "category": "webdesign",
       "technologies": ["HTML", "Bootstrap CSS", "Lightbox"],
       "liveUrl": "https://hotelandratecuci.ro/index.html"
+    },
+    {
+      "title": "Site Tennis Steps",
+      "thumbImage": "/images/tennis/tennis-thumbnail.webp",
+      "images": [
+        "/images/tennis/tennis-thumbnail.webp",
+        "/images/tennis/tennis1.webp",
+        "/images/tennis/tennis2.webp",
+        "/images/tennis/tennis3.webp",
+        "/images/tennis/tennis4.webp"
+      ],
+      "description": "Site de prezentare pentru o echipă de profesioniști în tenis și racordare rachete",
+      "fullDescription": "Un site de prezentare pentru Tennis Steps, o echipă de profesioniști certificați LTA și ERSA, specializați în racordarea rachetelor și antrenamente de tenis. Site-ul prezintă serviciile oferite — racordare profesională, evaluare nivel de joc și training pentru racordori — cu un design modern și sportiv, optimizat pentru toate dispozitivele.",
+      "tags": ["HTML", "Nuxt 3", "Tailwind CSS"],
+      "category": "webdesign",
+      "technologies": ["HTML", "Nuxt 3", "Tailwind CSS"],
+      "liveUrl": "https://www.tennissteps.co.uk/"
     }
   ],
   "testimonials": [
