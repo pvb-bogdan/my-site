@@ -32,7 +32,7 @@
       </div>
       <div
         class="py-2 mx-auto text-sm text-center text-gray-400 bg-gray-100 rounded-lg dark:text-gray-400 dark:bg-gray-800">
-        <p>&copy; {{ currentYear }} {{ portfolioData.personal.name }}. Toate drepturile rezervate.</p>
+        <p>&copy; {{ currentYear }} {{ portfolioData.personal.fullName }}. Toate drepturile rezervate.</p>
       </div>
     </footer>
   </div>
