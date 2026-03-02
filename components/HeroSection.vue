@@ -1,5 +1,5 @@
 <template>
-  <section id="hero" class="relative flex items-center justify-center min-h-screen px-6 pt-20 overflow-hidden">
+  <section id="hero" class="relative flex items-center justify-center px-6 pt-20 overflow-hidden">
     <!-- Background Gradient Blobs -->
     <div class="absolute inset-0 z-0">
       <!-- Violet/Purple blob - top left area -->
