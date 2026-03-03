@@ -134,6 +134,26 @@
       "category": "webdesign",
       "technologies": ["HTML", "Nuxt 3", "Tailwind CSS"],
       "liveUrl": "https://www.tennissteps.co.uk/"
+    },
+    {
+      "title": "Catalog Mirese Ballroom",
+      "thumbImage": "/images/magazines/mirese/catalog-mirese1.webp",
+      "images": [
+        "/images/magazines/mirese/catalog-mirese1.webp",
+        "/images/magazines/mirese/catalog-mirese2.webp",
+        "/images/magazines/mirese/catalog-mirese3.webp"
+      ],
+      "description": "Catalog prezentare nunti",
+      "fullDescription": "Un catalog detaliat care prezintă nuntile de succes organizate de Ballroom Andra/ Platul Mirilor, cu imagini de înaltă calitate și descrieri detaliate ale serviciilor oferite. Ideal pentru a atrage potențiali clienți și a evidenția experiența și profesionalismul echipei de servicii. Catalogul este conceput pentru a oferi o prezentare clasică, eleganta si eleganta, care ajută pe clienti de a-i cunoaste pe Ballroom Andra/ Platul Mirilor, iar serviciile oferite, cu imagini de calitate superioar în organizarea de evenimente memorabile.",
+      "tags": ["InDesign", "PDF", "Print"],
+      "category": "magazines",
+      "technologies": ["InDesign", "Photoshop", "PDF", "Print"],
+      "liveUrl": "https://palatulmirilor.ro/",
+      "testimonial": {
+        "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastră  de prezentare a serviciilor oferite de Ballroom Andra/ Platul Mirilor !",
+        "author": "Mac Florea",
+        "role": "CEO, Wedeco."
+      }
     }
   ],
   "testimonials": [
