@@ -163,7 +163,7 @@ const props = defineProps<{
 const filters = [
   { label: 'Toate', value: 'all' },
   { label: 'Web Design', value: 'webdesign' },
-  { label: 'Magazines', value: 'magazines' },
+  { label: 'Cataloage', value: 'magazines' },
   { label: 'Grafică', value: 'graphics' }
 ]
 

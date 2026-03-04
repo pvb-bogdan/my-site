@@ -121,5 +121,27 @@
       "author": "Mac Florea",
       "role": "CEO, Restaurant Andra."
     }
+  },
+  {
+    "title": "Meniu Restaurant Andra",
+    "thumbImage": "/images/menu/menu-andra1.webp",
+    "images": [
+      "/images/menu/menu-andra1.webp",
+      "/images/menu/menu-andra2.webp",
+      "/images/menu/menu-andra3.webp",
+      "/images/menu/menu-andra4.webp",
+      "/images/menu/menu-andra5.webp"
+    ],
+    "description": "Meniu pentr Restaurant Andra",
+    "fullDescription": "Un meniu elegant și bine structurat pentru Restaurant Andra, care prezintă oferta culinară într-un format atractiv și ușor de navigat. Designul se concentrează pe evidențierea preparatelor, cu imagini apetisante și o tipografie clară, pentru a oferi clienților o experiență plăcută și informativă atunci când aleg mâncarea preferată.",
+    "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+    "category": "magazines",
+    "technologies": ["InDesign", "Photoshop", "PDF", "Print"],
+    "liveUrl": "https://www.restaurant-andra.ro/",
+    "testimonial": {
+      "quote": "Meniul reflecta perfect calitatea și diversitatea preparatelor noastre, iar designul său elegant a fost foarte apreciat de clienți. Bogdan a fost extrem de profesionist și a livrat un produs final care a depășit așteptările noastre. Recomand cu încredere pentru orice proiect de design grafic!",
+      "author": "Mac Florea",
+      "role": "CEO, Restaurant Andra."
+    }
   }
 ]
