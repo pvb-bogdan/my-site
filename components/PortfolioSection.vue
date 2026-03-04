@@ -160,12 +160,18 @@ const props = defineProps<{
   projects: Project[]
 }>()
 
-const filters = [
+const allFilters = [
   { label: 'Toate', value: 'all' },
   { label: 'Web Design', value: 'webdesign' },
   { label: 'Cataloage', value: 'magazines' },
   { label: 'Grafică', value: 'graphics' }
 ]
+
+// Compute filters based on available project categories
+const filters = computed(() => {
+  const activeCategories = new Set(props.projects.map(p => p.category))
+  return allFilters.filter(f => f.value === 'all' || activeCategories.has(f.value))
+})
 
 const INITIAL_PROJECTS = 9
 const LOAD_MORE_COUNT = 3
