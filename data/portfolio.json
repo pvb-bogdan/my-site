@@ -171,7 +171,12 @@
       "tags": ["HTML", "Bootstrap CSS", "Lightbox"],
       "category": "webdesign",
       "technologies": ["HTML", "Bootstrap CSS", "Lightbox"],
-      "liveUrl": "https://www.restaurant-andra.ro/"
+      "liveUrl": "https://www.restaurant-andra.ro/",
+       "testimonial": {
+        "quote": "Bogdan a înțeles exact ce aveam nevoie: un site clar, atractiv, care să aducă clienții la noi. Rezultatul a depășit așteptările — rapid, bine structurat și ușor de actualizat. Îl recomand cu toată încrederea!",
+        "author": "Mac Florea",
+        "role": "CEO, Restaurant Andra."
+      }
     }
   ],
   "testimonials": [
