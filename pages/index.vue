@@ -16,7 +16,7 @@
       :technologies="portfolioData.technologies" />
 
     <!-- Portfolio Section -->
-    <PortfolioSection :projects="portfolioData.projects" />
+    <PortfolioSection :projects="projectsData" />
 
     <!-- Testimonials Section -->
     <TestimonialsSection :testimonials="portfolioData.testimonials" />
@@ -41,6 +41,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import portfolioData from '../data/portfolio.json'
+import projectsData from '../data/projects.json'
 import { useTheme } from '../composables/useTheme'
 
 // Theme definition
