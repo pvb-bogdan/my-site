@@ -154,6 +154,24 @@
         "author": "Mac Florea",
         "role": "CEO, Wedeco."
       }
+    },
+    {
+      "title": "Site Restaurant Andra",
+      "thumbImage": "/images/restaurant/thumbnail-restaurant.webp",
+      "images": [
+        "/images/restaurant/thumbnail-restaurant.webp",
+        "/images/restaurant/restaurant-andra1.webp",
+        "/images/restaurant/restaurant-andra2.webp",
+        "/images/restaurant/restaurant-andra3.webp",
+        "/images/restaurant/restaurant-andra4.webp",
+        "/images/restaurant/restaurant-andra5.webp"
+      ],
+      "description": "Site de prezentare pentru Restaurant Andra, cu informații despre meniu, livrări și date de contact.",
+      "fullDescription": "Un site de prezentare pentru Restaurant Andra, realizat pentru a oferi clienților acces rapid la informații despre meniu, livrare la domiciliu, program și contact. Platforma este structurată clar, cu accent pe accesibilitate și experiență intuitivă, fiind optimizată pentru toate dispozitivele.",
+      "tags": ["HTML", "Bootstrap CSS", "Lightbox"],
+      "category": "webdesign",
+      "technologies": ["HTML", "Bootstrap CSS", "Lightbox"],
+      "liveUrl": "https://www.restaurant-andra.ro/"
     }
   ],
   "testimonials": [
