@@ -168,8 +168,29 @@
     ],
     "description": "Design SuperBox",
     "fullDescription": "Am creat designul pentru cutia promoțională SuperBOX, un ambalaj inovator și atractiv care evidențiază produsele din interior. Designul se concentrează pe utilizarea culorilor paastel și a elementelor grafice moderne pentru a atrage atenția mirilor și a transmite mesajul brandului într-un mod eficient. Fiecare aspect al designului a fost gândit pentru a oferi o experiență vizuală plăcută.",
-    "tags": ["Design", "Illustrator", "Photoshop"],
+    "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"],
     "category": "graphics",
-    "technologies": ["Illustrator", "Photoshop"]
+    "technologies": ["Illustrator", "Photoshop", "Print", "Packaging"]
+  },
+  {
+    "title": "Meniu Restaurant Belvisso",
+    "thumbImage": "/images/belvisso/belvisso1.webp",
+    "images": [
+      "/images/belvisso/belvisso1.webp",
+      "/images/belvisso/belvisso2.webp",
+      "/images/belvisso/belvisso3.webp",
+      "/images/belvisso/belvisso4.webp",
+      "/images/belvisso/belvisso5.webp"
+    ],
+    "description": "Meniu pentr Restaurant Belvisso",
+    "fullDescription": "Un meniu elegant și bine structurat pentru Restaurant Belvisso, care prezintă oferta culinară într-un format atractiv și ușor de navigat. Designul se concentrează pe evidențierea preparatelor, cu imagini apetisante și o tipografie clară, pentru a oferi clienților o experiență plăcută și informativă atunci când aleg mâncarea preferată.",
+    "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+    "category": "magazines",
+    "technologies": ["InDesign", "Photoshop", "PDF", "Print"],
+    "testimonial": {
+      "quote": "Meniul reflecta perfect calitatea și diversitatea preparatelor noastre, iar designul său elegant a fost foarte apreciat de clienți.",
+      "author": "Proprietar, Restaurant Belvisso",
+      "role": "CEO, Restaurant Belvisso."
+    }
   }
 ]
