@@ -143,5 +143,33 @@
       "author": "Mac Florea",
       "role": "CEO, Restaurant Andra."
     }
+  },
+  {
+    "title": "Design joc Farmer Joey",
+    "thumbImage": "/images/apps/joey.webp",
+    "images": [
+      "/images/apps/joey.webp",
+      "/images/apps/joey1.webp",
+      "/images/apps/joey2.webp"
+    ],
+    "description": "Design joc Farmer Joey",
+    "fullDescription": "Am creat designul pentru jocul Farmer Joey, un joc mobil captivant care aduce la viață experiența de a fi fermier. Designul include elemente vizuale atractive și intuitive, care îmbunătățesc experiența utilizatorului și fac jocul ușor de navigat și plăcut de jucat. De la personaje și peisaje până la interfața utilizatorului, fiecare aspect al designului a fost gândit pentru a oferi o experiență de joc memorabilă și distractivă.",
+    "tags": ["Design", "Illustrator", "Photoshop"],
+    "category": "graphics",
+    "technologies": ["Illustrator", "Photoshop"]
+  },
+  {
+    "title": "Box promo SuperBOX",
+    "thumbImage": "/images/box/box1.webp",
+    "images": [
+      "/images/box/box1.webp",
+      "/images/box/box2.webp",
+      "/images/box/box3.webp"
+    ],
+    "description": "Design SuperBox",
+    "fullDescription": "Am creat designul pentru cutia promoțională SuperBOX, un ambalaj inovator și atractiv care evidențiază produsele din interior. Designul se concentrează pe utilizarea culorilor paastel și a elementelor grafice moderne pentru a atrage atenția mirilor și a transmite mesajul brandului într-un mod eficient. Fiecare aspect al designului a fost gândit pentru a oferi o experiență vizuală plăcută.",
+    "tags": ["Design", "Illustrator", "Photoshop"],
+    "category": "graphics",
+    "technologies": ["Illustrator", "Photoshop"]
   }
 ]
