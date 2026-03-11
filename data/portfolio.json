@@ -37,8 +37,7 @@
   ],
   "about": {
     "bio": [
-      "Sunt un web designer și dezvoltator frontend pasionat, cu peste 5 ani de experiență în crearea de experiențe digitale impresionante. Mă specializez în construirea de aplicații web moderne, performante și accesibile, pe care utilizatorii le adoră.",
-      "Abordarea mea combină principii de design curat cu practici robuste de dezvoltare, asigurându-mă că fiecare proiect nu doar arată excelent, ci și funcționează impecabil pe toate dispozitivele."
+      "Creez experiențe digitale moderne și intuitive, îmbinând web designul cu dezvoltarea frontend pentru proiecte care nu doar arată bine, ci sunt și plăcute de folosit. În același timp, îmi place să dau viață identității vizuale prin logo-uri, cataloage și alte materiale de branding sau print, astfel încât fiecare proiect să comunice clar și coerent, în orice format."
     ],
     "linkedinLink": "https://www.linkedin.com/in/petrebogdan"
   },
@@ -51,8 +50,7 @@
     { "name": "Nuxt.js", "level": 80, "icon": "nuxt" },
     { "name": "Git & GitHub", "level": 85, "icon": "git" },
     { "name": "Figma", "level": 75, "icon": "figma" },
-    { "name": "Adobe CC", "level": 75, "icon": "adobe" },
-    { "name": "Responsive Design", "level": 95, "icon": "responsive" }
+    { "name": "Adobe CC", "level": 75, "icon": "adobe" }
   ],
   "testimonials": [
     {
