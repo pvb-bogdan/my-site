@@ -145,18 +145,23 @@
     }
   },
   {
-    "title": "Design joc Farmer Joey",
-    "thumbImage": "/images/apps/joey.webp",
+    "title": "SwitcMorn Brand Cafea",
+    "thumbImage": "/images/switchmorn/t-shirtSM.webp",
     "images": [
-      "/images/apps/joey.webp",
-      "/images/apps/joey1.webp",
-      "/images/apps/joey2.webp"
+      "/images/switchmorn/t-shirtSM.webp",
+      "/images/switchmorn/banner.webp",
+      "/images/switchmorn/banner1.webp"
     ],
-    "description": "Design joc Farmer Joey",
-    "fullDescription": "Am creat designul pentru jocul Farmer Joey, un joc mobil captivant care aduce la viață experiența de a fi fermier. Designul include elemente vizuale atractive și intuitive, care îmbunătățesc experiența utilizatorului și fac jocul ușor de navigat și plăcut de jucat. De la personaje și peisaje până la interfața utilizatorului, fiecare aspect al designului a fost gândit pentru a oferi o experiență de joc memorabilă și distractivă.",
-    "tags": ["Design", "Illustrator", "Photoshop"],
+    "description": "Design SwitchMorn merchandise",
+    "fullDescription": "Am construit universul vizual SwitchMorn printr-o identitate de brand caldă și expresivă, de la logo până la tricouri, afișe, bannere, flyere și stickere, într-o paletă de alb, roșu, cafeniu și negru. Designul a fost gândit pentru a transmite energia și pasiunea pentru cafea, cu elemente grafice care evocă aroma și atmosfera unei cafele de calitate.",
+    "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"],
     "category": "graphics",
-    "technologies": ["Illustrator", "Photoshop"]
+    "technologies": ["Illustrator", "Photoshop", "Print", "Packaging"],
+    "testimonial": {
+      "role": "CEO, SwitchMorn",
+      "author": "Proprietar, SwitchMorn",
+      "quote": "Colaborarea a fost excelentă, iar identitatea vizuală creată pentru SwitchMorn a surprins perfect energia și personalitatea brandului nostru. Designul a fost foarte apreciat de clienți și a contribuit semnificativ la creșterea vizibilității și recunoașterii brandului nostru pe piață. Recomand cu încredere pentru orice proiect de design grafic!"
+    }
   },
   {
     "title": "Box promo SuperBOX",
@@ -182,7 +187,7 @@
       "/images/belvisso/belvisso4.webp",
       "/images/belvisso/belvisso5.webp"
     ],
-    "description": "Meniu pentr Restaurant Belvisso",
+    "description": "Meniu pentru Restaurant Belvisso",
     "fullDescription": "Un meniu elegant și bine structurat pentru Restaurant Belvisso, care prezintă oferta culinară într-un format atractiv și ușor de navigat. Designul se concentrează pe evidențierea preparatelor, cu imagini apetisante și o tipografie clară, pentru a oferi clienților o experiență plăcută și informativă atunci când aleg mâncarea preferată.",
     "tags": ["InDesign", "PDF", "Print", "Photoshop"],
     "category": "magazines",
@@ -192,5 +197,19 @@
       "author": "Proprietar, Restaurant Belvisso",
       "role": "CEO, Restaurant Belvisso."
     }
+  },
+   {
+    "title": "Design joc Farmer Joey",
+    "thumbImage": "/images/apps/joey.webp",
+    "images": [
+      "/images/apps/joey.webp",
+      "/images/apps/joey1.webp",
+      "/images/apps/joey2.webp"
+    ],
+    "description": "Design joc Farmer Joey",
+    "fullDescription": "Am creat designul pentru jocul Farmer Joey, un joc mobil captivant care aduce la viață experiența de a fi fermier. Designul include elemente vizuale atractive și intuitive, care îmbunătățesc experiența utilizatorului și fac jocul ușor de navigat și plăcut de jucat. De la personaje și peisaje până la interfața utilizatorului, fiecare aspect al designului a fost gândit pentru a oferi o experiență de joc memorabilă și distractivă.",
+    "tags": ["Design", "Illustrator", "Photoshop"],
+    "category": "graphics",
+    "technologies": ["Illustrator", "Photoshop"]
   }
 ]
