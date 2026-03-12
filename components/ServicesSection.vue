@@ -1,5 +1,5 @@
 <template>
-  <section id="services" class="relative px-6 py-20 overflow-hidden bg-gray-100 dark:bg-gray-800/50">
+  <section id="services" class="relative px-6 py-20 overflow-hidden bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 800px;">
     <!-- Decorative background elements -->
     <div class="absolute inset-0 pointer-events-none">
       <!-- Dot grid pattern - top left -->

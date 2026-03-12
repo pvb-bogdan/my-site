@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonials" class="relative px-6 py-20 overflow-hidden bg-white dark:bg-gray-800/50">
+  <section id="testimonials" class="relative px-6 py-20 overflow-hidden bg-white dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 600px;">
     <!-- Decorative background elements -->
     <div class="absolute inset-0 pointer-events-none">
       <IconsDotGrid class="absolute opacity-20 top-10 right-10 dark:opacity-10" />

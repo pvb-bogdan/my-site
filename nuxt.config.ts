@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxtjs/seo'],
+  modules: ['@nuxtjs/seo', '@nuxt/image'],
 
   seo: {
     site: {
@@ -74,6 +74,12 @@ export default defineNuxtConfig({
           rel: 'icon',
           type: 'image/png',
           href: '/favicon.png'
+        },
+        {
+          rel: 'preload',
+          as: 'image',
+          href: '/images/avatar2.webp',
+          type: 'image/webp'
         }
       ],
     },

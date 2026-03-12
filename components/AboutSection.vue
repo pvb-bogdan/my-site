@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="relative px-6 py-20 overflow-hidden">
+  <section id="about" class="relative px-6 py-20 overflow-hidden" style="content-visibility: auto; contain-intrinsic-size: auto 900px;">
     <!-- Background Decorative Elements -->
     <div class="absolute inset-0 pointer-events-none">
       <!-- Decorative dots pattern -->
@@ -20,9 +20,12 @@
             
             <!-- Avatar container - larger size -->
             <div class="relative overflow-hidden border-2 border-gray-300 rounded-full shadow-lg cursor-pointer w-72 h-72 md:w-96 md:h-96 dark:border-gray-700 group/avatar">
-              <img 
-                src="~/assets/images/avatar1.webp" 
+              <NuxtImg 
+                src="/images/avatar1.webp" 
                 alt="Avatar" 
+                width="384"
+                height="384"
+                loading="lazy"
                 class="object-cover w-full h-full transition-all duration-500 bg-white grayscale dark:bg-gray-900 group-hover/avatar:grayscale-0"
               />
             </div>

@@ -49,9 +49,12 @@
                     :key="image + idx"
                     class="flex-shrink-0 w-full h-full snap-start"
                   >
-                    <img
+                    <NuxtImg
                       :src="image"
                       :alt="project.title"
+                      width="1280"
+                      height="720"
+                      loading="lazy"
                       class="object-cover w-full h-full transition-opacity duration-300"
                     />
                   </div>

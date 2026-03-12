@@ -1,17 +1,17 @@
 <template>
   <section id="hero" class="relative flex items-center justify-center px-6 pt-20 overflow-hidden">
     <!-- Background Gradient Blobs -->
-    <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 z-0" style="contain: layout style paint;">
       <!-- Violet/Purple blob - top left area -->
-      <div class="absolute -top-20 left-[10%] w-[550px] h-[550px] bg-gradient-to-br from-violet-200 to-purple-400 rounded-full blur-3xl opacity-40 mix-blend-multiply dark:mix-blend-screen dark:opacity-30 animate-blob-move-1"></div>
+      <div class="absolute -top-20 left-[10%] w-[550px] h-[550px] bg-gradient-to-br from-violet-200 to-purple-400 rounded-full blur-3xl opacity-40 mix-blend-multiply dark:mix-blend-screen dark:opacity-30 animate-blob-move-1" style="will-change: transform;"></div>
       <!-- Cyan/Teal blob - upper right -->
-      <div class="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-gradient-to-bl from-cyan-300 to-teal-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-2"></div>
+      <div class="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-gradient-to-bl from-cyan-300 to-teal-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-2" style="will-change: transform;"></div>
       <!-- Indigo/Blue blob - left center-ish -->
-      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-indigo-200 to-blue-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3"></div>
+      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-indigo-200 to-blue-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3" style="will-change: transform;"></div>
       <!-- Pink/Fuchsia blob - bottom center-right -->
-      <div class="absolute bottom-[10%] right-[25%] w-[450px] h-[450px] bg-gradient-to-tl from-pink-300 to-fuchsia-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-4"></div>
+      <div class="absolute bottom-[10%] right-[25%] w-[450px] h-[450px] bg-gradient-to-tl from-pink-300 to-fuchsia-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-4" style="will-change: transform;"></div>
       <!-- Sky/Cyan blob - bottom left offset -->
-      <div class="absolute -bottom-16 left-[30%] w-[400px] h-[400px] bg-gradient-to-r from-sky-300 to-cyan-400 rounded-full blur-3xl opacity-25 mix-blend-multiply dark:mix-blend-screen dark:opacity-15 animate-blob-move-5"></div>
+      <div class="absolute -bottom-16 left-[30%] w-[400px] h-[400px] bg-gradient-to-r from-sky-300 to-cyan-400 rounded-full blur-3xl opacity-25 mix-blend-multiply dark:mix-blend-screen dark:opacity-15 animate-blob-move-5" style="will-change: transform;"></div>
     </div>
 
     <div class="container mx-auto z-1">
@@ -60,9 +60,13 @@
             <span class="text-xs font-semibold text-gray-700 dark:text-gray-200">Figma</span>
           </div> -->
 
-          <img 
-            src="~/assets/images/avatar2.webp" 
+          <NuxtImg 
+            src="/images/avatar2.webp" 
             alt="Device Mockup" 
+            width="640"
+            height="900"
+            loading="eager"
+            fetchpriority="high"
             class="relative z-10 hidden w-full max-w-lg mx-auto transition-transform duration-300 transform md:block lg:max-w-xl xl:max-w-[40rem] hover:scale-105"
           />
         </div>

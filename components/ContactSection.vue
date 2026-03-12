@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50">
+  <section id="contact" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 700px;">
     <div class="container max-w-6xl mx-auto">
       <!-- Section Header -->
       <div class="mb-16 text-center">
@@ -102,8 +102,11 @@
         <div class="relative p-6 bg-white border border-gray-200 shadow-lg dark:bg-gray-900 rounded-2xl dark:border-gray-700 flex items-center justify-center min-h-[400px]">
           <!-- SVG Image -->
           <img 
-            src="~/assets/images/contact-1.svg" 
+            src="/images/contact-1.svg" 
             alt="Contact illustration" 
+            loading="lazy"
+            width="500"
+            height="400"
             class="object-contain w-full h-full"
           />
           

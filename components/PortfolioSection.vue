@@ -1,5 +1,5 @@
 <template>
-  <section id="portfolio" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50">
+  <section id="portfolio" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 1200px;">
     <div class="container mx-auto">
       <div class="mb-16 text-center">
         <h2 class="mb-4 text-4xl font-bold md:text-5xl">Portofoliu</h2>
@@ -42,10 +42,13 @@
         >
           <!-- Project Image -->
           <div class="relative overflow-hidden aspect-video">
-            <img
+            <NuxtImg
               v-if="project.images && project.images.length > 0"
               :src="project.thumbImage || project.images[0]"
               :alt="project.title"
+              width="640"
+              height="360"
+              loading="lazy"
               class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
             />
             <div
