@@ -80,23 +80,23 @@
     "liveUrl": "https://www.tennissteps.co.uk/"
   },
   {
-    "title": "Catalog Mirese Ballroom",
-    "thumbImage": "/images/magazines/mirese/catalog-mirese1.webp",
+    "title": "Carte - Cum sa devii prima alegere a mirilor ",
+    "thumbImage": "/images/carte2/coperta.webp",
     "images": [
-      "/images/magazines/mirese/catalog-mirese1.webp",
-      "/images/magazines/mirese/catalog-mirese2.webp",
-      "/images/magazines/mirese/catalog-mirese3.webp"
+      "/images/carte2/coperta.webp",
+      "/images/carte2/carte1.webp",
+      "/images/carte2/carte2.webp",
+      "/images/carte2/carte3.webp"
     ],
-    "description": "Catalog prezentare nunti",
-    "fullDescription": "Un catalog detaliat care prezintă nuntile de succes organizate de Ballroom Andra/ Platul Mirilor, cu imagini de înaltă calitate și descrieri detaliate ale serviciilor oferite. Ideal pentru a atrage potențiali clienți și a evidenția experiența și profesionalismul echipei de servicii. Catalogul este conceput pentru a oferi o prezentare clasică, eleganta si eleganta, care ajută pe clienti de a-i cunoaste pe Ballroom Andra/ Platul Mirilor, iar serviciile oferite, cu imagini de calitate superioar în organizarea de evenimente memorabile.",
+    "description": "Tehnoredactare carte pentru organizatori de nunti",
+    "fullDescription": "Tehnoredactare și design pentru cartea „Cum să devii prima alegere a mirilor”, un ghid esențial pentru organizatorii de nunți care doresc să-și îmbunătățească serviciile și să atragă mai mulți clienți. Cartea oferă sfaturi practice și strategii eficiente, prezentate într-un format atractiv și ușor de citit, cu o copertă profesională și un layout bine structurat.",
     "tags": ["InDesign", "PDF", "Print"],
     "category": "magazines",
     "technologies": ["InDesign", "Photoshop", "PDF", "Print"],
-    "liveUrl": "https://palatulmirilor.ro/",
     "testimonial": {
-      "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastră  de prezentare a serviciilor oferite de Ballroom Andra/ Platul Mirilor !",
+      "quote": "Am lucrat foarte bine cu Bogdan la realizarea cartii 'Cum să devii prima alegere a mirilor' și am fost extrem de mulțumit de rezultatul final! Cartea arată profesional, este bine structurată și ușor de citit, iar designul său atrăgător a fost foarte apreciat de cititori. Recomand cu încredere pentru orice proiect de tehnoredactare și design editorial!",
       "author": "Mac Florea",
-      "role": "CEO, Wedeco."
+      "role": "Autor, Cartea 'Cum să devii prima alegere a mirilor'."
     }
   },
   {
@@ -198,7 +198,47 @@
       "role": "CEO, Restaurant Belvisso."
     }
   },
-   {
+  {
+    "title": "Catalog Mirese Ballroom",
+    "thumbImage": "/images/magazines/mirese/catalog-mirese1.webp",
+    "images": [
+      "/images/magazines/mirese/catalog-mirese1.webp",
+      "/images/magazines/mirese/catalog-mirese2.webp",
+      "/images/magazines/mirese/catalog-mirese3.webp"
+    ],
+    "description": "Catalog prezentare nunti",
+    "fullDescription": "Un catalog detaliat care prezintă nuntile de succes organizate de Ballroom Andra/ Platul Mirilor, cu imagini de înaltă calitate și descrieri detaliate ale serviciilor oferite. Ideal pentru a atrage potențiali clienți și a evidenția experiența și profesionalismul echipei de servicii. Catalogul este conceput pentru a oferi o prezentare clasică, eleganta si eleganta, care ajută pe clienti de a-i cunoaste pe Ballroom Andra/ Platul Mirilor, iar serviciile oferite, cu imagini de calitate superioar în organizarea de evenimente memorabile.",
+    "tags": ["InDesign", "PDF", "Print"],
+    "category": "magazines",
+    "technologies": ["InDesign", "Photoshop", "PDF", "Print"],
+    "liveUrl": "https://palatulmirilor.ro/",
+    "testimonial": {
+      "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastră  de prezentare a serviciilor oferite de Ballroom Andra/ Platul Mirilor !",
+      "author": "Mac Florea",
+      "role": "CEO, Wedeco."
+    }
+  },
+  {
+    "title": "Catalog prezentare sali de nunti",
+    "thumbImage": "/images/sali/sala1.webp",
+    "images": [
+      "/images/sali/sala1.webp",
+      "/images/sali/sala2.webp",
+      "/images/sali/sala3.webp"
+    ],
+    "description": "Catalog prezentare ambientare sali de nunti",
+    "fullDescription": "Un catalog care pezinta cum poate fi ambientata o sala de nunta, cu imagini de inalta calitate si descrieri detaliate ale serviciilor oferite. Ideal pentru a atrage potentiali clienti si a evidentia experienta si profesionalismul echipei de servicii. Catalogul este conceput pentru a oferi o prezentare clasica, eleganta si rafinata, care ajuta pe clienti sa vada cum arata sala de nunti, iar serviciile oferite, cu imagini de calitate superioara in organizarea de evenimente memorabile.",
+    "tags": ["InDesign", "PDF", "Print"],
+    "category": "magazines",
+    "technologies": ["InDesign", "Photoshop", "PDF", "Print"],
+    "liveUrl": "https://wedeco.ro/",
+    "testimonial": {
+      "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastră  de prezentare a serviciilor oferite de WeDeco",
+      "author": "Mac Florea",
+      "role": "CEO, Wedeco."
+    }
+  },
+  {
     "title": "Design joc Farmer Joey",
     "thumbImage": "/images/apps/joey.webp",
     "images": [
