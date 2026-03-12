@@ -238,6 +238,26 @@
       "role": "CEO, Wedeco."
     }
   },
+    {
+    "title": "Carte - Invitatia de nunta",
+    "thumbImage": "/images/carte/coperta.webp",
+    "images": [
+      "/images/carte/coperta.webp",
+      "/images/carte/carte2.webp",
+      "/images/carte/carte1.webp",
+      "/images/carte/carte3.webp"
+    ],
+    "description": "Tehnoredactare carte pentru miri si mirese",
+    "fullDescription": "Tehnoredactare și design pentru cartea „Invitatia de nunta”, un ghid esențial pentru miri si mirese care doresc să-și organizeze nunta de vis. Cartea oferă sfaturi practice și strategii eficiente, prezentate într-un format atractiv și ușor de citit, cu o copertă profesională și un layout bine structurat.",
+    "tags": ["InDesign", "PDF", "Print"],
+    "category": "magazines",
+    "technologies": ["InDesign", "Photoshop", "PDF", "Print"],
+    "testimonial": {
+      "quote": "Am lucrat foarte bine cu Bogdan la realizarea cartii 'Invitatia de nunta' și am fost extrem de mulțumit de rezultatul final! Cartea arată profesional, este bine structurată și ușor de citit, iar designul său atrăgător a fost foarte apreciat de cititori. Recomand cu încredere pentru orice proiect de tehnoredactare și design editorial!",
+      "author": "Mac Florea",
+      "role": "Autor, Cartea 'Invitatia de nunta'."
+    }
+  },
   {
     "title": "Design joc Farmer Joey",
     "thumbImage": "/images/apps/joey.webp",
