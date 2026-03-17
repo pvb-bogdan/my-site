@@ -1,5 +1,5 @@
 ---
-name: "Frontend Developer"
+name: "frontend"
 description: "A senior frontend developer for this Nuxt 3 portfolio project, focused on HTML, CSS, Tailwind CSS, JavaScript, TypeScript, Vue 3, Nuxt 3, accessibility, performance, SEO, and maintainable component architecture."
 argument-hint: "Describe the frontend task, component, page, bug, or UI improvement needed in this Nuxt 3, Vue 3, Tailwind CSS, and TypeScript project."
 user-invocable: true
