@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl border-b border-white/20 dark:border-gray-700/30 shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)] lg:bg-transparent lg:dark:bg-transparent lg:backdrop-blur-none lg:border-none lg:shadow-none lg:data-[scrolled]:bg-white/60 lg:data-[scrolled]:dark:bg-gray-900/70 lg:data-[scrolled]:backdrop-blur-xl lg:data-[scrolled]:border-b lg:data-[scrolled]:border-white/20 lg:data-[scrolled]:dark:border-gray-700/30 lg:data-[scrolled]:shadow-[0_4px_30px_rgba(0,0,0,0.1)] lg:data-[scrolled]:dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+    class="site-header"
     :data-scrolled="isScrolled ? '' : undefined">
     <div class="container px-6 py-4 mx-auto">
       <div class="flex items-center justify-between">
@@ -319,5 +319,36 @@ onBeforeUnmount(() => {
 
 .dark .bubble.hover {
   background: rgb(55 65 81 / 0.8);
+}
+
+.site-header {
+  @apply fixed top-2 left-0 right-0 z-50 transition-all duration-700 ease-in-out;
+  @apply bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl;
+  @apply border-b border-white/20 dark:border-gray-700/30;
+  @apply shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)];
+  @apply rounded-none;
+}
+
+/* Mobile scrolled: shrink into a floating pill */
+.site-header[data-scrolled] {
+  left: 1rem;
+  right: 1rem;
+  @apply border rounded-full;
+}
+
+@screen lg {
+  /* Desktop initial: transparent full-width bar */
+  .site-header {
+    @apply left-0 right-0 bg-transparent dark:bg-transparent backdrop-blur-none border-none shadow-none rounded-none;
+  }
+
+  /* Desktop scrolled: centred pill matching content width */
+  .site-header[data-scrolled] {
+    left: max(1.5rem, calc(50% - 600px));
+    right: max(1.5rem, calc(50% - 600px));
+    @apply rounded-full bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl;
+    @apply border border-white/20 dark:border-gray-700/30;
+    @apply shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)];
+  }
 }
 </style>
