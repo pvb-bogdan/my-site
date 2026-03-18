@@ -1,7 +1,8 @@
 <template>
   <header
     class="site-header"
-    :data-scrolled="isScrolled ? '' : undefined">
+    :data-scrolled="isScrolled ? '' : undefined"
+    :data-menu-open="mobileMenuOpen ? '' : undefined">
     <div class="container px-6 py-4 mx-auto">
       <div class="flex items-center justify-between">
         <!-- Logo (Left) -->
@@ -322,7 +323,7 @@ onBeforeUnmount(() => {
 }
 
 .site-header {
-  @apply fixed top-2 left-0 right-0 z-50 transition-all duration-700 ease-in-out;
+  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out;
   @apply bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl;
   @apply border-b border-white/20 dark:border-gray-700/30;
   @apply shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)];
@@ -336,10 +337,20 @@ onBeforeUnmount(() => {
   @apply border rounded-full;
 }
 
+/* Mobile: revert to full-width rectangle when menu is open, instantly */
+@media (max-width: 1023px) {
+  .site-header[data-scrolled][data-menu-open] {
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    transition-duration: 0ms;
+  }
+}
+
 @screen lg {
   /* Desktop initial: transparent full-width bar */
   .site-header {
-    @apply left-0 right-0 bg-transparent dark:bg-transparent backdrop-blur-none border-none shadow-none rounded-none;
+    @apply top-2 left-0 right-0 bg-transparent dark:bg-transparent backdrop-blur-none border-none shadow-none rounded-none;
   }
 
   /* Desktop scrolled: centred pill matching content width */
