@@ -1,0 +1,303 @@
+{
+  "nav": {
+    "home": "Acasa",
+    "services": "Servicii",
+    "about": "Despre",
+    "portfolio": "Portofoliu",
+    "testimonials": "Testimoniale",
+    "contact": "Contact"
+  },
+  "lang": {
+    "ro": "RO",
+    "en": "EN",
+    "switch": "Schimba limba"
+  },
+  "aria": {
+    "goHome": "Mergi la sectiunea principala a lui {name}",
+    "toggleTheme": "Schimba tema",
+    "openMenu": "Deschide meniul",
+    "closeMenu": "Inchide meniul",
+    "goToTestimonial": "Mergi la testimonialul {num}",
+    "closeModal": "Inchide fereastra",
+    "previousImage": "Imaginea anterioara",
+    "nextImage": "Imaginea urmatoare",
+    "viewImage": "Vezi imaginea {num}"
+  },
+  "seo": {
+    "homeTitle": "Bogdan Petre - Web Designer si Dezvoltator Frontend",
+    "homeDescription": "Portofoliu personal Bogdan Petre - Web Designer si Dezvoltator Frontend specializat in Vue, Nuxt si tehnologii web moderne.",
+    "errorTitle": "404 - Pagina negasita | Bogdan Petre"
+  },
+  "hero": {
+    "greeting": "Salut, sunt",
+    "title": "UI/UX Designer",
+    "description": "Creez experiente digitale intuitive si atractive, axate pe utilizator, folosind Figma si AdobeXD pentru prototipare si design. Integrez designul cu dezvoltarea frontend pentru rezultate moderne si eficiente.",
+    "ctaPortfolio": "Vezi Portofoliul",
+    "ctaContact": "Contacteaza-ma",
+    "scroll": "Scroll"
+  },
+  "services": {
+    "title": "Servicii",
+    "subtitle": "Solutii complete pentru dezvoltare web si design modern",
+    "items": {
+      "uiux": {
+        "title": "Design UI/UX",
+        "description": "Creez interfete intuitive si site-uri care arata bine si functioneaza exact asa cum trebuie, gandite pentru oameni, nu doar pentru ecrane."
+      },
+      "print": {
+        "title": "Print Design",
+        "description": "Creez materiale print clare si bine structurate, pregatite corect pentru tipar, care arata profesionist si transmit mesajul tau exact asa cum trebuie."
+      },
+      "identity": {
+        "title": "Identitate vizuala",
+        "description": "Creez identitati vizuale care spun povestea brandului tau, prin elemente simple si memorabile, usor de recunoscut."
+      },
+      "performance": {
+        "title": "Optimizare Performanta",
+        "description": "Ma asigur ca site-ul tau se incarca rapid si functioneaza perfect pe toate dispozitivele si platformele."
+      }
+    }
+  },
+  "about": {
+    "title": "Despre Mine",
+    "bio": [
+      "Creez experiente digitale moderne si intuitive, imbinand web designul cu dezvoltarea frontend pentru proiecte care nu doar arata bine, ci sunt si placute de folosit. In acelasi timp, imi place sa dau viata identitatii vizuale prin logo-uri, cataloage si alte materiale de branding sau print, astfel incat fiecare proiect sa comunice clar si coerent, in orice format."
+    ],
+    "technologies": "Tehnologii si Instrumente",
+    "linkedin": "LinkedIn"
+  },
+  "portfolio": {
+    "title": "Portofoliu",
+    "subtitle": "O selectie de proiecte recente care prezinta munca mea",
+    "showMore": "Arata mai multe",
+    "filters": {
+      "all": "Toate",
+      "webdesign": "Web Design",
+      "magazines": "Cataloage",
+      "graphics": "Grafica"
+    },
+    "swipe": "Swipe pentru a naviga"
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "Catalog WeDeco",
+        "description": "Catalog de prezentare pentru scaune WeDeco",
+        "fullDescription": "Un catalog detaliat care prezinta gama completa de scaune WeDeco, cu imagini de inalta calitate si descrieri clare ale produselor. Ideal pentru promovare in magazine si online.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastra de mobilier WeDeco!",
+          "author": "Mac Florea",
+          "role": "CEO, Wedeco"
+        }
+      },
+      {
+        "title": "Catalog Ballroom",
+        "description": "Catalog de prezentare pentru mobilier ballroom",
+        "fullDescription": "Un catalog elegant si bine structurat pentru mobilier de sali de bal, cu imagini de calitate si descrieri detaliate, gandit sa evidentieze designul si calitatea produselor.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastra de mobilier WeDeco!",
+          "author": "Mac Florea",
+          "role": "CEO, Wedeco."
+        }
+      },
+      {
+        "title": "Site Hotel Andra",
+        "description": "Site de prezentare curat si minimalist pentru un hotel boutique",
+        "fullDescription": "Un site elegant si minimalist pentru un hotel boutique, cu navigare simpla, imagini puternice si o experienta fluida. Designul pune accent pe confort, atmosfera si conversie.",
+        "tags": ["HTML", "Bootstrap CSS", "Lightbox"]
+      },
+      {
+        "title": "Site Tennis Steps",
+        "description": "Site de prezentare pentru o echipa de profesionisti in tenis si racordare rachete",
+        "fullDescription": "Site de prezentare pentru Tennis Steps, echipa certificata LTA si ERSA, cu focus pe racordare profesionala, evaluare nivel joc si training pentru racordori, optimizat pentru toate dispozitivele.",
+        "tags": ["HTML", "Nuxt 3", "Tailwind CSS"]
+      },
+      {
+        "title": "Carte - Cum sa devii prima alegere a mirilor",
+        "description": "Tehnoredactare carte pentru organizatori de nunti",
+        "fullDescription": "Tehnoredactare si design pentru cartea Cum sa devii prima alegere a mirilor, un ghid practic pentru organizatorii de nunti care vor sa isi imbunatateasca serviciile si sa atraga mai multi clienti.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "Am lucrat foarte bine cu Bogdan la realizarea cartii 'Cum sa devii prima alegere a mirilor' si am fost extrem de multumit de rezultatul final!",
+          "author": "Mac Florea",
+          "role": "Autor, Cartea 'Cum sa devii prima alegere a mirilor'."
+        }
+      },
+      {
+        "title": "Site Restaurant Andra",
+        "description": "Site de prezentare pentru Restaurant Andra, cu informatii despre meniu, livrari si contact",
+        "fullDescription": "Site construit pentru acces rapid la meniu, livrare, program si contact. Structura clara, experienta intuitiva si optimizare completa pentru mobil si desktop.",
+        "tags": ["HTML", "Bootstrap CSS", "Lightbox", "JS", "Responsive design"],
+        "testimonial": {
+          "quote": "Bogdan a inteles exact ce aveam nevoie: un site clar, atractiv, care sa aduca clienti la noi. Rezultatul a depasit asteptarile.",
+          "author": "Mac Florea",
+          "role": "CEO, Restaurant Andra."
+        }
+      },
+      {
+        "title": "Meniu Restaurant Andra",
+        "description": "Meniu pentru Restaurant Andra",
+        "fullDescription": "Un meniu elegant si bine structurat, care prezinta oferta culinara intr-un format clar si atractiv, cu accent pe lizibilitate si prezentare vizuala.",
+        "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+        "testimonial": {
+          "quote": "Meniul reflecta perfect calitatea si diversitatea preparatelor noastre, iar designul a fost foarte apreciat de clienti.",
+          "author": "Mac Florea",
+          "role": "CEO, Restaurant Andra."
+        }
+      },
+      {
+        "title": "SwitchMorn Brand Cafea",
+        "description": "Design materiale SwitchMorn",
+        "fullDescription": "Am construit universul vizual SwitchMorn printr-o identitate de brand calda si expresiva: logo, tricouri, afise, bannere, flyere si stickere, intr-o paleta cromatica coerenta.",
+        "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"],
+        "testimonial": {
+          "quote": "Identitatea vizuala creata pentru SwitchMorn a surprins perfect energia si personalitatea brandului nostru.",
+          "author": "Proprietar, SwitchMorn",
+          "role": "CEO, SwitchMorn"
+        }
+      },
+      {
+        "title": "Box promo SuperBOX",
+        "description": "Design SuperBOX",
+        "fullDescription": "Design pentru cutia promotionala SuperBOX, gandit sa evidentieze produsul si sa atraga atentia prin elemente grafice moderne si culori prietenoase.",
+        "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"]
+      },
+      {
+        "title": "Meniu Restaurant Belvisso",
+        "description": "Meniu pentru Restaurant Belvisso",
+        "fullDescription": "Meniu elegant si bine structurat pentru Restaurant Belvisso, cu accent pe prezentarea preparatelor, claritate tipografica si experienta vizuala placuta.",
+        "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+        "testimonial": {
+          "quote": "Meniul reflecta perfect calitatea si diversitatea preparatelor noastre, iar designul sau elegant a fost foarte apreciat de clienti.",
+          "author": "Proprietar, Restaurant Belvisso",
+          "role": "CEO, Restaurant Belvisso."
+        }
+      },
+      {
+        "title": "Catalog Mirese Ballroom",
+        "description": "Catalog de prezentare nunti",
+        "fullDescription": "Catalog detaliat care prezinta nuntile organizate de Ballroom Andra / Palatul Mirilor, cu imagini de calitate si descrieri ale serviciilor pentru potentiali clienti.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor de prezentare a serviciilor oferite de Ballroom Andra / Palatul Mirilor!",
+          "author": "Mac Florea",
+          "role": "CEO, Wedeco."
+        }
+      },
+      {
+        "title": "Catalog prezentare sali de nunti",
+        "description": "Catalog de prezentare pentru ambientare sali de nunti",
+        "fullDescription": "Catalog care arata variante de ambientare pentru sali de nunta, cu imagini de inalta calitate si prezentare eleganta a serviciilor oferite.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor de prezentare a serviciilor oferite de WeDeco.",
+          "author": "Mac Florea",
+          "role": "CEO, Wedeco."
+        }
+      },
+      {
+        "title": "Carte - Invitatia de nunta",
+        "description": "Tehnoredactare carte pentru miri si mirese",
+        "fullDescription": "Tehnoredactare si design pentru cartea Invitatia de nunta, ghid practic pentru miri care vor sa isi organizeze nunta de vis, intr-un format usor de parcurs.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "Am lucrat foarte bine cu Bogdan la realizarea cartii 'Invitatia de nunta' si am fost extrem de multumit de rezultat.",
+          "author": "Mac Florea",
+          "role": "Autor, Cartea 'Invitatia de nunta'."
+        }
+      },
+      {
+        "title": "Design joc Farmer Joey",
+        "description": "Design joc Farmer Joey",
+        "fullDescription": "Design vizual pentru jocul mobil Farmer Joey, cu elemente intuitive si atractive care imbunatatesc experienta utilizatorului, de la personaje si peisaje pana la interfata.",
+        "tags": ["Design", "Illustrator", "Photoshop"]
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Testimoniale",
+    "subtitle": "Ce spun clientii despre colaborarea cu mine",
+    "swipe": "Swipe pentru a naviga",
+    "items": [
+      {
+        "name": "Bogdan Danaila",
+        "role": "Business Manager / Motul Romania",
+        "initials": "BD",
+        "text": "Pe langa entuziasm si focus pe calitate, are o viziune orientata catre client, venind tot timpul cu propuneri si idei, cu o consultanta in web si graphic design foarte eficienta si constructiva."
+      },
+      {
+        "name": "Michael Dan Popa",
+        "role": "CEO / Cinetic Data",
+        "initials": "MC",
+        "text": "Conceperea mesajului, design-ul, implementarea si consultanta in optimizare sunt orientate spre atingerea unor obiective de retentie si fidelizare a vizitatorilor si nu spre livrarea unui produs in cel mai scurt timp."
+      },
+      {
+        "name": "Catalin Bozienita",
+        "role": "Director / CPS",
+        "initials": "CB",
+        "text": "Am fost foarte impresionati de capacitatea lui Bogdan de a livra o identitate corporativa care simbolizeaza perfect viziunea noastra si transmite imaginea stilat, elegant si modern. Recomandam cu incredere."
+      },
+      {
+        "name": "Iosif Cristian Dietter",
+        "role": "IT Manager / Pavone Profumi",
+        "initials": "IC",
+        "text": "Suntem foarte multumiti de noua noastra identitate de brand si modul in care Bogdan isi desfasoara activitatea. A fost o experienta si o placere sa lucram cu el."
+      },
+      {
+        "name": "Adrian Stefanescu",
+        "role": "Manager / MegaMusic",
+        "initials": "AS",
+        "text": "Un designer talentat, cu o capacitate excelenta de a transforma viziunea noastra intr-o prezentare noua, eleganta si bine structurata. A inteles rapid nevoile noastre si a venit cu solutii creative, livrate cu atentie la detalii. Il recomand cu cea mai mare incredere."
+      },
+      {
+        "name": "Laurentiu Bozienita",
+        "role": "AscendioPraxis",
+        "initials": "LB",
+        "text": "Bogdan ne-a ajutat atat cu designul, cat si cu dezvoltarea site-ului, iar rezultatul a iesit exact cum ne doream: modern, rapid si usor de folosit. Il recomand cu incredere oricui isi doreste un site bine facut, de la concept pana la implementare."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacteaza-ma",
+    "subtitle": "Ai un proiect in minte? Hai sa lucram impreuna pentru a crea ceva extraordinar",
+    "introTitle": "Sa vorbim!",
+    "introText": "Sunt mereu deschis pentru noi colaborari si proiecte creative. Nu ezita sa ma contactezi prin oricare dintre canalele de mai jos.",
+    "phone": "Telefon",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "clickToShow": "Click pentru a afisa",
+    "sendMessage": "Trimite mesaj"
+  },
+  "footer": {
+    "invite": "Te mai astept!",
+    "dayWish": "Iti doresc o zi de {day} fericita",
+    "wishPrefix": "Iti doresc o zi de",
+    "wishSuffix": "fericita",
+    "fridaySuffix": "si un weekend placut!",
+    "rights": "Toate drepturile rezervate.",
+    "days": {
+      "0": "Duminica",
+      "1": "Luni",
+      "2": "Marti",
+      "3": "Miercuri",
+      "4": "Joi",
+      "5": "Vineri",
+      "6": "Sambata"
+    }
+  },
+  "modal": {
+    "swipe": "Swipe pentru a naviga",
+    "aboutProject": "Despre Proiect",
+    "viewSite": "Vezi site",
+    "viewGithub": "Vezi pe GitHub",
+    "technologies": "Tehnologii"
+  },
+  "error": {
+    "code": "Eroare 404",
+    "title": "Pagina negasita",
+    "description": "Se pare ca aceasta pagina nu exista sau a fost mutata. Intoarce-te acasa si exploreaza portofoliul.",
+    "backHome": "Inapoi acasa"
+  }
+}

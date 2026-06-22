@@ -34,9 +34,9 @@
 
         <!-- Bio -->
         <div>
-          <h2 class="mb-6 text-4xl font-bold md:text-5xl">Despre Mine</h2>
+          <h2 class="mb-6 text-4xl font-bold md:text-5xl">{{ t('about.title') }}</h2>
           <p
-            v-for="(paragraph, index) in bio"
+            v-for="(paragraph, index) in localizedBio"
             :key="index"
             class="mb-6 text-xl leading-relaxed text-gray-600 dark:text-gray-400"
           >
@@ -49,7 +49,7 @@
             rel="noopener noreferrer"
           >
             <IconsLinkedin class="relative z-10 w-5 h-5" />
-            <span class="relative z-10">LinkedIn</span>
+            <span class="relative z-10">{{ t('about.linkedin') }}</span>
             <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover:opacity-100"></div>
           </a>
         </div>
@@ -57,7 +57,7 @@
 
       <!-- Bottom Section: Technologies -->
       <div>
-        <h3 class="mb-8 text-2xl font-semibold text-center md:text-3xl">Tehnologii și Instrumente</h3>
+        <h3 class="mb-8 text-2xl font-semibold text-center md:text-3xl">{{ t('about.technologies') }}</h3>
         
         <!-- Skill bars grid -->
         <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -92,7 +92,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Component } from 'vue'
+import { computed, type Component } from 'vue'
 import HtmlCss from './icons/tech/HtmlCss.vue'
 import Bootstrap from './icons/tech/Bootstrap.vue'
 import TailwindCss from './icons/tech/TailwindCss.vue'
@@ -103,6 +103,13 @@ import Git from './icons/tech/Git.vue'
 import Figma from './icons/tech/Figma.vue'
 import AdobeCC from './icons/tech/AdobeCC.vue'
 import Responsive from './icons/tech/Responsive.vue'
+
+const { t, tm, rt } = useI18n()
+
+const localizedBio = computed(() => {
+  const entries = tm('about.bio') as unknown[]
+  return entries.map((entry) => rt(entry as never))
+})
 
 const techIconMap: Record<string, Component> = {
   htmlcss: HtmlCss,
@@ -124,7 +131,6 @@ interface Technology {
 }
 
 defineProps<{
-  bio: string[]
   linkedinLink: string
   technologies: Technology[]
 }>()

@@ -2,9 +2,9 @@
   <section id="portfolio" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 1200px;">
     <div class="container mx-auto">
       <div class="mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">Portofoliu</h2>
+        <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('portfolio.title') }}</h2>
         <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 dark:text-gray-400">
-          O selecție de proiecte recente care prezintă munca mea
+          {{ t('portfolio.subtitle') }}
         </p>
       </div>
 
@@ -85,7 +85,7 @@
           class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 shadow-lg group rounded-xl hover:shadow-xl hover:scale-105"
         >
           <span class="relative z-10 flex items-center gap-3">
-            <span>Arată mai multe</span>
+            <span>{{ t('portfolio.showMore') }}</span>
             <span class="px-2 py-1 text-sm rounded-lg bg-white/20">
               +{{ Math.min(LOAD_MORE_COUNT, remainingProjects) }}
             </span>
@@ -100,26 +100,26 @@
           class="w-6 h-6 cursor-pointer"
           :class="{ active: activeFilter === 'all' }"
           @click="activeFilter = 'all'"
-          aria-label="Toate"/>
+          :aria-label="t('portfolio.filters.all')"/>
           <WebDesignIcon 
           class="w-6 h-6 cursor-pointer"
           :class="{ active: activeFilter === 'webdesign' }"
           @click="activeFilter = 'webdesign'"
-          aria-label="Web Design"/>
+          :aria-label="t('portfolio.filters.webdesign')"/>
           <MagazinesIcon 
           class="w-6 h-6 cursor-pointer"
           :class="{ active: activeFilter === 'magazines' }"
           @click="activeFilter = 'magazines'"
-          aria-label="Magazines"/>
+          :aria-label="t('portfolio.filters.magazines')"/>
           <GraphicsIcon 
           class="w-6 h-6 cursor-pointer"
           :class="{ active: activeFilter === 'graphics' }"
           @click="activeFilter = 'graphics'"
-          aria-label="Grafică"/>
+          :aria-label="t('portfolio.filters.graphics')"/>
           <ShowMoreIcon 
           class="w-6 h-6 cursor-pointer"
           :disabled="!hasMoreProjects"
-          @click="showMoreProjects" aria-label="Arata mai multe"/>  
+           @click="showMoreProjects" :aria-label="t('portfolio.showMore')"/>  
        </div>
     </div>
 
@@ -141,6 +141,8 @@ import ShowMoreIcon from './icons/ShowMoreIcon.vue'
 import { ref, computed, watch } from 'vue'
 import ProjectModal from './ProjectModal.vue'
 
+const { t, tm, rt } = useI18n()
+
 interface Project {
   title: string
   description: string
@@ -159,21 +161,106 @@ interface Project {
   }
 }
 
+interface LocalizedProjectCopy {
+  title?: string
+  description?: string
+  fullDescription?: string
+  tags?: string[]
+  testimonial?: {
+    quote: string
+    author: string
+    role: string
+  }
+}
+
 const props = defineProps<{
   projects: Project[]
 }>()
 
-const allFilters = [
-  { label: 'Toate', value: 'all' },
-  { label: 'Web Design', value: 'webdesign' },
-  { label: 'Cataloage', value: 'magazines' },
-  { label: 'Grafică', value: 'graphics' }
+const localizedProjectCopy = computed(() => tm('projects.items') as Array<Record<string, unknown>>)
+
+const projectLocaleKeyOrder = [
+  '/images/magazines/wedeco-1.jpg',
+  '/images/magazines/ballroom/ballroom1.webp',
+  '/images/andra/thumbnail-andra.webp',
+  '/images/tennis/tennis-thumbnail.webp',
+  '/images/carte2/coperta.webp',
+  '/images/restaurant/thumbnail-restaurant.webp',
+  '/images/menu/menu-andra1.webp',
+  '/images/switchmorn/t-shirtSM.webp',
+  '/images/box/box1.webp',
+  '/images/belvisso/belvisso1.webp',
+  '/images/magazines/mirese/catalog-mirese1.webp',
+  '/images/sali/sala1.webp',
+  '/images/carte/coperta.webp',
+  '/images/apps/joey.webp'
 ]
+
+const resolveLocalizedProject = (projectCopy: Record<string, unknown>): LocalizedProjectCopy => {
+  const testimonial = projectCopy.testimonial as Record<string, unknown> | undefined
+  const tags = (projectCopy.tags as unknown[] | undefined)?.map((tag) => rt(tag as never))
+
+  return {
+    title: projectCopy.title ? rt(projectCopy.title as never) : undefined,
+    description: projectCopy.description ? rt(projectCopy.description as never) : undefined,
+    fullDescription: projectCopy.fullDescription ? rt(projectCopy.fullDescription as never) : undefined,
+    tags,
+    testimonial: testimonial
+      ? {
+          quote: rt(testimonial.quote as never),
+          author: rt(testimonial.author as never),
+          role: rt(testimonial.role as never)
+        }
+      : undefined
+  }
+}
+
+const localizedByThumb = computed(() => {
+  const map = new Map<string, LocalizedProjectCopy>()
+
+  localizedProjectCopy.value.forEach((item, index) => {
+    const key = projectLocaleKeyOrder[index]
+    if (!key) {
+      return
+    }
+
+    map.set(key, resolveLocalizedProject(item))
+  })
+
+  return map
+})
+
+const localizedProjects = computed<Project[]>(() => {
+  return props.projects.map((project) => {
+    const key = project.thumbImage ?? ''
+    const localized = localizedByThumb.value.get(key)
+
+    if (!localized) {
+      return project
+    }
+
+    return {
+      ...project,
+      title: localized.title ?? project.title,
+      description: localized.description ?? project.description,
+      fullDescription: localized.fullDescription ?? project.fullDescription,
+      tags: localized.tags ?? project.tags,
+      testimonial: localized.testimonial ?? project.testimonial
+    }
+  })
+})
+
+const allFilters = computed(() => [
+  { label: t('portfolio.filters.all'), value: 'all' },
+  { label: t('portfolio.filters.webdesign'), value: 'webdesign' },
+  { label: t('portfolio.filters.magazines'), value: 'magazines' },
+  { label: t('portfolio.filters.graphics'), value: 'graphics' }
+])
 
 // Compute filters based on available project categories
 const filters = computed(() => {
-  const activeCategories = new Set(props.projects.map(p => p.category))
-  return allFilters.filter(f => f.value === 'all' || activeCategories.has(f.value))
+  const activeCategories = new Set(localizedProjects.value.map(p => p.category))
+  return allFilters.value.filter(f => f.value === 'all' || activeCategories.has(f.value))
 })
 
 const INITIAL_PROJECTS = 9
@@ -191,9 +278,9 @@ watch(activeFilter, () => {
 
 const filteredProjects = computed(() => {
   if (activeFilter.value === 'all') {
-    return props.projects
+    return localizedProjects.value
   }
-  return props.projects.filter(project => project.category === activeFilter.value)
+  return localizedProjects.value.filter(project => project.category === activeFilter.value)
 })
 
 const visibleProjects = computed(() => {

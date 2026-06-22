@@ -3,9 +3,9 @@
     <div class="container max-w-6xl mx-auto">
       <!-- Section Header -->
       <div class="mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">Contactează-mă</h2>
+        <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('contact.title') }}</h2>
         <p class="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400">
-          Ai un proiect în minte? Hai să lucrăm împreună pentru a crea ceva extraordinar
+          {{ t('contact.subtitle') }}
         </p>
       </div>
 
@@ -15,10 +15,9 @@
         <div class="space-y-4">
           <!-- Intro Text -->
           <div class="p-6 bg-white border border-gray-200 shadow-lg dark:bg-gray-900 rounded-2xl dark:border-gray-700">
-            <h3 class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Să vorbim!</h3>
+            <h3 class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">{{ t('contact.introTitle') }}</h3>
             <p class="leading-relaxed text-gray-600 dark:text-gray-400">
-              Sunt mereu deschis pentru noi colaborări și proiecte creative. 
-              Nu ezita să mă contactezi prin oricare dintre canalele de mai jos.
+              {{ t('contact.introText') }}
             </p>
           </div>
 
@@ -36,9 +35,9 @@
                 <IconsPhone class="w-6 h-6 text-indigo-600 group-hover:text-white" />
               </div>
               <div class="flex-1">
-                <p class="text-sm text-gray-500 dark:text-gray-400">Telefon</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('contact.phone') }}</p>
                 <p v-if="!phoneRevealed" class="text-sm font-semibold text-gray-500 dark:text-gray-400">
-                  Click pentru a afișa
+                  {{ t('contact.clickToShow') }}
                 </p>
                 <a 
                   v-else
@@ -64,9 +63,9 @@
                 <IconsEmail class="w-6 h-6 text-indigo-600 group-hover:text-white" />
               </div>
               <div class="flex-1">
-                <p class="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('contact.email') }}</p>
                 <p v-if="!emailRevealed" class="text-sm font-semibold text-gray-500 dark:text-gray-400">
-                  Click pentru a afișa
+                  {{ t('contact.clickToShow') }}
                 </p>
                 <a 
                   v-else
@@ -91,8 +90,8 @@
                 <IconsWhatsapp class="w-6 h-6 text-green-600 group-hover:text-white" />
               </div>
               <div>
-                <p class="text-sm text-gray-500 dark:text-gray-400">WhatsApp</p>
-                <p class="font-semibold text-gray-900 transition-colors dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400">Trimite mesaj</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('contact.whatsapp') }}</p>
+                <p class="font-semibold text-gray-900 transition-colors dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400">{{ t('contact.sendMessage') }}</p>
               </div>
             </a>
           </div>
@@ -153,6 +152,8 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+
+const { t } = useI18n()
 
 // Reveal states for anti-spam protection
 const phoneRevealed = ref(false)

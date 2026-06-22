@@ -17,22 +17,22 @@
           <!-- Text Content -->
           <div class="flex-1 text-center lg:text-left">
             <p class="mb-4 font-semibold tracking-widest text-gray-300 uppercase animate-fade-in-up animation-delay-100">
-              Eroare 404
+              {{ t('error.code') }}
             </p>
             <h1 class="mb-6 text-6xl font-bold md:text-7xl lg:text-8xl animate-fade-in-up animation-delay-200">
-              Pagină
+              {{ t('error.title') }}
               <br />
-              <span class="text-indigo-400">negăsită</span>
+              <span class="text-indigo-400">404</span>
             </h1>
             <p class="max-w-md mx-auto mb-10 text-xl text-gray-600 lg:mx-0 dark:text-gray-300 animate-fade-in-up animation-delay-300">
-              Se pare că această pagină nu există sau a fost mutată. Întoarce-te acasă și explorează portofoliul.
+              {{ t('error.description') }}
             </p>
             <div class="flex justify-center lg:justify-start animate-fade-in-up animation-delay-400">
               <NuxtLink
                 to="/"
                 class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 rounded-lg shadow-lg group hover:scale-105 hover:shadow-xl"
               >
-                <span class="relative z-10">Înapoi acasă</span>
+                <span class="relative z-10">{{ t('error.backHome') }}</span>
                 <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover:opacity-100"></div>
               </NuxtLink>
             </div>
@@ -66,10 +66,11 @@
 <script setup lang="ts">
 import { useTheme } from '~/composables/useTheme'
 
-const { isDark } = useTheme()
+useTheme()
+const { t } = useI18n()
 
 useHead({
-  title: '404 – Pagină negăsită | Bogdan Petre',
+  title: computed(() => t('seo.errorTitle')),
   meta: [
     { name: 'robots', content: 'noindex' },
   ],

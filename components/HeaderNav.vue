@@ -8,7 +8,7 @@
         <!-- Logo (Left) -->
         <a
           href="#hero"
-          :aria-label="`Go to ${fullName} home section`"
+          :aria-label="t('aria.goHome', { name: fullName })"
           :title="fullName"
           class="z-10 text-2xl text-indigo-500 transition-colors hover:text-indigo-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
           @click.prevent="handleLinkClick('#hero')"
@@ -36,11 +36,23 @@
         </div>
 
         <!-- Theme Toggle (Right) -->
-        <div class="items-center hidden lg:flex">
+        <div class="items-center hidden gap-3 lg:flex">
+          <div class="flex items-center p-1 rounded-lg bg-gray-200/70 dark:bg-gray-800/70" :aria-label="t('lang.switch')" role="group">
+            <button
+              v-for="lang in localeButtons"
+              :key="lang"
+              type="button"
+              class="px-2 py-1 text-xs font-semibold rounded-md transition-colors"
+              :class="locale === lang ? 'bg-indigo-600 text-white' : 'text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400'"
+              @click="changeLocale(lang)"
+            >
+              {{ t(`lang.${lang}`) }}
+            </button>
+          </div>
           <button
             type="button"
             class="p-2 text-gray-700 transition-all duration-200 dark:text-yellow-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
-            aria-label="Toggle theme"
+            :aria-label="t('aria.toggleTheme')"
             @click="emit('toggleTheme')"
           >
             <svg class="hidden w-5 h-5 dark:block" fill="currentColor" viewBox="0 0 20 20">
@@ -54,10 +66,22 @@
 
         <!-- Mobile Menu & Theme Toggle -->
         <div class="flex items-center gap-2 lg:hidden">
+          <div class="flex items-center p-1 rounded-lg bg-gray-200/70 dark:bg-gray-800/70" :aria-label="t('lang.switch')" role="group">
+            <button
+              v-for="lang in localeButtons"
+              :key="`mobile-${lang}`"
+              type="button"
+              class="px-2 py-1 text-xs font-semibold rounded-md transition-colors"
+              :class="locale === lang ? 'bg-indigo-600 text-white' : 'text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400'"
+              @click="changeLocale(lang)"
+            >
+              {{ t(`lang.${lang}`) }}
+            </button>
+          </div>
           <button
             type="button"
             class="p-2 text-gray-700 transition-all duration-200 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-yellow-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
-            aria-label="Toggle theme"
+            :aria-label="t('aria.toggleTheme')"
             @click="emit('toggleTheme')"
           >
             <svg class="hidden w-5 h-5 dark:block" fill="currentColor" viewBox="0 0 20 20">
@@ -73,7 +97,7 @@
             class="text-gray-700 transition-colors hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
             :aria-controls="mobileNavigationId"
             :aria-expanded="mobileMenuOpen"
-            :aria-label="mobileMenuOpen ? 'Close menu' : 'Open menu'"
+            :aria-label="mobileMenuOpen ? t('aria.closeMenu') : t('aria.openMenu')"
             @click="mobileMenuOpen = !mobileMenuOpen"
           >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,6 +164,9 @@ const emit = defineEmits<{
   (e: 'toggleTheme'): void
 }>()
 
+const { t, locale, setLocale } = useI18n()
+const localeButtons = ['ro', 'en'] as const
+
 const mobileMenuOpen = ref(false)
 const mobileNavigationId = 'mobile-navigation'
 const hoverBubble = ref<HTMLElement | null>(null)
@@ -204,6 +231,14 @@ const handleResize = () => {
   if (window.innerWidth >= 1024) {
     mobileMenuOpen.value = false
   }
+}
+
+const changeLocale = async (nextLocale: 'ro' | 'en') => {
+  if (locale.value === nextLocale) {
+    return
+  }
+
+  await setLocale(nextLocale)
 }
 
 const initializeActiveLink = () => {

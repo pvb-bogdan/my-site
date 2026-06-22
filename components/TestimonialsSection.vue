@@ -10,9 +10,9 @@
 
     <div class="container relative z-10 mx-auto">
       <div class="mb-12 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">Testimoniale</h2>
+        <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('testimonials.title') }}</h2>
         <p class="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400">
-          Ce spun clienții despre colaborarea cu mine
+          {{ t('testimonials.subtitle') }}
         </p>
       </div>
 
@@ -26,7 +26,7 @@
           @scroll="onScroll"
         >
           <div
-            v-for="testimonial in testimonials"
+            v-for="testimonial in localizedTestimonials"
             :key="testimonial.name"
             class="flex-shrink-0 w-full px-3 md:w-1/2 snap-start"
           >
@@ -60,7 +60,7 @@
         <!-- Dots Navigation -->
         <div class="flex justify-center gap-3 mt-8">
           <button
-            v-for="(testimonial, index) in testimonials"
+            v-for="(testimonial, index) in localizedTestimonials"
             :key="testimonial.name + '-dot'"
             @click="scrollToSlide(index)"
             class="transition-all duration-300 rounded-full"
@@ -69,13 +69,13 @@
                 ? 'bg-indigo-600 dark:bg-indigo-400 w-10 h-4'
                 : 'bg-gray-300 dark:bg-gray-600 hover:bg-indigo-300 dark:hover:bg-indigo-500/50 w-4 h-4'
             ]"
-            :aria-label="`Go to testimonial ${index + 1}`"
+            :aria-label="t('aria.goToTestimonial', { num: index + 1 })"
           />
         </div>
 
         <!-- Swipe hint for mobile -->
         <p class="mt-4 text-sm text-center text-gray-400 md:hidden dark:text-gray-500">
-          ← Swipe pentru a naviga →
+          ← {{ t('testimonials.swipe') }} →
         </p>
       </div>
     </div>
@@ -94,7 +94,9 @@
 </style>
 
 <script setup lang="ts">
-import { ref, nextTick } from 'vue'
+import { computed, ref, nextTick } from 'vue'
+
+const { t, tm, rt } = useI18n()
 
 interface Testimonial {
   name: string
@@ -103,9 +105,16 @@ interface Testimonial {
   text: string
 }
 
-const props = defineProps<{
-  testimonials: Testimonial[]
-}>()
+const localizedTestimonials = computed<Testimonial[]>(() => {
+  const items = tm('testimonials.items') as Array<Record<string, unknown>>
+
+  return items.map((item) => ({
+    name: rt(item.name as never),
+    role: rt(item.role as never),
+    initials: rt(item.initials as never),
+    text: rt(item.text as never)
+  }))
+})
 
 const carouselRef = ref<HTMLElement | null>(null)
 const activeIndex = ref(0)

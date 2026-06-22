@@ -35,9 +35,9 @@
     
     <div class="container relative z-10 mx-auto">
       <div class="mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">Servicii</h2>
+        <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('services.title') }}</h2>
         <p class="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400">
-          Soluții complete pentru dezvoltare web și design modern
+          {{ t('services.subtitle') }}
         </p>
       </div>
 
@@ -51,8 +51,8 @@
             <component :is="iconMap[service.icon]" class="text-indigo-600 w-7 h-7 dark:text-indigo-400" />
           </div>
           
-          <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">{{ service.title }}</h3>
-          <p class="text-gray-600 dark:text-gray-400">{{ service.description }}</p>
+          <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">{{ t(`services.items.${service.icon}.title`) }}</h3>
+          <p class="text-gray-600 dark:text-gray-400">{{ t(`services.items.${service.icon}.description`) }}</p>
         </div>
       </div>
     </div>
@@ -71,6 +71,8 @@ import CircleRings from '../components/icons/CircleRings.vue'
 import CrossPlus from '../components/icons/CrossPlus.vue'
 import Squares from '../components/icons/Squares.vue'
 import DiagonalLines from '../components/icons/DiagonalLines.vue'
+
+const { t } = useI18n()
 
 interface Service {
   icon: string

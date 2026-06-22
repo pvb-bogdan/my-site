@@ -16,27 +16,48 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxtjs/seo', '@nuxt/image'],
+  modules: ['@nuxtjs/seo', '@nuxt/image', '@nuxtjs/i18n'],
 
-  seo: {
-    site: {
-      url: 'https://petrebogdan.com',
-      name: 'Petre Bogdan - Web Designer & Frontend Developer'
+  i18n: {
+    restructureDir: '.',
+    strategy: 'prefix_except_default',
+    defaultLocale: 'ro',
+    locales: [
+      {
+        code: 'ro',
+        language: 'ro-RO',
+        name: 'Romana',
+        file: 'ro.json'
+      },
+      {
+        code: 'en',
+        language: 'en-US',
+        name: 'English',
+        file: 'en.json'
+      }
+    ],
+    langDir: 'locales',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      alwaysRedirect: false
     },
+    baseUrl: 'https://petrebogdan.com'
+  },
 
-    sitemap: {
-      enabled: true,
-    },
+  site: {
+    url: 'https://petrebogdan.com',
+    name: 'Petre Bogdan - Web Designer & Frontend Developer'
+  },
 
-    robots: {
-      enabled: true,
-      rules: [
-        {
-          userAgent: '*',
-          allow: '/',
-        },
-      ],
-    },
+  sitemap: {
+    enabled: true,
+  },
+
+  robots: {
+    enabled: true,
+    allow: ['/'],
   },
 
   app: {

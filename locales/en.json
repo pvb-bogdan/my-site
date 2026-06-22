@@ -1,0 +1,303 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "lang": {
+    "ro": "RO",
+    "en": "EN",
+    "switch": "Switch language"
+  },
+  "aria": {
+    "goHome": "Go to {name} home section",
+    "toggleTheme": "Toggle theme",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "goToTestimonial": "Go to testimonial {num}",
+    "closeModal": "Close modal",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "viewImage": "View image {num}"
+  },
+  "seo": {
+    "homeTitle": "Bogdan Petre - Web Designer & Frontend Developer",
+    "homeDescription": "Personal portfolio of Bogdan Petre - Web Designer and Frontend Developer focused on Vue, Nuxt, and modern web technologies.",
+    "errorTitle": "404 - Page Not Found | Bogdan Petre"
+  },
+  "hero": {
+    "greeting": "Hi, I am",
+    "title": "UI/UX Designer",
+    "description": "I craft intuitive and engaging digital experiences focused on users, using Figma and AdobeXD for prototyping and design. I blend design with frontend development for modern and efficient outcomes.",
+    "ctaPortfolio": "View Portfolio",
+    "ctaContact": "Contact Me",
+    "scroll": "Scroll"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Complete solutions for web development and modern design",
+    "items": {
+      "uiux": {
+        "title": "UI/UX Design",
+        "description": "I create intuitive interfaces and websites that look polished and work exactly as expected, designed for people, not just screens."
+      },
+      "print": {
+        "title": "Print Design",
+        "description": "I design clear and well-structured print materials, properly prepared for production, with a professional look and clear messaging."
+      },
+      "identity": {
+        "title": "Visual Identity",
+        "description": "I build visual identities that tell your brand story through simple, memorable elements that are easy to recognize."
+      },
+      "performance": {
+        "title": "Performance Optimization",
+        "description": "I make sure your website loads fast and performs reliably across devices and platforms."
+      }
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "bio": [
+      "I create modern and intuitive digital experiences, combining web design and frontend development for projects that not only look great but are also delightful to use. At the same time, I enjoy bringing visual identities to life through logos, catalogs, and other branding or print assets, so each project communicates clearly and consistently across every format."
+    ],
+    "technologies": "Technologies and Tools",
+    "linkedin": "LinkedIn"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "A selection of recent projects showcasing my work",
+    "showMore": "Show more",
+    "filters": {
+      "all": "All",
+      "webdesign": "Web Design",
+      "magazines": "Magazines",
+      "graphics": "Graphics"
+    },
+    "swipe": "Swipe to navigate"
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "WeDeco Catalog",
+        "description": "Presentation catalog for WeDeco chairs",
+        "fullDescription": "A detailed catalog that presents the full WeDeco chair range with high-quality visuals and clear product descriptions. Ideal for both in-store and online promotion.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "We worked extremely well with Bogdan on producing the catalogs from our WeDeco furniture collection!",
+          "author": "Mac Florea",
+          "role": "CEO, Wedeco"
+        }
+      },
+      {
+        "title": "Ballroom Catalog",
+        "description": "Presentation catalog for ballroom furniture",
+        "fullDescription": "An elegant and well-structured catalog for ballroom furniture, designed to showcase product quality and design through clear, high-quality visuals.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "We worked extremely well with Bogdan on producing the catalogs from our WeDeco furniture collection!",
+          "author": "Mac Florea",
+          "role": "CEO, Wedeco."
+        }
+      },
+      {
+        "title": "Hotel Andra Website",
+        "description": "Clean and minimal showcase website for a boutique hotel",
+        "fullDescription": "A clean and elegant boutique hotel website with simple navigation, strong imagery, and a fluid user experience focused on comfort and conversions.",
+        "tags": ["HTML", "Bootstrap CSS", "Lightbox"]
+      },
+      {
+        "title": "Tennis Steps Website",
+        "description": "Showcase website for a professional tennis and racket-stringing team",
+        "fullDescription": "A presentation website for Tennis Steps, a certified LTA and ERSA team focused on professional stringing, player-level assessment, and stringer training, optimized for all devices.",
+        "tags": ["HTML", "Nuxt 3", "Tailwind CSS"]
+      },
+      {
+        "title": "Book - Become the First Choice for Brides and Grooms",
+        "description": "Book layout and editorial design for wedding planners",
+        "fullDescription": "Editorial layout and design for a practical guide aimed at wedding planners who want to improve services and attract more clients.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "I worked very well with Bogdan on the book Become the First Choice for Brides and Grooms and was extremely pleased with the final result!",
+          "author": "Mac Florea",
+          "role": "Author"
+        }
+      },
+      {
+        "title": "Restaurant Andra Website",
+        "description": "Presentation website for Restaurant Andra with menu, delivery, and contact information",
+        "fullDescription": "A website built to provide quick access to menu, delivery, schedule, and contact details, with a clear structure and fully responsive behavior.",
+        "tags": ["HTML", "Bootstrap CSS", "Lightbox", "JS", "Responsive design"],
+        "testimonial": {
+          "quote": "Bogdan understood exactly what we needed: a clear and attractive website that brings customers to us. The result exceeded expectations.",
+          "author": "Mac Florea",
+          "role": "CEO, Restaurant Andra."
+        }
+      },
+      {
+        "title": "Restaurant Andra Menu",
+        "description": "Menu design for Restaurant Andra",
+        "fullDescription": "An elegant and well-structured menu that presents the culinary offer in a clear and appealing format, with strong readability and visual hierarchy.",
+        "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+        "testimonial": {
+          "quote": "The menu perfectly reflects the quality and variety of our dishes, and its design was highly appreciated by our clients.",
+          "author": "Mac Florea",
+          "role": "CEO, Restaurant Andra."
+        }
+      },
+      {
+        "title": "SwitchMorn Coffee Brand",
+        "description": "SwitchMorn brand asset design",
+        "fullDescription": "I built the SwitchMorn visual universe through a warm and expressive brand identity, from logo to apparel, posters, banners, flyers, and stickers in a coherent palette.",
+        "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"],
+        "testimonial": {
+          "quote": "The visual identity created for SwitchMorn captured our brand's energy and personality perfectly.",
+          "author": "SwitchMorn Owner",
+          "role": "CEO, SwitchMorn"
+        }
+      },
+      {
+        "title": "SuperBOX Promo Box",
+        "description": "SuperBOX package design",
+        "fullDescription": "Design for the SuperBOX promotional package, created to highlight the product and attract attention through modern graphics and approachable color direction.",
+        "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"]
+      },
+      {
+        "title": "Restaurant Belvisso Menu",
+        "description": "Menu design for Restaurant Belvisso",
+        "fullDescription": "An elegant and structured menu for Restaurant Belvisso, focused on dish presentation, typographic clarity, and a polished reading experience.",
+        "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+        "testimonial": {
+          "quote": "The menu perfectly reflects the quality and diversity of our dishes, and its elegant design was highly appreciated by our clients.",
+          "author": "Restaurant Belvisso Owner",
+          "role": "CEO, Restaurant Belvisso."
+        }
+      },
+      {
+        "title": "Ballroom Brides Catalog",
+        "description": "Wedding presentation catalog",
+        "fullDescription": "A detailed catalog showcasing successful weddings organized by Ballroom Andra / Palatul Mirilor, with high-quality visuals and clear service descriptions for prospective clients.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "We worked very well with Bogdan on the service presentation catalogs for Ballroom Andra / Palatul Mirilor.",
+          "author": "Mac Florea",
+          "role": "CEO, Wedeco."
+        }
+      },
+      {
+        "title": "Wedding Halls Presentation Catalog",
+        "description": "Catalog for wedding hall ambience concepts",
+        "fullDescription": "A catalog presenting different wedding hall ambiance concepts through high-quality imagery and elegant service presentation.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "We worked very well with Bogdan on the presentation catalogs for services offered by WeDeco.",
+          "author": "Mac Florea",
+          "role": "CEO, Wedeco."
+        }
+      },
+      {
+        "title": "Book - The Wedding Invitation",
+        "description": "Book layout and editorial design for brides and grooms",
+        "fullDescription": "Editorial layout and design for The Wedding Invitation, a practical guide for couples planning their ideal wedding, delivered in an accessible and attractive format.",
+        "tags": ["InDesign", "PDF", "Print"],
+        "testimonial": {
+          "quote": "I worked very well with Bogdan on The Wedding Invitation and was extremely pleased with the final result.",
+          "author": "Mac Florea",
+          "role": "Author"
+        }
+      },
+      {
+        "title": "Farmer Joey Game Design",
+        "description": "Farmer Joey game design",
+        "fullDescription": "Visual design for the Farmer Joey mobile game, with intuitive and engaging elements that improve user experience, from characters and environments to interface components.",
+        "tags": ["Design", "Illustrator", "Photoshop"]
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "What clients say about working with me",
+    "swipe": "Swipe to navigate",
+    "items": [
+      {
+        "name": "Bogdan Danaila",
+        "role": "Business Manager / Motul Romania",
+        "initials": "BD",
+        "text": "Beyond enthusiasm and a strong focus on quality, he has a client-oriented vision and consistently brings ideas and proposals, offering highly effective and constructive web and graphic design consultancy."
+      },
+      {
+        "name": "Michael Dan Popa",
+        "role": "CEO / Cinetic Data",
+        "initials": "MC",
+        "text": "Message strategy, design, implementation, and optimization consultancy are all aimed at retention and visitor loyalty goals, not just at delivering a product as quickly as possible."
+      },
+      {
+        "name": "Catalin Bozienita",
+        "role": "Director / CPS",
+        "initials": "CB",
+        "text": "We were highly impressed by Bogdan's ability to deliver a corporate identity that perfectly symbolizes our vision and conveys a stylish, elegant, and modern image. We confidently recommend him."
+      },
+      {
+        "name": "Iosif Cristian Dietter",
+        "role": "IT Manager / Pavone Profumi",
+        "initials": "IC",
+        "text": "We are very satisfied with our new brand identity and with the way Bogdan approaches his work. It was a great experience and a pleasure to collaborate with him."
+      },
+      {
+        "name": "Adrian Stefanescu",
+        "role": "Manager / MegaMusic",
+        "initials": "AS",
+        "text": "A talented designer with an excellent ability to turn our vision into a fresh, elegant, and well-structured presentation. He quickly understood our needs and delivered creative solutions with great attention to detail. I highly recommend him."
+      },
+      {
+        "name": "Laurentiu Bozienita",
+        "role": "AscendioPraxis",
+        "initials": "LB",
+        "text": "Bogdan supported us with both design and website development, and the result came out exactly as we wanted: modern, fast, and easy to use. I recommend him to anyone who wants a well-crafted website, from concept to implementation."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Have a project in mind? Let us work together and create something extraordinary.",
+    "introTitle": "Let us talk!",
+    "introText": "I am always open to new collaborations and creative projects. Feel free to contact me through any of the channels below.",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "clickToShow": "Click to reveal",
+    "sendMessage": "Send message"
+  },
+  "footer": {
+    "invite": "Looking forward to hearing from you!",
+    "dayWish": "Wishing you a wonderful {day}",
+    "wishPrefix": "Wishing you a",
+    "wishSuffix": "wonderful",
+    "fridaySuffix": "and have a great weekend!",
+    "rights": "All rights reserved.",
+    "days": {
+      "0": "Sunday",
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday"
+    }
+  },
+  "modal": {
+    "swipe": "Swipe to navigate",
+    "aboutProject": "About Project",
+    "viewSite": "View site",
+    "viewGithub": "View on GitHub",
+    "technologies": "Technologies"
+  },
+  "error": {
+    "code": "Error 404",
+    "title": "Page not found",
+    "description": "This page does not exist or has been moved. Go back home and explore the portfolio.",
+    "backHome": "Back home"
+  }
+}

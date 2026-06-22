@@ -9,7 +9,7 @@
         <button
           @click="closeModal"
           class="fixed z-50 p-3 transition-colors bg-gray-200 rounded-full shadow-lg top-6 right-6 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
-          aria-label="Close modal"
+          :aria-label="t('aria.closeModal')"
         >
           <svg class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -70,7 +70,7 @@
                   @click="scrollToSlide(currentImageIndex - 1)"
                   :disabled="currentImageIndex === 0"
                   class="absolute items-center justify-center hidden w-10 h-10 text-white transition-all -translate-y-1/2 rounded-full left-4 top-1/2 md:flex bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed"
-                  aria-label="Previous image"
+                  :aria-label="t('aria.previousImage')"
                 >
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -80,7 +80,7 @@
                   @click="scrollToSlide(currentImageIndex + 1)"
                   :disabled="currentImageIndex === project.images.length - 1"
                   class="absolute items-center justify-center hidden w-10 h-10 text-white transition-all -translate-y-1/2 rounded-full right-4 top-1/2 md:flex bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed"
-                  aria-label="Next image"
+                  :aria-label="t('aria.nextImage')"
                 >
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -109,12 +109,12 @@
                     ? 'bg-indigo-600 dark:bg-indigo-400 w-8'
                     : 'bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 w-2'
                 ]"
-                :aria-label="`View image ${index + 1}`"
+                :aria-label="t('aria.viewImage', { num: index + 1 })"
               />
             </div>
             <!-- Swipe hint for mobile -->
             <p class="mt-4 text-sm text-center text-gray-400 md:hidden dark:text-gray-500">
-              ← Swipe pentru a naviga →
+              ← {{ t('modal.swipe') }} →
             </p>
           </div>
 
@@ -125,7 +125,7 @@
               <!-- Project Details -->
               <div>
                 <h3 class="mb-6 text-3xl font-semibold text-gray-900 dark:text-gray-100">
-                  Despre Proiect
+                  {{ t('modal.aboutProject') }}
                 </h3>
                 <p class="mb-6 text-xl leading-relaxed text-gray-600 dark:text-gray-400">
                   {{ project.description }}
@@ -170,7 +170,7 @@
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
-                  Vezi site
+                  {{ t('modal.viewSite') }}
                 </a>
                 <a
                   v-if="project.githubUrl"
@@ -182,14 +182,14 @@
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
                   </svg>
-                  Vezi pe GitHub
+                  {{ t('modal.viewGithub') }}
                 </a>
               </div>
 
               <!-- Technologies Used -->
               <div v-if="project.technologies && project.technologies.length > 0">
                 <h3 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">
-                  Tehnologii
+                  {{ t('modal.technologies') }}
                 </h3>
                 <div class="grid grid-cols-2 gap-4">
                   <div
@@ -211,6 +211,8 @@
 
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue'
+
+const { t } = useI18n()
 
 interface Testimonial {
   quote: string
