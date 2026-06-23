@@ -27,7 +27,7 @@
               <span
                 v-for="tag in project.tags"
                 :key="tag"
-                class="px-4 py-2 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full dark:bg-indigo-600/20 dark:text-indigo-300"
+                class="px-4 py-2 text-sm font-medium text-blue-700 bg-blue-100 rounded-full dark:bg-blue-600/20 dark:text-blue-300"
               >
                 {{ tag }}
               </span>
@@ -36,7 +36,7 @@
 
           <!-- Image Slider -->
           <div v-if="project" class="mb-16">
-            <div class="relative overflow-hidden aspect-video bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl group">
+            <div class="relative overflow-hidden aspect-video bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl group">
               <div
                 ref="carouselRef"
                 class="flex w-full h-full overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar"
@@ -106,7 +106,7 @@
                 :class="[
                   'h-2 rounded-full transition-all',
                   currentImageIndex === index
-                    ? 'bg-indigo-600 dark:bg-indigo-400 w-8'
+                    ? 'bg-blue-600 dark:bg-sky-400 w-8'
                     : 'bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 w-2'
                 ]"
                 :aria-label="t('aria.viewImage', { num: index + 1 })"
@@ -136,12 +136,12 @@
               </div>
 
               <!-- Client Testimonial -->
-              <div v-if="project.testimonial" class="p-8 border-l-4 border-indigo-600 rounded-2xl bg-indigo-50 dark:bg-indigo-900/20">
+              <div v-if="project.testimonial" class="p-8 border-l-4 border-blue-600 rounded-2xl bg-blue-50 dark:bg-blue-900/20">
                 <p class="mb-6 text-xl italic text-gray-700 dark:text-gray-300">
                   "{{ project.testimonial.quote }}"
                 </p>
                 <div class="flex items-center gap-4">
-                  <div class="flex items-center justify-center text-xl font-bold text-white bg-indigo-600 rounded-full w-14 h-14">
+                  <div class="flex items-center justify-center text-xl font-bold text-white bg-blue-600 rounded-full w-14 h-14">
                     {{ project.testimonial.author.charAt(0) }}
                   </div>
                   <div>
@@ -165,7 +165,7 @@
                   :href="project.liveUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center justify-center w-full gap-2 px-6 py-4 font-semibold text-white transition-colors duration-200 transform bg-indigo-600 shadow-lg hover:bg-indigo-700 rounded-xl hover:shadow-xl hover:scale-105"
+                  class="flex items-center justify-center w-full gap-2 px-6 py-4 font-semibold text-white transition-colors duration-200 transform bg-blue-600 shadow-lg hover:bg-blue-700 rounded-xl hover:shadow-xl hover:scale-105"
                 >
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

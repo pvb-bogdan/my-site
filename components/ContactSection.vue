@@ -16,7 +16,7 @@
           <!-- Intro Text -->
           <div class="p-6 bg-white border border-gray-200 shadow-lg dark:bg-gray-900 rounded-2xl dark:border-gray-700">
             <h3 class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">{{ t('contact.introTitle') }}</h3>
-            <p class="leading-relaxed text-gray-600 dark:text-gray-400">
+            <p class="leading-relaxed text-gray-600 dark:text-gray-400 text-balance">
               {{ t('contact.introText') }}
             </p>
           </div>
@@ -27,12 +27,12 @@
             <div 
               @click="revealPhone"
               :class="[
-                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-lg',
+                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg',
                 !phoneRevealed ? 'cursor-pointer' : ''
               ]"
             >
-              <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-indigo-100 rounded-xl dark:bg-indigo-900/30 group-hover:bg-indigo-600 group-hover:text-white">
-                <IconsPhone class="w-6 h-6 text-indigo-600 group-hover:text-white" />
+              <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
+                <IconsPhone class="w-6 h-6 text-blue-600 group-hover:text-white" />
               </div>
               <div class="flex-1">
                 <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('contact.phone') }}</p>
@@ -42,7 +42,7 @@
                 <a 
                   v-else
                   :href="`tel:${phone.replace(/\s/g, '')}`"
-                  class="font-semibold text-gray-900 transition-colors dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400"
+                  class="font-semibold text-gray-900 transition-colors dark:text-white hover:text-blue-600 dark:hover:text-sky-400"
                   @click.stop
                 >
                   {{ phone }}
@@ -55,12 +55,12 @@
             <div 
               @click="revealEmail"
               :class="[
-                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-lg',
+                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg',
                 !emailRevealed ? 'cursor-pointer' : ''
               ]"
             >
-              <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-indigo-100 rounded-xl dark:bg-indigo-900/30 group-hover:bg-indigo-600 group-hover:text-white">
-                <IconsEmail class="w-6 h-6 text-indigo-600 group-hover:text-white" />
+              <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
+                <IconsEmail class="w-6 h-6 text-blue-600 group-hover:text-white" />
               </div>
               <div class="flex-1">
                 <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('contact.email') }}</p>
@@ -70,7 +70,7 @@
                 <a 
                   v-else
                   :href="`mailto:${email}`"
-                  class="font-semibold text-gray-900 transition-colors dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400"
+                  class="font-semibold text-gray-900 transition-colors dark:text-white hover:text-blue-600 dark:hover:text-sky-400"
                   @click.stop
                 >
                   {{ email }}
@@ -116,7 +116,7 @@
               :href="contactInfo.instagram"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center w-10 h-10 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:border-transparent group"
+              class="flex items-center justify-center w-10 h-10 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-gradient-to-br hover:from-blue-600 hover:via-sky-500 hover:to-cyan-400 hover:border-transparent group"
               aria-label="Instagram"
             >
               <IconsInstagram class="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-white" />

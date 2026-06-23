@@ -45,10 +45,10 @@
         <div
           v-for="service in services"
           :key="service.title"
-          class="relative p-8 overflow-hidden text-center transition-all duration-300 transform bg-white border border-gray-200 shadow-md group rounded-2xl hover:shadow-lg hover:-translate-y-1 hover:border-indigo-300 dark:bg-gray-900 dark:border-gray-800 dark:hover:border-indigo-500/40"
+          class="relative p-8 overflow-hidden text-center transition-all duration-300 transform bg-white border border-gray-200 shadow-md group rounded-2xl hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 dark:bg-gray-900 dark:border-gray-800 dark:hover:border-blue-500/40"
         >
-          <div class="flex items-center justify-center mx-auto mb-5 transition-transform duration-300 w-14 h-14 bg-indigo-50 rounded-2xl group-hover:scale-105 group-hover:bg-indigo-100 dark:bg-indigo-600/15 dark:group-hover:bg-indigo-600/25">
-            <component :is="iconMap[service.icon]" class="text-indigo-600 w-7 h-7 dark:text-indigo-400" />
+          <div class="flex items-center justify-center mx-auto mb-5 transition-transform duration-300 w-14 h-14 bg-sky-50 rounded-2xl group-hover:scale-105 group-hover:bg-sky-100 dark:bg-blue-600/15 dark:group-hover:bg-blue-600/25">
+            <component :is="iconMap[service.icon]" class="text-blue-600 w-7 h-7 dark:text-sky-400" />
           </div>
           
           <h3 class="mb-3 text-xl font-semibold text-gray-900 dark:text-white">{{ t(`services.items.${service.icon}.title`) }}</h3>

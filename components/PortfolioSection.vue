@@ -16,15 +16,15 @@
           @click="activeFilter = filter.value"
           :class="[
             'relative overflow-hidden px-6 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 group/filter',
-            activeFilter === filter.value
-              ? 'bg-indigo-600 text-white shadow-lg hover:shadow-xl'
+              activeFilter === filter.value
+              ? 'bg-blue-600 text-white shadow-lg hover:shadow-xl'
               : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:border-gray-700'
           ]"
         >
           <span class="relative z-10">{{ filter.label }}</span>
           <div
             v-if="activeFilter === filter.value"
-            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover/filter:opacity-100"
+            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-cyan-500 group-hover/filter:opacity-100"
           ></div>
         </button>
       </div>
@@ -53,7 +53,7 @@
             />
             <div
               v-else
-              class="w-full h-full bg-gradient-to-br from-indigo-600 to-purple-600"
+              class="w-full h-full bg-gradient-to-br from-blue-600 to-cyan-500"
             ></div>
             <!-- Hover Overlay with Project Info -->
             <div class="absolute inset-0 flex flex-col justify-center p-6 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50 group-hover:opacity-100">
@@ -82,7 +82,7 @@
       <div v-if="hasMoreProjects" class="justify-center hidden mt-12 show-more-desktop md:flex">
         <button
           @click="showMoreProjects"
-          class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 shadow-lg group rounded-xl hover:shadow-xl hover:scale-105"
+          class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 shadow-lg group rounded-xl hover:shadow-xl hover:scale-105"
         >
           <span class="relative z-10 flex items-center gap-3">
             <span>{{ t('portfolio.showMore') }}</span>
@@ -90,7 +90,7 @@
               +{{ Math.min(LOAD_MORE_COUNT, remainingProjects) }}
             </span>
           </span>
-          <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover:opacity-100"></div>
+          <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-cyan-500 group-hover:opacity-100"></div>
         </button>
       </div>
 

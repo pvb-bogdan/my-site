@@ -10,7 +10,7 @@
           href="#hero"
           :aria-label="t('aria.goHome', { name: fullName })"
           :title="fullName"
-          class="z-10 text-2xl text-indigo-500 transition-colors hover:text-indigo-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+          class="z-10 text-2xl text-blue-500 transition-colors hover:text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
           @click.prevent="handleLinkClick('#hero')"
         >
           <strong>pb</strong>
@@ -43,7 +43,7 @@
               :key="lang"
               type="button"
               class="px-2 py-1 text-xs font-semibold rounded-md transition-colors"
-              :class="locale === lang ? 'bg-indigo-600 text-white' : 'text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400'"
+              :class="locale === lang ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-sky-400'"
               @click="changeLocale(lang)"
             >
               {{ t(`lang.${lang}`) }}
@@ -51,7 +51,7 @@
           </div>
           <button
             type="button"
-            class="p-2 text-gray-700 transition-all duration-200 dark:text-yellow-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+            class="p-2 text-gray-700 transition-all duration-200 dark:text-yellow-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
             :aria-label="t('aria.toggleTheme')"
             @click="emit('toggleTheme')"
           >
@@ -72,7 +72,7 @@
               :key="`mobile-${lang}`"
               type="button"
               class="px-2 py-1 text-xs font-semibold rounded-md transition-colors"
-              :class="locale === lang ? 'bg-indigo-600 text-white' : 'text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400'"
+              :class="locale === lang ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-sky-400'"
               @click="changeLocale(lang)"
             >
               {{ t(`lang.${lang}`) }}
@@ -80,7 +80,7 @@
           </div>
           <button
             type="button"
-            class="p-2 text-gray-700 transition-all duration-200 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-yellow-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+            class="p-2 text-gray-700 transition-all duration-200 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-yellow-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
             :aria-label="t('aria.toggleTheme')"
             @click="emit('toggleTheme')"
           >
@@ -94,7 +94,7 @@
 
           <button
             type="button"
-            class="text-gray-700 transition-colors hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+            class="text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
             :aria-controls="mobileNavigationId"
             :aria-expanded="mobileMenuOpen"
             :aria-label="mobileMenuOpen ? t('aria.closeMenu') : t('aria.openMenu')"
@@ -134,8 +134,8 @@
           :aria-current="activeLink === link.href ? 'location' : undefined"
           :class="{
             'block transition-colors duration-200': true,
-            'text-white bg-gradient-to-r from-indigo-700 to-purple-600 rounded-lg px-4 py-2': activeLink === link.href,
-            'text-gray-700 hover:text-indigo-600 dark:text-gray-300 dark:hover:text-indigo-400': activeLink !== link.href
+            'text-white bg-gradient-to-r from-blue-700 to-cyan-500 rounded-lg px-4 py-2': activeLink === link.href,
+            'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-sky-400': activeLink !== link.href
           }"
           @click.prevent="handleLinkClick(link.href); handleMobileClick()"
         >
@@ -319,7 +319,7 @@ onBeforeUnmount(() => {
 }
 
 .nav a:focus-visible {
-  outline: 2px solid rgb(99 102 241);
+  outline: 2px solid rgb(59 130 246);
   outline-offset: 2px;
 }
 
@@ -330,14 +330,14 @@ onBeforeUnmount(() => {
 /* Active link styling using .active class (cross-browser compatible) */
 .nav a.active {
   color: white;
-  background: linear-gradient(to right, rgb(67 56 202), rgb(147 51 234)); /* from-indigo-700 to-purple-600 */
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(to right, rgb(29 78 216), rgb(14 165 233)); /* from-blue-700 to-cyan-500 */
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
 .dark .nav a.active {
   color: white;
-  background: linear-gradient(to right, rgb(67 56 202), rgb(147 51 234)); /* from-indigo-700 to-purple-600 */
-  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.5);
+  background: linear-gradient(to right, rgb(29 78 216), rgb(14 165 233)); /* from-blue-700 to-cyan-500 */
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.5);
 }
 
 .bubble {

@@ -15,8 +15,8 @@
         <div class="relative flex justify-center order-1 lg:order-none">
           <div class="relative">
             <!-- Decorative elements behind avatar -->
-            <IconsTriangle class="absolute text-purple-400 scale-150 -top-8 -left-8 opacity-20 dark:opacity-15" />
-            <IconsCircleRings class="absolute text-indigo-400 opacity-25 -bottom-6 -right-6 dark:opacity-15" />
+            <IconsTriangle class="absolute text-sky-400 scale-150 -top-8 -left-8 opacity-20 dark:opacity-15" />
+            <IconsCircleRings class="absolute text-blue-400 opacity-25 -bottom-6 -right-6 dark:opacity-15" />
             
             <!-- Avatar container - larger size -->
             <div class="relative overflow-hidden border-2 border-gray-300 rounded-full shadow-lg cursor-pointer w-72 h-72 md:w-96 md:h-96 dark:border-gray-700 group/avatar">
@@ -44,13 +44,13 @@
           </p>
           <a
             :href="linkedinLink"
-            class="relative inline-flex items-center gap-2 px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-indigo-600 rounded-lg shadow-lg cursor-pointer group hover:scale-105 hover:shadow-xl"
+            class="relative inline-flex items-center gap-2 px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg shadow-lg cursor-pointer group hover:scale-105 hover:shadow-xl"
             target="_blank"
             rel="noopener noreferrer"
           >
             <IconsLinkedin class="relative z-10 w-5 h-5" />
             <span class="relative z-10">{{ t('about.linkedin') }}</span>
-            <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-indigo-700 to-purple-600 group-hover:opacity-100"></div>
+            <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-cyan-500 group-hover:opacity-100"></div>
           </a>
         </div>
       </div>
@@ -64,14 +64,14 @@
           <div
             v-for="tech in technologies"
             :key="tech.name"
-            class="relative h-10 overflow-hidden transition-all duration-200 bg-white border border-gray-200 rounded-lg cursor-pointer group dark:bg-gray-800 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-500/40"
+            class="relative h-10 overflow-hidden transition-all duration-200 bg-white border border-gray-200 rounded-lg cursor-pointer group dark:bg-gray-800 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500/40"
           >
             <!-- Progress Background (hidden initially, shown on hover) -->
             <div 
-              class="absolute inset-0 w-0 transition-all duration-700 ease-out bg-indigo-600/50 dark:bg-indigo-500/30 group-hover:w-full"
+              class="absolute inset-0 w-0 transition-all duration-700 ease-out bg-blue-600/50 dark:bg-blue-500/30 group-hover:w-full"
             >
               <div 
-                class="h-full bg-indigo-600/50 dark:bg-indigo-500/40"
+                class="h-full bg-blue-600/50 dark:bg-blue-500/40"
                 :style="{ width: `${tech.level}%` }"
               ></div>
             </div>
@@ -79,7 +79,7 @@
             <!-- Content -->
             <div class="relative flex items-center justify-between h-full px-4">
               <div class="flex items-center gap-2">
-                <component :is="techIconMap[tech.icon]" class="w-4 h-4 text-indigo-600 transition-colors dark:text-indigo-400 group-hover:text-white" />
+                <component :is="techIconMap[tech.icon]" class="w-4 h-4 text-blue-600 transition-colors dark:text-sky-400 group-hover:text-white" />
                 <span class="text-sm font-medium text-gray-900 transition-colors dark:text-white group-hover:text-white">{{ tech.name }}</span>
               </div>
               <span class="text-xs font-semibold text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">{{ tech.level }}%</span>
