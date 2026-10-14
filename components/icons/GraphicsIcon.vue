@@ -1,16 +1,15 @@
 <template>
-<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
-	<defs>
-		<mask id="SVGRcNQVnQT">
-			<g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-				<path fill="#ffffff" d="M39 14a5 5 0 1 0 0-10a5 5 0 0 0 0 10M9 44a5 5 0 1 0 0-10a5 5 0 0 0 0 10m5-40H4v10h10zm30 30H34v10h10z" />
-				<path d="M34 9H14m20 30H14m-5-5V14m30 20V14" />
-			</g>
-		</mask>
-	</defs>
-	<path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGRcNQVnQT)" />
-</svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <!-- Palette icon - represents graphics/design -->
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="8" cy="9" r="1.5" fill="currentColor" />
+    <circle cx="16" cy="9" r="1.5" fill="currentColor" />
+    <circle cx="8" cy="15" r="1.5" fill="currentColor" />
+    <circle cx="14" cy="17" r="1.5" fill="currentColor" />
+    <path d="M12 17c-2-2-2-4 1-5" />
+  </svg>
 </template>
+
 <script setup lang="ts">
-// Graphics icon
+// Graphics icon - Palette (clean, modern)
 </script>
