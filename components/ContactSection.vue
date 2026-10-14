@@ -24,10 +24,11 @@
           <!-- Contact Items -->
           <div class="space-y-4">
             <!-- Phone -->
-            <div 
+            <button
               @click="revealPhone"
+              type="button"
               :class="[
-                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg',
+                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg w-full focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2',
                 !phoneRevealed ? 'cursor-pointer' : ''
               ]"
             >
@@ -49,13 +50,14 @@
                 </a>
               </div>
               <IconsEye v-if="!phoneRevealed" class="w-5 h-5 text-gray-400" />
-            </div>
+            </button>
 
             <!-- Email -->
-            <div 
+            <button
               @click="revealEmail"
+              type="button"
               :class="[
-                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg',
+                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg w-full focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2',
                 !emailRevealed ? 'cursor-pointer' : ''
               ]"
             >
@@ -77,14 +79,14 @@
                 </a>
               </div>
               <IconsEye v-if="!emailRevealed" class="w-5 h-5 text-gray-400" />
-            </div>
+            </button>
 
             <!-- WhatsApp -->
-            <a 
+            <a
               :href="`https://wa.me/${whatsapp}`"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-green-500 dark:hover:border-green-500 hover:shadow-lg"
+              class="flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-green-500 dark:hover:border-green-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-green-500 focus-visible:outline-offset-2"
             >
               <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-green-100 rounded-xl dark:bg-green-900/30 group-hover:bg-green-500 group-hover:text-white">
                 <IconsWhatsapp class="w-6 h-6 text-green-600 group-hover:text-white" />
@@ -112,36 +114,36 @@
           <!-- Social Icons Card - positioned bottom right -->
           <div class="absolute flex gap-2 p-3 border border-gray-200 shadow-lg bottom-6 right-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm dark:border-gray-700 rounded-xl">
             <!-- Instagram -->
-            <a 
+            <a
               :href="contactInfo.instagram"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center w-10 h-10 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-gradient-to-br hover:from-blue-600 hover:via-sky-500 hover:to-cyan-400 hover:border-transparent group"
+              class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-gradient-to-br hover:from-blue-600 hover:via-sky-500 hover:to-cyan-400 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="Instagram"
             >
-              <IconsInstagram class="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-white" />
+              <IconsInstagram class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" />
             </a>
 
             <!-- Facebook -->
-            <a 
+            <a
               :href="contactInfo.facebook"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center w-10 h-10 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-blue-600 hover:border-transparent group"
+              class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-blue-600 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="Facebook"
             >
-              <IconsFacebook class="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-white" />
+              <IconsFacebook class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" />
             </a>
 
             <!-- LinkedIn -->
-            <a 
+            <a
               :href="contactInfo.linkedin"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center w-10 h-10 transition-all duration-300 border border-gray-200 bg-gray-50 dark:bg-gray-700 rounded-lg dark:border-gray-600 hover:bg-[#0077B5] hover:border-transparent group"
+              class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 bg-gray-50 dark:bg-gray-700 rounded-lg dark:border-gray-600 hover:bg-[#0077B5] hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="LinkedIn"
             >
-              <IconsLinkedin class="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-white" />
+              <IconsLinkedin class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" />
             </a>
           </div>
         </div>

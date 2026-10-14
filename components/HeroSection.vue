@@ -30,14 +30,14 @@
           <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in-up animation-delay-400">
             <a
               href="#portfolio"
-              class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg shadow-lg group hover:scale-105 hover:shadow-xl"
+              class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg shadow-lg group hover:scale-105 hover:shadow-xl active:scale-95 focus-visible:outline-2 focus-visible:outline-blue-300 focus-visible:outline-offset-2"
             >
               <span class="relative z-10">{{ t('hero.ctaPortfolio') }}</span>
               <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-cyan-500 group-hover:opacity-100"></div>
             </a>
             <a
               href="#contact"
-              class="px-8 py-4 font-semibold text-gray-900 transition-all duration-200 transform bg-white border border-gray-300 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white dark:border-gray-700"
+              class="px-8 py-4 font-semibold text-gray-900 transition-all duration-200 transform bg-white border border-gray-300 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl hover:bg-gray-100 active:scale-95 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white dark:border-gray-700 focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
             >
               {{ t('hero.ctaContact') }}
             </a>
