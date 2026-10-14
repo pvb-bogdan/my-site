@@ -126,7 +126,7 @@
         :id="mobileNavigationId"
         v-if="mobileMenuOpen"
         aria-label="Mobile navigation"
-        class="pt-4 pb-4 mt-4 space-y-4 border-t border-gray-200 lg:hidden dark:border-gray-800"
+        class="pt-4 pb-4 mt-4 space-y-4 border-t border-gray-200 lg:hidden dark:border-gray-800 mobile-menu-enter"
       >
         <a
           v-for="link in navLinks"
@@ -134,9 +134,9 @@
           :href="link.href"
           :aria-current="activeLink === link.href ? 'location' : undefined"
           :class="{
-            'block transition-colors duration-200': true,
-            'text-white bg-gradient-to-r from-blue-700 to-cyan-500 rounded-lg px-4 py-2': activeLink === link.href,
-            'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-sky-400': activeLink !== link.href
+            'block transition-all duration-200 px-4 py-3 rounded-lg font-medium': true,
+            'text-white bg-gradient-to-r from-blue-700 to-cyan-500 shadow-md': activeLink === link.href,
+            'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2': activeLink !== link.href
           }"
           @click.prevent="handleLinkClick(link.href); handleMobileClick()"
         >

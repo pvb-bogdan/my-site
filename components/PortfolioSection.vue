@@ -14,8 +14,9 @@
           v-for="filter in filters"
           :key="filter.value"
           @click="activeFilter = filter.value"
+          type="button"
           :class="[
-            'relative overflow-hidden px-6 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 group/filter',
+            'relative overflow-hidden px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 group/filter focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95',
               activeFilter === filter.value
               ? 'bg-blue-600 text-white shadow-lg hover:shadow-xl'
               : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 dark:border-gray-700'
@@ -82,7 +83,8 @@
       <div v-if="hasMoreProjects" class="justify-center hidden mt-12 show-more-desktop md:flex">
         <button
           @click="showMoreProjects"
-          class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 shadow-lg group rounded-xl hover:shadow-xl hover:scale-105"
+          type="button"
+          class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 shadow-lg group rounded-xl hover:shadow-xl hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
         >
           <span class="relative z-10 flex items-center gap-3">
             <span>{{ t('portfolio.showMore') }}</span>
@@ -95,31 +97,52 @@
       </div>
 
       <!-- Sticky Mobile/Tablet Footer with Icon Buttons -->
-       <div class="sticky z-50 flex items-center justify-between w-full p-4 rounded-lg shadow-2xl bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl md:hidden bottom-5">
-          <AllIcon 
-          class="w-6 h-6 cursor-pointer"
-          :class="{ active: activeFilter === 'all' }"
-          @click="activeFilter = 'all'"
-          :aria-label="t('portfolio.filters.all')"/>
-          <WebDesignIcon 
-          class="w-6 h-6 cursor-pointer"
-          :class="{ active: activeFilter === 'webdesign' }"
-          @click="activeFilter = 'webdesign'"
-          :aria-label="t('portfolio.filters.webdesign')"/>
-          <MagazinesIcon 
-          class="w-6 h-6 cursor-pointer"
-          :class="{ active: activeFilter === 'magazines' }"
-          @click="activeFilter = 'magazines'"
-          :aria-label="t('portfolio.filters.magazines')"/>
-          <GraphicsIcon 
-          class="w-6 h-6 cursor-pointer"
-          :class="{ active: activeFilter === 'graphics' }"
-          @click="activeFilter = 'graphics'"
-          :aria-label="t('portfolio.filters.graphics')"/>
-          <ShowMoreIcon 
-          class="w-6 h-6 cursor-pointer"
-          :disabled="!hasMoreProjects"
-           @click="showMoreProjects" :aria-label="t('portfolio.showMore')"/>  
+       <div class="sticky z-50 flex items-center justify-between w-full p-4 rounded-lg shadow-2xl bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl md:hidden bottom-5 gap-2">
+          <button
+            type="button"
+            @click="activeFilter = 'all'"
+            :aria-label="t('portfolio.filters.all')"
+            class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95"
+            :class="{ 'bg-blue-600 text-white': activeFilter === 'all', 'hover:bg-gray-100 dark:hover:bg-gray-800': activeFilter !== 'all' }"
+          >
+            <AllIcon class="w-6 h-6"/>
+          </button>
+          <button
+            type="button"
+            @click="activeFilter = 'webdesign'"
+            :aria-label="t('portfolio.filters.webdesign')"
+            class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95"
+            :class="{ 'bg-blue-600 text-white': activeFilter === 'webdesign', 'hover:bg-gray-100 dark:hover:bg-gray-800': activeFilter !== 'webdesign' }"
+          >
+            <WebDesignIcon class="w-6 h-6"/>
+          </button>
+          <button
+            type="button"
+            @click="activeFilter = 'magazines'"
+            :aria-label="t('portfolio.filters.magazines')"
+            class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95"
+            :class="{ 'bg-blue-600 text-white': activeFilter === 'magazines', 'hover:bg-gray-100 dark:hover:bg-gray-800': activeFilter !== 'magazines' }"
+          >
+            <MagazinesIcon class="w-6 h-6"/>
+          </button>
+          <button
+            type="button"
+            @click="activeFilter = 'graphics'"
+            :aria-label="t('portfolio.filters.graphics')"
+            class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95"
+            :class="{ 'bg-blue-600 text-white': activeFilter === 'graphics', 'hover:bg-gray-100 dark:hover:bg-gray-800': activeFilter !== 'graphics' }"
+          >
+            <GraphicsIcon class="w-6 h-6"/>
+          </button>
+          <button
+            type="button"
+            @click="showMoreProjects"
+            :disabled="!hasMoreProjects"
+            :aria-label="t('portfolio.showMore')"
+            class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-800"
+          >
+            <ShowMoreIcon class="w-6 h-6"/>
+          </button>
        </div>
     </div>
 
