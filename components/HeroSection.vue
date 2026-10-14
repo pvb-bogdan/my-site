@@ -1,17 +1,13 @@
 <template>
   <section id="hero" class="relative flex items-center justify-center px-6 pt-20 overflow-hidden">
-    <!-- Background Gradient Blobs -->
-    <div class="absolute inset-0 z-0" style="contain: layout style paint;">
+    <!-- Background Gradient Blobs - optimized for performance -->
+    <div class="absolute inset-0 z-0" style="contain: layout style paint; transform: translateZ(0);">
       <!-- Blue blob - top left area -->
-      <div class="absolute -top-20 left-[10%] w-[550px] h-[550px] bg-gradient-to-br from-sky-200 to-blue-400 rounded-full blur-3xl opacity-40 mix-blend-multiply dark:mix-blend-screen dark:opacity-30 animate-blob-move-1" style="will-change: transform;"></div>
+      <div class="absolute -top-20 left-[10%] w-[550px] h-[550px] bg-gradient-to-br from-sky-200 to-blue-400 rounded-full blur-3xl opacity-40 mix-blend-multiply dark:mix-blend-screen dark:opacity-30 animate-blob-move-1" style="will-change: transform; backface-visibility: hidden;"></div>
       <!-- Cyan/Teal blob - upper right -->
-      <div class="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-gradient-to-bl from-cyan-300 to-teal-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-2" style="will-change: transform;"></div>
-      <!-- Blue/Cyan blob - left center-ish -->
-      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-blue-200 to-sky-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3" style="will-change: transform;"></div>
-      <!-- Blue/Cyan blob - bottom center-right -->
-      <div class="absolute bottom-[10%] right-[25%] w-[450px] h-[450px] bg-gradient-to-tl from-blue-300 to-cyan-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-4" style="will-change: transform;"></div>
-      <!-- Sky/Cyan blob - bottom left offset -->
-      <div class="absolute -bottom-16 left-[30%] w-[400px] h-[400px] bg-gradient-to-r from-sky-300 to-cyan-400 rounded-full blur-3xl opacity-25 mix-blend-multiply dark:mix-blend-screen dark:opacity-15 animate-blob-move-5" style="will-change: transform;"></div>
+      <div class="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-gradient-to-bl from-cyan-300 to-teal-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-2" style="will-change: transform; backface-visibility: hidden;"></div>
+      <!-- Blue/Cyan blob - left center-ish (reduced animation) -->
+      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-blue-200 to-sky-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3-slow" style="will-change: transform; backface-visibility: hidden;"></div>
     </div>
 
     <div class="container mx-auto z-1">
@@ -49,10 +45,9 @@
           <!-- Soft Glow/Shadow -->
           <div class="absolute -z-1 left-1/2 top-1/2 w-[90%] h-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/30 blur-2xl"></div>
 
-          <!-- Floating SVG Shapes -->
-          <svg class="absolute top-0 left-0 w-16 h-16 text-sky-300/40 opacity-70 animate-float-slow" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="currentColor"/></svg>
-          <svg class="absolute w-10 h-10 text-cyan-300 dark:text-green-100 right-4 top-10 opacity-60 animate-float-medium" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="8" fill="currentColor"/></svg>
-          <svg class="absolute bottom-0 w-12 h-12 left-10 text-cyan-300/40 opacity-60 animate-float-fast" viewBox="0 0 40 40" fill="none"><polygon points="20,0 40,40 0,40" fill="currentColor"/></svg>
+          <!-- Floating SVG Shapes - reduced animation count for performance -->
+          <svg class="absolute top-0 left-0 w-16 h-16 text-sky-300/40 opacity-70 animate-float-slow" viewBox="0 0 64 64" fill="none" style="will-change: transform;"><circle cx="32" cy="32" r="32" fill="currentColor"/></svg>
+          <svg class="absolute w-10 h-10 text-cyan-300 dark:text-green-100 right-4 top-10 opacity-60 animate-float-medium" viewBox="0 0 48 48" fill="none" style="will-change: transform;"><rect x="8" y="8" width="32" height="32" rx="8" fill="currentColor"/></svg>
 
           <!-- Figma Badge
           <div class="absolute flex items-center gap-1 px-3 py-1 border border-gray-200 rounded-full shadow-lg -top-4 -right-4 bg-white/80 dark:bg-gray-900/80 dark:border-gray-700 backdrop-blur-md animate-fade-in-up animation-delay-400">
@@ -191,6 +186,7 @@ defineProps<{
 }
 .animate-scroll-indicator {
   animation: scroll-indicator 1.6s cubic-bezier(0.4,0,0.2,1) infinite;
+  will-change: opacity, transform;
 }
 
 @keyframes float-slow {

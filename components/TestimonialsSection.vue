@@ -11,7 +11,7 @@
     <div class="container relative z-10 mx-auto">
       <div class="mb-12 text-center">
         <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('testimonials.title') }}</h2>
-        <p class="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400">
+        <p class="max-w-2xl mx-auto text-lg text-gray-700 dark:text-gray-300">
           {{ t('testimonials.subtitle') }}
         </p>
       </div>
@@ -30,16 +30,16 @@
             :key="testimonial.name"
             class="flex-shrink-0 w-full px-3 md:w-1/2 snap-start"
           >
-            <div class="relative flex flex-col h-full p-8 overflow-hidden bg-white border border-gray-200 shadow-lg md:p-10 rounded-2xl dark:bg-gray-900 dark:border-gray-800 min-h-[280px]">
+            <div class="relative flex flex-col h-full p-8 overflow-hidden bg-white border border-gray-200 shadow-lg md:p-10 rounded-2xl dark:bg-gray-900 dark:border-gray-800 min-h-[280px] focus-within:outline-2 focus-within:outline-blue-500 focus-within:outline-offset-2">
               <!-- Quote Icon -->
-              <div class="absolute top-6 right-6 opacity-10 dark:opacity-5">
+              <div class="absolute top-6 right-6 opacity-10 dark:opacity-5" aria-hidden="true">
                 <svg class="w-16 h-16 text-blue-600 dark:text-sky-400" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
               </div>
 
               <!-- Testimonial Text -->
-              <p class="relative z-10 flex-grow mb-8 text-lg italic leading-relaxed text-gray-700 md:text-xl dark:text-gray-300">
+              <p class="relative z-10 flex-grow mb-8 text-lg italic leading-relaxed text-gray-800 md:text-xl dark:text-gray-200">
                 "{{ testimonial.text }}"
               </p>
 
@@ -50,7 +50,7 @@
                 </div>
                 <div class="ml-4">
                   <p class="text-lg font-semibold text-gray-900 dark:text-white">{{ testimonial.name }}</p>
-                  <p class="text-sm text-gray-600 dark:text-gray-400">{{ testimonial.role }}</p>
+                  <p class="text-sm text-gray-700 dark:text-gray-300">{{ testimonial.role }}</p>
                 </div>
               </div>
             </div>
@@ -63,13 +63,15 @@
             v-for="(testimonial, index) in localizedTestimonials"
             :key="testimonial.name + '-dot'"
             @click="scrollToSlide(index)"
-            class="transition-all duration-300 rounded-full"
+            type="button"
+            class="transition-all duration-300 rounded-full focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
             :class="[
               isSlideActive(index)
                     ? 'bg-blue-600 dark:bg-sky-400 w-10 h-4'
                     : 'bg-gray-300 dark:bg-gray-600 hover:bg-blue-300 dark:hover:bg-sky-500/50 w-4 h-4'
             ]"
             :aria-label="t('aria.goToTestimonial', { num: index + 1 })"
+            :aria-pressed="isSlideActive(index)"
           />
         </div>
 

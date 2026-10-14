@@ -61,6 +61,16 @@ select:focus-visible {
   }
 }
 
+/* Blob animations - optimized for performance */
+@keyframes blob-move-3-slow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.04); }
+}
+
+.animate-blob-move-3-slow {
+  animation: blob-move-3-slow 18s ease-in-out infinite;
+}
+
 .mobile-menu-enter {
   animation: slideDown 200ms ease-out;
 }

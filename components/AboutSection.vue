@@ -38,13 +38,13 @@
           <p
             v-for="(paragraph, index) in localizedBio"
             :key="index"
-            class="mb-6 text-xl leading-relaxed text-gray-600 dark:text-gray-400"
+            class="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300"
           >
             {{ paragraph }}
           </p>
           <a
             :href="linkedinLink"
-            class="relative inline-flex items-center gap-2 px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg shadow-lg cursor-pointer group hover:scale-105 hover:shadow-xl"
+            class="relative inline-flex items-center gap-2 px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg shadow-lg cursor-pointer group hover:scale-105 hover:shadow-xl active:scale-95 focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
             target="_blank"
             rel="noopener noreferrer"
           >
