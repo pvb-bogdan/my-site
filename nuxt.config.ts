@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   css: [
-    '@fontsource-variable/nunito',
+    '@fontsource-variable/nunito/index.css',
     '~/assets/css/tailwind.css'
   ],
 

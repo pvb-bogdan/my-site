@@ -1,5 +1,6 @@
 <template>
   <header
+    ref="headerRef"
     class="site-header"
     :data-scrolled="isScrolled ? '' : undefined"
     :data-menu-open="mobileMenuOpen ? '' : undefined">
@@ -106,6 +107,17 @@ const { t } = useI18n()
 const mobileMenuOpen = ref(false)
 const mobileNavigationId = 'mobile-navigation'
 const hoverBubble = ref<HTMLElement | null>(null)
+const headerRef = ref<HTMLElement | null>(null)
+let headerResizeObserver: ResizeObserver | null = null
+
+// Publish the header's bottom edge as --header-height so sticky UI (the portfolio
+// filter) can sit just below it. It changes when the header turns into a pill.
+const publishHeaderHeight = () => {
+  const header = headerRef.value
+  if (!header) return
+  const headerBottom = Math.round(header.getBoundingClientRect().bottom)
+  document.documentElement.style.setProperty('--header-height', `${headerBottom}px`)
+}
 const activeLink = ref<string>('')
 let intersectionObserver: IntersectionObserver | null = null
 
@@ -123,7 +135,8 @@ const updateActiveLink = (href: string) => {
   activeLink.value = href
 
   if (window.location.hash !== href) {
-    window.history.replaceState(null, '', href)
+    // Keep vue-router's history state so Back/Forward (e.g. closing a project) keeps working
+    window.history.replaceState(window.history.state, '', href)
   }
 }
 
@@ -213,6 +226,11 @@ const initializeIntersectionObserver = () => {
 onMounted(() => {
   initializeActiveLink()
   initializeIntersectionObserver()
+  publishHeaderHeight()
+  if (headerRef.value) {
+    headerResizeObserver = new ResizeObserver(publishHeaderHeight)
+    headerResizeObserver.observe(headerRef.value)
+  }
   window.addEventListener('keydown', handleEscapeKey)
   window.addEventListener('resize', handleResize)
 })
@@ -222,6 +240,7 @@ onBeforeUnmount(() => {
     intersectionObserver.disconnect()
   }
 
+  headerResizeObserver?.disconnect()
   window.removeEventListener('keydown', handleEscapeKey)
   window.removeEventListener('resize', handleResize)
 })

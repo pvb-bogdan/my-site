@@ -1,5 +1,6 @@
 [
   {
+    "slug": "wedeco-catalog",
     "title": "Catalog WeDeco",
     "thumbImage": "/images/magazines/wedeco-1.jpg",
     "images": [
@@ -24,6 +25,7 @@
     }
   },
   {
+    "slug": "ballroom-catalog",
     "title": "Catalog Ballroom",
     "thumbImage": "/images/magazines/ballroom/ballroom1.webp",
     "images": [
@@ -47,6 +49,7 @@
     }
   },
   {
+    "slug": "hotel-andra-website",
     "title": "Site Hotel Andra",
     "thumbImage": "/images/andra/thumbnail-andra.webp",
     "images": [
@@ -63,6 +66,7 @@
     "liveUrl": "https://hotelandratecuci.ro/index.html"
   },
   {
+    "slug": "tennis-steps-website",
     "title": "Site Tennis Steps",
     "thumbImage": "/images/tennis/tennis-thumbnail.webp",
     "images": [
@@ -80,6 +84,7 @@
     "liveUrl": "https://www.tennissteps.co.uk/"
   },
   {
+    "slug": "book-first-choice-for-couples",
     "title": "Carte - Cum sa devii prima alegere a mirilor ",
     "thumbImage": "/images/carte2/coperta.webp",
     "images": [
@@ -100,6 +105,7 @@
     }
   },
   {
+    "slug": "restaurant-andra-website",
     "title": "Site Restaurant Andra",
     "thumbImage": "/images/restaurant/thumbnail-restaurant.webp",
     "images": [
@@ -123,6 +129,7 @@
     }
   },
   {
+    "slug": "restaurant-andra-menu",
     "title": "Meniu Restaurant Andra",
     "thumbImage": "/images/menu/menu-andra1.webp",
     "images": [
@@ -145,6 +152,7 @@
     }
   },
   {
+    "slug": "switchmorn-coffee-brand",
     "title": "SwitcMorn Brand Cafea",
     "thumbImage": "/images/switchmorn/t-shirtSM.webp",
     "images": [
@@ -164,6 +172,7 @@
     }
   },
   {
+    "slug": "superbox-promo-box",
     "title": "Box promo SuperBOX",
     "thumbImage": "/images/box/box1.webp",
     "images": [
@@ -178,6 +187,7 @@
     "technologies": ["Illustrator", "Photoshop", "Print", "Packaging"]
   },
   {
+    "slug": "belvisso-menu",
     "title": "Meniu Restaurant Belvisso",
     "thumbImage": "/images/belvisso/belvisso1.webp",
     "images": [
@@ -199,6 +209,7 @@
     }
   },
   {
+    "slug": "ballroom-brides-catalog",
     "title": "Catalog Mirese Ballroom",
     "thumbImage": "/images/magazines/mirese/catalog-mirese1.webp",
     "images": [
@@ -219,6 +230,7 @@
     }
   },
   {
+    "slug": "wedding-halls-catalog",
     "title": "Catalog prezentare sali de nunti",
     "thumbImage": "/images/sali/sala1.webp",
     "images": [
@@ -239,6 +251,7 @@
     }
   },
     {
+    "slug": "book-wedding-invitation",
     "title": "Carte - Invitatia de nunta",
     "thumbImage": "/images/carte/coperta.webp",
     "images": [
@@ -259,6 +272,7 @@
     }
   },
   {
+    "slug": "farmer-joey-game",
     "title": "Design joc Farmer Joey",
     "thumbImage": "/images/apps/joey.webp",
     "images": [

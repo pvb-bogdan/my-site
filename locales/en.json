@@ -83,11 +83,13 @@
       "graphics": "Graphics"
     },
     "swipe": "Swipe to navigate",
-    "filterLabel": "Filter projects by category"
+    "filterLabel": "Filter projects by category",
+    "resultCount": "No projects | {n} project | {n} projects",
+    "openProject": "Open project: {title}"
   },
   "projects": {
-    "items": [
-      {
+    "items": {
+      "wedeco-catalog": {
         "title": "WeDeco Catalog",
         "description": "Presentation catalog for WeDeco chairs",
         "fullDescription": "A detailed catalog that presents the full WeDeco chair range with high-quality visuals and clear product descriptions. Ideal for both in-store and online promotion.",
@@ -102,7 +104,7 @@
           "role": "CEO, Wedeco"
         }
       },
-      {
+      "ballroom-catalog": {
         "title": "Ballroom Catalog",
         "description": "Presentation catalog for ballroom furniture",
         "fullDescription": "An elegant and well-structured catalog for ballroom furniture, designed to showcase product quality and design through clear, high-quality visuals.",
@@ -117,7 +119,7 @@
           "role": "CEO, Wedeco."
         }
       },
-      {
+      "hotel-andra-website": {
         "title": "Hotel Andra Website",
         "description": "Clean and minimal showcase website for a boutique hotel",
         "fullDescription": "A clean and elegant boutique hotel website with simple navigation, strong imagery, and a fluid user experience focused on comfort and conversions.",
@@ -127,7 +129,7 @@
           "Lightbox"
         ]
       },
-      {
+      "tennis-steps-website": {
         "title": "Tennis Steps Website",
         "description": "Showcase website for a professional tennis and racket-stringing team",
         "fullDescription": "A presentation website for Tennis Steps, a certified LTA and ERSA team focused on professional stringing, player-level assessment, and stringer training, optimized for all devices.",
@@ -137,7 +139,7 @@
           "Tailwind CSS"
         ]
       },
-      {
+      "book-first-choice-for-couples": {
         "title": "Book - Become the First Choice for Brides and Grooms",
         "description": "Book layout and editorial design for wedding planners",
         "fullDescription": "Editorial layout and design for a practical guide aimed at wedding planners who want to improve services and attract more clients.",
@@ -152,7 +154,7 @@
           "role": "Author"
         }
       },
-      {
+      "restaurant-andra-website": {
         "title": "Restaurant Andra Website",
         "description": "Presentation website for Restaurant Andra with menu, delivery, and contact information",
         "fullDescription": "A website built to provide quick access to menu, delivery, schedule, and contact details, with a clear structure and fully responsive behavior.",
@@ -169,7 +171,7 @@
           "role": "CEO, Restaurant Andra."
         }
       },
-      {
+      "restaurant-andra-menu": {
         "title": "Restaurant Andra Menu",
         "description": "Menu design for Restaurant Andra",
         "fullDescription": "An elegant and well-structured menu that presents the culinary offer in a clear and appealing format, with strong readability and visual hierarchy.",
@@ -185,7 +187,7 @@
           "role": "CEO, Restaurant Andra."
         }
       },
-      {
+      "switchmorn-coffee-brand": {
         "title": "SwitchMorn Coffee Brand",
         "description": "SwitchMorn brand asset design",
         "fullDescription": "I built the SwitchMorn visual universe through a warm and expressive brand identity, from logo to apparel, posters, banners, flyers, and stickers in a coherent palette.",
@@ -202,7 +204,7 @@
           "role": "CEO, SwitchMorn"
         }
       },
-      {
+      "superbox-promo-box": {
         "title": "SuperBOX Promo Box",
         "description": "SuperBOX package design",
         "fullDescription": "Design for the SuperBOX promotional package, created to highlight the product and attract attention through modern graphics and approachable color direction.",
@@ -214,7 +216,7 @@
           "Packaging"
         ]
       },
-      {
+      "belvisso-menu": {
         "title": "Restaurant Belvisso Menu",
         "description": "Menu design for Restaurant Belvisso",
         "fullDescription": "An elegant and structured menu for Restaurant Belvisso, focused on dish presentation, typographic clarity, and a polished reading experience.",
@@ -230,7 +232,7 @@
           "role": "CEO, Restaurant Belvisso."
         }
       },
-      {
+      "ballroom-brides-catalog": {
         "title": "Ballroom Brides Catalog",
         "description": "Wedding presentation catalog",
         "fullDescription": "A detailed catalog showcasing successful weddings organized by Ballroom Andra / Palatul Mirilor, with high-quality visuals and clear service descriptions for prospective clients.",
@@ -245,7 +247,7 @@
           "role": "CEO, Wedeco."
         }
       },
-      {
+      "wedding-halls-catalog": {
         "title": "Wedding Halls Presentation Catalog",
         "description": "Catalog for wedding hall ambience concepts",
         "fullDescription": "A catalog presenting different wedding hall ambiance concepts through high-quality imagery and elegant service presentation.",
@@ -260,7 +262,7 @@
           "role": "CEO, Wedeco."
         }
       },
-      {
+      "book-wedding-invitation": {
         "title": "Book - The Wedding Invitation",
         "description": "Book layout and editorial design for brides and grooms",
         "fullDescription": "Editorial layout and design for The Wedding Invitation, a practical guide for couples planning their ideal wedding, delivered in an accessible and attractive format.",
@@ -275,7 +277,7 @@
           "role": "Author"
         }
       },
-      {
+      "farmer-joey-game": {
         "title": "Farmer Joey Game Design",
         "description": "Farmer Joey game design",
         "fullDescription": "Visual design for the Farmer Joey mobile game, with intuitive and engaging elements that improve user experience, from characters and environments to interface components.",
@@ -285,7 +287,7 @@
           "Photoshop"
         ]
       }
-    ]
+    }
   },
   "testimonials": {
     "title": "Testimonials",

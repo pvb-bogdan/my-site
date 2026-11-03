@@ -107,8 +107,8 @@ import Responsive from './icons/tech/Responsive.vue'
 const { t, tm, rt } = useI18n()
 
 const localizedBio = computed(() => {
-  const entries = tm('about.bio') as unknown[]
-  return entries.map((entry) => rt(entry as never))
+  const entries = tm('about.bio') as unknown
+  return (Array.isArray(entries) ? entries : []).map((entry) => rt(entry as never))
 })
 
 const techIconMap: Record<string, Component> = {

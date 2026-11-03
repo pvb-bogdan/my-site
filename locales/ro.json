@@ -83,11 +83,13 @@
       "graphics": "Grafica"
     },
     "swipe": "Swipe pentru a naviga",
-    "filterLabel": "Filtreaza proiectele dupa categorie"
+    "filterLabel": "Filtreaza proiectele dupa categorie",
+    "resultCount": "Niciun proiect | {n} proiect | {n} proiecte",
+    "openProject": "Deschide proiectul: {title}"
   },
   "projects": {
-    "items": [
-      {
+    "items": {
+      "wedeco-catalog": {
         "title": "Catalog WeDeco",
         "description": "Catalog de prezentare pentru scaune WeDeco",
         "fullDescription": "Un catalog detaliat care prezinta gama completa de scaune WeDeco, cu imagini de inalta calitate si descrieri clare ale produselor. Ideal pentru promovare in magazine si online.",
@@ -102,7 +104,7 @@
           "role": "CEO, Wedeco"
         }
       },
-      {
+      "ballroom-catalog": {
         "title": "Catalog Ballroom",
         "description": "Catalog de prezentare pentru mobilier ballroom",
         "fullDescription": "Un catalog elegant si bine structurat pentru mobilier de sali de bal, cu imagini de calitate si descrieri detaliate, gandit sa evidentieze designul si calitatea produselor.",
@@ -117,7 +119,7 @@
           "role": "CEO, Wedeco."
         }
       },
-      {
+      "hotel-andra-website": {
         "title": "Site Hotel Andra",
         "description": "Site de prezentare curat si minimalist pentru un hotel boutique",
         "fullDescription": "Un site elegant si minimalist pentru un hotel boutique, cu navigare simpla, imagini puternice si o experienta fluida. Designul pune accent pe confort, atmosfera si conversie.",
@@ -127,7 +129,7 @@
           "Lightbox"
         ]
       },
-      {
+      "tennis-steps-website": {
         "title": "Site Tennis Steps",
         "description": "Site de prezentare pentru o echipa de profesionisti in tenis si racordare rachete",
         "fullDescription": "Site de prezentare pentru Tennis Steps, echipa certificata LTA si ERSA, cu focus pe racordare profesionala, evaluare nivel joc si training pentru racordori, optimizat pentru toate dispozitivele.",
@@ -137,7 +139,7 @@
           "Tailwind CSS"
         ]
       },
-      {
+      "book-first-choice-for-couples": {
         "title": "Carte - Cum sa devii prima alegere a mirilor",
         "description": "Tehnoredactare carte pentru organizatori de nunti",
         "fullDescription": "Tehnoredactare si design pentru cartea Cum sa devii prima alegere a mirilor, un ghid practic pentru organizatorii de nunti care vor sa isi imbunatateasca serviciile si sa atraga mai multi clienti.",
@@ -152,7 +154,7 @@
           "role": "Autor, Cartea 'Cum sa devii prima alegere a mirilor'."
         }
       },
-      {
+      "restaurant-andra-website": {
         "title": "Site Restaurant Andra",
         "description": "Site de prezentare pentru Restaurant Andra, cu informatii despre meniu, livrari si contact",
         "fullDescription": "Site construit pentru acces rapid la meniu, livrare, program si contact. Structura clara, experienta intuitiva si optimizare completa pentru mobil si desktop.",
@@ -169,7 +171,7 @@
           "role": "CEO, Restaurant Andra."
         }
       },
-      {
+      "restaurant-andra-menu": {
         "title": "Meniu Restaurant Andra",
         "description": "Meniu pentru Restaurant Andra",
         "fullDescription": "Un meniu elegant si bine structurat, care prezinta oferta culinara intr-un format clar si atractiv, cu accent pe lizibilitate si prezentare vizuala.",
@@ -185,7 +187,7 @@
           "role": "CEO, Restaurant Andra."
         }
       },
-      {
+      "switchmorn-coffee-brand": {
         "title": "SwitchMorn Brand Cafea",
         "description": "Design materiale SwitchMorn",
         "fullDescription": "Am construit universul vizual SwitchMorn printr-o identitate de brand calda si expresiva: logo, tricouri, afise, bannere, flyere si stickere, intr-o paleta cromatica coerenta.",
@@ -202,7 +204,7 @@
           "role": "CEO, SwitchMorn"
         }
       },
-      {
+      "superbox-promo-box": {
         "title": "Box promo SuperBOX",
         "description": "Design SuperBOX",
         "fullDescription": "Design pentru cutia promotionala SuperBOX, gandit sa evidentieze produsul si sa atraga atentia prin elemente grafice moderne si culori prietenoase.",
@@ -214,7 +216,7 @@
           "Packaging"
         ]
       },
-      {
+      "belvisso-menu": {
         "title": "Meniu Restaurant Belvisso",
         "description": "Meniu pentru Restaurant Belvisso",
         "fullDescription": "Meniu elegant si bine structurat pentru Restaurant Belvisso, cu accent pe prezentarea preparatelor, claritate tipografica si experienta vizuala placuta.",
@@ -230,7 +232,7 @@
           "role": "CEO, Restaurant Belvisso."
         }
       },
-      {
+      "ballroom-brides-catalog": {
         "title": "Catalog Mirese Ballroom",
         "description": "Catalog de prezentare nunti",
         "fullDescription": "Catalog detaliat care prezinta nuntile organizate de Ballroom Andra / Palatul Mirilor, cu imagini de calitate si descrieri ale serviciilor pentru potentiali clienti.",
@@ -245,7 +247,7 @@
           "role": "CEO, Wedeco."
         }
       },
-      {
+      "wedding-halls-catalog": {
         "title": "Catalog prezentare sali de nunti",
         "description": "Catalog de prezentare pentru ambientare sali de nunti",
         "fullDescription": "Catalog care arata variante de ambientare pentru sali de nunta, cu imagini de inalta calitate si prezentare eleganta a serviciilor oferite.",
@@ -260,7 +262,7 @@
           "role": "CEO, Wedeco."
         }
       },
-      {
+      "book-wedding-invitation": {
         "title": "Carte - Invitatia de nunta",
         "description": "Tehnoredactare carte pentru miri si mirese",
         "fullDescription": "Tehnoredactare si design pentru cartea Invitatia de nunta, ghid practic pentru miri care vor sa isi organizeze nunta de vis, intr-un format usor de parcurs.",
@@ -275,7 +277,7 @@
           "role": "Autor, Cartea 'Invitatia de nunta'."
         }
       },
-      {
+      "farmer-joey-game": {
         "title": "Design joc Farmer Joey",
         "description": "Design joc Farmer Joey",
         "fullDescription": "Design vizual pentru jocul mobil Farmer Joey, cu elemente intuitive si atractive care imbunatatesc experienta utilizatorului, de la personaje si peisaje pana la interfata.",
@@ -285,7 +287,7 @@
           "Photoshop"
         ]
       }
-    ]
+    }
   },
   "testimonials": {
     "title": "Testimoniale",
