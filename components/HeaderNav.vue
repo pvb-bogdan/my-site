@@ -180,6 +180,7 @@ const handleEscapeKey = (event: KeyboardEvent) => {
 }
 
 const handleResize = () => {
+  publishHeaderHeight()
   if (window.innerWidth >= 1280) {
     mobileMenuOpen.value = false
   }
@@ -234,6 +235,8 @@ onMounted(() => {
   if (headerRef.value) {
     headerResizeObserver = new ResizeObserver(publishHeaderHeight)
     headerResizeObserver.observe(headerRef.value)
+    // The header also moves (top offset, pill inset) without resizing; re-measure after it settles
+    headerRef.value.addEventListener('transitionend', publishHeaderHeight)
   }
   window.addEventListener('keydown', handleEscapeKey)
   window.addEventListener('resize', handleResize)
@@ -245,6 +248,7 @@ onBeforeUnmount(() => {
   }
 
   headerResizeObserver?.disconnect()
+  headerRef.value?.removeEventListener('transitionend', publishHeaderHeight)
   window.removeEventListener('keydown', handleEscapeKey)
   window.removeEventListener('resize', handleResize)
 })
