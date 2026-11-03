@@ -33,7 +33,7 @@
                 class="flex items-center w-full gap-4 p-4 text-left transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
               >
                 <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
-                  <component :is="channel.icon" class="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
+                  <Icon :name="channel.icon" class="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
                 </div>
                 <div class="flex-1">
                   <p class="text-sm text-gray-600 dark:text-gray-400">{{ channel.label }}</p>
@@ -49,7 +49,7 @@
                 @click="revealChannel(channel.key)"
               >
                 <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
-                  <component :is="channel.icon" class="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
+                  <Icon :name="channel.icon" class="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
                 </div>
                 <div class="flex-1">
                   <p class="text-sm text-gray-600 dark:text-gray-400">{{ channel.label }}</p>
@@ -57,7 +57,7 @@
                     {{ t('contact.clickToShow') }}
                   </p>
                 </div>
-                <IconsEye class="w-5 h-5 text-gray-500" aria-hidden="true" />
+                <Icon name="lucide:eye" class="w-5 h-5 text-gray-500" aria-hidden="true" />
               </button>
             </template>
 
@@ -69,7 +69,7 @@
               class="flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-green-500 dark:hover:border-green-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-green-500 focus-visible:outline-offset-2"
             >
               <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-green-100 rounded-xl dark:bg-green-900/30 group-hover:bg-green-500 group-hover:text-white">
-                <IconsWhatsapp class="w-6 h-6 text-green-600 group-hover:text-white" aria-hidden="true" />
+                <Icon name="simple-icons:whatsapp" class="w-6 h-6 text-green-600 group-hover:text-white" aria-hidden="true" />
               </div>
               <div>
                 <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('contact.whatsapp') }}</p>
@@ -101,7 +101,7 @@
               class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-gradient-to-br hover:from-blue-600 hover:via-sky-500 hover:to-cyan-400 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="Instagram"
             >
-              <IconsInstagram class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
+              <Icon name="simple-icons:instagram" class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
             </a>
 
             <!-- Facebook -->
@@ -112,7 +112,7 @@
               class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-blue-600 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="Facebook"
             >
-              <IconsFacebook class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
+              <Icon name="simple-icons:facebook" class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
             </a>
 
             <!-- LinkedIn -->
@@ -123,7 +123,7 @@
               class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 bg-gray-50 dark:bg-gray-700 rounded-lg dark:border-gray-600 hover:bg-[#0077B5] hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="LinkedIn"
             >
-              <IconsLinkedin class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
+              <Icon name="simple-icons:linkedin" class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -133,7 +133,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, reactive, resolveComponent, type ComponentPublicInstance } from 'vue'
+import { computed, nextTick, reactive, type ComponentPublicInstance } from 'vue'
 
 const { t } = useI18n()
 
@@ -169,23 +169,20 @@ const phone = computed(() => contactInfo.phone.join(' '))
 const whatsapp = computed(() => contactInfo.whatsapp.join(''))
 const email = computed(() => `${contactInfo.email[0]}@${contactInfo.email[1]}.${contactInfo.email[2]}`)
 
-const phoneIcon = resolveComponent('IconsPhone')
-const emailIcon = resolveComponent('IconsEmail')
-
 const revealableChannels = computed(() => [
   {
     key: 'phone' as const,
     label: t('contact.phone'),
     value: phone.value,
     href: `tel:${phone.value.replace(/\s/g, '')}`,
-    icon: phoneIcon
+    icon: 'lucide:phone'
   },
   {
     key: 'email' as const,
     label: t('contact.email'),
     value: email.value,
     href: `mailto:${email.value}`,
-    icon: emailIcon
+    icon: 'lucide:mail'
   }
 ])
 </script>

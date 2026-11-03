@@ -16,7 +16,22 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxtjs/seo', '@nuxt/image', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/seo', '@nuxt/image', '@nuxtjs/i18n', '@nuxt/icon'],
+
+  // Icons come from the locally installed Iconify JSON sets (Lucide for UI, Simple Icons
+  // for brands) and render as inline SVG, so nothing is fetched from api.iconify.design.
+  icon: {
+    mode: 'svg',
+    serverBundle: 'local',
+    fallbackToApi: false,
+    clientBundle: {
+      // Icon names stored in data/*.json are found by the scan as well
+      scan: {
+        globInclude: ['components/**/*.vue', 'pages/**/*.vue', 'error.vue', 'data/**/*.json'],
+        globExclude: ['node_modules', 'dist', '.nuxt', '.output']
+      }
+    }
+  },
 
   i18n: {
     restructureDir: '.',

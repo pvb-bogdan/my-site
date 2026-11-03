@@ -2,10 +2,10 @@
   <section id="testimonials" aria-labelledby="testimonials-title" class="relative px-6 py-20 overflow-hidden bg-white dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 600px;">
     <!-- Decorative background elements -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-      <IconsDotGrid class="absolute opacity-20 top-10 right-10 dark:opacity-10" />
-      <IconsCircleRings class="absolute opacity-15 bottom-20 left-16 dark:opacity-10" />
-      <IconsTriangle class="absolute opacity-15 top-1/3 left-8 dark:opacity-10" />
-      <IconsSquares class="absolute opacity-20 bottom-32 right-20 dark:opacity-10" />
+      <DecorDotGrid class="absolute opacity-20 top-10 right-10 dark:opacity-10" />
+      <DecorCircleRings class="absolute opacity-15 bottom-20 left-16 dark:opacity-10" />
+      <DecorTriangle class="absolute opacity-15 top-1/3 left-8 dark:opacity-10" />
+      <DecorSquares class="absolute opacity-20 bottom-32 right-20 dark:opacity-10" />
     </div>
 
     <div class="container relative z-10 mx-auto">

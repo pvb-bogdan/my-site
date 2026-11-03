@@ -6,33 +6,47 @@
     "description": "Creez experiențe digitale frumoase, centrate pe utilizator, cu tehnologii web moderne. Specializat în Vue, Nuxt și sisteme de design scalabile."
   },
   "navLinks": [
-    { "label": "Acasă", "href": "#hero" },
-    { "label": "Servicii", "href": "#services" },
-    { "label": "Despre", "href": "#about" },
-    { "label": "Portofoliu", "href": "#portfolio" },
-    { "label": "Testimoniale", "href": "#testimonials" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "Acasă",
+      "href": "#hero"
+    },
+    {
+      "label": "Servicii",
+      "href": "#services"
+    },
+    {
+      "label": "Despre",
+      "href": "#about"
+    },
+    {
+      "label": "Portofoliu",
+      "href": "#portfolio"
+    },
+    {
+      "label": "Testimoniale",
+      "href": "#testimonials"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
   ],
   "services": [
     {
-      "icon": "uiux",
-      "title": "Design UI/UX",
-      "description": "Creez interfețe intuitive și site-uri care arată bine și funcționează exact așa cum trebuie, gândite pentru oameni, nu doar pentru ecrane."
+      "id": "uiux",
+      "icon": "lucide:monitor-smartphone"
     },
     {
-      "icon": "print",
-      "title": "Print Design",
-      "description": "Creez materiale print clare și bine structurate, pregătite corect pentru tipar, care arată profesionist și transmit mesajul tău exact așa cum trebuie."
+      "id": "print",
+      "icon": "lucide:printer"
     },
     {
-      "icon": "identity",
-      "title": "Identitate vizuală",
-      "description": "Creez identități vizuale care spun povestea brandului tău, prin elemente simple și memorabile, ușor de recunoscut."
+      "id": "identity",
+      "icon": "lucide:pen-tool"
     },
     {
-      "icon": "performance",
-      "title": "Optimizare Performanță",
-      "description": "Mă asigur că site-ul tău se încarcă rapid și funcționează perfect pe toate dispozitivele și platformele."
+      "id": "performance",
+      "icon": "lucide:gauge"
     }
   ],
   "about": {
@@ -42,15 +56,51 @@
     "linkedinLink": "https://www.linkedin.com/in/petrebogdan"
   },
   "technologies": [
-    { "name": "HTML & CSS", "level": 90, "icon": "htmlcss" },
-    { "name": "Bootstrap", "level": 90, "icon": "bootstrap" },
-    { "name": "Tailwind CSS", "level": 90, "icon": "tailwind" },
-    { "name": "JavaScript", "level": 75, "icon": "javascript" },
-    { "name": "Vue.js", "level": 55, "icon": "vue" },
-    { "name": "Nuxt.js", "level": 80, "icon": "nuxt" },
-    { "name": "Git & GitHub", "level": 85, "icon": "git" },
-    { "name": "Figma", "level": 75, "icon": "figma" },
-    { "name": "Adobe CC", "level": 75, "icon": "adobe" }
+    {
+      "name": "HTML & CSS",
+      "level": 90,
+      "icon": "htmlcss"
+    },
+    {
+      "name": "Bootstrap",
+      "level": 90,
+      "icon": "bootstrap"
+    },
+    {
+      "name": "Tailwind CSS",
+      "level": 90,
+      "icon": "tailwind"
+    },
+    {
+      "name": "JavaScript",
+      "level": 75,
+      "icon": "javascript"
+    },
+    {
+      "name": "Vue.js",
+      "level": 55,
+      "icon": "vue"
+    },
+    {
+      "name": "Nuxt.js",
+      "level": 80,
+      "icon": "nuxt"
+    },
+    {
+      "name": "Git & GitHub",
+      "level": 85,
+      "icon": "git"
+    },
+    {
+      "name": "Figma",
+      "level": 75,
+      "icon": "figma"
+    },
+    {
+      "name": "Adobe CC",
+      "level": 75,
+      "icon": "adobe"
+    }
   ],
   "testimonials": [
     {
@@ -91,9 +141,25 @@
     }
   ],
   "socialLinks": [
-    { "name": "GitHub", "icon": "🔗", "url": "https://github.com" },
-    { "name": "Dribbble", "icon": "🎨", "url": "https://dribbble.com" },
-    { "name": "Behance", "icon": "📱", "url": "https://behance.net" },
-    { "name": "LinkedIn", "icon": "💼", "url": "https://linkedin.com" }
+    {
+      "name": "GitHub",
+      "icon": "🔗",
+      "url": "https://github.com"
+    },
+    {
+      "name": "Dribbble",
+      "icon": "🎨",
+      "url": "https://dribbble.com"
+    },
+    {
+      "name": "Behance",
+      "icon": "📱",
+      "url": "https://behance.net"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "💼",
+      "url": "https://linkedin.com"
+    }
   ]
 }

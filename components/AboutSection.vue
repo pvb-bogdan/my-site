@@ -3,9 +3,9 @@
     <!-- Background Decorative Elements -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <!-- Decorative dots pattern -->
-      <IconsDotGrid class="absolute opacity-20 top-20 right-10 dark:opacity-10" />
-      <IconsSquares class="absolute opacity-20 bottom-20 left-10 dark:opacity-10" />
-      <IconsCircleRings class="absolute opacity-15 bottom-40 right-20 dark:opacity-10" />
+      <DecorDotGrid class="absolute opacity-20 top-20 right-10 dark:opacity-10" />
+      <DecorSquares class="absolute opacity-20 bottom-20 left-10 dark:opacity-10" />
+      <DecorCircleRings class="absolute opacity-15 bottom-40 right-20 dark:opacity-10" />
     </div>
 
     <div class="container relative z-10 mx-auto">
@@ -15,8 +15,8 @@
         <div class="relative flex justify-center order-1 lg:order-none">
           <div class="relative">
             <!-- Decorative elements behind avatar -->
-            <IconsTriangle class="absolute text-sky-400 scale-150 -top-8 -left-8 opacity-20 dark:opacity-15" />
-            <IconsCircleRings class="absolute text-blue-400 opacity-25 -bottom-6 -right-6 dark:opacity-15" />
+            <DecorTriangle class="absolute text-sky-400 scale-150 -top-8 -left-8 opacity-20 dark:opacity-15" />
+            <DecorCircleRings class="absolute text-blue-400 opacity-25 -bottom-6 -right-6 dark:opacity-15" />
             
             <!-- Avatar container - larger size -->
             <div class="relative overflow-hidden border-2 border-gray-300 rounded-full shadow-lg cursor-pointer w-72 h-72 md:w-96 md:h-96 dark:border-gray-700 group/avatar">
