@@ -49,20 +49,32 @@
                 @scroll.passive="onScroll"
               >
                 <template v-if="project.images && project.images.length > 0">
+                  <!-- The morph name sits on the slide (not the img) so its snapshot includes the placeholder below -->
                   <div
                     v-for="(image, imageIndex) in project.images"
                     :key="image + imageIndex"
-                    class="flex-shrink-0 w-full h-full snap-start"
+                    class="relative flex-shrink-0 w-full h-full snap-start"
+                    :style="heroTransitionName && imageIndex === currentImageIndex ? { viewTransitionName: heroTransitionName } : undefined"
                   >
+                    <!-- Placeholder: same props as the card thumbnail, so it is the already-cached file -->
+                    <NuxtImg
+                      v-if="imageIndex === 0"
+                      :src="project.thumbImage || image"
+                      alt=""
+                      aria-hidden="true"
+                      width="640"
+                      height="360"
+                      class="absolute inset-0 object-cover w-full h-full"
+                    />
                     <NuxtImg
                       :src="image"
                       :alt="t('modal.imageAlt', { title: project.title, num: imageIndex + 1, total: project.images.length })"
                       width="1280"
                       height="720"
                       :loading="imageIndex === 0 ? 'eager' : 'lazy'"
+                      :fetchpriority="imageIndex === 0 ? 'high' : undefined"
                       :data-project-hero="imageIndex === currentImageIndex ? '' : undefined"
-                      :style="heroTransitionName && imageIndex === currentImageIndex ? { viewTransitionName: heroTransitionName } : undefined"
-                      class="object-cover w-full h-full transition-opacity duration-base"
+                      class="relative object-cover w-full h-full"
                     />
                   </div>
                 </template>
@@ -236,6 +248,7 @@ interface Project {
   fullDescription?: string
   tags: string[]
   category: string
+  thumbImage?: string
   images?: string[]
   technologies?: string[]
   liveUrl?: string

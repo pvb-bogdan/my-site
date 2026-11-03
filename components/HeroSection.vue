@@ -4,7 +4,7 @@
     ref="heroRef"
     aria-labelledby="hero-title"
     :data-motion-paused="isOffscreen ? '' : undefined"
-    class="relative flex items-center justify-center px-6 pt-20 overflow-hidden">
+    class="relative flex items-center justify-center px-6 pt-20 pb-12 overflow-hidden min-h-screen min-h-svh">
     <HeroBackground />
 
     <div class="container relative z-10 mx-auto">
@@ -36,24 +36,28 @@
           </div>
         </div>
 
-        <!-- Hero Image: one image for every size (160px on phones, above the heading) -->
-        <div class="relative flex-shrink-0 order-first lg:order-none lg:flex-1">
+        <!-- Hero Image: tablet and up only; phones get a text-only, full-height first screen -->
+        <div class="relative flex-shrink-0 hidden md:block lg:flex-1">
           <!-- Soft Glow/Shadow -->
           <div class="absolute left-1/2 top-1/2 w-[90%] h-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/30 blur-2xl" aria-hidden="true"></div>
 
           <!-- One floating shape only (motion restraint) -->
           <svg aria-hidden="true" class="absolute top-0 left-0 hidden w-16 h-16 md:block text-sky-300/40 opacity-70 animate-float-slow" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="currentColor"/></svg>
 
-          <NuxtImg
-            src="/images/avatar2.webp"
-            :alt="t('hero.imageAlt')"
-            width="640"
-            height="900"
-            sizes="160px md:384px lg:576px xl:640px"
-            loading="eager"
-            fetchpriority="high"
-            class="relative z-10 w-40 mx-auto md:w-full md:max-w-sm lg:max-w-xl xl:max-w-[40rem]"
-          />
+          <!-- A hidden eager <img> still downloads, so on phones the <source> swaps in a 1×1 blank GIF -->
+          <picture>
+            <source media="(max-width: 767px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+            <NuxtImg
+              src="/images/avatar2.webp"
+              :alt="t('hero.imageAlt')"
+              width="640"
+              height="900"
+              sizes="md:384px lg:576px xl:640px"
+              loading="eager"
+              fetchpriority="high"
+              class="relative z-10 w-full mx-auto max-w-sm lg:max-w-xl xl:max-w-[40rem]"
+            />
+          </picture>
         </div>
       </div>
     </div>
