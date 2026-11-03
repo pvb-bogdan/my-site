@@ -66,11 +66,39 @@
   "about": {
     "title": "Despre Mine",
     "bio": [
-      "Creez experiente digitale moderne si intuitive, imbinand web designul cu dezvoltarea frontend pentru proiecte care nu doar arata bine, ci sunt si placute de folosit. In acelasi timp, imi place sa dau viata identitatii vizuale prin logo-uri, cataloage si alte materiale de branding sau print, astfel incat fiecare proiect sa comunice clar si coerent, in orice format."
+      "Dupa 15 ani de design pentru print si web intr-o companie cu ritm alert, lucrez acum direct cu clientii: site-uri, cataloage, meniuri si identitati vizuale care arata profesionist si sunt usor de folosit.",
+      "Imbin designul vizual cu dezvoltarea frontend, asa ca designul pe care il aprobi este exact site-ul pe care il primesti — rapid, responsive si construit cu instrumente moderne precum Vue si Nuxt."
     ],
-    "technologies": "Tehnologii si Instrumente",
     "linkedin": "LinkedIn",
-    "imageAlt": "Fotografie cu Bogdan Petre"
+    "imageAlt": "Fotografie cu Bogdan Petre",
+    "availability": "Disponibil pentru proiecte freelance",
+    "experienceValue": "15+",
+    "experienceLabel": "ani de experienta in design si frontend",
+    "processTitle": "Cum lucrez",
+    "process": [
+      {
+        "title": "Descoperire",
+        "text": "Discutam despre obiectivele tale, publicul tau si cum arata succesul."
+      },
+      {
+        "title": "Design",
+        "text": "Wireframe-uri si design vizual in Figma, revizuite impreuna inainte de cod."
+      },
+      {
+        "title": "Dezvoltare",
+        "text": "Un site rapid si responsive in Vue/Nuxt sau fisiere pregatite pentru tipar."
+      },
+      {
+        "title": "Lansare si suport",
+        "text": "Publicam, iti predau totul si raman disponibil pentru modificari."
+      }
+    ],
+    "toolsTitle": "Instrumentele mele de zi cu zi",
+    "toolGroups": {
+      "design": "Design",
+      "frontend": "Frontend",
+      "tooling": "Instrumente"
+    }
   },
   "portfolio": {
     "title": "Portofoliu",

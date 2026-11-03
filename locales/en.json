@@ -66,11 +66,39 @@
   "about": {
     "title": "About Me",
     "bio": [
-      "I create modern and intuitive digital experiences, combining web design and frontend development for projects that not only look great but are also delightful to use. At the same time, I enjoy bringing visual identities to life through logos, catalogs, and other branding or print assets, so each project communicates clearly and consistently across every format."
+      "After 15 years designing for print and web inside a busy company, I now work directly with clients: websites, catalogs, menus and brand identities that look professional and are easy to use.",
+      "I combine visual design with frontend development, so the design you approve is the site you get — fast, responsive and built with modern tools like Vue and Nuxt."
     ],
-    "technologies": "Technologies and Tools",
     "linkedin": "LinkedIn",
-    "imageAlt": "Photo of Bogdan Petre"
+    "imageAlt": "Photo of Bogdan Petre",
+    "availability": "Available for freelance projects",
+    "experienceValue": "15+",
+    "experienceLabel": "years of design & frontend experience",
+    "processTitle": "How I work",
+    "process": [
+      {
+        "title": "Discover",
+        "text": "We talk about your goals, audience and what success looks like."
+      },
+      {
+        "title": "Design",
+        "text": "Wireframes and visual design in Figma, reviewed together before any code."
+      },
+      {
+        "title": "Build",
+        "text": "A fast, responsive site in Vue/Nuxt, or print-ready files for print work."
+      },
+      {
+        "title": "Launch & support",
+        "text": "Go live, hand over, and stay available for changes."
+      }
+    ],
+    "toolsTitle": "Tools I use every day",
+    "toolGroups": {
+      "design": "Design",
+      "frontend": "Frontend",
+      "tooling": "Tooling"
+    }
   },
   "portfolio": {
     "title": "Portfolio",

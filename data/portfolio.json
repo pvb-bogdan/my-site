@@ -50,56 +50,73 @@
     }
   ],
   "about": {
-    "bio": [
-      "Creez experiențe digitale moderne și intuitive, îmbinând web designul cu dezvoltarea frontend pentru proiecte care nu doar arată bine, ci sunt și plăcute de folosit. În același timp, îmi place să dau viață identității vizuale prin logo-uri, cataloage și alte materiale de branding sau print, astfel încât fiecare proiect să comunice clar și coerent, în orice format."
-    ],
     "linkedinLink": "https://www.linkedin.com/in/petrebogdan"
   },
   "technologies": [
     {
-      "name": "HTML & CSS",
-      "level": 90,
-      "icon": "htmlcss"
+      "name": "Figma",
+      "icon": "simple-icons:figma",
+      "group": "design"
     },
     {
-      "name": "Bootstrap",
-      "level": 90,
-      "icon": "bootstrap"
+      "name": "Photoshop",
+      "icon": "simple-icons:adobephotoshop",
+      "group": "design"
     },
     {
-      "name": "Tailwind CSS",
-      "level": 90,
-      "icon": "tailwind"
+      "name": "Illustrator",
+      "icon": "simple-icons:adobeillustrator",
+      "group": "design"
+    },
+    {
+      "name": "InDesign",
+      "icon": "simple-icons:adobeindesign",
+      "group": "design"
+    },
+    {
+      "name": "HTML5",
+      "icon": "simple-icons:html5",
+      "group": "frontend"
+    },
+    {
+      "name": "CSS",
+      "icon": "simple-icons:css",
+      "group": "frontend"
     },
     {
       "name": "JavaScript",
-      "level": 75,
-      "icon": "javascript"
+      "icon": "simple-icons:javascript",
+      "group": "frontend"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "simple-icons:tailwindcss",
+      "group": "frontend"
+    },
+    {
+      "name": "Bootstrap",
+      "icon": "simple-icons:bootstrap",
+      "group": "frontend"
     },
     {
       "name": "Vue.js",
-      "level": 55,
-      "icon": "vue"
+      "icon": "simple-icons:vuedotjs",
+      "group": "frontend"
     },
     {
-      "name": "Nuxt.js",
-      "level": 80,
-      "icon": "nuxt"
+      "name": "Nuxt",
+      "icon": "simple-icons:nuxt",
+      "group": "frontend"
     },
     {
-      "name": "Git & GitHub",
-      "level": 85,
-      "icon": "git"
+      "name": "Git",
+      "icon": "simple-icons:git",
+      "group": "tooling"
     },
     {
-      "name": "Figma",
-      "level": 75,
-      "icon": "figma"
-    },
-    {
-      "name": "Adobe CC",
-      "level": 75,
-      "icon": "adobe"
+      "name": "GitHub",
+      "icon": "simple-icons:github",
+      "group": "tooling"
     }
   ],
   "testimonials": [
