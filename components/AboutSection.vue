@@ -68,7 +68,8 @@
       </div>
 
       <!-- 2. How I work -->
-      <div class="mb-20">
+      <!-- No bottom margin on phones: the tools strip below is hidden there -->
+      <div class="md:mb-20">
         <h3 class="mb-10 text-2xl font-semibold text-center md:text-3xl">{{ t('about.processTitle') }}</h3>
 
         <ol ref="processListRef" class="process-list relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -93,8 +94,8 @@
         </ol>
       </div>
 
-      <!-- 3. Tools strip: real brand marks, names always visible -->
-      <div>
+      <!-- 3. Tools strip: real brand marks, names always visible; tablet and up only (secondary info on phones) -->
+      <div class="hidden md:block">
         <h3 class="mb-10 text-2xl font-semibold text-center md:text-3xl">{{ t('about.toolsTitle') }}</h3>
 
         <div class="flex flex-wrap justify-center gap-x-12 gap-y-10">
