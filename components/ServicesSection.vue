@@ -1,7 +1,7 @@
 <template>
-  <section id="services" class="relative px-6 py-20 overflow-hidden bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 800px;">
+  <section id="services" aria-labelledby="services-title" class="relative px-6 py-20 overflow-hidden bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 800px;">
     <!-- Decorative background elements -->
-    <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <!-- Dot grid pattern - top left -->
       <div class="absolute top-10 left-10 opacity-20 dark:opacity-10">
         <DotGrid />
@@ -35,7 +35,7 @@
     
     <div class="container relative z-10 mx-auto">
       <div class="mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('services.title') }}</h2>
+        <h2 id="services-title" class="mb-4 text-4xl font-bold md:text-5xl">{{ t('services.title') }}</h2>
         <p class="max-w-2xl mx-auto text-lg text-gray-700 dark:text-gray-300">
           {{ t('services.subtitle') }}
         </p>

@@ -10,7 +10,7 @@
           href="#hero"
           :aria-label="t('aria.goHome', { name: fullName })"
           :title="fullName"
-          class="z-10 text-2xl text-blue-500 transition-colors hover:text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+          class="z-10 flex items-center justify-center text-2xl text-blue-600 transition-colors rounded-lg min-w-11 min-h-11 dark:text-sky-400 hover:text-blue-500 dark:hover:text-sky-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
           @click.prevent="handleLinkClick('#hero')"
         >
           <strong>pb</strong>
@@ -35,73 +35,27 @@
           </nav>
         </div>
 
-        <!-- Theme Toggle (Right) -->
+        <!-- Language + Theme (Right) -->
         <div class="items-center hidden gap-3 xl:flex">
-          <div class="flex items-center p-1 rounded-lg bg-gray-200/70 dark:bg-gray-800/70" :aria-label="t('lang.switch')" role="group">
-            <button
-              v-for="lang in localeButtons"
-              :key="lang"
-              type="button"
-              class="px-3 py-2 text-xs font-semibold rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-              :class="locale === lang ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-sky-400'"
-              @click="changeLocale(lang)"
-            >
-              {{ t(`lang.${lang}`) }}
-            </button>
-          </div>
-          <button
-            type="button"
-            class="p-2 text-gray-700 transition-all duration-200 dark:text-yellow-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
-            :aria-label="t('aria.toggleTheme')"
-            @click="emit('toggleTheme')"
-          >
-            <svg class="hidden w-5 h-5 dark:block" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-            </svg>
-            <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-          </button>
+          <LocaleSwitch />
+          <ThemeToggle />
         </div>
 
         <!-- Mobile Menu & Theme Toggle -->
         <div class="flex items-center gap-2 xl:hidden">
-          <div class="flex items-center p-1 rounded-lg bg-gray-200/70 dark:bg-gray-800/70" :aria-label="t('lang.switch')" role="group">
-            <button
-              v-for="lang in localeButtons"
-              :key="`mobile-${lang}`"
-              type="button"
-              class="px-3 py-2 text-xs font-semibold rounded-md transition-colors focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-              :class="locale === lang ? 'bg-blue-600 text-white' : 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-sky-400'"
-              @click="changeLocale(lang)"
-            >
-              {{ t(`lang.${lang}`) }}
-            </button>
-          </div>
-          <button
-            type="button"
-            class="p-2 text-gray-700 transition-all duration-200 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-yellow-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
-            :aria-label="t('aria.toggleTheme')"
-            @click="emit('toggleTheme')"
-          >
-            <svg class="hidden w-5 h-5 dark:block" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-            </svg>
-            <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-          </button>
+          <LocaleSwitch />
+          <ThemeToggle />
 
           <button
             type="button"
-            class="p-2 text-gray-700 transition-colors hover:text-blue-600 dark:text-gray-300 dark:hover:text-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+            class="flex items-center justify-center text-gray-700 transition-colors min-w-11 min-h-11 hover:text-blue-600 dark:text-gray-300 dark:hover:text-sky-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
             :aria-controls="mobileNavigationId"
             :aria-expanded="mobileMenuOpen"
             :aria-label="mobileMenuOpen ? t('aria.closeMenu') : t('aria.openMenu')"
             @click="mobileMenuOpen = !mobileMenuOpen"
             @keydown.esc="mobileMenuOpen = false"
           >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 v-if="!mobileMenuOpen"
                 stroke-linecap="round"
@@ -125,7 +79,7 @@
       <nav
         :id="mobileNavigationId"
         v-if="mobileMenuOpen"
-        aria-label="Mobile navigation"
+        :aria-label="t('aria.mobileNavigation')"
         class="pt-4 pb-4 mt-4 space-y-4 border-t border-gray-200 xl:hidden dark:border-gray-800 mobile-menu-enter"
       >
         <a
@@ -135,7 +89,8 @@
           :aria-current="activeLink === link.href ? 'location' : undefined"
           :class="{
             'block transition-all duration-200 px-4 py-3 rounded-lg font-medium': true,
-            'text-white bg-gradient-to-r from-blue-700 to-cyan-500 shadow-md': activeLink === link.href,
+            // Solid blue-600 keeps white text above 4.5:1 (the cyan end of the old gradient did not)
+            'text-white bg-blue-600 shadow-md': activeLink === link.href,
             'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2': activeLink !== link.href
           }"
           @click.prevent="handleLinkClick(link.href); handleMobileClick()"
@@ -161,12 +116,7 @@ const props = defineProps<{
   isScrolled: boolean
 }>()
 
-const emit = defineEmits<{
-  (e: 'toggleTheme'): void
-}>()
-
-const { t, locale, setLocale } = useI18n()
-const localeButtons = ['ro', 'en'] as const
+const { t } = useI18n()
 
 const mobileMenuOpen = ref(false)
 const mobileNavigationId = 'mobile-navigation'
@@ -196,7 +146,8 @@ const handleLinkClick = (href: string) => {
   const target = document.querySelector<HTMLElement>(href)
   if (target) {
     updateActiveLink(href)
-    target.scrollIntoView({ behavior: 'smooth' })
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' })
   }
 }
 
@@ -232,14 +183,6 @@ const handleResize = () => {
   if (window.innerWidth >= 1280) {
     mobileMenuOpen.value = false
   }
-}
-
-const changeLocale = async (nextLocale: 'ro' | 'en') => {
-  if (locale.value === nextLocale) {
-    return
-  }
-
-  await setLocale(nextLocale)
 }
 
 const initializeActiveLink = () => {
@@ -331,13 +274,14 @@ onBeforeUnmount(() => {
 /* Active link styling using .active class (cross-browser compatible) */
 .nav a.active {
   color: white;
-  background: linear-gradient(to right, rgb(29 78 216), rgb(14 165 233)); /* from-blue-700 to-cyan-500 */
+  /* blue-700 → sky-600 keeps white text above 4.5:1 across the whole pill */
+  background: linear-gradient(to right, rgb(29 78 216), rgb(2 132 199));
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
 
 .dark .nav a.active {
   color: white;
-  background: linear-gradient(to right, rgb(29 78 216), rgb(14 165 233)); /* from-blue-700 to-cyan-500 */
+  background: linear-gradient(to right, rgb(29 78 216), rgb(2 132 199));
   box-shadow: 0 4px 20px rgba(14, 165, 233, 0.5);
 }
 

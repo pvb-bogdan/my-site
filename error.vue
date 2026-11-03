@@ -14,7 +14,7 @@
         <div class="flex flex-col items-center justify-between gap-12 lg:flex-row">
           <!-- Text Content -->
           <div class="flex-1 text-center lg:text-left">
-            <p class="mb-4 font-semibold tracking-widest text-gray-300 uppercase animate-fade-in-up animation-delay-100">
+            <p class="mb-4 font-semibold tracking-widest text-gray-500 uppercase dark:text-gray-400 animate-fade-in-up animation-delay-100">
               {{ t('error.code') }}
             </p>
             <h1 class="mb-6 text-6xl font-bold md:text-7xl lg:text-8xl animate-fade-in-up animation-delay-200">
@@ -31,7 +31,7 @@
                 class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg shadow-lg group hover:scale-105 hover:shadow-xl"
               >
                 <span class="relative z-10">{{ t('error.backHome') }}</span>
-                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-cyan-500 group-hover:opacity-100"></div>
+                <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-sky-600 group-hover:opacity-100"></div>
               </NuxtLink>
             </div>
           </div>
@@ -41,12 +41,12 @@
             <div class="absolute left-1/2 top-1/2 w-[90%] h-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/30 blur-2xl"></div>
 
             <!-- Floating SVG Shapes -->
-            <svg class="absolute top-0 left-0 w-16 h-16 text-sky-300/40 opacity-70 animate-float-slow" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="currentColor"/></svg>
-            <svg class="absolute w-10 h-10 text-cyan-300 dark:text-green-100 right-4 top-10 opacity-60 animate-float-medium" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="8" fill="currentColor"/></svg>
+            <svg aria-hidden="true" class="absolute top-0 left-0 w-16 h-16 text-sky-300/40 opacity-70 animate-float-slow" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="currentColor"/></svg>
+            <svg aria-hidden="true" class="absolute w-10 h-10 text-cyan-300 dark:text-green-100 right-4 top-10 opacity-60 animate-float-medium" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="8" fill="currentColor"/></svg>
 
             <NuxtImg
               src="/images/avatar2.webp"
-              alt="Bogdan Petre"
+              :alt="t('hero.imageAlt')"
               width="640"
               height="900"
               loading="eager"

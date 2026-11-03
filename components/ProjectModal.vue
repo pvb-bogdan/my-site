@@ -3,15 +3,21 @@
     <Transition name="modal">
       <div
         v-if="isOpen"
+        ref="dialogRef"
+        role="dialog"
+        aria-modal="true"
+        :aria-labelledby="titleId"
         class="fixed inset-0 z-[100] bg-white dark:bg-gray-900 overflow-y-auto"
       >
         <!-- Close Button -->
         <button
+          ref="closeButtonRef"
+          type="button"
           @click="closeModal"
-          class="fixed z-50 p-3 transition-colors bg-gray-200 rounded-full shadow-lg top-6 right-6 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
+          class="fixed z-50 p-3 transition-colors bg-gray-200 rounded-full shadow-lg top-6 right-6 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
           :aria-label="t('aria.closeModal')"
         >
-          <svg class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -20,7 +26,7 @@
         <div class="container px-6 py-20 mx-auto">
           <!-- Project Header -->
           <div v-if="project" class="max-w-4xl mb-12">
-            <h2 class="mb-6 text-5xl font-bold text-gray-900 md:text-6xl dark:text-gray-100">
+            <h2 :id="titleId" class="mb-6 text-5xl font-bold text-gray-900 md:text-6xl dark:text-gray-100">
               {{ project.title }}
             </h2>
             <div class="flex flex-wrap gap-2">
@@ -45,13 +51,13 @@
               >
                 <template v-if="project.images && project.images.length > 0">
                   <div
-                    v-for="(image, idx) in project.images"
-                    :key="image + idx"
+                    v-for="(image, imageIndex) in project.images"
+                    :key="image + imageIndex"
                     class="flex-shrink-0 w-full h-full snap-start"
                   >
                     <NuxtImg
                       :src="image"
-                      :alt="project.title"
+                      :alt="t('modal.imageAlt', { title: project.title, num: imageIndex + 1, total: project.images.length })"
                       width="1280"
                       height="720"
                       loading="lazy"
@@ -67,22 +73,24 @@
               <!-- Prev / Next Buttons (desktop only) -->
               <template v-if="project.images && project.images.length > 1">
                 <button
+                  type="button"
                   @click="scrollToSlide(currentImageIndex - 1)"
                   :disabled="currentImageIndex === 0"
-                  class="absolute items-center justify-center hidden w-10 h-10 text-white transition-all -translate-y-1/2 rounded-full left-4 top-1/2 md:flex bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed"
+                  class="absolute items-center justify-center hidden w-10 h-10 text-white transition-all -translate-y-1/2 rounded-full left-4 top-1/2 md:flex bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
                   :aria-label="t('aria.previousImage')"
                 >
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
                 <button
+                  type="button"
                   @click="scrollToSlide(currentImageIndex + 1)"
                   :disabled="currentImageIndex === project.images.length - 1"
-                  class="absolute items-center justify-center hidden w-10 h-10 text-white transition-all -translate-y-1/2 rounded-full right-4 top-1/2 md:flex bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed"
+                  class="absolute items-center justify-center hidden w-10 h-10 text-white transition-all -translate-y-1/2 rounded-full right-4 top-1/2 md:flex bg-black/50 hover:bg-black/70 disabled:opacity-30 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
                   :aria-label="t('aria.nextImage')"
                 >
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
@@ -98,22 +106,29 @@
             </div>
 
             <!-- Image Dots Navigation -->
-            <div v-if="project.images && project.images.length > 1" class="flex justify-center gap-2 mt-6">
+            <div v-if="project.images && project.images.length > 1" class="flex justify-center mt-4">
+              <!-- Each dot keeps its 8px visual but gets a 24px+ hit area through padding -->
               <button
                 v-for="(image, index) in project.images"
                 :key="'dot-' + index"
-                @click="scrollToSlide(index)"
-                :class="[
-                  'h-2 rounded-full transition-all',
-                  currentImageIndex === index
-                    ? 'bg-blue-600 dark:bg-sky-400 w-8'
-                    : 'bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 w-2'
-                ]"
+                type="button"
+                class="p-2 rounded-full group/dot focus-visible:outline-2 focus-visible:outline-blue-500"
                 :aria-label="t('aria.viewImage', { num: index + 1 })"
-              />
+                :aria-current="currentImageIndex === index ? 'true' : undefined"
+                @click="scrollToSlide(index)"
+              >
+                <span
+                  :class="[
+                    'block h-2 rounded-full transition-all',
+                    currentImageIndex === index
+                      ? 'bg-blue-600 dark:bg-sky-400 w-8'
+                      : 'bg-gray-300 dark:bg-gray-700 group-hover/dot:bg-gray-400 dark:group-hover/dot:bg-gray-600 w-2'
+                  ]"
+                ></span>
+              </button>
             </div>
             <!-- Swipe hint for mobile -->
-            <p class="mt-4 text-sm text-center text-gray-400 md:hidden dark:text-gray-500">
+            <p class="mt-4 text-sm text-center text-gray-600 md:hidden dark:text-gray-400">
               ← {{ t('modal.swipe') }} →
             </p>
           </div>
@@ -167,7 +182,7 @@
                   rel="noopener noreferrer"
                   class="flex items-center justify-center w-full gap-2 px-6 py-4 font-semibold text-white transition-colors duration-200 transform bg-blue-600 shadow-lg hover:bg-blue-700 rounded-xl hover:shadow-xl hover:scale-105"
                 >
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                   {{ t('modal.viewSite') }}
@@ -179,7 +194,7 @@
                   rel="noopener noreferrer"
                   class="flex items-center justify-center w-full gap-2 px-6 py-4 font-semibold text-white transition-colors duration-200 transform bg-gray-800 shadow-lg hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-xl hover:shadow-xl hover:scale-105"
                 >
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
                   </svg>
                   {{ t('modal.viewGithub') }}
@@ -210,9 +225,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick, onBeforeUnmount } from 'vue'
+import { ref, watch, nextTick, onBeforeUnmount, useId } from 'vue'
 
 const { t } = useI18n()
+const titleId = useId()
 
 interface Testimonial {
   quote: string
@@ -244,6 +260,12 @@ const emit = defineEmits<{
 
 const currentImageIndex = ref(0)
 const carouselRef = ref<HTMLElement | null>(null)
+const dialogRef = ref<HTMLElement | null>(null)
+const closeButtonRef = ref<HTMLElement | null>(null)
+// The element that opened the dialog, so focus can return to it on close
+let returnFocusTarget: HTMLElement | null = null
+
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 const closeModal = () => {
   emit('close')
@@ -256,7 +278,7 @@ const scrollToSlide = (index: number) => {
     if (!container) return
     const card = container.children[index] as HTMLElement
     if (card) {
-      card.scrollIntoView({ behavior: 'smooth', inline: 'start' })
+      card.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'nearest', inline: 'start' })
     }
   })
 }
@@ -284,10 +306,45 @@ watch(() => props.project, () => {
   currentImageIndex.value = 0
 })
 
-// Handle ESC key to close modal. The listener lives at module scope so the exact
-// same function can be removed again (a watcher's return value is ignored by Vue).
+const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+
+// Keep Tab / Shift+Tab inside the dialog
+const trapFocus = (event: KeyboardEvent) => {
+  const dialog = dialogRef.value
+  if (!dialog) return
+  const focusableElements = Array.from(dialog.querySelectorAll<HTMLElement>(focusableSelector))
+    .filter((element) => element.offsetParent !== null || element === closeButtonRef.value)
+  if (focusableElements.length === 0) return
+
+  const firstElement = focusableElements[0]
+  const lastElement = focusableElements[focusableElements.length - 1]
+  const focusIsOutside = !dialog.contains(document.activeElement)
+
+  if (event.shiftKey && (document.activeElement === firstElement || focusIsOutside)) {
+    event.preventDefault()
+    lastElement.focus()
+  } else if (!event.shiftKey && (document.activeElement === lastElement || focusIsOutside)) {
+    event.preventDefault()
+    firstElement.focus()
+  }
+}
+
+// The listener lives at module scope so the exact same function can be removed
+// again (a watcher's return value is ignored by Vue).
 const handleKeydown = (event: KeyboardEvent) => {
-  if (event.key === 'Escape') closeModal()
+  const imageCount = props.project?.images?.length ?? 0
+
+  if (event.key === 'Escape') {
+    closeModal()
+  } else if (event.key === 'Tab') {
+    trapFocus(event)
+  } else if (event.key === 'ArrowLeft' && currentImageIndex.value > 0) {
+    event.preventDefault()
+    scrollToSlide(currentImageIndex.value - 1)
+  } else if (event.key === 'ArrowRight' && currentImageIndex.value < imageCount - 1) {
+    event.preventDefault()
+    scrollToSlide(currentImageIndex.value + 1)
+  }
 }
 
 const detachModalListeners = () => {
@@ -295,12 +352,17 @@ const detachModalListeners = () => {
   document.body.style.overflow = ''
 }
 
-watch(() => props.isOpen, (isOpen) => {
+watch(() => props.isOpen, async (isOpen) => {
   if (isOpen) {
+    returnFocusTarget = document.activeElement as HTMLElement | null
     document.body.style.overflow = 'hidden'
     window.addEventListener('keydown', handleKeydown)
+    await nextTick()
+    closeButtonRef.value?.focus()
   } else {
     detachModalListeners()
+    returnFocusTarget?.focus()
+    returnFocusTarget = null
   }
 })
 
@@ -318,14 +380,12 @@ onBeforeUnmount(detachModalListeners)
   opacity: 0;
 }
 
-/* Hide scrollbar but keep functionality */
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+/* Hide only the carousel's horizontal scrollbar; the dialog keeps its vertical one */
+.hide-scrollbar {
+  scrollbar-width: none;
 }
 
-* {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 </style>

@@ -21,7 +21,11 @@
     "closeModal": "Inchide fereastra",
     "previousImage": "Imaginea anterioara",
     "nextImage": "Imaginea urmatoare",
-    "viewImage": "Vezi imaginea {num}"
+    "viewImage": "Vezi imaginea {num}",
+    "darkMode": "Mod intunecat",
+    "switchToLight": "Treci la modul luminos",
+    "switchToDark": "Treci la modul intunecat",
+    "mobileNavigation": "Navigare mobila"
   },
   "seo": {
     "homeTitle": "Bogdan Petre - Web Designer si Dezvoltator Frontend",
@@ -34,7 +38,8 @@
     "description": "Creez experiente digitale intuitive si atractive, axate pe utilizator, folosind Figma si AdobeXD pentru prototipare si design. Integrez designul cu dezvoltarea frontend pentru rezultate moderne si eficiente.",
     "ctaPortfolio": "Vezi Portofoliul",
     "ctaContact": "Contacteaza-ma",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "imageAlt": "Portret ilustrat al lui Bogdan Petre"
   },
   "services": {
     "title": "Servicii",
@@ -64,7 +69,8 @@
       "Creez experiente digitale moderne si intuitive, imbinand web designul cu dezvoltarea frontend pentru proiecte care nu doar arata bine, ci sunt si placute de folosit. In acelasi timp, imi place sa dau viata identitatii vizuale prin logo-uri, cataloage si alte materiale de branding sau print, astfel incat fiecare proiect sa comunice clar si coerent, in orice format."
     ],
     "technologies": "Tehnologii si Instrumente",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "imageAlt": "Fotografie cu Bogdan Petre"
   },
   "portfolio": {
     "title": "Portofoliu",
@@ -76,7 +82,8 @@
       "magazines": "Cataloage",
       "graphics": "Grafica"
     },
-    "swipe": "Swipe pentru a naviga"
+    "swipe": "Swipe pentru a naviga",
+    "filterLabel": "Filtreaza proiectele dupa categorie"
   },
   "projects": {
     "items": [
@@ -84,7 +91,11 @@
         "title": "Catalog WeDeco",
         "description": "Catalog de prezentare pentru scaune WeDeco",
         "fullDescription": "Un catalog detaliat care prezinta gama completa de scaune WeDeco, cu imagini de inalta calitate si descrieri clare ale produselor. Ideal pentru promovare in magazine si online.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastra de mobilier WeDeco!",
           "author": "Mac Florea",
@@ -95,7 +106,11 @@
         "title": "Catalog Ballroom",
         "description": "Catalog de prezentare pentru mobilier ballroom",
         "fullDescription": "Un catalog elegant si bine structurat pentru mobilier de sali de bal, cu imagini de calitate si descrieri detaliate, gandit sa evidentieze designul si calitatea produselor.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor din colectia noastra de mobilier WeDeco!",
           "author": "Mac Florea",
@@ -106,19 +121,31 @@
         "title": "Site Hotel Andra",
         "description": "Site de prezentare curat si minimalist pentru un hotel boutique",
         "fullDescription": "Un site elegant si minimalist pentru un hotel boutique, cu navigare simpla, imagini puternice si o experienta fluida. Designul pune accent pe confort, atmosfera si conversie.",
-        "tags": ["HTML", "Bootstrap CSS", "Lightbox"]
+        "tags": [
+          "HTML",
+          "Bootstrap CSS",
+          "Lightbox"
+        ]
       },
       {
         "title": "Site Tennis Steps",
         "description": "Site de prezentare pentru o echipa de profesionisti in tenis si racordare rachete",
         "fullDescription": "Site de prezentare pentru Tennis Steps, echipa certificata LTA si ERSA, cu focus pe racordare profesionala, evaluare nivel joc si training pentru racordori, optimizat pentru toate dispozitivele.",
-        "tags": ["HTML", "Nuxt 3", "Tailwind CSS"]
+        "tags": [
+          "HTML",
+          "Nuxt 3",
+          "Tailwind CSS"
+        ]
       },
       {
         "title": "Carte - Cum sa devii prima alegere a mirilor",
         "description": "Tehnoredactare carte pentru organizatori de nunti",
         "fullDescription": "Tehnoredactare si design pentru cartea Cum sa devii prima alegere a mirilor, un ghid practic pentru organizatorii de nunti care vor sa isi imbunatateasca serviciile si sa atraga mai multi clienti.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "Am lucrat foarte bine cu Bogdan la realizarea cartii 'Cum sa devii prima alegere a mirilor' si am fost extrem de multumit de rezultatul final!",
           "author": "Mac Florea",
@@ -129,7 +156,13 @@
         "title": "Site Restaurant Andra",
         "description": "Site de prezentare pentru Restaurant Andra, cu informatii despre meniu, livrari si contact",
         "fullDescription": "Site construit pentru acces rapid la meniu, livrare, program si contact. Structura clara, experienta intuitiva si optimizare completa pentru mobil si desktop.",
-        "tags": ["HTML", "Bootstrap CSS", "Lightbox", "JS", "Responsive design"],
+        "tags": [
+          "HTML",
+          "Bootstrap CSS",
+          "Lightbox",
+          "JS",
+          "Responsive design"
+        ],
         "testimonial": {
           "quote": "Bogdan a inteles exact ce aveam nevoie: un site clar, atractiv, care sa aduca clienti la noi. Rezultatul a depasit asteptarile.",
           "author": "Mac Florea",
@@ -140,7 +173,12 @@
         "title": "Meniu Restaurant Andra",
         "description": "Meniu pentru Restaurant Andra",
         "fullDescription": "Un meniu elegant si bine structurat, care prezinta oferta culinara intr-un format clar si atractiv, cu accent pe lizibilitate si prezentare vizuala.",
-        "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print",
+          "Photoshop"
+        ],
         "testimonial": {
           "quote": "Meniul reflecta perfect calitatea si diversitatea preparatelor noastre, iar designul a fost foarte apreciat de clienti.",
           "author": "Mac Florea",
@@ -151,7 +189,13 @@
         "title": "SwitchMorn Brand Cafea",
         "description": "Design materiale SwitchMorn",
         "fullDescription": "Am construit universul vizual SwitchMorn printr-o identitate de brand calda si expresiva: logo, tricouri, afise, bannere, flyere si stickere, intr-o paleta cromatica coerenta.",
-        "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"],
+        "tags": [
+          "Design",
+          "Illustrator",
+          "Photoshop",
+          "Print",
+          "Packaging"
+        ],
         "testimonial": {
           "quote": "Identitatea vizuala creata pentru SwitchMorn a surprins perfect energia si personalitatea brandului nostru.",
           "author": "Proprietar, SwitchMorn",
@@ -162,13 +206,24 @@
         "title": "Box promo SuperBOX",
         "description": "Design SuperBOX",
         "fullDescription": "Design pentru cutia promotionala SuperBOX, gandit sa evidentieze produsul si sa atraga atentia prin elemente grafice moderne si culori prietenoase.",
-        "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"]
+        "tags": [
+          "Design",
+          "Illustrator",
+          "Photoshop",
+          "Print",
+          "Packaging"
+        ]
       },
       {
         "title": "Meniu Restaurant Belvisso",
         "description": "Meniu pentru Restaurant Belvisso",
         "fullDescription": "Meniu elegant si bine structurat pentru Restaurant Belvisso, cu accent pe prezentarea preparatelor, claritate tipografica si experienta vizuala placuta.",
-        "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print",
+          "Photoshop"
+        ],
         "testimonial": {
           "quote": "Meniul reflecta perfect calitatea si diversitatea preparatelor noastre, iar designul sau elegant a fost foarte apreciat de clienti.",
           "author": "Proprietar, Restaurant Belvisso",
@@ -179,7 +234,11 @@
         "title": "Catalog Mirese Ballroom",
         "description": "Catalog de prezentare nunti",
         "fullDescription": "Catalog detaliat care prezinta nuntile organizate de Ballroom Andra / Palatul Mirilor, cu imagini de calitate si descrieri ale serviciilor pentru potentiali clienti.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor de prezentare a serviciilor oferite de Ballroom Andra / Palatul Mirilor!",
           "author": "Mac Florea",
@@ -190,7 +249,11 @@
         "title": "Catalog prezentare sali de nunti",
         "description": "Catalog de prezentare pentru ambientare sali de nunti",
         "fullDescription": "Catalog care arata variante de ambientare pentru sali de nunta, cu imagini de inalta calitate si prezentare eleganta a serviciilor oferite.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "Am lucrat foarte bine cu Bogdan la realizarea cataloagelor de prezentare a serviciilor oferite de WeDeco.",
           "author": "Mac Florea",
@@ -201,7 +264,11 @@
         "title": "Carte - Invitatia de nunta",
         "description": "Tehnoredactare carte pentru miri si mirese",
         "fullDescription": "Tehnoredactare si design pentru cartea Invitatia de nunta, ghid practic pentru miri care vor sa isi organizeze nunta de vis, intr-un format usor de parcurs.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "Am lucrat foarte bine cu Bogdan la realizarea cartii 'Invitatia de nunta' si am fost extrem de multumit de rezultat.",
           "author": "Mac Florea",
@@ -212,7 +279,11 @@
         "title": "Design joc Farmer Joey",
         "description": "Design joc Farmer Joey",
         "fullDescription": "Design vizual pentru jocul mobil Farmer Joey, cu elemente intuitive si atractive care imbunatatesc experienta utilizatorului, de la personaje si peisaje pana la interfata.",
-        "tags": ["Design", "Illustrator", "Photoshop"]
+        "tags": [
+          "Design",
+          "Illustrator",
+          "Photoshop"
+        ]
       }
     ]
   },
@@ -292,12 +363,16 @@
     "aboutProject": "Despre Proiect",
     "viewSite": "Vezi site",
     "viewGithub": "Vezi pe GitHub",
-    "technologies": "Tehnologii"
+    "technologies": "Tehnologii",
+    "imageAlt": "{title} — imaginea {num} din {total}"
   },
   "error": {
     "code": "Eroare 404",
     "title": "Pagina negasita",
     "description": "Se pare ca aceasta pagina nu exista sau a fost mutata. Intoarce-te acasa si exploreaza portofoliul.",
     "backHome": "Inapoi acasa"
+  },
+  "a11y": {
+    "skipToContent": "Sari la continut"
   }
 }

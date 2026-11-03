@@ -1,7 +1,7 @@
 <template>
-  <section id="testimonials" class="relative px-6 py-20 overflow-hidden bg-white dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 600px;">
+  <section id="testimonials" aria-labelledby="testimonials-title" class="relative px-6 py-20 overflow-hidden bg-white dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 600px;">
     <!-- Decorative background elements -->
-    <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <IconsDotGrid class="absolute opacity-20 top-10 right-10 dark:opacity-10" />
       <IconsCircleRings class="absolute opacity-15 bottom-20 left-16 dark:opacity-10" />
       <IconsTriangle class="absolute opacity-15 top-1/3 left-8 dark:opacity-10" />
@@ -10,7 +10,7 @@
 
     <div class="container relative z-10 mx-auto">
       <div class="mb-12 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('testimonials.title') }}</h2>
+        <h2 id="testimonials-title" class="mb-4 text-4xl font-bold md:text-5xl">{{ t('testimonials.title') }}</h2>
         <p class="max-w-2xl mx-auto text-lg text-gray-700 dark:text-gray-300">
           {{ t('testimonials.subtitle') }}
         </p>
@@ -58,25 +58,28 @@
 
         </div>
         <!-- Dots Navigation -->
-        <div class="flex justify-center gap-3 mt-8">
+        <div class="flex justify-center gap-1 mt-6">
           <button
             v-for="(testimonial, index) in localizedTestimonials"
             :key="testimonial.name + '-dot'"
             @click="scrollToSlide(index)"
             type="button"
-            class="transition-all duration-300 rounded-full focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
-            :class="[
-              isSlideActive(index)
-                    ? 'bg-blue-600 dark:bg-sky-400 w-10 h-4'
-                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-blue-300 dark:hover:bg-sky-500/50 w-4 h-4'
-            ]"
+            class="flex items-center justify-center rounded-full min-w-11 min-h-11 group/dot focus-visible:outline-2 focus-visible:outline-blue-500"
             :aria-label="t('aria.goToTestimonial', { num: index + 1 })"
-            :aria-pressed="isSlideActive(index)"
-          />
+            :aria-current="isSlideActive(index) ? 'true' : undefined"
+          >
+            <!-- 16px visual dot inside a 44px hit area -->
+            <span
+              class="block h-4 transition-all duration-300 rounded-full"
+              :class="isSlideActive(index)
+                ? 'bg-blue-600 dark:bg-sky-400 w-10'
+                : 'bg-gray-300 dark:bg-gray-600 group-hover/dot:bg-blue-300 dark:group-hover/dot:bg-sky-500/50 w-4'"
+            ></span>
+          </button>
         </div>
 
         <!-- Swipe hint for mobile -->
-        <p class="mt-4 text-sm text-center text-gray-400 md:hidden dark:text-gray-500">
+        <p class="mt-4 text-sm text-center text-gray-600 md:hidden dark:text-gray-400">
           ← {{ t('testimonials.swipe') }} →
         </p>
       </div>
@@ -129,7 +132,9 @@ const scrollToSlide = (index: number) => {
     if (!container) return
     const card = container.children[index] as HTMLElement
     if (card) {
-      card.scrollIntoView({ behavior: 'smooth', inline: 'start' })
+      // block: 'nearest' keeps the page itself from jumping vertically
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      card.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'start' })
     }
   })
 }

@@ -1,9 +1,9 @@
 <template>
-  <section id="contact" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 700px;">
+  <section id="contact" aria-labelledby="contact-title" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 700px;">
     <div class="container max-w-6xl mx-auto">
       <!-- Section Header -->
       <div class="mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('contact.title') }}</h2>
+        <h2 id="contact-title" class="mb-4 text-4xl font-bold md:text-5xl">{{ t('contact.title') }}</h2>
         <p class="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400">
           {{ t('contact.subtitle') }}
         </p>
@@ -69,7 +69,7 @@
               class="flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-green-500 dark:hover:border-green-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-green-500 focus-visible:outline-offset-2"
             >
               <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-green-100 rounded-xl dark:bg-green-900/30 group-hover:bg-green-500 group-hover:text-white">
-                <IconsWhatsapp class="w-6 h-6 text-green-600 group-hover:text-white" />
+                <IconsWhatsapp class="w-6 h-6 text-green-600 group-hover:text-white" aria-hidden="true" />
               </div>
               <div>
                 <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('contact.whatsapp') }}</p>
@@ -84,7 +84,7 @@
           <!-- SVG Image -->
           <img 
             src="/images/contact-1.svg" 
-            alt="Contact illustration" 
+            alt=""
             loading="lazy"
             width="500"
             height="400"
@@ -101,7 +101,7 @@
               class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-gradient-to-br hover:from-blue-600 hover:via-sky-500 hover:to-cyan-400 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="Instagram"
             >
-              <IconsInstagram class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" />
+              <IconsInstagram class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
             </a>
 
             <!-- Facebook -->
@@ -112,7 +112,7 @@
               class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-blue-600 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="Facebook"
             >
-              <IconsFacebook class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" />
+              <IconsFacebook class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
             </a>
 
             <!-- LinkedIn -->
@@ -123,7 +123,7 @@
               class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 bg-gray-50 dark:bg-gray-700 rounded-lg dark:border-gray-600 hover:bg-[#0077B5] hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="LinkedIn"
             >
-              <IconsLinkedin class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" />
+              <IconsLinkedin class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
             </a>
           </div>
         </div>

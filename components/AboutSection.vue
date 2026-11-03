@@ -1,7 +1,7 @@
 <template>
-  <section id="about" class="relative px-6 py-20 overflow-hidden" style="content-visibility: auto; contain-intrinsic-size: auto 900px;">
+  <section id="about" aria-labelledby="about-title" class="relative px-6 py-20 overflow-hidden" style="content-visibility: auto; contain-intrinsic-size: auto 900px;">
     <!-- Background Decorative Elements -->
-    <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <!-- Decorative dots pattern -->
       <IconsDotGrid class="absolute opacity-20 top-20 right-10 dark:opacity-10" />
       <IconsSquares class="absolute opacity-20 bottom-20 left-10 dark:opacity-10" />
@@ -22,7 +22,7 @@
             <div class="relative overflow-hidden border-2 border-gray-300 rounded-full shadow-lg cursor-pointer w-72 h-72 md:w-96 md:h-96 dark:border-gray-700 group/avatar">
               <NuxtImg 
                 src="/images/avatar1.webp" 
-                alt="Avatar" 
+                :alt="t('about.imageAlt')"
                 width="384"
                 height="384"
                 loading="lazy"
@@ -34,7 +34,7 @@
 
         <!-- Bio -->
         <div>
-          <h2 class="mb-6 text-4xl font-bold md:text-5xl">{{ t('about.title') }}</h2>
+          <h2 id="about-title" class="mb-6 text-4xl font-bold md:text-5xl">{{ t('about.title') }}</h2>
           <p
             v-for="(paragraph, index) in localizedBio"
             :key="index"
@@ -48,9 +48,9 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <IconsLinkedin class="relative z-10 w-5 h-5" />
+            <IconsLinkedin class="relative z-10 w-5 h-5" aria-hidden="true" />
             <span class="relative z-10">{{ t('about.linkedin') }}</span>
-            <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-cyan-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-sky-600 group-hover:opacity-100"></div>
           </a>
         </div>
       </div>

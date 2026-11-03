@@ -21,7 +21,11 @@
     "closeModal": "Close modal",
     "previousImage": "Previous image",
     "nextImage": "Next image",
-    "viewImage": "View image {num}"
+    "viewImage": "View image {num}",
+    "darkMode": "Dark mode",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
+    "mobileNavigation": "Mobile navigation"
   },
   "seo": {
     "homeTitle": "Bogdan Petre - Web Designer & Frontend Developer",
@@ -34,7 +38,8 @@
     "description": "I craft intuitive and engaging digital experiences focused on users, using Figma and AdobeXD for prototyping and design. I blend design with frontend development for modern and efficient outcomes.",
     "ctaPortfolio": "View Portfolio",
     "ctaContact": "Contact Me",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "imageAlt": "Illustrated portrait of Bogdan Petre"
   },
   "services": {
     "title": "Services",
@@ -64,7 +69,8 @@
       "I create modern and intuitive digital experiences, combining web design and frontend development for projects that not only look great but are also delightful to use. At the same time, I enjoy bringing visual identities to life through logos, catalogs, and other branding or print assets, so each project communicates clearly and consistently across every format."
     ],
     "technologies": "Technologies and Tools",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "imageAlt": "Photo of Bogdan Petre"
   },
   "portfolio": {
     "title": "Portfolio",
@@ -76,7 +82,8 @@
       "magazines": "Magazines",
       "graphics": "Graphics"
     },
-    "swipe": "Swipe to navigate"
+    "swipe": "Swipe to navigate",
+    "filterLabel": "Filter projects by category"
   },
   "projects": {
     "items": [
@@ -84,7 +91,11 @@
         "title": "WeDeco Catalog",
         "description": "Presentation catalog for WeDeco chairs",
         "fullDescription": "A detailed catalog that presents the full WeDeco chair range with high-quality visuals and clear product descriptions. Ideal for both in-store and online promotion.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "We worked extremely well with Bogdan on producing the catalogs from our WeDeco furniture collection!",
           "author": "Mac Florea",
@@ -95,7 +106,11 @@
         "title": "Ballroom Catalog",
         "description": "Presentation catalog for ballroom furniture",
         "fullDescription": "An elegant and well-structured catalog for ballroom furniture, designed to showcase product quality and design through clear, high-quality visuals.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "We worked extremely well with Bogdan on producing the catalogs from our WeDeco furniture collection!",
           "author": "Mac Florea",
@@ -106,19 +121,31 @@
         "title": "Hotel Andra Website",
         "description": "Clean and minimal showcase website for a boutique hotel",
         "fullDescription": "A clean and elegant boutique hotel website with simple navigation, strong imagery, and a fluid user experience focused on comfort and conversions.",
-        "tags": ["HTML", "Bootstrap CSS", "Lightbox"]
+        "tags": [
+          "HTML",
+          "Bootstrap CSS",
+          "Lightbox"
+        ]
       },
       {
         "title": "Tennis Steps Website",
         "description": "Showcase website for a professional tennis and racket-stringing team",
         "fullDescription": "A presentation website for Tennis Steps, a certified LTA and ERSA team focused on professional stringing, player-level assessment, and stringer training, optimized for all devices.",
-        "tags": ["HTML", "Nuxt 3", "Tailwind CSS"]
+        "tags": [
+          "HTML",
+          "Nuxt 3",
+          "Tailwind CSS"
+        ]
       },
       {
         "title": "Book - Become the First Choice for Brides and Grooms",
         "description": "Book layout and editorial design for wedding planners",
         "fullDescription": "Editorial layout and design for a practical guide aimed at wedding planners who want to improve services and attract more clients.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "I worked very well with Bogdan on the book Become the First Choice for Brides and Grooms and was extremely pleased with the final result!",
           "author": "Mac Florea",
@@ -129,7 +156,13 @@
         "title": "Restaurant Andra Website",
         "description": "Presentation website for Restaurant Andra with menu, delivery, and contact information",
         "fullDescription": "A website built to provide quick access to menu, delivery, schedule, and contact details, with a clear structure and fully responsive behavior.",
-        "tags": ["HTML", "Bootstrap CSS", "Lightbox", "JS", "Responsive design"],
+        "tags": [
+          "HTML",
+          "Bootstrap CSS",
+          "Lightbox",
+          "JS",
+          "Responsive design"
+        ],
         "testimonial": {
           "quote": "Bogdan understood exactly what we needed: a clear and attractive website that brings customers to us. The result exceeded expectations.",
           "author": "Mac Florea",
@@ -140,7 +173,12 @@
         "title": "Restaurant Andra Menu",
         "description": "Menu design for Restaurant Andra",
         "fullDescription": "An elegant and well-structured menu that presents the culinary offer in a clear and appealing format, with strong readability and visual hierarchy.",
-        "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print",
+          "Photoshop"
+        ],
         "testimonial": {
           "quote": "The menu perfectly reflects the quality and variety of our dishes, and its design was highly appreciated by our clients.",
           "author": "Mac Florea",
@@ -151,7 +189,13 @@
         "title": "SwitchMorn Coffee Brand",
         "description": "SwitchMorn brand asset design",
         "fullDescription": "I built the SwitchMorn visual universe through a warm and expressive brand identity, from logo to apparel, posters, banners, flyers, and stickers in a coherent palette.",
-        "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"],
+        "tags": [
+          "Design",
+          "Illustrator",
+          "Photoshop",
+          "Print",
+          "Packaging"
+        ],
         "testimonial": {
           "quote": "The visual identity created for SwitchMorn captured our brand's energy and personality perfectly.",
           "author": "SwitchMorn Owner",
@@ -162,13 +206,24 @@
         "title": "SuperBOX Promo Box",
         "description": "SuperBOX package design",
         "fullDescription": "Design for the SuperBOX promotional package, created to highlight the product and attract attention through modern graphics and approachable color direction.",
-        "tags": ["Design", "Illustrator", "Photoshop", "Print", "Packaging"]
+        "tags": [
+          "Design",
+          "Illustrator",
+          "Photoshop",
+          "Print",
+          "Packaging"
+        ]
       },
       {
         "title": "Restaurant Belvisso Menu",
         "description": "Menu design for Restaurant Belvisso",
         "fullDescription": "An elegant and structured menu for Restaurant Belvisso, focused on dish presentation, typographic clarity, and a polished reading experience.",
-        "tags": ["InDesign", "PDF", "Print", "Photoshop"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print",
+          "Photoshop"
+        ],
         "testimonial": {
           "quote": "The menu perfectly reflects the quality and diversity of our dishes, and its elegant design was highly appreciated by our clients.",
           "author": "Restaurant Belvisso Owner",
@@ -179,7 +234,11 @@
         "title": "Ballroom Brides Catalog",
         "description": "Wedding presentation catalog",
         "fullDescription": "A detailed catalog showcasing successful weddings organized by Ballroom Andra / Palatul Mirilor, with high-quality visuals and clear service descriptions for prospective clients.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "We worked very well with Bogdan on the service presentation catalogs for Ballroom Andra / Palatul Mirilor.",
           "author": "Mac Florea",
@@ -190,7 +249,11 @@
         "title": "Wedding Halls Presentation Catalog",
         "description": "Catalog for wedding hall ambience concepts",
         "fullDescription": "A catalog presenting different wedding hall ambiance concepts through high-quality imagery and elegant service presentation.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "We worked very well with Bogdan on the presentation catalogs for services offered by WeDeco.",
           "author": "Mac Florea",
@@ -201,7 +264,11 @@
         "title": "Book - The Wedding Invitation",
         "description": "Book layout and editorial design for brides and grooms",
         "fullDescription": "Editorial layout and design for The Wedding Invitation, a practical guide for couples planning their ideal wedding, delivered in an accessible and attractive format.",
-        "tags": ["InDesign", "PDF", "Print"],
+        "tags": [
+          "InDesign",
+          "PDF",
+          "Print"
+        ],
         "testimonial": {
           "quote": "I worked very well with Bogdan on The Wedding Invitation and was extremely pleased with the final result.",
           "author": "Mac Florea",
@@ -212,7 +279,11 @@
         "title": "Farmer Joey Game Design",
         "description": "Farmer Joey game design",
         "fullDescription": "Visual design for the Farmer Joey mobile game, with intuitive and engaging elements that improve user experience, from characters and environments to interface components.",
-        "tags": ["Design", "Illustrator", "Photoshop"]
+        "tags": [
+          "Design",
+          "Illustrator",
+          "Photoshop"
+        ]
       }
     ]
   },
@@ -292,12 +363,16 @@
     "aboutProject": "About Project",
     "viewSite": "View site",
     "viewGithub": "View on GitHub",
-    "technologies": "Technologies"
+    "technologies": "Technologies",
+    "imageAlt": "{title} — image {num} of {total}"
   },
   "error": {
     "code": "Error 404",
     "title": "Page not found",
     "description": "This page does not exist or has been moved. Go back home and explore the portfolio.",
     "backHome": "Back home"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content"
   }
 }

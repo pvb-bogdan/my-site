@@ -1,20 +1,21 @@
 <template>
-  <section id="portfolio" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 1200px;">
+  <section id="portfolio" aria-labelledby="portfolio-title" class="px-6 py-20 bg-gray-100 dark:bg-gray-800/50" style="content-visibility: auto; contain-intrinsic-size: auto 1200px;">
     <div class="container mx-auto">
       <div class="mb-16 text-center">
-        <h2 class="mb-4 text-4xl font-bold md:text-5xl">{{ t('portfolio.title') }}</h2>
+        <h2 id="portfolio-title" class="mb-4 text-4xl font-bold md:text-5xl">{{ t('portfolio.title') }}</h2>
         <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-600 dark:text-gray-400">
           {{ t('portfolio.subtitle') }}
         </p>
       </div>
 
       <!-- Filter Buttons (desktop/tablet: top, mobile: hidden) -->
-      <div class="justify-center hidden gap-3 mb-8 md:flex-wrap filter-btns-desktop md:flex">
+      <div class="justify-center hidden gap-3 mb-8 md:flex-wrap filter-btns-desktop md:flex" role="group" :aria-label="t('portfolio.filterLabel')">
         <button
           v-for="filter in filters"
           :key="filter.value"
           @click="activeFilter = filter.value"
           type="button"
+          :aria-pressed="activeFilter === filter.value"
           :class="[
             'relative overflow-hidden px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 group/filter focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95',
               activeFilter === filter.value
@@ -25,7 +26,7 @@
           <span class="relative z-10">{{ filter.label }}</span>
           <div
             v-if="activeFilter === filter.value"
-            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-cyan-500 group-hover/filter:opacity-100"
+            class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-sky-600 group-hover/filter:opacity-100"
           ></div>
         </button>
       </div>
@@ -35,18 +36,19 @@
         tag="div"
         class="grid grid-cols-1 gap-8 md:grid-cols-3 "
       >
-        <div
+        <button
           v-for="project in visibleProjects"
           :key="project.title"
+          type="button"
           @click="openModal(project)"
-          class="relative overflow-hidden shadow-lg cursor-pointer group rounded-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02]"
+          class="relative block w-full overflow-hidden text-left shadow-lg cursor-pointer group rounded-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-4"
         >
           <!-- Project Image -->
           <div class="relative overflow-hidden aspect-video">
             <NuxtImg
               v-if="project.images && project.images.length > 0"
               :src="project.thumbImage || project.images[0]"
-              :alt="project.title"
+              alt=""
               width="640"
               height="360"
               loading="lazy"
@@ -57,7 +59,7 @@
               class="w-full h-full bg-gradient-to-br from-blue-600 to-cyan-500"
             ></div>
             <!-- Hover Overlay with Project Info -->
-            <div class="absolute inset-0 flex flex-col justify-center p-6 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50 group-hover:opacity-100">
+            <div class="absolute inset-0 flex flex-col justify-center p-6 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50 group-hover:opacity-100 group-focus-visible:opacity-100">
               <h3 class="mb-3 text-2xl font-bold text-white">
                 {{ project.title }}
               </h3>
@@ -76,7 +78,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </button>
       </TransitionGroup>
 
       <!-- Show More Button (desktop/tablet: bottom, mobile: hidden) -->
@@ -92,47 +94,55 @@
               +{{ Math.min(LOAD_MORE_COUNT, remainingProjects) }}
             </span>
           </span>
-          <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-cyan-500 group-hover:opacity-100"></div>
+          <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-sky-600 group-hover:opacity-100"></div>
         </button>
       </div>
 
       <!-- Sticky Mobile/Tablet Footer with Icon Buttons -->
-       <div class="sticky z-50 flex items-center justify-between w-full p-4 rounded-lg shadow-2xl bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl md:hidden bottom-5 gap-2">
+       <div class="sticky z-50 flex items-center justify-between w-full p-4 rounded-lg shadow-2xl bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl md:hidden bottom-5 gap-2" role="group" :aria-label="t('portfolio.filterLabel')">
           <button
             type="button"
             @click="activeFilter = 'all'"
             :aria-label="t('portfolio.filters.all')"
+            :title="t('portfolio.filters.all')"
+            :aria-pressed="activeFilter === 'all'"
             class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95"
             :class="{ 'bg-blue-600 text-white': activeFilter === 'all', 'hover:bg-gray-100 dark:hover:bg-gray-800': activeFilter !== 'all' }"
           >
-            <AllIcon class="w-6 h-6"/>
+            <AllIcon class="w-6 h-6" aria-hidden="true" />
           </button>
           <button
             type="button"
             @click="activeFilter = 'webdesign'"
             :aria-label="t('portfolio.filters.webdesign')"
+            :title="t('portfolio.filters.webdesign')"
+            :aria-pressed="activeFilter === 'webdesign'"
             class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95"
             :class="{ 'bg-blue-600 text-white': activeFilter === 'webdesign', 'hover:bg-gray-100 dark:hover:bg-gray-800': activeFilter !== 'webdesign' }"
           >
-            <WebDesignIcon class="w-6 h-6"/>
+            <WebDesignIcon class="w-6 h-6" aria-hidden="true" />
           </button>
           <button
             type="button"
             @click="activeFilter = 'magazines'"
             :aria-label="t('portfolio.filters.magazines')"
+            :title="t('portfolio.filters.magazines')"
+            :aria-pressed="activeFilter === 'magazines'"
             class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95"
             :class="{ 'bg-blue-600 text-white': activeFilter === 'magazines', 'hover:bg-gray-100 dark:hover:bg-gray-800': activeFilter !== 'magazines' }"
           >
-            <MagazinesIcon class="w-6 h-6"/>
+            <MagazinesIcon class="w-6 h-6" aria-hidden="true" />
           </button>
           <button
             type="button"
             @click="activeFilter = 'graphics'"
             :aria-label="t('portfolio.filters.graphics')"
+            :title="t('portfolio.filters.graphics')"
+            :aria-pressed="activeFilter === 'graphics'"
             class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95"
             :class="{ 'bg-blue-600 text-white': activeFilter === 'graphics', 'hover:bg-gray-100 dark:hover:bg-gray-800': activeFilter !== 'graphics' }"
           >
-            <GraphicsIcon class="w-6 h-6"/>
+            <GraphicsIcon class="w-6 h-6" aria-hidden="true" />
           </button>
           <button
             type="button"
@@ -141,7 +151,7 @@
             :aria-label="t('portfolio.showMore')"
             class="p-3 rounded-lg transition-all duration-200 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <ShowMoreIcon class="w-6 h-6"/>
+            <ShowMoreIcon class="w-6 h-6" aria-hidden="true" />
           </button>
        </div>
     </div>
