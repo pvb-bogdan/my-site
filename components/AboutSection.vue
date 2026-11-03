@@ -49,14 +49,15 @@
           </p>
 
           <!-- The only number in the section: an honest experience fact, not a counter tile -->
-          <p class="flex items-baseline gap-3 mt-8 mb-8">
-            <span class="text-5xl font-bold text-blue-600 tabular-nums dark:text-sky-400">{{ t('about.experienceValue') }}</span>
-            <span class="text-lg text-gray-700 dark:text-gray-300">{{ t('about.experienceLabel') }}</span>
+          <!-- items-center (not baseline): the label wraps to two lines on phones and must sit beside the number's middle -->
+          <p class="flex items-center gap-3 mt-8 mb-8">
+            <span class="text-5xl font-bold leading-none text-blue-600 tabular-nums dark:text-sky-400">{{ t('about.experienceValue') }}</span>
+            <span class="text-lg leading-snug text-gray-700 dark:text-gray-300">{{ t('about.experienceLabel') }}</span>
           </p>
 
           <a
             :href="linkedinLink"
-            class="pressable inline-flex items-center gap-2 px-8 py-4 font-semibold text-white transition-colors bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
+            class="pressable flex w-full justify-center sm:inline-flex sm:w-auto items-center gap-2 px-8 py-4 font-semibold text-white transition-colors bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
             target="_blank"
             rel="noopener noreferrer"
           >
