@@ -11,64 +11,57 @@
     </div>
 
     <div class="container relative z-10 mx-auto">
-      <div class="flex flex-col items-center justify-between gap-12 lg:flex-row">
-        <!-- Text Content -->
+      <div class="flex flex-col items-center justify-between gap-8 md:gap-12 lg:flex-row">
+        <!-- Text Content: heading and intro paint immediately (no opacity delay) for a fast LCP -->
         <div class="flex-1 text-center lg:text-left">
-          <h1 id="hero-title" class="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl animate-fade-in-up animation-delay-100">
+          <h1 id="hero-title" class="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl">
             {{ t('hero.greeting') }} <br/> <span class="text-blue-600 dark:text-sky-400">{{ name }}</span>
           </h1>
-          <h2 class="mb-6 text-3xl font-semibold text-gray-700 md:text-4xl dark:text-gray-300 animate-fade-in-up animation-delay-200">
+          <p class="mb-6 text-3xl font-semibold text-gray-700 md:text-4xl dark:text-gray-300">
             {{ t('hero.title') }}
-          </h2>
-          <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-700 lg:mx-0 dark:text-gray-200 animate-fade-in-up animation-delay-300">
+          </p>
+          <p class="max-w-2xl mx-auto mb-8 text-xl text-gray-700 lg:mx-0 dark:text-gray-200">
             {{ t('hero.description') }}
           </p>
-          <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in-up animation-delay-400">
+          <div class="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start animate-fade-in-up animation-delay-200">
             <a
               href="#portfolio"
-              class="relative px-8 py-4 overflow-hidden font-semibold text-white transition-all duration-300 transform bg-blue-600 rounded-lg shadow-lg group hover:scale-105 hover:shadow-xl active:scale-95 focus-visible:outline-2 focus-visible:outline-blue-300 focus-visible:outline-offset-2"
+              class="pressable px-8 py-4 font-semibold text-white transition-colors bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-blue-300 focus-visible:outline-offset-2"
             >
-              <span class="relative z-10">{{ t('hero.ctaPortfolio') }}</span>
-              <div class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-blue-700 to-sky-600 group-hover:opacity-100"></div>
+              {{ t('hero.ctaPortfolio') }}
             </a>
             <a
               href="#contact"
-              class="px-8 py-4 font-semibold text-gray-900 transition-all duration-200 transform bg-white border border-gray-300 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl hover:bg-gray-100 active:scale-95 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white dark:border-gray-700 focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
+              class="pressable px-8 py-4 font-semibold text-gray-900 transition-colors bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white dark:border-gray-700 focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
             >
               {{ t('hero.ctaContact') }}
             </a>
           </div>
         </div>
 
-          <!-- Hero Image -->
-        <div class="relative flex-shrink-0 lg:flex-1 animate-fade-in-right animation-delay-300">
+        <!-- Hero Image: one image for every size (160px on phones, above the heading) -->
+        <div class="relative flex-shrink-0 order-first lg:order-none lg:flex-1">
           <!-- Soft Glow/Shadow -->
-          <div class="absolute left-1/2 top-1/2 w-[90%] h-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/30 blur-2xl"></div>
+          <div class="absolute left-1/2 top-1/2 w-[90%] h-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/30 blur-2xl" aria-hidden="true"></div>
 
-          <!-- Floating SVG Shapes - reduced animation count for performance -->
-          <svg aria-hidden="true" class="absolute top-0 left-0 w-16 h-16 text-sky-300/40 opacity-70 animate-float-slow" viewBox="0 0 64 64" fill="none" style="will-change: transform;"><circle cx="32" cy="32" r="32" fill="currentColor"/></svg>
-          <svg aria-hidden="true" class="absolute w-10 h-10 text-cyan-300 dark:text-green-100 right-4 top-10 opacity-60 animate-float-medium" viewBox="0 0 48 48" fill="none" style="will-change: transform;"><rect x="8" y="8" width="32" height="32" rx="8" fill="currentColor"/></svg>
+          <!-- One floating shape only (motion restraint) -->
+          <svg aria-hidden="true" class="absolute top-0 left-0 hidden w-16 h-16 md:block text-sky-300/40 opacity-70 animate-float-slow" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="currentColor"/></svg>
 
-          <!-- Figma Badge
-          <div class="absolute flex items-center gap-1 px-3 py-1 border border-gray-200 rounded-full shadow-lg -top-4 -right-4 bg-white/80 dark:bg-gray-900/80 dark:border-gray-700 backdrop-blur-md animate-fade-in-up animation-delay-400">
-            <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5"><g><circle cx="12" cy="5" r="3" fill="#F24E1E"/><circle cx="12" cy="12" r="3" fill="#A259FF"/><circle cx="12" cy="19" r="3" fill="#1ABCFE"/><circle cx="5" cy="12" r="3" fill="#0ACF83"/><circle cx="19" cy="12" r="3" fill="#FF7262"/></g></svg>
-            <span class="text-xs font-semibold text-gray-700 dark:text-gray-200">Figma</span>
-          </div> -->
-
-          <NuxtImg 
-            src="/images/avatar2.webp" 
+          <NuxtImg
+            src="/images/avatar2.webp"
             :alt="t('hero.imageAlt')"
             width="640"
             height="900"
+            sizes="160px md:384px lg:576px xl:640px"
             loading="eager"
             fetchpriority="high"
-            class="relative z-10 hidden w-full max-w-lg mx-auto transition-transform duration-300 transform md:block lg:max-w-xl xl:max-w-[40rem] hover:scale-105"
+            class="relative z-10 w-40 mx-auto md:w-full md:max-w-sm lg:max-w-xl xl:max-w-[40rem]"
           />
         </div>
       </div>
     </div>
     <!-- Scroll Indicator -->
-    <div aria-hidden="true" class="absolute flex-col items-center hidden -translate-x-1/2 left-1/2 bottom-6 opacity-80 animate-fade-in-up animation-delay-400 md:flex">
+    <div aria-hidden="true" class="absolute flex-col items-center hidden -translate-x-1/2 left-1/2 bottom-6 opacity-80 md:flex">
       <div class="relative flex items-start justify-center h-12 border-2 rounded-full border-sky-400 w-7 dark:border-gray-600">
         <div class="w-2 h-2 mt-2 rounded-full bg-sky-400 dark:bg-gray-600 animate-scroll-indicator"></div>
       </div>

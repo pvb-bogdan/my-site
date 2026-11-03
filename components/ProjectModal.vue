@@ -43,7 +43,7 @@
             <div class="relative overflow-hidden aspect-video bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl group">
               <div
                 ref="carouselRef"
-                class="flex w-full h-full overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar"
+                class="flex w-full h-full overflow-x-auto motion-safe:scroll-smooth snap-x snap-mandatory hide-scrollbar"
                 style="-webkit-overflow-scrolling: touch;"
                 @scroll="onScroll"
               >

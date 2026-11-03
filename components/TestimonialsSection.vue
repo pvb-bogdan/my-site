@@ -17,25 +17,28 @@
       </div>
 
       <!-- Carousel Container -->
-      <div class="relative mx-auto">
+      <div
+        class="relative mx-auto"
+        role="region"
+        aria-roledescription="carousel"
+        :aria-label="t('testimonials.carouselLabel')"
+      >
         <!-- Carousel Track with CSS scroll snap -->
         <div
           ref="carouselRef"
-          class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory hide-scrollbar"
+          class="flex overflow-x-auto motion-safe:scroll-smooth snap-x snap-mandatory hide-scrollbar"
           style="-webkit-overflow-scrolling: touch;"
           @scroll="onScroll"
         >
           <div
             v-for="testimonial in localizedTestimonials"
             :key="testimonial.name"
-            class="flex-shrink-0 w-full px-3 md:w-1/2 snap-start"
+            class="flex-shrink-0 w-[85%] px-3 md:w-1/2 snap-start"
           >
             <div class="relative flex flex-col h-full p-8 overflow-hidden bg-white border border-gray-200 shadow-lg md:p-10 rounded-2xl dark:bg-gray-900 dark:border-gray-800 min-h-[280px] focus-within:outline-2 focus-within:outline-blue-500 focus-within:outline-offset-2">
               <!-- Quote Icon -->
               <div class="absolute top-6 right-6 opacity-10 dark:opacity-5" aria-hidden="true">
-                <svg class="w-16 h-16 text-blue-600 dark:text-sky-400" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
+                <Icon name="lucide:quote" class="w-16 h-16 text-blue-600 dark:text-sky-400" />
               </div>
 
               <!-- Testimonial Text -->
@@ -57,8 +60,17 @@
           </div>
 
         </div>
-        <!-- Dots Navigation -->
-        <div class="flex justify-center gap-1 mt-6">
+        <!-- Prev / Next (desktop) around the dots -->
+        <div class="flex items-center justify-center gap-1 mt-6">
+          <button
+            type="button"
+            class="pressable items-center justify-center hidden mr-2 text-gray-700 bg-white border border-gray-200 rounded-full shadow-sm md:flex w-11 h-11 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed dark:bg-gray-900 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+            :aria-label="t('aria.previousTestimonial')"
+            :disabled="activeIndex === 0"
+            @click="scrollToSlide(activeIndex - 1)"
+          >
+            <Icon name="lucide:chevron-left" class="w-5 h-5" aria-hidden="true" />
+          </button>
           <button
             v-for="(testimonial, index) in localizedTestimonials"
             :key="testimonial.name + '-dot'"
@@ -76,12 +88,16 @@
                 : 'bg-gray-300 dark:bg-gray-600 group-hover/dot:bg-blue-300 dark:group-hover/dot:bg-sky-500/50 w-4'"
             ></span>
           </button>
+          <button
+            type="button"
+            class="pressable items-center justify-center hidden ml-2 text-gray-700 bg-white border border-gray-200 rounded-full shadow-sm md:flex w-11 h-11 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed dark:bg-gray-900 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+            :aria-label="t('aria.nextTestimonial')"
+            :disabled="activeIndex === localizedTestimonials.length - 1"
+            @click="scrollToSlide(activeIndex + 1)"
+          >
+            <Icon name="lucide:chevron-right" class="w-5 h-5" aria-hidden="true" />
+          </button>
         </div>
-
-        <!-- Swipe hint for mobile -->
-        <p class="mt-4 text-sm text-center text-gray-600 md:hidden dark:text-gray-400">
-          ← {{ t('testimonials.swipe') }} →
-        </p>
       </div>
     </div>
   </section>

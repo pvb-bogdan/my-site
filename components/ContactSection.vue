@@ -19,6 +19,10 @@
             <p class="leading-relaxed text-gray-600 dark:text-gray-400 text-balance">
               {{ t('contact.introText') }}
             </p>
+            <p class="flex items-center gap-2 mt-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <Icon name="lucide:clock" class="w-4 h-4 text-blue-600 dark:text-sky-400" aria-hidden="true" />
+              {{ t('contact.replyTime') }}
+            </p>
           </div>
 
           <!-- Contact Items -->

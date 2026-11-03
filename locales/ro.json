@@ -25,19 +25,21 @@
     "darkMode": "Mod intunecat",
     "switchToLight": "Treci la modul luminos",
     "switchToDark": "Treci la modul intunecat",
-    "mobileNavigation": "Navigare mobila"
+    "mobileNavigation": "Navigare mobila",
+    "previousTestimonial": "Testimonialul anterior",
+    "nextTestimonial": "Testimonialul urmator"
   },
   "seo": {
-    "homeTitle": "Bogdan Petre - Web Designer si Dezvoltator Frontend",
-    "homeDescription": "Portofoliu personal Bogdan Petre - Web Designer si Dezvoltator Frontend specializat in Vue, Nuxt si tehnologii web moderne.",
+    "homeTitle": "Bogdan Petre – Web & Print Designer",
+    "homeDescription": "Portofoliul lui Bogdan Petre, web & print designer cu peste 15 ani de experienta: site-uri, cataloage, meniuri si identitati vizuale. Disponibil pentru proiecte freelance.",
     "errorTitle": "404 - Pagina negasita | Bogdan Petre"
   },
   "hero": {
     "greeting": "Salut, sunt",
-    "title": "UI/UX Designer",
-    "description": "Creez experiente digitale intuitive si atractive, axate pe utilizator, folosind Figma si AdobeXD pentru prototipare si design. Integrez designul cu dezvoltarea frontend pentru rezultate moderne si eficiente.",
-    "ctaPortfolio": "Vezi Portofoliul",
-    "ctaContact": "Contacteaza-ma",
+    "title": "Web & Print Designer",
+    "description": "Ajut afacerile mici sa arate profesionist online si pe hartie — site-uri, cataloage, meniuri si identitati vizuale, de la design pana la implementare.",
+    "ctaPortfolio": "Vezi lucrarile",
+    "ctaContact": "Hai sa discutam",
     "scroll": "Scroll",
     "imageAlt": "Portret ilustrat al lui Bogdan Petre"
   },
@@ -110,7 +112,6 @@
       "magazines": "Cataloage",
       "graphics": "Grafica"
     },
-    "swipe": "Swipe pentru a naviga",
     "filterLabel": "Filtreaza proiectele dupa categorie",
     "resultCount": "Niciun proiect | {n} proiect | {n} proiecte",
     "openProject": "Deschide proiectul: {title}"
@@ -320,7 +321,6 @@
   "testimonials": {
     "title": "Testimoniale",
     "subtitle": "Ce spun clientii despre colaborarea cu mine",
-    "swipe": "Swipe pentru a naviga",
     "items": [
       {
         "name": "Bogdan Danaila",
@@ -358,18 +358,20 @@
         "initials": "LB",
         "text": "Bogdan ne-a ajutat atat cu designul, cat si cu dezvoltarea site-ului, iar rezultatul a iesit exact cum ne doream: modern, rapid si usor de folosit. Il recomand cu incredere oricui isi doreste un site bine facut, de la concept pana la implementare."
       }
-    ]
+    ],
+    "carouselLabel": "Testimoniale clienti"
   },
   "contact": {
     "title": "Contacteaza-ma",
     "subtitle": "Ai un proiect in minte? Hai sa lucram impreuna pentru a crea ceva extraordinar",
     "introTitle": "Sa vorbim!",
-    "introText": "Sunt mereu deschis pentru noi colaborari si proiecte creative. Nu ezita sa ma contactezi prin oricare dintre canalele de mai jos.",
+    "introText": "Spune-mi despre afacerea ta, de ce ai nevoie si in cat timp. Poti folosi oricare dintre canalele de mai jos.",
     "phone": "Telefon",
     "email": "Email",
     "whatsapp": "WhatsApp",
     "clickToShow": "Click pentru a afisa",
-    "sendMessage": "Trimite mesaj"
+    "sendMessage": "Trimite mesaj",
+    "replyTime": "Raspund in maximum 24 de ore."
   },
   "footer": {
     "invite": "Te mai astept!",

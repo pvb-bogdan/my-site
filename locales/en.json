@@ -25,19 +25,21 @@
     "darkMode": "Dark mode",
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode",
-    "mobileNavigation": "Mobile navigation"
+    "mobileNavigation": "Mobile navigation",
+    "previousTestimonial": "Previous testimonial",
+    "nextTestimonial": "Next testimonial"
   },
   "seo": {
-    "homeTitle": "Bogdan Petre - Web Designer & Frontend Developer",
-    "homeDescription": "Personal portfolio of Bogdan Petre - Web Designer and Frontend Developer focused on Vue, Nuxt, and modern web technologies.",
+    "homeTitle": "Bogdan Petre – Web & Print Designer",
+    "homeDescription": "Portfolio of Bogdan Petre, web & print designer with 15+ years of experience: websites, catalogs, menus and brand identities. Available for freelance projects.",
     "errorTitle": "404 - Page Not Found | Bogdan Petre"
   },
   "hero": {
     "greeting": "Hi, I am",
-    "title": "UI/UX Designer",
-    "description": "I craft intuitive and engaging digital experiences focused on users, using Figma and AdobeXD for prototyping and design. I blend design with frontend development for modern and efficient outcomes.",
-    "ctaPortfolio": "View Portfolio",
-    "ctaContact": "Contact Me",
+    "title": "Web & Print Designer",
+    "description": "I help small businesses look professional online and on paper — websites, catalogs, menus and brand identities, designed and built end to end.",
+    "ctaPortfolio": "View work",
+    "ctaContact": "Start a project",
     "scroll": "Scroll",
     "imageAlt": "Illustrated portrait of Bogdan Petre"
   },
@@ -110,7 +112,6 @@
       "magazines": "Magazines",
       "graphics": "Graphics"
     },
-    "swipe": "Swipe to navigate",
     "filterLabel": "Filter projects by category",
     "resultCount": "No projects | {n} project | {n} projects",
     "openProject": "Open project: {title}"
@@ -320,7 +321,6 @@
   "testimonials": {
     "title": "Testimonials",
     "subtitle": "What clients say about working with me",
-    "swipe": "Swipe to navigate",
     "items": [
       {
         "name": "Bogdan Danaila",
@@ -358,18 +358,20 @@
         "initials": "LB",
         "text": "Bogdan supported us with both design and website development, and the result came out exactly as we wanted: modern, fast, and easy to use. I recommend him to anyone who wants a well-crafted website, from concept to implementation."
       }
-    ]
+    ],
+    "carouselLabel": "Client testimonials"
   },
   "contact": {
     "title": "Contact Me",
     "subtitle": "Have a project in mind? Let us work together and create something extraordinary.",
     "introTitle": "Let us talk!",
-    "introText": "I am always open to new collaborations and creative projects. Feel free to contact me through any of the channels below.",
+    "introText": "Tell me about your business, what you need and your timeline. Any of the channels below works.",
     "phone": "Phone",
     "email": "Email",
     "whatsapp": "WhatsApp",
     "clickToShow": "Click to reveal",
-    "sendMessage": "Send message"
+    "sendMessage": "Send message",
+    "replyTime": "I reply within 24 hours."
   },
   "footer": {
     "invite": "Looking forward to hearing from you!",

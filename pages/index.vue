@@ -36,10 +36,8 @@
     <!-- Footer -->
     <footer class="pt-4 bg-white border-t border-gray-200 dark:bg-gray-900 dark:border-gray-800">
       <div class="container mx-auto mb-4 text-center">
-        <p class="text-lg text-gray-600 dark:text-gray-300">{{ t('footer.invite') }}<br />{{ t('footer.dayWish', { day: dayGreeting }) }}
-          <span v-if="isFriday"> {{ t('footer.fridaySuffix') }}</span>
-          <span v-else>!</span>
-        </p>
+        <!-- Kept on one line: a line break before "!" would render as a stray space -->
+        <p class="text-lg text-gray-600 dark:text-gray-300">{{ t('footer.invite') }}<br />{{ t('footer.dayWish', { day: dayGreeting }) }}{{ isFriday ? ` ${t('footer.fridaySuffix')}` : '!' }}</p>
       </div>
       <div
         class="py-2 mx-auto text-sm text-center text-gray-600 bg-gray-100 rounded-lg dark:text-gray-400 dark:bg-gray-800">
@@ -97,6 +95,8 @@ useSeoMeta({
 })
 
 useHead({
+  // The SEO title already contains the name; skip the "| site name" suffix
+  titleTemplate: '%s',
   htmlAttrs: {
     lang: computed(() => locale.value)
   }

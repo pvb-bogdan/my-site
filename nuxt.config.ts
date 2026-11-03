@@ -63,7 +63,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://petrebogdan.com',
-    name: 'Petre Bogdan - Web Designer & Frontend Developer'
+    name: 'Bogdan Petre'
   },
 
   sitemap: {
@@ -77,7 +77,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Petre Bogdan - Web Designer & Frontend Developer',
+      title: 'Bogdan Petre – Web & Print Designer',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -86,7 +86,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Personal portfolio of Petre Bogdan - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.'
+            'Portfolio of Bogdan Petre, web & print designer with 15+ years of experience: websites, catalogs, menus and brand identities.'
         },
         { name: 'twitter:card', content: 'summary_large_image' }
       ],
@@ -103,12 +103,6 @@ export default defineNuxtConfig({
           rel: 'icon',
           type: 'image/png',
           href: '/favicon.png'
-        },
-        {
-          rel: 'preload',
-          as: 'image',
-          href: '/images/avatar2.webp',
-          type: 'image/webp'
         }
       ],
     },
