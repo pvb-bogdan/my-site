@@ -218,8 +218,8 @@ onBeforeUnmount(() => {
 
 .filter-thumb.is-ready {
   transition:
-    transform var(--dur-slow, 300ms) var(--ease-out, cubic-bezier(0.25, 1, 0.5, 1)),
-    width var(--dur-slow, 300ms) var(--ease-out, cubic-bezier(0.25, 1, 0.5, 1));
+    transform var(--dur-base, 250ms) var(--ease-out, cubic-bezier(0.25, 1, 0.5, 1)),
+    width var(--dur-base, 250ms) var(--ease-out, cubic-bezier(0.25, 1, 0.5, 1));
 }
 
 .filter-segment {

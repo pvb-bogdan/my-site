@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen text-gray-900 transition-colors duration-300 bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
+  <div class="min-h-screen text-gray-900 transition-colors duration-base bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
     <!-- Skip link: first focusable element, visible only on keyboard focus -->
     <a
       href="#main"
@@ -10,7 +10,7 @@
 
     <!-- Header Navigation -->
     <HeaderNav :full-name="portfolioData.personal.fullName" :nav-links="localizedNavLinks"
-      :is-scrolled="isScrolled" />
+      :is-scrolled="isScrolled" :has-content-under="hasContentUnder" />
 
     <main id="main" tabindex="-1" class="focus:outline-none">
     <!-- Hero Section -->
@@ -56,6 +56,7 @@ const { t, locale } = useI18n()
 
 // Navigation state
 const isScrolled = ref(false)
+const hasContentUnder = ref(false)
 
 // Current year for footer
 const currentYear = computed(() => new Date().getFullYear())
@@ -65,8 +66,8 @@ const dayIndex = computed(() => new Date().getDay())
 const dayGreeting = computed(() => t(`footer.days.${dayIndex.value}`))
 const isFriday = computed(() => dayIndex.value === 5)
 
+// Home is the logo only, so every nav item names real content
 const localizedNavLinks = computed(() => [
-  { label: t('nav.home'), href: '#hero' },
   { label: t('nav.services'), href: '#services' },
   { label: t('nav.about'), href: '#about' },
   { label: t('nav.portfolio'), href: '#portfolio' },
@@ -77,6 +78,7 @@ const localizedNavLinks = computed(() => [
 // Scroll handler for header
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
+  hasContentUnder.value = window.scrollY > 0
 }
 
 // SEO: canonical and og:url come from @nuxtjs/seo (site.url + i18n) per locale

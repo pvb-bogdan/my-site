@@ -3,6 +3,7 @@
     ref="headerRef"
     class="site-header"
     :data-scrolled="isScrolled ? '' : undefined"
+    :data-content-under="hasContentUnder ? '' : undefined"
     :data-menu-open="mobileMenuOpen ? '' : undefined">
     <div class="container px-6 py-4 mx-auto">
       <div class="flex items-center justify-between">
@@ -74,7 +75,7 @@
           :href="link.href"
           :aria-current="activeLink === link.href ? 'location' : undefined"
           :class="{
-            'block transition-all duration-200 px-4 py-3 rounded-lg font-medium': true,
+            'block transition-all duration-base px-4 py-3 rounded-lg font-medium': true,
             // Solid blue-600 keeps white text above 4.5:1 (the cyan end of the old gradient did not)
             'text-white bg-blue-600 shadow-md': activeLink === link.href,
             'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2': activeLink !== link.href
@@ -100,6 +101,7 @@ const props = defineProps<{
   fullName: string
   navLinks: NavLink[]
   isScrolled: boolean
+  hasContentUnder: boolean
 }>()
 
 const { t } = useI18n()
@@ -184,12 +186,12 @@ const handleResize = () => {
 }
 
 const initializeActiveLink = () => {
-  const fallbackLink = props.navLinks[0]?.href ?? ''
   const currentHash = window.location.hash
 
+  // Nothing is highlighted on the hero: "Home" is the logo, not a nav item
   activeLink.value = props.navLinks.some((link) => link.href === currentHash)
     ? currentHash
-    : fallbackLink
+    : ''
 }
 
 // Initialize Intersection Observer to track active section
@@ -208,12 +210,14 @@ const initializeIntersectionObserver = () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute('id')
-        activeLink.value = id ? `#${id}` : ''
+        activeLink.value = id && id !== 'hero' ? `#${id}` : ''
       }
     })
   }, options)
 
-  // Observe all section elements
+  // Observe the hero (to clear the highlight) and every linked section
+  const hero = document.getElementById('hero')
+  if (hero) intersectionObserver.observe(hero)
   props.navLinks.forEach((link) => {
     const sectionId = link.href.substring(1) // Remove the '#' from href
     const element = document.getElementById(sectionId)
@@ -307,18 +311,41 @@ onBeforeUnmount(() => {
 }
 
 .site-header {
-  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out;
+  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-slow;
   @apply bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl;
-  @apply border-b border-white/20 dark:border-gray-700/30;
-  @apply shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)];
+  @apply border border-transparent;
   @apply rounded-none;
+}
+
+/* Scroll edge effect instead of a hard border: a soft fade under the bar,
+   shown only once content scrolls beneath it */
+.site-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 1.25rem;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgb(15 23 42 / 0.08), transparent);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.dark .site-header::after {
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0.35), transparent);
+}
+
+.site-header[data-content-under]:not([data-scrolled])::after {
+  opacity: 1;
 }
 
 /* Mobile scrolled: shrink into a floating pill */
 .site-header[data-scrolled] {
   left: 1rem;
   right: 1rem;
-  @apply border rounded-full;
+  @apply rounded-full border-white/20 dark:border-gray-700/30;
+  @apply shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)];
 }
 
 /* Mobile: revert to full-width rectangle when menu is open, instantly */
@@ -344,6 +371,25 @@ onBeforeUnmount(() => {
     @apply rounded-full bg-white/60 dark:bg-gray-900/70 backdrop-blur-xl;
     @apply border border-white/20 dark:border-gray-700/30;
     @apply shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)];
+  }
+
+  /* The transparent desktop bar has nothing to fade from */
+  .site-header:not([data-scrolled])::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header,
+  .site-header[data-scrolled] {
+    @apply bg-white dark:bg-gray-900 backdrop-blur-none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .site-header,
+  .site-header[data-scrolled] {
+    @apply bg-white dark:bg-gray-900 backdrop-blur-none border-gray-700 dark:border-gray-300;
   }
 }
 </style>

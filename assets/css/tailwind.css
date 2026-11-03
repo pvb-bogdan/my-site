@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Shared motion tokens: one easing and three durations for the whole site */
+:root {
+  --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 400ms;
+  --header-height: 80px;
+}
+
 html {
   color-scheme: light;
   scroll-padding-top: 80px;
@@ -84,27 +93,12 @@ select:focus-visible {
 
 @keyframes blob-move-1 {
   0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-24px) scale(1.04); }
-}
-
-@keyframes blob-move-2 {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(18px) scale(1.03); }
-}
-
-@keyframes blob-move-3 {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-12px) scale(1.04); }
+  50% { transform: translateY(-12px) scale(1.02); }
 }
 
 @keyframes float-slow {
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-18px) scale(1.08); }
-}
-
-@keyframes float-medium {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-10px) scale(1.05); }
 }
 
 @keyframes scroll-indicator {
@@ -123,11 +117,8 @@ select:focus-visible {
   animation: fade-in-right 0.8s ease-out forwards;
 }
 
-.animate-blob-move-1 { animation: blob-move-1 12s ease-in-out infinite; }
-.animate-blob-move-2 { animation: blob-move-2 10s ease-in-out infinite; }
-.animate-blob-move-3 { animation: blob-move-3 18s ease-in-out infinite; }
+.animate-blob-move-1 { animation: blob-move-1 24s ease-in-out infinite; }
 .animate-float-slow { animation: float-slow 5s ease-in-out infinite; }
-.animate-float-medium { animation: float-medium 3.5s ease-in-out infinite; }
 .animate-scroll-indicator { animation: scroll-indicator 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
 
 .animation-delay-100 { animation-delay: 0.1s; }
@@ -143,9 +134,63 @@ select:focus-visible {
   animation: slideUp 150ms ease-in forwards;
 }
 
-/* Enhanced button states */
-button:active {
-  transform: scale(0.98);
+/* Press feedback: instant, on press (not hover), for buttons and button-like links */
+button:not(:disabled),
+.pressable {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+  transition-duration: var(--dur-fast);
+  transition-timing-function: var(--ease-out);
+}
+
+button:not(:disabled):active,
+.pressable:active {
+  transform: scale(0.97);
+  transition-duration: 100ms;
+}
+
+/* Size-specific tracking: big headings tighter, body text untouched */
+h1,
+h2 {
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+h3,
+h4 {
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Theme switch: a short cross-fade (see useTheme) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--dur-base);
+  animation-timing-function: var(--ease-out);
+}
+
+/* Project card ↔ modal hero image shared-element transition */
+::view-transition-group(project-hero) {
+  animation-duration: var(--dur-slow);
+  animation-timing-function: var(--ease-out);
+}
+
+::view-transition-old(project-hero),
+::view-transition-new(project-hero) {
+  /* Both snapshots fill the morphing box instead of stretching */
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Decorative motion pauses while the hero is offscreen (set by HeroSection) */
+[data-motion-paused] .animate-blob-move-1,
+[data-motion-paused] .animate-float-slow,
+[data-motion-paused] .animate-scroll-indicator {
+  animation-play-state: paused;
 }
 
 /* Custom scrollbar styling for webkit browsers */

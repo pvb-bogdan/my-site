@@ -125,7 +125,7 @@ const { t, tm, rt } = useI18n()
 interface Technology {
   name: string
   icon: string
-  group: 'design' | 'frontend' | 'tooling'
+  group: string
 }
 
 const props = defineProps<{

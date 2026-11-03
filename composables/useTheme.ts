@@ -17,7 +17,14 @@ export function useTheme() {
 
   const toggleTheme = () => {
     isDark.value = !isDark.value
-    applyTheme()
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    // Cross-fade light <-> dark where View Transitions exist; switch instantly otherwise
+    if (!prefersReducedMotion && typeof document.startViewTransition === 'function') {
+      document.startViewTransition(applyTheme)
+    } else {
+      applyTheme()
+    }
   }
 
   onMounted(() => {

@@ -41,7 +41,9 @@
               width="640"
               height="360"
               loading="lazy"
-              class="project-thumb object-cover w-full h-full transition-transform duration-500"
+              :data-project-thumb="project.slug"
+              :style="heroSlug === project.slug && !isModalOpen ? { viewTransitionName: 'project-hero' } : undefined"
+              class="project-thumb object-cover w-full h-full transition-transform duration-slow"
             />
             <span
               v-else
@@ -92,6 +94,8 @@
     <ProjectModal
       :is-open="isModalOpen"
       :project="selectedProject"
+      :hero-transition-name="heroSlug ? 'project-hero' : undefined"
+      :skip-fade="heroSlug !== null"
       @close="closeProject"
     />
   </section>
@@ -224,15 +228,71 @@ const selectedProject = ref<Project | null>(null)
 const isModalOpen = ref(false)
 // True when this page pushed the ?project entry, so closing can simply go Back
 const openedWithPush = ref(false)
-const syncModalWithRoute = () => {
-  const slug = typeof route.query.project === 'string' ? route.query.project : ''
-  const project = localizedProjects.value.find((candidate) => candidate.slug === slug) ?? null
+// Slug whose card/modal image carries the shared view-transition-name during a morph
+const heroSlug = ref<string | null>(null)
 
+const applyModalState = (project: Project | null) => {
   if (project) {
     selectedProject.value = project
     isModalOpen.value = true
   } else {
     isModalOpen.value = false
+  }
+}
+
+// Wait (briefly) for the modal's large image so the morph doesn't land on an empty box
+const waitForModalHeroImage = async () => {
+  const heroImage = document.querySelector<HTMLImageElement>('[role="dialog"] img[data-project-hero]')
+  if (!heroImage) return
+  const shortTimeout = new Promise((resolve) => setTimeout(resolve, 300))
+  await Promise.race([heroImage.decode().catch(() => undefined), shortTimeout])
+}
+
+const syncModalWithRoute = async () => {
+  const slug = typeof route.query.project === 'string' ? route.query.project : ''
+  const project = localizedProjects.value.find((candidate) => candidate.slug === slug) ?? null
+  const isOpening = project !== null
+  const transitionSlug = isOpening ? project.slug : selectedProject.value?.slug
+  const cardThumbIsRendered = transitionSlug
+    ? document.querySelector(`[data-project-thumb="${transitionSlug}"]`) !== null
+    : false
+
+  // Grow from / shrink into the card with the View Transitions API; plain fade otherwise
+  const canMorph = typeof document.startViewTransition === 'function'
+    && !prefersReducedMotion()
+    && cardThumbIsRendered
+    && isOpening !== isModalOpen.value
+
+  if (!canMorph || !transitionSlug) {
+    applyModalState(project)
+    return
+  }
+
+  // The old snapshot needs the name on the element that is visible now
+  heroSlug.value = transitionSlug
+  await nextTick()
+
+  let hasUpdated = false
+  const viewTransition = document.startViewTransition(async () => {
+    hasUpdated = true
+    applyModalState(project)
+    await nextTick()
+    if (isOpening) await waitForModalHeroImage()
+  })
+
+  // Safety net: if the browser never renders a frame (e.g. a background pane), skip the
+  // animation so the modal still opens/closes; skipping runs the pending update callback
+  const fallbackTimer = setTimeout(() => {
+    if (!hasUpdated) viewTransition.skipTransition()
+  }, 1000)
+
+  try {
+    await viewTransition.finished
+  } catch {
+    // An interrupted transition still leaves the DOM in its final state
+  } finally {
+    clearTimeout(fallbackTimer)
+    heroSlug.value = null
   }
 }
 

@@ -45,9 +45,9 @@
         <div
           v-for="service in services"
           :key="service.id"
-          class="relative p-8 overflow-hidden text-center transition-all duration-300 transform bg-white border border-gray-200 shadow-md group rounded-2xl hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 dark:bg-gray-900 dark:border-gray-800 dark:hover:border-blue-500/40 focus-within:outline-2 focus-within:outline-blue-500 focus-within:outline-offset-2"
+          class="relative p-8 overflow-hidden text-center transition-all duration-base bg-white border border-gray-200 shadow-md group rounded-2xl hover:shadow-lg hover:border-blue-300 dark:bg-gray-900 dark:border-gray-800 dark:hover:border-blue-500/40 focus-within:outline-2 focus-within:outline-blue-500 focus-within:outline-offset-2"
         >
-          <div class="flex items-center justify-center mx-auto mb-5 transition-transform duration-300 w-14 h-14 bg-sky-50 rounded-2xl group-hover:scale-105 group-hover:bg-sky-100 dark:bg-blue-600/15 dark:group-hover:bg-blue-600/25">
+          <div class="flex items-center justify-center mx-auto mb-5 transition-transform duration-base w-14 h-14 bg-sky-50 rounded-2xl group-hover:bg-sky-100 dark:bg-blue-600/15 dark:group-hover:bg-blue-600/25">
             <Icon :name="service.icon" class="w-6 h-6 text-blue-600 dark:text-sky-400" aria-hidden="true" />
           </div>
 

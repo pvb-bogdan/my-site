@@ -1,6 +1,7 @@
 <template>
   <Teleport to="body">
-    <Transition name="modal">
+    <!-- The fade is skipped while a card ↔ modal View Transition animates instead -->
+    <Transition name="modal" :css="!skipFade">
       <div
         v-if="isOpen"
         ref="dialogRef"
@@ -58,8 +59,10 @@
                       :alt="t('modal.imageAlt', { title: project.title, num: imageIndex + 1, total: project.images.length })"
                       width="1280"
                       height="720"
-                      loading="lazy"
-                      class="object-cover w-full h-full transition-opacity duration-300"
+                      :loading="imageIndex === 0 ? 'eager' : 'lazy'"
+                      :data-project-hero="imageIndex === currentImageIndex ? '' : undefined"
+                      :style="heroTransitionName && imageIndex === currentImageIndex ? { viewTransitionName: heroTransitionName } : undefined"
+                      class="object-cover w-full h-full transition-opacity duration-base"
                     />
                   </div>
                 </template>
@@ -93,7 +96,7 @@
               <!-- Image Counter -->
               <div
                 v-if="project.images && project.images.length > 1"
-                class="absolute px-3 py-1 text-sm font-medium text-white rounded-full bottom-4 right-4 bg-black/50"
+                class="absolute px-3 py-1 text-sm font-medium text-white rounded-full bottom-4 right-4 bg-black/50 tabular-nums"
               >
                 {{ currentImageIndex + 1 }} / {{ project.images.length }}
               </div>
@@ -174,7 +177,7 @@
                   :href="project.liveUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center justify-center w-full gap-2 px-6 py-4 font-semibold text-white transition-colors duration-200 transform bg-blue-600 shadow-lg hover:bg-blue-700 rounded-xl hover:shadow-xl hover:scale-105"
+                  class="flex items-center justify-center w-full gap-2 px-6 py-4 font-semibold text-white transition-colors duration-base bg-blue-600 shadow-lg hover:bg-blue-700 rounded-xl hover:shadow-xl"
                 >
                   <Icon name="lucide:external-link" class="w-5 h-5" aria-hidden="true" />
                   {{ t('modal.viewSite') }}
@@ -184,7 +187,7 @@
                   :href="project.githubUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center justify-center w-full gap-2 px-6 py-4 font-semibold text-white transition-colors duration-200 transform bg-gray-800 shadow-lg hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-xl hover:shadow-xl hover:scale-105"
+                  class="flex items-center justify-center w-full gap-2 px-6 py-4 font-semibold text-white transition-colors duration-base bg-gray-800 shadow-lg hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-xl hover:shadow-xl"
                 >
                   <Icon name="simple-icons:github" class="w-5 h-5" aria-hidden="true" />
                   {{ t('modal.viewGithub') }}
@@ -243,6 +246,9 @@ interface Project {
 const props = defineProps<{
   isOpen: boolean
   project: Project | null
+  // Shared view-transition-name for the visible image while the card ↔ modal morph runs
+  heroTransitionName?: string
+  skipFade?: boolean
 }>()
 
 const emit = defineEmits<{

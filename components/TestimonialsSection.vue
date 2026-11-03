@@ -82,7 +82,7 @@
           >
             <!-- 16px visual dot inside a 44px hit area -->
             <span
-              class="block h-4 transition-all duration-300 rounded-full"
+              class="block h-4 transition-all duration-base rounded-full"
               :class="isSlideActive(index)
                 ? 'bg-blue-600 dark:bg-sky-400 w-10'
                 : 'bg-gray-300 dark:bg-gray-600 group-hover/dot:bg-blue-300 dark:group-hover/dot:bg-sky-500/50 w-4'"

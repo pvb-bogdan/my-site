@@ -34,9 +34,9 @@
                 v-if="revealed[channel.key]"
                 :ref="(element) => setChannelLink(channel.key, element)"
                 :href="channel.href"
-                class="flex items-center w-full gap-4 p-4 text-left transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+                class="flex items-center w-full gap-4 p-4 text-left transition-all duration-base bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
               >
-                <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
+                <div class="flex items-center justify-center w-12 h-12 transition-all duration-base bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
                   <Icon :name="channel.icon" class="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
                 </div>
                 <div class="flex-1">
@@ -49,10 +49,10 @@
               <button
                 v-else
                 type="button"
-                class="flex items-center w-full gap-4 p-4 text-left transition-all duration-300 bg-white border border-gray-200 cursor-pointer dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+                class="flex items-center w-full gap-4 p-4 text-left transition-all duration-base bg-white border border-gray-200 cursor-pointer dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
                 @click="revealChannel(channel.key)"
               >
-                <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
+                <div class="flex items-center justify-center w-12 h-12 transition-all duration-base bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
                   <Icon :name="channel.icon" class="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
                 </div>
                 <div class="flex-1">
@@ -70,9 +70,9 @@
               :href="`https://wa.me/${whatsapp}`"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-green-500 dark:hover:border-green-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-green-500 focus-visible:outline-offset-2"
+              class="flex items-center gap-4 p-4 transition-all duration-base bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-green-500 dark:hover:border-green-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-green-500 focus-visible:outline-offset-2"
             >
-              <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-green-100 rounded-xl dark:bg-green-900/30 group-hover:bg-green-500 group-hover:text-white">
+              <div class="flex items-center justify-center w-12 h-12 transition-all duration-base bg-green-100 rounded-xl dark:bg-green-900/30 group-hover:bg-green-500 group-hover:text-white">
                 <Icon name="simple-icons:whatsapp" class="w-6 h-6 text-green-600 group-hover:text-white" aria-hidden="true" />
               </div>
               <div>
@@ -96,13 +96,13 @@
           />
           
           <!-- Social Icons Card - positioned bottom right -->
-          <div class="absolute flex gap-2 p-3 border border-gray-200 shadow-lg bottom-6 right-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm dark:border-gray-700 rounded-xl">
+          <div class="social-card absolute flex gap-2 p-3 border border-gray-200 shadow-lg bottom-6 right-6 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm dark:border-gray-700 rounded-xl">
             <!-- Instagram -->
             <a
               :href="contactInfo.instagram"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-gradient-to-br hover:from-blue-600 hover:via-sky-500 hover:to-cyan-400 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
+              class="flex items-center justify-center w-12 h-12 transition-all duration-base border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-gradient-to-br hover:from-blue-600 hover:via-sky-500 hover:to-cyan-400 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="Instagram"
             >
               <Icon name="simple-icons:instagram" class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
@@ -113,7 +113,7 @@
               :href="contactInfo.facebook"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-blue-600 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
+              class="flex items-center justify-center w-12 h-12 transition-all duration-base border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 hover:bg-blue-600 hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="Facebook"
             >
               <Icon name="simple-icons:facebook" class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
@@ -124,7 +124,7 @@
               :href="contactInfo.linkedin"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center justify-center w-12 h-12 transition-all duration-300 border border-gray-200 bg-gray-50 dark:bg-gray-700 rounded-lg dark:border-gray-600 hover:bg-[#0077B5] hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
+              class="flex items-center justify-center w-12 h-12 transition-all duration-base border border-gray-200 bg-gray-50 dark:bg-gray-700 rounded-lg dark:border-gray-600 hover:bg-[#0077B5] hover:border-transparent focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2 group"
               aria-label="LinkedIn"
             >
               <Icon name="simple-icons:linkedin" class="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-white" aria-hidden="true" />
@@ -190,3 +190,17 @@ const revealableChannels = computed(() => [
   }
 ])
 </script>
+
+<style scoped>
+@media (prefers-reduced-transparency: reduce) {
+  .social-card {
+    @apply bg-white dark:bg-gray-800 backdrop-blur-none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .social-card {
+    @apply bg-white dark:bg-gray-800 backdrop-blur-none border-gray-700 dark:border-gray-300;
+  }
+}
+</style>

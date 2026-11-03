@@ -1,5 +1,10 @@
 <template>
-  <section id="hero" aria-labelledby="hero-title" class="relative flex items-center justify-center px-6 pt-20 overflow-hidden">
+  <section
+    id="hero"
+    ref="heroRef"
+    aria-labelledby="hero-title"
+    :data-motion-paused="isOffscreen ? '' : undefined"
+    class="relative flex items-center justify-center px-6 pt-20 overflow-hidden">
     <HeroBackground />
 
     <div class="container relative z-10 mx-auto">
@@ -63,9 +68,28 @@
 </template>
 
 <script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+
 const { t } = useI18n()
 
 defineProps<{
   name: string
 }>()
+
+// Pause the decorative loops while the hero is scrolled out of view
+const heroRef = ref<HTMLElement | null>(null)
+const isOffscreen = ref(false)
+let visibilityObserver: IntersectionObserver | null = null
+
+onMounted(() => {
+  if (!heroRef.value || !('IntersectionObserver' in window)) return
+  visibilityObserver = new IntersectionObserver(([entry]) => {
+    isOffscreen.value = !entry.isIntersecting
+  })
+  visibilityObserver.observe(heroRef.value)
+})
+
+onBeforeUnmount(() => {
+  visibilityObserver?.disconnect()
+})
 </script>
