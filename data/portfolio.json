@@ -1,36 +1,8 @@
 {
   "personal": {
     "name": "Bogdan",
-    "fullName": "Bogdan Petre",
-    "title": "Web & Print Designer",
-    "description": "Ajut afacerile mici sa arate profesionist online si pe hartie — site-uri, cataloage, meniuri si identitati vizuale."
+    "fullName": "Bogdan Petre"
   },
-  "navLinks": [
-    {
-      "label": "Acasă",
-      "href": "#hero"
-    },
-    {
-      "label": "Servicii",
-      "href": "#services"
-    },
-    {
-      "label": "Despre",
-      "href": "#about"
-    },
-    {
-      "label": "Portofoliu",
-      "href": "#portfolio"
-    },
-    {
-      "label": "Testimoniale",
-      "href": "#testimonials"
-    },
-    {
-      "label": "Contact",
-      "href": "#contact"
-    }
-  ],
   "services": [
     {
       "id": "uiux",
@@ -117,66 +89,6 @@
       "name": "GitHub",
       "icon": "simple-icons:github",
       "group": "tooling"
-    }
-  ],
-  "testimonials": [
-    {
-      "name": "Bogdan Danaila",
-      "role": "Business Manager / Motul Romania",
-      "initials": "BD",
-      "text": "Pe langa entuziasm si focus pe calitate, are o viziune orientata catre client, venind tot timpul cu propuneri si idei, cu o consultanta in web si graphic design foarte eficienta si constructiva."
-    },
-    {
-      "name": "Michael Dan Popa",
-      "role": "CEO / Cinetic Data",
-      "initials": "MC",
-      "text": "Conceperea mesajului, design-ul, implementarea si consultanta in optimizare sunt orientate spre atingerea unor obiective de retentie si fidelizare a vizitatorilor si nu spre livrarea unui produs in cel mai scurt timp."
-    },
-    {
-      "name": "Catalin Bozienita",
-      "role": "Director / CPS",
-      "initials": "CB",
-      "text": "Am fost foarte impresionati de capacitatea lui Bogdan de a livra o identitate corporativa care simbolizeaza perfect viziunea noastra si transmite imaginea stilat, elegant si modern. Recomandam cu incredere."
-    },
-    {
-      "name": "Iosif Cristian Dietter",
-      "role": "IT Manager / Pavone Profumi",
-      "initials": "IC",
-      "text": "Suntem foarte multumiti de noua noastra identitate de brand si modul in care Bogdan isi desfasoara activitatea . A fost experienta si o placere  lucru cu el"
-    },
-    {
-      "name": "Adrian Stefanescu",
-      "role": "Manager / MegaMusic",
-      "initials": "AS",
-      "text": "Un designer talentat, cu o capacitate excelentă de a transforma viziunea noastră într-o prezentare nouă, elegantă și bine structurată. A înțeles rapid nevoile noastre și a venit cu soluții creative, livrate cu atenție la detalii. Îl recomand cu cea mai mare încredere."
-    },
-    {
-      "name": "Laurentiu Bozienita",
-      "role": "AscendioPraxis",
-      "initials": "LB",
-      "text": "Bogdan ne-a ajutat atât cu designul, cât și cu dezvoltarea site-ului, iar rezultatul a ieșit exact cum ne doream: modern, rapid și ușor de folosit. Îl recomand cu încredere oricui își dorește un site bine făcut, de la concept până la implementare."
-    }
-  ],
-  "socialLinks": [
-    {
-      "name": "GitHub",
-      "icon": "🔗",
-      "url": "https://github.com"
-    },
-    {
-      "name": "Dribbble",
-      "icon": "🎨",
-      "url": "https://dribbble.com"
-    },
-    {
-      "name": "Behance",
-      "icon": "📱",
-      "url": "https://behance.net"
-    },
-    {
-      "name": "LinkedIn",
-      "icon": "💼",
-      "url": "https://linkedin.com"
     }
   ]
 }

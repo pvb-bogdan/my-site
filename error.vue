@@ -3,14 +3,9 @@
     class="min-h-screen text-gray-900 transition-colors duration-300 bg-gray-50 dark:bg-gray-900 dark:text-gray-100"
   >
     <section class="relative flex items-center justify-center min-h-screen px-6 overflow-hidden">
-      <!-- Background Gradient Blobs (mirrors HeroSection) -->
-      <div class="absolute inset-0 z-0" style="contain: layout style paint;">
-        <div class="absolute -top-20 left-[10%] w-[550px] h-[550px] bg-gradient-to-br from-sky-200 to-blue-400 rounded-full blur-3xl opacity-40 mix-blend-multiply dark:mix-blend-screen dark:opacity-30 animate-blob-move-1" style="will-change: transform;"></div>
-        <div class="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-gradient-to-bl from-cyan-300 to-teal-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-2" style="will-change: transform;"></div>
-        <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-blue-200 to-sky-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3" style="will-change: transform;"></div>
-      </div>
+      <HeroBackground />
 
-      <div class="container z-10 mx-auto">
+      <div class="container relative z-10 mx-auto">
         <div class="flex flex-col items-center justify-between gap-12 lg:flex-row">
           <!-- Text Content -->
           <div class="flex-1 text-center lg:text-left">

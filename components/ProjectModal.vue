@@ -45,7 +45,7 @@
                 ref="carouselRef"
                 class="flex w-full h-full overflow-x-auto motion-safe:scroll-smooth snap-x snap-mandatory hide-scrollbar"
                 style="-webkit-overflow-scrolling: touch;"
-                @scroll="onScroll"
+                @scroll.passive="onScroll"
               >
                 <template v-if="project.images && project.images.length > 0">
                   <div
@@ -216,6 +216,7 @@
 
 <script setup lang="ts">
 import { ref, watch, nextTick, onBeforeUnmount, useId } from 'vue'
+import { useCarousel } from '~/composables/useCarousel'
 
 const { t } = useI18n()
 const titleId = useId()
@@ -248,52 +249,21 @@ const emit = defineEmits<{
   close: []
 }>()
 
-const currentImageIndex = ref(0)
 const carouselRef = ref<HTMLElement | null>(null)
+const { activeIndex: currentImageIndex, scrollToSlide, onScroll, reset: resetCarousel } = useCarousel(carouselRef)
 const dialogRef = ref<HTMLElement | null>(null)
 const closeButtonRef = ref<HTMLElement | null>(null)
 // The element that opened the dialog, so focus can return to it on close
 let returnFocusTarget: HTMLElement | null = null
 
-const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 const closeModal = () => {
   emit('close')
 }
 
-const scrollToSlide = (index: number) => {
-  currentImageIndex.value = index
-  nextTick(() => {
-    const container = carouselRef.value
-    if (!container) return
-    const card = container.children[index] as HTMLElement
-    if (card) {
-      card.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'nearest', inline: 'start' })
-    }
-  })
-}
-
-// Update currentImageIndex on scroll (for snap sync)
-const onScroll = () => {
-  const container = carouselRef.value
-  if (!container) return
-  const children = Array.from(container.children) as HTMLElement[]
-  const scrollLeft = container.scrollLeft
-  let minDiff = Infinity
-  let closest = 0
-  children.forEach((child, idx) => {
-    const diff = Math.abs(child.offsetLeft - scrollLeft)
-    if (diff < minDiff) {
-      minDiff = diff
-      closest = idx
-    }
-  })
-  currentImageIndex.value = closest
-}
-
-// Reset image index when project changes
+// Start each project at its first image
 watch(() => props.project, () => {
-  currentImageIndex.value = 0
+  resetCarousel()
 })
 
 const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'

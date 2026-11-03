@@ -1,14 +1,6 @@
 <template>
   <section id="hero" aria-labelledby="hero-title" class="relative flex items-center justify-center px-6 pt-20 overflow-hidden">
-    <!-- Background Gradient Blobs - optimized for performance -->
-    <div class="absolute inset-0 z-0" style="contain: layout style paint; transform: translateZ(0);">
-      <!-- Blue blob - top left area -->
-      <div class="absolute -top-20 left-[10%] w-[550px] h-[550px] bg-gradient-to-br from-sky-200 to-blue-400 rounded-full blur-3xl opacity-40 mix-blend-multiply dark:mix-blend-screen dark:opacity-30 animate-blob-move-1" style="will-change: transform; backface-visibility: hidden;"></div>
-      <!-- Cyan/Teal blob - upper right -->
-      <div class="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-gradient-to-bl from-cyan-300 to-teal-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-2" style="will-change: transform; backface-visibility: hidden;"></div>
-      <!-- Blue/Cyan blob - left center-ish (reduced animation) -->
-      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-blue-200 to-sky-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3" style="will-change: transform; backface-visibility: hidden;"></div>
-    </div>
+    <HeroBackground />
 
     <div class="container relative z-10 mx-auto">
       <div class="flex flex-col items-center justify-between gap-8 md:gap-12 lg:flex-row">

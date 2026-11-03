@@ -28,7 +28,7 @@
           ref="carouselRef"
           class="flex overflow-x-auto motion-safe:scroll-smooth snap-x snap-mandatory hide-scrollbar"
           style="-webkit-overflow-scrolling: touch;"
-          @scroll="onScroll"
+          @scroll.passive="onScroll"
         >
           <div
             v-for="testimonial in localizedTestimonials"
@@ -115,7 +115,8 @@
 </style>
 
 <script setup lang="ts">
-import { computed, ref, nextTick } from 'vue'
+import { computed, ref } from 'vue'
+import { useCarousel } from '~/composables/useCarousel'
 
 const { t, tm, rt } = useI18n()
 
@@ -138,43 +139,8 @@ const localizedTestimonials = computed<Testimonial[]>(() => {
 })
 
 const carouselRef = ref<HTMLElement | null>(null)
-const activeIndex = ref(0)
-
-// Scroll to a specific slide
-const scrollToSlide = (index: number) => {
-  activeIndex.value = index
-  nextTick(() => {
-    const container = carouselRef.value
-    if (!container) return
-    const card = container.children[index] as HTMLElement
-    if (card) {
-      // block: 'nearest' keeps the page itself from jumping vertically
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      card.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'start' })
-    }
-  })
-}
+const { activeIndex, scrollToSlide, onScroll } = useCarousel(carouselRef)
 
 // Helper to check if a slide is active (for dot styling)
-const isSlideActive = (index: number) => {
-  return activeIndex.value === index
-}
-
-// Update activeIndex on scroll (for snap sync)
-const onScroll = () => {
-  const container = carouselRef.value
-  if (!container) return
-  const children = Array.from(container.children) as HTMLElement[]
-  const scrollLeft = container.scrollLeft
-  let minDiff = Infinity
-  let closest = 0
-  children.forEach((child, idx) => {
-    const diff = Math.abs(child.offsetLeft - scrollLeft)
-    if (diff < minDiff) {
-      minDiff = diff
-      closest = idx
-    }
-  })
-  activeIndex.value = closest
-}
+const isSlideActive = (index: number) => activeIndex.value === index
 </script>
