@@ -210,7 +210,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick } from 'vue'
+import { ref, watch, nextTick, onBeforeUnmount } from 'vue'
 
 const { t } = useI18n()
 
@@ -284,22 +284,27 @@ watch(() => props.project, () => {
   currentImageIndex.value = 0
 })
 
-// Handle ESC key to close modal
+// Handle ESC key to close modal. The listener lives at module scope so the exact
+// same function can be removed again (a watcher's return value is ignored by Vue).
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Escape') closeModal()
+}
+
+const detachModalListeners = () => {
+  window.removeEventListener('keydown', handleKeydown)
+  document.body.style.overflow = ''
+}
+
 watch(() => props.isOpen, (isOpen) => {
   if (isOpen) {
     document.body.style.overflow = 'hidden'
-    const handleKeydown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeModal()
-    }
     window.addEventListener('keydown', handleKeydown)
-    return () => {
-      window.removeEventListener('keydown', handleKeydown)
-      document.body.style.overflow = ''
-    }
   } else {
-    document.body.style.overflow = ''
+    detachModalListeners()
   }
 })
+
+onBeforeUnmount(detachModalListeners)
 </script>
 
 <style scoped>

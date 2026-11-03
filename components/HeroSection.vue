@@ -7,10 +7,10 @@
       <!-- Cyan/Teal blob - upper right -->
       <div class="absolute top-[15%] right-[5%] w-[400px] h-[400px] bg-gradient-to-bl from-cyan-300 to-teal-400 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-20 animate-blob-move-2" style="will-change: transform; backface-visibility: hidden;"></div>
       <!-- Blue/Cyan blob - left center-ish (reduced animation) -->
-      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-blue-200 to-sky-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3-slow" style="will-change: transform; backface-visibility: hidden;"></div>
+      <div class="absolute top-[40%] -left-[5%] w-[500px] h-[500px] bg-gradient-to-tr from-blue-200 to-sky-500 rounded-full blur-3xl opacity-30 mix-blend-multiply dark:mix-blend-screen dark:opacity-25 animate-blob-move-3" style="will-change: transform; backface-visibility: hidden;"></div>
     </div>
 
-    <div class="container mx-auto z-1">
+    <div class="container relative z-10 mx-auto">
       <div class="flex flex-col items-center justify-between gap-12 lg:flex-row">
         <!-- Text Content -->
         <div class="flex-1 text-center lg:text-left">
@@ -43,7 +43,7 @@
           <!-- Hero Image -->
         <div class="relative flex-shrink-0 lg:flex-1 animate-fade-in-right animation-delay-300">
           <!-- Soft Glow/Shadow -->
-          <div class="absolute -z-1 left-1/2 top-1/2 w-[90%] h-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/30 blur-2xl"></div>
+          <div class="absolute left-1/2 top-1/2 w-[90%] h-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-400/30 blur-2xl"></div>
 
           <!-- Floating SVG Shapes - reduced animation count for performance -->
           <svg class="absolute top-0 left-0 w-16 h-16 text-sky-300/40 opacity-70 animate-float-slow" viewBox="0 0 64 64" fill="none" style="will-change: transform;"><circle cx="32" cy="32" r="32" fill="currentColor"/></svg>
@@ -68,7 +68,7 @@
       </div>
     </div>
     <!-- Scroll Indicator -->
-    <div class="absolute flex-col items-center hidden -translate-x-1/2 md-flex left-1/2 bottom-6 opacity-80 animate-fade-in-up animation-delay-400 md:flex">
+    <div class="absolute flex-col items-center hidden -translate-x-1/2 left-1/2 bottom-6 opacity-80 animate-fade-in-up animation-delay-400 md:flex">
       <div class="relative flex items-start justify-center h-12 border-2 rounded-full border-sky-400 w-7 dark:border-gray-600">
         <div class="w-2 h-2 mt-2 rounded-full bg-sky-400 dark:bg-gray-600 animate-scroll-indicator"></div>
       </div>
@@ -84,130 +84,3 @@ defineProps<{
   name: string
 }>()
 </script>
-
-<style scoped>
-/* Fade in from above */
-@keyframes fade-in-down {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Fade in from below */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Fade in from right */
-@keyframes fade-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-fade-in-down {
-  animation: fade-in-down 0.6s ease-out forwards;
-}
-
-.animate-fade-in-up {
-  opacity: 0;
-  animation: fade-in-up 0.6s ease-out forwards;
-}
-
-.animate-fade-in-right {
-  opacity: 0;
-  animation: fade-in-right 0.8s ease-out forwards;
-}
-
-/* Animation delays */
-.animation-delay-100 {
-  animation-delay: 0.1s;
-}
-
-.animation-delay-200 {
-  animation-delay: 0.2s;
-}
-
-.animation-delay-300 {
-  animation-delay: 0.3s;
-}
-
-.animation-delay-400 {
-  animation-delay: 0.4s;
-}
-
-@keyframes blob-move-1 {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-24px) scale(1.04); }
-}
-.animate-blob-move-1 { animation: blob-move-1 12s ease-in-out infinite; }
-@keyframes blob-move-2 {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(18px) scale(1.03); }
-}
-.animate-blob-move-2 { animation: blob-move-2 10s ease-in-out infinite; }
-@keyframes blob-move-3 {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-16px) scale(1.05); }
-}
-.animate-blob-move-3 { animation: blob-move-3 14s ease-in-out infinite; }
-@keyframes blob-move-4 {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(20px) scale(1.02); }
-}
-.animate-blob-move-4 { animation: blob-move-4 11s ease-in-out infinite; }
-@keyframes blob-move-5 {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-12px) scale(1.04); }
-}
-.animate-blob-move-5 { animation: blob-move-5 13s ease-in-out infinite; }
-
-@keyframes scroll-indicator {
-  0% { opacity: 1; transform: translateY(0); }
-  60% { opacity: 1; transform: translateY(18px); }
-  100% { opacity: 0; transform: translateY(24px); }
-}
-.animate-scroll-indicator {
-  animation: scroll-indicator 1.6s cubic-bezier(0.4,0,0.2,1) infinite;
-  will-change: opacity, transform;
-}
-
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-18px) scale(1.08); }
-}
-.animate-float-slow {
-  animation: float-slow 5s ease-in-out infinite;
-}
-@keyframes float-medium {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-10px) scale(1.05); }
-}
-.animate-float-medium {
-  animation: float-medium 3.5s ease-in-out infinite;
-}
-@keyframes float-fast {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-8px) scale(1.03); }
-}
-.animate-float-fast {
-  animation: float-fast 2.7s ease-in-out infinite;
-}
-</style>

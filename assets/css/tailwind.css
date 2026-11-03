@@ -2,10 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling behavior */
 html {
-  scroll-behavior: smooth;
+  color-scheme: light;
   scroll-padding-top: 80px;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Smooth scrolling only when the user hasn't asked for reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Global focus styles (WCAG 2.2 AAA - 2px outline with 3:1 contrast) */
@@ -61,15 +71,69 @@ select:focus-visible {
   }
 }
 
-/* Blob animations - optimized for performance */
-@keyframes blob-move-3-slow {
+/* Shared entrance and decorative animations (used by the hero and the 404 page) */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blob-move-1 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-24px) scale(1.04); }
+}
+
+@keyframes blob-move-2 {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(18px) scale(1.03); }
+}
+
+@keyframes blob-move-3 {
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-12px) scale(1.04); }
 }
 
-.animate-blob-move-3-slow {
-  animation: blob-move-3-slow 18s ease-in-out infinite;
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-18px) scale(1.08); }
 }
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+@keyframes scroll-indicator {
+  0% { opacity: 1; transform: translateY(0); }
+  60% { opacity: 1; transform: translateY(18px); }
+  100% { opacity: 0; transform: translateY(24px); }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  opacity: 0;
+  animation: fade-in-right 0.8s ease-out forwards;
+}
+
+.animate-blob-move-1 { animation: blob-move-1 12s ease-in-out infinite; }
+.animate-blob-move-2 { animation: blob-move-2 10s ease-in-out infinite; }
+.animate-blob-move-3 { animation: blob-move-3 18s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 5s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium 3.5s ease-in-out infinite; }
+.animate-scroll-indicator { animation: scroll-indicator 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
 
 .mobile-menu-enter {
   animation: slideDown 200ms ease-out;
@@ -95,12 +159,4 @@ button:active {
     scrollbar-width: none;
   }
 
-  /* Animation delays for staggered effects */
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
 }

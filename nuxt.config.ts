@@ -66,29 +66,22 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        // Lets the browser render scrollbars and form controls in the active theme
+        { name: 'color-scheme', content: 'light dark' },
         {
           name: 'description',
           content:
             'Personal portfolio of Petre Bogdan - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.'
         },
-        {
-          property: 'og:title',
-          content: 'Petre Bogdan - Web Designer & Frontend Developer'
-        },
-        {
-          property: 'og:description',
-          content:
-            'Personal portfolio of Petre Bogdan - Web Designer and Frontend Developer specializing in Vue, Nuxt, and modern web technologies.'
-        },
-        {
-          property: 'og:image',
-          content: 'https://petrebogdan.com/og-image.png'
-        },
-        {
-          property: 'og:url',
-          content: 'https://petrebogdan.com'
-        },
         { name: 'twitter:card', content: 'summary_large_image' }
+      ],
+      script: [
+        {
+          // Runs before first paint so the saved (or OS) theme is applied without a light flash
+          innerHTML:
+            "(function(){try{var savedTheme=localStorage.getItem('theme');var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;if(savedTheme==='dark'||(!savedTheme&&prefersDark)){document.documentElement.classList.add('dark')}}catch(error){}})()",
+          tagPosition: 'head'
+        }
       ],
       link: [
         {

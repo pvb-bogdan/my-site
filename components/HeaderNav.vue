@@ -17,7 +17,7 @@
         </a>
 
         <!-- Desktop Navigation (Center) -->
-        <div class="absolute hidden -translate-x-1/2 lg:flex left-1/2">
+        <div class="absolute hidden -translate-x-1/2 xl:flex left-1/2">
           <nav class="nav">
             <div class="bubble hover" ref="hoverBubble"></div>
             <a
@@ -36,7 +36,7 @@
         </div>
 
         <!-- Theme Toggle (Right) -->
-        <div class="items-center hidden gap-3 lg:flex">
+        <div class="items-center hidden gap-3 xl:flex">
           <div class="flex items-center p-1 rounded-lg bg-gray-200/70 dark:bg-gray-800/70" :aria-label="t('lang.switch')" role="group">
             <button
               v-for="lang in localeButtons"
@@ -65,7 +65,7 @@
         </div>
 
         <!-- Mobile Menu & Theme Toggle -->
-        <div class="flex items-center gap-2 lg:hidden">
+        <div class="flex items-center gap-2 xl:hidden">
           <div class="flex items-center p-1 rounded-lg bg-gray-200/70 dark:bg-gray-800/70" :aria-label="t('lang.switch')" role="group">
             <button
               v-for="lang in localeButtons"
@@ -126,7 +126,7 @@
         :id="mobileNavigationId"
         v-if="mobileMenuOpen"
         aria-label="Mobile navigation"
-        class="pt-4 pb-4 mt-4 space-y-4 border-t border-gray-200 lg:hidden dark:border-gray-800 mobile-menu-enter"
+        class="pt-4 pb-4 mt-4 space-y-4 border-t border-gray-200 xl:hidden dark:border-gray-800 mobile-menu-enter"
       >
         <a
           v-for="link in navLinks"
@@ -229,7 +229,7 @@ const handleEscapeKey = (event: KeyboardEvent) => {
 }
 
 const handleResize = () => {
-  if (window.innerWidth >= 1024) {
+  if (window.innerWidth >= 1280) {
     mobileMenuOpen.value = false
   }
 }
@@ -374,7 +374,7 @@ onBeforeUnmount(() => {
 }
 
 /* Mobile: revert to full-width rectangle when menu is open, instantly */
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .site-header[data-scrolled][data-menu-open] {
     left: 0;
     right: 0;
@@ -383,7 +383,7 @@ onBeforeUnmount(() => {
   }
 }
 
-@screen lg {
+@screen xl {
   /* Desktop initial: transparent full-width bar */
   .site-header {
     @apply top-2 left-0 right-0 bg-transparent dark:bg-transparent backdrop-blur-none border-none shadow-none rounded-none;

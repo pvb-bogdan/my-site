@@ -1,33 +1,27 @@
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 
+// The inline script in nuxt.config.ts sets the `dark` class before first paint,
+// so this composable only mirrors that class and persists explicit choices.
 export function useTheme() {
-  const isDark = ref(true)
+  // Shared across components (header toggle, page) so they all read the same state
+  const isDark = useState('theme-is-dark', () => false)
+
+  const applyTheme = () => {
+    document.documentElement.classList.toggle('dark', isDark.value)
+    try {
+      localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+    } catch {
+      // Storage can be blocked (private mode); the theme still applies for this visit
+    }
+  }
 
   const toggleTheme = () => {
     isDark.value = !isDark.value
-    updateTheme()
-  }
-
-  const updateTheme = () => {
-    if (typeof window !== 'undefined') {
-      const html = document.documentElement
-      if (isDark.value) {
-        html.classList.add('dark')
-        localStorage.setItem('theme', 'dark')
-      } else {
-        html.classList.remove('dark')
-        localStorage.setItem('theme', 'light')
-      }
-    }
+    applyTheme()
   }
 
   onMounted(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme')
-      // Default to dark if no preference or if saved as dark
-      isDark.value = savedTheme === 'dark' || !savedTheme
-      updateTheme()
-    }
+    isDark.value = document.documentElement.classList.contains('dark')
   })
 
   return {

@@ -23,63 +23,43 @@
 
           <!-- Contact Items -->
           <div class="space-y-4">
-            <!-- Phone -->
-            <button
-              @click="revealPhone"
-              type="button"
-              :class="[
-                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg w-full focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2',
-                !phoneRevealed ? 'cursor-pointer' : ''
-              ]"
-            >
-              <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
-                <IconsPhone class="w-6 h-6 text-blue-600 group-hover:text-white" />
-              </div>
-              <div class="flex-1">
-                <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('contact.phone') }}</p>
-                <p v-if="!phoneRevealed" class="text-sm font-semibold text-gray-500 dark:text-gray-400">
-                  {{ t('contact.clickToShow') }}
-                </p>
-                <a 
-                  v-else
-                  :href="`tel:${phone.replace(/\s/g, '')}`"
-                  class="font-semibold text-gray-900 transition-colors dark:text-white hover:text-blue-600 dark:hover:text-sky-400"
-                  @click.stop
-                >
-                  {{ phone }}
-                </a>
-              </div>
-              <IconsEye v-if="!phoneRevealed" class="w-5 h-5 text-gray-400" />
-            </button>
-
-            <!-- Email -->
-            <button
-              @click="revealEmail"
-              type="button"
-              :class="[
-                'flex items-center gap-4 p-4 transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg w-full focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2',
-                !emailRevealed ? 'cursor-pointer' : ''
-              ]"
-            >
-              <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
-                <IconsEmail class="w-6 h-6 text-blue-600 group-hover:text-white" />
-              </div>
-              <div class="flex-1">
-                <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('contact.email') }}</p>
-                <p v-if="!emailRevealed" class="text-sm font-semibold text-gray-500 dark:text-gray-400">
-                  {{ t('contact.clickToShow') }}
-                </p>
-                <a 
-                  v-else
-                  :href="`mailto:${email}`"
-                  class="font-semibold text-gray-900 transition-colors dark:text-white hover:text-blue-600 dark:hover:text-sky-400"
-                  @click.stop
-                >
-                  {{ email }}
-                </a>
-              </div>
-              <IconsEye v-if="!emailRevealed" class="w-5 h-5 text-gray-400" />
-            </button>
+            <!-- Phone & Email: a button while hidden, swapped for a full-card link once revealed,
+                 so there is only ever one interactive element (no <a> nested in a <button>) -->
+            <template v-for="channel in revealableChannels" :key="channel.key">
+              <a
+                v-if="revealed[channel.key]"
+                :ref="(element) => setChannelLink(channel.key, element)"
+                :href="channel.href"
+                class="flex items-center w-full gap-4 p-4 text-left transition-all duration-300 bg-white border border-gray-200 dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+              >
+                <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
+                  <component :is="channel.icon" class="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
+                </div>
+                <div class="flex-1">
+                  <p class="text-sm text-gray-600 dark:text-gray-400">{{ channel.label }}</p>
+                  <p class="font-semibold text-gray-900 transition-colors dark:text-white group-hover:text-blue-600 dark:group-hover:text-sky-400">
+                    {{ channel.value }}
+                  </p>
+                </div>
+              </a>
+              <button
+                v-else
+                type="button"
+                class="flex items-center w-full gap-4 p-4 text-left transition-all duration-300 bg-white border border-gray-200 cursor-pointer dark:bg-gray-900 group rounded-xl dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-blue-500 focus-visible:outline-offset-2"
+                @click="revealChannel(channel.key)"
+              >
+                <div class="flex items-center justify-center w-12 h-12 transition-all duration-300 bg-blue-100 rounded-xl dark:bg-blue-900/30 group-hover:bg-blue-600 group-hover:text-white">
+                  <component :is="channel.icon" class="w-6 h-6 text-blue-600 group-hover:text-white" aria-hidden="true" />
+                </div>
+                <div class="flex-1">
+                  <p class="text-sm text-gray-600 dark:text-gray-400">{{ channel.label }}</p>
+                  <p class="text-sm font-semibold text-gray-600 dark:text-gray-400">
+                    {{ t('contact.clickToShow') }}
+                  </p>
+                </div>
+                <IconsEye class="w-5 h-5 text-gray-500" aria-hidden="true" />
+              </button>
+            </template>
 
             <!-- WhatsApp -->
             <a
@@ -153,25 +133,27 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, reactive, resolveComponent, type ComponentPublicInstance } from 'vue'
 
 const { t } = useI18n()
 
-// Reveal states for anti-spam protection
-const phoneRevealed = ref(false)
-const emailRevealed = ref(false)
+type ChannelKey = 'phone' | 'email'
 
-// Reveal functions
-const revealPhone = () => {
-   if (!phoneRevealed.value) {
-    setTimeout(() => (phoneRevealed.value = true), 300)
+// Reveal states for anti-spam protection
+const revealed = reactive<Record<ChannelKey, boolean>>({ phone: false, email: false })
+const channelLinks: Partial<Record<ChannelKey, HTMLElement>> = {}
+
+const setChannelLink = (key: ChannelKey, element: Element | ComponentPublicInstance | null) => {
+  if (element instanceof HTMLElement) {
+    channelLinks[key] = element
   }
 }
 
-const revealEmail = () => {
-   if (!emailRevealed.value) {
-    setTimeout(() => (emailRevealed.value = true), 300)
-  }
+// Reveal instantly and move focus to the new link, so keyboard users don't lose their place
+const revealChannel = async (key: ChannelKey) => {
+  revealed[key] = true
+  await nextTick()
+  channelLinks[key]?.focus()
 }
 
 // Contact information - you can update these values
@@ -187,4 +169,23 @@ const phone = computed(() => contactInfo.phone.join(' '))
 const whatsapp = computed(() => contactInfo.whatsapp.join(''))
 const email = computed(() => `${contactInfo.email[0]}@${contactInfo.email[1]}.${contactInfo.email[2]}`)
 
+const phoneIcon = resolveComponent('IconsPhone')
+const emailIcon = resolveComponent('IconsEmail')
+
+const revealableChannels = computed(() => [
+  {
+    key: 'phone' as const,
+    label: t('contact.phone'),
+    value: phone.value,
+    href: `tel:${phone.value.replace(/\s/g, '')}`,
+    icon: phoneIcon
+  },
+  {
+    key: 'email' as const,
+    label: t('contact.email'),
+    value: email.value,
+    href: `mailto:${email.value}`,
+    icon: emailIcon
+  }
+])
 </script>

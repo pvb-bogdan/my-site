@@ -74,15 +74,22 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
 }
 
-// SEO
+// SEO: canonical and og:url come from @nuxtjs/seo (site.url + i18n) per locale
+useSeoMeta({
+  title: () => t('seo.homeTitle'),
+  description: () => t('seo.homeDescription'),
+  ogTitle: () => t('seo.homeTitle'),
+  ogDescription: () => t('seo.homeDescription'),
+  ogImage: {
+    url: 'https://petrebogdan.com/og-image.png',
+    width: 1200,
+    height: 630,
+    type: 'image/png'
+  },
+  twitterCard: 'summary_large_image'
+})
+
 useHead({
-  title: computed(() => t('seo.homeTitle')),
-  meta: [
-    { name: 'description', content: computed(() => t('seo.homeDescription')) },
-    { property: 'og:title', content: computed(() => t('seo.homeTitle')) },
-    { property: 'og:description', content: computed(() => t('seo.homeDescription')) },
-    // Add more og tags if needed, e.g., og:image
-  ],
   htmlAttrs: {
     lang: computed(() => locale.value)
   }
